@@ -1,0 +1,17 @@
+{
+  "election": {
+    "id": "bc-provincial-2026",
+    "title": "2026 BC Provincial General Election",
+    "voting_date": null,
+    "boundary_version": null,
+    "status": "final_roster",
+    "source_url": "https://elections.bc.ca/2026-provincial-election/candidate-list/"
+  },
+  "roster_url": "https://elections.bc.ca/2026election/2026-provincial-general-election-candidates.csv",
+  "voting_archive_url": "https://www.leg.bc.ca/parliamentary-business/voting-records-index-archive",
+  "voting_since": 2020,
+  "disclosure_urls": [
+    "https://www.leg.bc.ca/about/accountability/members-disclosures/public-disclosure-statements",
+    "https://www.leg.bc.ca/about/accountability/members-disclosures/public-disclosure-statements/y/archived-public-disclosure-statements"
+  ]
+}

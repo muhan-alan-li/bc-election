@@ -1,0 +1,6 @@
+[project]
+name = "bc-election-ingestion"
+version = "0.1.0"
+description = "Repeatable, source-linked constituency research"
+requires-python = ">=3.12"
+dependencies = []
