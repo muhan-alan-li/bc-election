@@ -45,3 +45,13 @@ func TestFinderProxyUnavailable(t *testing.T) {
 		t.Fatal("Error cached")
 	}
 }
+
+// Exercise the same router the client reaches, including the /api/ fallback.
+func TestSidebarFinderRoute(t *testing.T) {
+	handler := newHandler(t.TempDir(), t.TempDir(), "synthetic", ":invalid")
+	response := httptest.NewRecorder()
+	handler.ServeHTTP(response, httptest.NewRequest("POST", "/api/constituency-finder", strings.NewReader(`{"postal_code":"V6Y1N9"}`)))
+	if response.Code != http.StatusServiceUnavailable || !strings.Contains(response.Body.String(), "finder service is unavailable") {
+		t.Fatalf("Sidebar lookup missed the finder route: %d %s", response.Code, response.Body.String())
+	}
+}

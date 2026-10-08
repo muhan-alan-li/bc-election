@@ -54,22 +54,40 @@ func TestFinderAPI(t *testing.T) {
 	if response.Header().Get("Cache-Control") != "no-store" {
 		t.Fatal("location response cached")
 	}
-	for _, input := range []string{`{"postal_code":"V6Y"}`, `{"latitude":91,"longitude":-123}`, `{"latitude":49}`, `{"postal_code":"V6Y1N9","latitude":49,"longitude":-123}`, `{"latitude":49,"longitude":-123,"accuracy_m":-1}`, `{} {}`, `{"extra":1}`} {
-		if got := finderRequest(handler, input); got.Code != 400 {
-			t.Fatal(input, got.Code)
-		}
-	}
-	if got := finderRequest(handler, `{"postal_code":"V6Y9Z9"}`); got.Code != 404 {
-		t.Fatal(got.Code)
-	}
-	if got := finderRequest(handler, `{"latitude":40,"longitude":-123}`); got.Code != 200 || !strings.Contains(got.Body.String(), `"status":"no_match"`) {
-		t.Fatal(got.Code, got.Body.String())
-	}
-	if got := finderRequest(handler, `{"latitude":49.5,"longitude":-123}`); !strings.Contains(got.Body.String(), `"status":"ambiguous"`) {
-		t.Fatal("shared boundary", got.Body.String())
-	}
-	if got := finderRequest(handler, `{"latitude":49.5,"longitude":-123.001,"accuracy_m":100}`); !strings.Contains(got.Body.String(), `"status":"ambiguous"`) {
-		t.Fatal("accuracy circle", got.Body.String())
+	for _, test := range []struct {
+		name, input, status string
+		code                int
+	}{
+		{"incomplete postal code", `{"postal_code":"V6Y"}`, "", 400},
+		{"invalid latitude", `{"latitude":91,"longitude":-123}`, "", 400},
+		{"missing longitude", `{"latitude":49}`, "", 400},
+		{"mixed inputs", `{"postal_code":"V6Y1N9","latitude":49,"longitude":-123}`, "", 400},
+		{"negative accuracy", `{"latitude":49,"longitude":-123,"accuracy_m":-1}`, "", 400},
+		{"multiple JSON objects", `{} {}`, "", 400},
+		{"unknown field", `{"extra":1}`, "", 400},
+		{"unknown postal code", `{"postal_code":"V6Y9Z9"}`, "", 404},
+		{"outside BC", `{"latitude":40,"longitude":-123}`, "no_match", 200},
+		{"shared boundary", `{"latitude":49.5,"longitude":-123}`, "ambiguous", 200},
+		{"accuracy spans boundary", `{"latitude":49.5,"longitude":-123.001,"accuracy_m":100}`, "ambiguous", 200},
+	} {
+		t.Run(test.name, func(t *testing.T) {
+			got := finderRequest(handler, test.input)
+			if got.Code != test.code {
+				t.Fatalf("got %d, want %d: %s", got.Code, test.code, got.Body.String())
+			}
+			var result struct {
+				Status string `json:"status"`
+			}
+			if err := json.Unmarshal(got.Body.Bytes(), &result); err != nil {
+				t.Fatal("Response is not JSON", err)
+			}
+			if test.status != "" && result.Status != test.status {
+				t.Fatalf("got status %q, want %q", result.Status, test.status)
+			}
+			if got.Header().Get("Cache-Control") != "no-store" {
+				t.Fatal("Location response may be cached")
+			}
+		})
 	}
 	missing := newFinderHandler(t.TempDir(), "synthetic")
 	if got := finderRequest(missing, `{"latitude":49,"longitude":-123}`); got.Code != 503 {
@@ -124,5 +142,14 @@ func TestBoundaryGeometryRoundTrip(t *testing.T) {
 	var postal postalLocations
 	if err := json.Unmarshal([]byte(`{"unknown":[[-123,49]]}`), &postal); err == nil {
 		t.Fatal("Unknown source accepted")
+	}
+}
+
+func TestHealthWithoutDataset(t *testing.T) {
+	handler := newFinderHandler(t.TempDir(), "synthetic")
+	response := httptest.NewRecorder()
+	handler.ServeHTTP(response, httptest.NewRequest("GET", "/health", nil))
+	if response.Code != 200 || response.Body.String() != `{"status":"ok"}` {
+		t.Fatal(response.Code, response.Body.String())
 	}
 }

@@ -7,12 +7,12 @@ Requires Go 1.24+ and Node.js 22.12+.
 From the project root:
 
 ```sh
-make up       # Build and start in the background at http://localhost:8000
+make up       # Build and restart in the background at http://localhost:8000
 make status   # Check the tracked server process
-make down     # Stop the server started by make up
+make down     # Stop both services started by make up
 ```
 
-Use `make up PORT=8080` for a different port. Logs are saved to `.run/server.log`. Run `make down` then `make up` to rebuild code changes. Published research updates appear without restarting. `make setup` installs client dependencies explicitly; `make up` installs them if missing.
+Use `make up PORT=8080` for a different port. Logs are saved to `.run/server.log`. `make up` rebuilds and restarts both services so updated client code cannot reach an older server without the finder endpoint. Published research updates appear without restarting. `make setup` installs client dependencies explicitly; `make up` installs them if missing.
 
 ## Client
 
@@ -100,3 +100,5 @@ Checks:
 cd content-server && go test -race ./...
 cd ../constituency-finder && go test -race ./...
 ```
+
+Run `make test` for the API routing regression and the focused finder suite (18 named cases, including the optional local-data smoke test). The finder unit tests use a tiny synthetic dataset and do not require downloads or listening ports.

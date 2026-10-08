@@ -20,6 +20,9 @@ stop_service() {
 case "$action" in
     up)
         mkdir -p "$run_dir"
+        # make up rebuilds both binaries; running processes still use the old code.
+        stop_service server
+        stop_service finder
         started_finder=false
         if ! alive finder; then
             nohup "$root/constituency-finder/bin/constituency-finder" \
