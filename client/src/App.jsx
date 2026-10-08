@@ -9,6 +9,7 @@ import { Finder } from './components/finder/Finder.jsx';
 import { Constituencies } from './routes/Constituencies.jsx';
 import { District } from './routes/District.jsx';
 import { Candidate } from './routes/Candidate.jsx';
+import { Parties } from './routes/Parties.jsx';
 import { NotFound } from './routes/NotFound.jsx';
 
 export function App() {
@@ -75,6 +76,7 @@ export function App() {
                         )}
                     </>
                 )}
+                {route.view === 'parties' && <Parties />}
                 {route.view === 'missing' && <NotFound />}
             </main>
             {finderOpen && <Finder onClose={() => setFinderOpen(false)} />}

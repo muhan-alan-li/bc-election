@@ -10,6 +10,8 @@ export function parseRoute() {
             .replace(/^#\/?/, '')
             .split('/')
             .map(decodeURIComponent);
+        if (parts[0] === 'parties' && parts.length === 1)
+            return { view: 'parties' };
         if (!parts[0] || (parts[0] === 'constituencies' && parts.length === 1))
             return { view: 'constituencies' };
         if (parts[0] === 'constituencies' && parts[1] && parts.length === 2)

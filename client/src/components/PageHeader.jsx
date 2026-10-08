@@ -7,7 +7,12 @@ export function PageHeader({ route, dataset, candidate }) {
     let description =
         'Find your constituency and explore the candidates running to represent you as an MLA.';
 
-    if (route.view === 'district') {
+    if (route.view === 'parties') {
+        title = 'Parties';
+        context = '2026 BC provincial election';
+        description =
+            'Meet the party leaders and compare their main campaign promises.';
+    } else if (route.view === 'district') {
         title = dataset?.district.name || route.code;
         context = dataset?.election.title || 'BC election guide';
         description = 'Candidates for MLA · Listed alphabetically.';

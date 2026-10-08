@@ -12,7 +12,8 @@ const options = {
     jsxImportSource: 'preact',
     sourcemap: true,
     target: ['es2022'],
-    loader: { '.png': 'dataurl' },
+    loader: { '.png': 'dataurl', '.jpg': 'file' },
+    assetNames: 'assets/[name]-[hash]',
 };
 
 if (process.argv.includes('--watch')) {

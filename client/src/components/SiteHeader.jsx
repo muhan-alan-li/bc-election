@@ -9,10 +9,24 @@ export function SiteHeader({ route }) {
                     <a
                         href="#/constituencies"
                         aria-current={
-                            route.view !== 'missing' ? 'page' : undefined
+                            [
+                                'constituencies',
+                                'district',
+                                'candidate',
+                            ].includes(route.view)
+                                ? 'page'
+                                : undefined
                         }
                     >
                         Constituencies
+                    </a>
+                    <a
+                        href="#/parties"
+                        aria-current={
+                            route.view === 'parties' ? 'page' : undefined
+                        }
+                    >
+                        Parties
                     </a>
                 </nav>
             </div>

@@ -1,6 +1,16 @@
 import { districtHref } from '../helpers/routes.js';
 
 export function Breadcrumbs({ route, dataset, candidate }) {
+    if (route.view === 'parties')
+        return (
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <ol>
+                    <li>
+                        <span aria-current="page">Parties</span>
+                    </li>
+                </ol>
+            </nav>
+        );
     return (
         <nav class="breadcrumbs" aria-label="Breadcrumb" tabIndex="0">
             <ol>
