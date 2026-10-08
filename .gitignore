@@ -1,0 +1,14 @@
+client/node_modules/
+client/dist/
+content-server/bin/
+.DS_Store
+.run/
+__pycache__/
+*.pyc
+.venv/
+ingestion/storage/raw/
+ingestion/storage/normalized/
+ingestion/storage/published/
+constituency-finder/bin/
+ingestion/storage/runs/
+bc-election-history.bundle
