@@ -2,7 +2,7 @@ import { RetryError } from './components/RetryError.jsx';
 import { useState } from 'preact/hooks';
 import { useElectionData } from './hooks/useElectionData.js';
 import { districtHref } from './helpers/routes.js';
-import { Breadcrumbs } from './components/Breadcrumbs.jsx';
+import { PageHeader } from './components/PageHeader.jsx';
 import { SiteHeader } from './components/SiteHeader.jsx';
 import { SiteFooter } from './components/SiteFooter.jsx';
 import { Finder } from './components/finder/Finder.jsx';
@@ -31,7 +31,7 @@ export function App() {
         <>
             <SiteHeader route={route} />
             <main class="shell">
-                <Breadcrumbs
+                <PageHeader
                     route={route}
                     dataset={dataset}
                     candidate={candidate}

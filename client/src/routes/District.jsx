@@ -1,6 +1,5 @@
-import { SourceLink } from '../components/SourceLink.jsx';
 import { useState } from 'preact/hooks';
-import { dateLabel, statusLabel } from '../helpers/labels.js';
+import { statusLabel } from '../helpers/labels.js';
 import { candidateHref } from '../helpers/routes.js';
 import { partyName } from '../helpers/candidates.js';
 
@@ -21,22 +20,6 @@ export function District({ dataset }) {
 
     return (
         <>
-            <div class="intro">
-                <p class="eyebrow">{dataset.election.title}</p>
-                <h1>{dataset.district.name}</h1>
-                <p>Candidates for MLA · Listed alphabetically.</p>
-            </div>
-            <p class="note">
-                Roster:{' '}
-                {dataset.district.roster_status === 'final_roster'
-                    ? 'Final candidate list'
-                    : 'Provisional candidate list'}{' '}
-                · Research assembled {dateLabel(dataset.generated_at)}. Records
-                may cover earlier dates.{' '}
-                <SourceLink href={dataset.election.source_url}>
-                    Elections BC
-                </SourceLink>
-            </p>
             <div class="filters">
                 <div>
                     <label for="candidate-search">

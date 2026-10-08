@@ -31,13 +31,6 @@ export function Constituencies({ districts, onFind }) {
 
     return (
         <>
-            <div class="intro">
-                <h1>Constituencies</h1>
-                <p>
-                    Find your constituency and explore the candidates running to
-                    represent you as an MLA.
-                </p>
-            </div>
             <div class="constituency-tools">
                 <div>
                     <label for="district-search">
@@ -58,11 +51,7 @@ export function Constituencies({ districts, onFind }) {
                     Find my constituency
                 </button>
             </div>
-            <p class="note">
-                Only constituencies with published research appear here.
-                Richmond Centre is the current pilot. Use the constituency
-                finder if you’re unsure of your constituency.
-            </p>
+
             <p class="result-count" role="status">
                 {matches.length} constituencies · Alphabetical order
             </p>

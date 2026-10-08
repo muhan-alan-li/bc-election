@@ -21,7 +21,7 @@ JavaScript and Preact, bundled with esbuild. Frontend source lives in `client/sr
 - `main.jsx` mounts the app; `App.jsx` connects the routes and page layout.
 - `routes/` contains the constituency list, district candidates, candidate detail, and not-found pages.
 - `components/` contains shared UI and the candidate-record and finder components.
-- `hooks/` manages data loading, finder requests, and pagination.
+- `hooks/` manages data loading, finder requests, persistent stars, and adaptive pagination.
 - `helpers/` contains API, routing, label, and candidate-affiliation helpers.
 
 Use `npm run format` to apply Prettier and `npm run format:check` to check the four-space JavaScript/JSX formatting.

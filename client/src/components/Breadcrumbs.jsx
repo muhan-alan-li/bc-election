@@ -2,7 +2,7 @@ import { districtHref } from '../helpers/routes.js';
 
 export function Breadcrumbs({ route, dataset, candidate }) {
     return (
-        <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <nav class="breadcrumbs" aria-label="Breadcrumb" tabIndex="0">
             <ol>
                 <li>
                     {route.view === 'constituencies' ? (
