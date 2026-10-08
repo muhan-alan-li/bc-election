@@ -16,7 +16,15 @@ Use `make up PORT=8080` for a different port. Logs are saved to `.run/server.log
 
 ## Client
 
-JavaScript and Preact, bundled with esbuild.
+JavaScript and Preact, bundled with esbuild. Frontend source lives in `client/src`:
+
+- `main.jsx` mounts the app; `App.jsx` connects the routes and page layout.
+- `routes/` contains the constituency list, district candidates, candidate detail, and not-found pages.
+- `components/` contains shared UI and the candidate-record and finder components.
+- `hooks/` manages data loading, finder requests, and pagination.
+- `helpers/` contains API, routing, label, and candidate-affiliation helpers.
+
+Use `npm run format` to apply Prettier and `npm run format:check` to check the four-space JavaScript/JSX formatting.
 
 ```sh
 cd client

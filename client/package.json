@@ -9,8 +9,8 @@
   "scripts": {
     "build": "node build.js",
     "dev": "node build.js --watch",
-    "format": "prettier --write build.js \"js/**/*.{js,jsx}\"",
-    "format:check": "prettier --check build.js \"js/**/*.{js,jsx}\""
+    "format": "prettier --write build.js \"src/**/*.{js,jsx}\"",
+    "format:check": "prettier --check build.js \"src/**/*.{js,jsx}\""
   },
   "dependencies": {
     "leaflet": "^1.9.4",

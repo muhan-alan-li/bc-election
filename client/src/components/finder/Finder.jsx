@@ -40,7 +40,6 @@ export function Finder({ onClose }) {
             if (id === sequence.current) setBusy(false);
         }
     }
-
     lookupRef.current = lookup;
 
     function useLocation() {

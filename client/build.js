@@ -5,7 +5,7 @@ await mkdir('dist', { recursive: true });
 await copyFile('index.html', 'dist/index.html');
 
 const options = {
-    entryPoints: ['js/app.jsx'],
+    entryPoints: ['src/main.jsx'],
     bundle: true,
     outfile: 'dist/app.js',
     jsx: 'automatic',
