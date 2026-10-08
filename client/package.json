@@ -8,13 +8,16 @@
   },
   "scripts": {
     "build": "node build.js",
-    "dev": "node build.js --watch"
+    "dev": "node build.js --watch",
+    "format": "prettier --write build.js \"js/**/*.{js,jsx}\"",
+    "format:check": "prettier --check build.js \"js/**/*.{js,jsx}\""
   },
   "dependencies": {
-    "preact": "^10.27.2",
-    "leaflet": "^1.9.4"
+    "leaflet": "^1.9.4",
+    "preact": "^10.27.2"
   },
   "devDependencies": {
-    "esbuild": "^0.25.10"
+    "esbuild": "^0.25.10",
+    "prettier": "3.9.9"
   }
 }
