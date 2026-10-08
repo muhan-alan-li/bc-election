@@ -1,10 +1,14 @@
+import { Pagination } from '../components/Pagination.jsx';
 import { useState } from 'preact/hooks';
 import { districtHref } from '../helpers/routes.js';
+import { useStarredConstituencies } from '../hooks/useStarredConstituencies.js';
+import { useAdaptivePageSize } from '../hooks/useAdaptivePageSize.js';
 
 export function Constituencies({ districts, onFind }) {
     const [query, setQuery] = useState('');
     const [page, setPage] = useState(1);
-    const pageSize = 10;
+    const { starred, toggleStar } = useStarredConstituencies();
+
     const matches = districts
         .filter((row) =>
             `${row.name} ${row.official_code}`
@@ -12,12 +16,19 @@ export function Constituencies({ districts, onFind }) {
                 .includes(query.trim().toLocaleLowerCase()),
         )
         .sort((a, b) => a.name.localeCompare(b.name, 'en-CA'));
+    const { pageSize, tableRef, paginationRef } = useAdaptivePageSize(
+        query,
+        matches.length,
+        page,
+    );
+
     const pages = Math.max(1, Math.ceil(matches.length / pageSize));
     const currentPage = Math.min(page, pages);
     const rows = matches.slice(
         (currentPage - 1) * pageSize,
         currentPage * pageSize,
     );
+
     return (
         <>
             <div class="intro">
@@ -62,9 +73,12 @@ export function Constituencies({ districts, onFind }) {
                     aria-label="Constituencies"
                     tabIndex="0"
                 >
-                    <table class="constituency-table">
+                    <table ref={tableRef} class="constituency-table">
                         <thead>
                             <tr>
+                                <th scope="col" class="star-column">
+                                    Star
+                                </th>
                                 <th scope="col">Constituency</th>
                                 <th scope="col">Code</th>
                                 <th scope="col">Candidates</th>
@@ -74,6 +88,23 @@ export function Constituencies({ districts, onFind }) {
                         <tbody>
                             {rows.map((row) => (
                                 <tr key={row.official_code}>
+                                    <td class="star-column">
+                                        <button
+                                            type="button"
+                                            class="star-button"
+                                            aria-pressed={starred.includes(
+                                                row.official_code,
+                                            )}
+                                            aria-label={`${starred.includes(row.official_code) ? 'Unstar' : 'Star'} ${row.name}`}
+                                            onClick={() =>
+                                                toggleStar(row.official_code)
+                                            }
+                                        >
+                                            {starred.includes(row.official_code)
+                                                ? '★'
+                                                : '☆'}
+                                        </button>
+                                    </td>
                                     <th scope="row">
                                         <a
                                             href={districtHref(
@@ -102,25 +133,13 @@ export function Constituencies({ districts, onFind }) {
                         : 'No constituency research has been published yet.'}
                 </p>
             )}
-            <nav class="pagination" aria-label="Constituency pages">
-                <button
-                    class="secondary"
-                    disabled={currentPage === 1}
-                    onClick={() => setPage(currentPage - 1)}
-                >
-                    Previous
-                </button>
-                <span>
-                    Page {currentPage} of {pages}
-                </span>
-                <button
-                    class="secondary"
-                    disabled={currentPage === pages}
-                    onClick={() => setPage(currentPage + 1)}
-                >
-                    Next
-                </button>
-            </nav>
+            <Pagination
+                currentPage={currentPage}
+                pages={pages}
+                onPageChange={setPage}
+                paginationRef={paginationRef}
+                label="Constituency pages"
+            />
         </>
     );
 }
