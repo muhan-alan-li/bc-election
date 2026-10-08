@@ -68,6 +68,19 @@ Use `--offline` before `run` to reuse cached source snapshots without network ac
 
 ## Checks
 
+Party and candidate platform collectors are separate Python jobs. They share the
+source snapshot cache but do not invoke the voting-history workflow or each other.
+See [platform collection configuration and coverage](ingestion/PLATFORMS.md).
+
+```sh
+cd ingestion
+python3 -m election collect-party-platforms
+python3 -m election collect-candidate-platforms --district 'Richmond Centre'
+```
+
+The curated registry includes first-pass campaign source URLs. Unconfigured entries are published with
+explicit `not_configured` coverage, rather than inferred platforms.
+
 ```sh
 cd content-server
 go test ./...

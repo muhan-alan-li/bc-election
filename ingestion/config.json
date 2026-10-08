@@ -10,6 +10,14 @@
   "roster_url": "https://elections.bc.ca/2026election/2026-provincial-general-election-candidates.csv",
   "voting_archive_url": "https://www.leg.bc.ca/parliamentary-business/voting-records-index-archive",
   "voting_since": 2020,
+  "platform_directories": [
+    "https://www.bcndp.ca/team",
+    "https://conservativebc.ca/our-team/",
+    "https://bcgreens.ca/candidates-2026/",
+    "https://www.centrebc.ca/our-team/",
+    "https://libertarian.bc.ca/2026-candidates/",
+    "https://votemate.org/bc2026provincial/candidates/"
+  ],
   "disclosure_urls": [
     "https://www.leg.bc.ca/about/accountability/members-disclosures/public-disclosure-statements",
     "https://www.leg.bc.ca/about/accountability/members-disclosures/public-disclosure-statements/y/archived-public-disclosure-statements"

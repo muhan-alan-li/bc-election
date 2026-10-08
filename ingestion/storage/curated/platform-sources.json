@@ -1,0 +1,1467 @@
+{
+  "bc-provincial-2026": {
+    "parties": {
+      "BC NDP": [
+        "https://www.bcndp.ca/action-for-you",
+        "https://www.bcndp.ca/releases/david-eby-launches-election-plan-build-bc-strong-amid-trumps-attacks"
+      ],
+      "Conservative Party": [
+        "https://conservativebc.ca/plan/"
+      ],
+      "BC Green Party": [
+        "https://bcgreens.ca/our-plan/"
+      ],
+      "CentreBC": [
+        "https://www.centrebc.ca/our-policy/"
+      ],
+      "OneBC": [
+        "https://1bc.ca/"
+      ],
+      "Libertarian": [
+        "https://libertarian.bc.ca/2026-platform/"
+      ],
+      "Christian Heritage Party of BC": [
+        "https://www.chpbc.ca/policies/"
+      ],
+      "Communist Party of BC": [
+        "https://cpcbc.ca/our-platform/"
+      ],
+      "Freedom Party of BC": [
+        "https://freedompartybc.ca/"
+      ],
+      "CWP": [
+        "https://www.canada2.net/"
+      ]
+    },
+    "candidates": {
+      "ABM": {
+        "Darryl Kropp": [
+          "https://conservativebc.ca/candidate/darryl-kropp/",
+          "https://votemate.org/bc2026provincial/candidates/14808?riding=2182"
+        ],
+        "Lakhwinder Jhaj": [
+          "https://www.centrebc.ca/candidates/lakhwinder-jhaj/",
+          "https://votemate.org/bc2026provincial/candidates/14706?riding=2182"
+        ],
+        "Pam Alexis": [
+          "https://votemate.org/bc2026provincial/candidates/14794?riding=2182"
+        ],
+        "Virender Dass": [
+          "https://votemate.org/bc2026provincial/candidates/14932?riding=2182"
+        ],
+        "Jeff Monds": [
+          "https://votemate.org/bc2026provincial/candidates/14920?riding=2182"
+        ]
+      },
+      "ABS": {
+        "Bruce Banman": [
+          "https://conservativebc.ca/candidate/bruce-banman/",
+          "https://votemate.org/bc2026provincial/candidates/14704?riding=2166"
+        ],
+        "Leah Ballantyne": [
+          "https://votemate.org/bc2026provincial/candidates/14918?riding=2166"
+        ],
+        "Robin Roy": [
+          "https://votemate.org/bc2026provincial/candidates/14831?riding=2166"
+        ]
+      },
+      "ABW": {
+        "Korky Neufeld": [
+          "https://conservativebc.ca/candidate/korky-neufeld/",
+          "https://votemate.org/bc2026provincial/candidates/14705?riding=2167"
+        ],
+        "Gurpreet Chahal": [
+          "https://votemate.org/bc2026provincial/candidates/14931?riding=2167"
+        ],
+        "Jules Côté": [
+          "https://votemate.org/bc2026provincial/candidates/14919?riding=2167"
+        ]
+      },
+      "BDS": {
+        "Donegal Wilson": [
+          "https://conservativebc.ca/candidate/donegal-wilson/",
+          "https://votemate.org/bc2026provincial/candidates/14748?riding=2205"
+        ],
+        "Keith Pomeroy": [
+          "https://votemate.org/bc2026provincial/candidates/14933?riding=2205"
+        ],
+        "Roly Russell": [
+          "https://votemate.org/bc2026provincial/candidates/14707?riding=2205"
+        ]
+      },
+      "BLS": {
+        "Sharon Hartwell": [
+          "https://conservativebc.ca/candidate/sharon-hartwell/",
+          "https://votemate.org/bc2026provincial/candidates/14726?riding=2217"
+        ],
+        "Frankie Abel": [
+          "https://votemate.org/bc2026provincial/candidates/14924?riding=2217"
+        ],
+        "Ed Ewald": [
+          "https://votemate.org/bc2026provincial/candidates/14925?riding=2217"
+        ]
+      },
+      "BNC": {
+        "Joshua Domnich": [
+          "https://conservativebc.ca/candidate/joshua-domnich/",
+          "https://votemate.org/bc2026provincial/candidates/14901?riding=2163"
+        ],
+        "Shila Taheri": [
+          "https://bcgreens.ca/candidates-2026/shila-taheri/",
+          "https://votemate.org/bc2026provincial/candidates/14821?riding=2163"
+        ],
+        "Vikas Gautam": [
+          "https://www.centrebc.ca/candidates/vikas-gautam/",
+          "https://votemate.org/bc2026provincial/candidates/14916?riding=2163"
+        ],
+        "Anne Kang": [
+          "https://votemate.org/bc2026provincial/candidates/14779?riding=2163"
+        ]
+      },
+      "BNE": {
+        "Peter Si": [
+          "https://conservativebc.ca/candidate/peter-si/",
+          "https://votemate.org/bc2026provincial/candidates/14905?riding=2144"
+        ],
+        "Javad Shushtarian": [
+          "https://bcgreens.ca/candidates-2026/javad-shushtarian/",
+          "https://votemate.org/bc2026provincial/candidates/14926?riding=2144"
+        ],
+        "Rohini Reah Arora": [
+          "https://votemate.org/bc2026provincial/candidates/14833?riding=2144"
+        ],
+        "De Ding": [
+          "https://votemate.org/bc2026provincial/candidates/14934?riding=2144"
+        ]
+      },
+      "BNN": {
+        "Joe Latam": [
+          "https://conservativebc.ca/candidate/joe-latam/",
+          "https://votemate.org/bc2026provincial/candidates/14879?riding=2143"
+        ],
+        "Raj Chouhan": [
+          "https://votemate.org/bc2026provincial/candidates/14836?riding=2143"
+        ],
+        "Greg DePaco": [
+          "https://votemate.org/bc2026provincial/candidates/14937?riding=2143"
+        ]
+      },
+      "BNO": {
+        "Simon Chandler": [
+          "https://conservativebc.ca/candidate/simon-chandler/",
+          "https://votemate.org/bc2026provincial/candidates/14805?riding=2145"
+        ],
+        "Maddy Kennedy-Parrott": [
+          "https://bcgreens.ca/candidates-2026/maddy-kennedy-parrott/",
+          "https://votemate.org/bc2026provincial/candidates/14935?riding=2145"
+        ],
+        "Janet Routledge": [
+          "https://votemate.org/bc2026provincial/candidates/14927?riding=2145"
+        ]
+      },
+      "BNS": {
+        "David Xie": [
+          "https://conservativebc.ca/candidate/david-xie/",
+          "https://votemate.org/bc2026provincial/candidates/14885?riding=2160"
+        ],
+        "Bryan Fockler": [
+          "https://bcgreens.ca/candidates-2026/bryan-fockler/",
+          "https://votemate.org/bc2026provincial/candidates/14936?riding=2160"
+        ],
+        "Paul Choi": [
+          "https://votemate.org/bc2026provincial/candidates/14835?riding=2160"
+        ],
+        "Andrew Rose": [
+          "https://votemate.org/bc2026provincial/candidates/14828?riding=2160"
+        ]
+      },
+      "CHN": {
+        "Heather Maahs": [
+          "https://conservativebc.ca/candidate/heather-maahs/",
+          "https://votemate.org/bc2026provincial/candidates/14732?riding=2194"
+        ],
+        "Dan Grice": [
+          "https://www.centrebc.ca/candidates/dan-grice/",
+          "https://votemate.org/bc2026provincial/candidates/14891?riding=2194"
+        ],
+        "Adila Shaukat": [
+          "https://votemate.org/bc2026provincial/candidates/14929?riding=2194"
+        ]
+      },
+      "CLR": {
+        "Scott McInnis": [
+          "https://conservativebc.ca/candidate/scott-mcinnis/",
+          "https://votemate.org/bc2026provincial/candidates/14734?riding=2219"
+        ],
+        "Rana Nelson": [
+          "https://bcgreens.ca/candidates-2026/rana-nelson/",
+          "https://votemate.org/bc2026provincial/candidates/14939?riding=2219"
+        ],
+        "Andrea Dunlop": [
+          "https://votemate.org/bc2026provincial/candidates/14838?riding=2219"
+        ]
+      },
+      "CQB": {
+        "Ryan Peterson": [
+          "https://conservativebc.ca/candidate/ryan-peterson/",
+          "https://votemate.org/bc2026provincial/candidates/14813?riding=2168"
+        ],
+        "Valerie Morrison": [
+          "https://bcgreens.ca/candidates-2026/valerie-morrison/",
+          "https://votemate.org/bc2026provincial/candidates/14941?riding=2168"
+        ],
+        "Kaden Mann": [
+          "https://www.centrebc.ca/candidates/kaden-mann/",
+          "https://votemate.org/bc2026provincial/candidates/14940?riding=2168"
+        ],
+        "Jodie Wickens": [
+          "https://votemate.org/bc2026provincial/candidates/14848?riding=2168"
+        ]
+      },
+      "CRC": {
+        "Brennan Day": [
+          "https://conservativebc.ca/candidate/brennan-day/",
+          "https://votemate.org/bc2026provincial/candidates/14720?riding=2127"
+        ],
+        "Jay Van Oostdam": [
+          "https://bcgreens.ca/candidates-2026/jay-van-oostdam/",
+          "https://votemate.org/bc2026provincial/candidates/14943?riding=2127"
+        ],
+        "Jason Cook": [
+          "https://www.centrebc.ca/candidates/jason-cook/",
+          "https://votemate.org/bc2026provincial/candidates/14914?riding=2127"
+        ],
+        "Will Cole-Hamilton": [
+          "https://votemate.org/bc2026provincial/candidates/14776?riding=2127"
+        ]
+      },
+      "CWV": {
+        "Bert Chen": [
+          "https://conservativebc.ca/candidate/bert-chen/",
+          "https://votemate.org/bc2026provincial/candidates/14876?riding=2128"
+        ],
+        "Justin Douglas": [
+          "https://bcgreens.ca/candidates-2026/justin-douglas/",
+          "https://votemate.org/bc2026provincial/candidates/14888?riding=2128"
+        ],
+        "James Chumsa": [
+          "https://votemate.org/bc2026provincial/candidates/14944?riding=2128"
+        ],
+        "Debra Toporowski": [
+          "https://votemate.org/bc2026provincial/candidates/14800?riding=2128"
+        ]
+      },
+      "DLN": {
+        "Monica Mohan": [
+          "https://conservativebc.ca/candidate/monica-mohan/",
+          "https://votemate.org/bc2026provincial/candidates/14882?riding=2146"
+        ],
+        "Kuldeep Rangi": [
+          "https://www.centrebc.ca/candidates/kuldeep-rangi/",
+          "https://votemate.org/bc2026provincial/candidates/14789?riding=2146"
+        ],
+        "Todd Schierling": [
+          "https://votemate.org/bc2026provincial/candidates/14847?riding=2146"
+        ]
+      },
+      "DLS": {
+        "Ian Paton": [
+          "https://conservativebc.ca/candidate/ian-paton/",
+          "https://votemate.org/bc2026provincial/candidates/14738?riding=2147"
+        ],
+        "Skadi Green": [
+          "https://bcgreens.ca/candidates-2026/skadi-green/",
+          "https://votemate.org/bc2026provincial/candidates/14945?riding=2147"
+        ],
+        "Jason McCormick": [
+          "https://votemate.org/bc2026provincial/candidates/14844?riding=2147"
+        ],
+        "Jim McMurtry": [
+          "https://votemate.org/bc2026provincial/candidates/14756?riding=2147"
+        ]
+      },
+      "ESC": {
+        "Dave Johnston": [
+          "https://conservativebc.ca/candidate/dave-johnston/",
+          "https://votemate.org/bc2026provincial/candidates/14807?riding=2129"
+        ],
+        "Sidney Coles": [
+          "https://bcgreens.ca/candidates-2026/sidney-coles/",
+          "https://votemate.org/bc2026provincial/candidates/14860?riding=2129"
+        ],
+        "Sid Tobias": [
+          "https://www.centrebc.ca/candidates/sid-tobias/",
+          "https://votemate.org/bc2026provincial/candidates/14896?riding=2129"
+        ],
+        "Darlene Rotchford": [
+          "https://votemate.org/bc2026provincial/candidates/14846?riding=2129"
+        ]
+      },
+      "FRN": {
+        "Tony Luck": [
+          "https://conservativebc.ca/candidate/tony-luck/",
+          "https://votemate.org/bc2026provincial/candidates/14731?riding=2213"
+        ],
+        "Jason Leboe": [
+          "https://votemate.org/bc2026provincial/candidates/14946?riding=2213"
+        ],
+        "Patrick Michell": [
+          "https://votemate.org/bc2026provincial/candidates/14890?riding=2213"
+        ]
+      },
+      "JFM": {
+        "Mike Hicks": [
+          "https://conservativebc.ca/candidate/mike-hicks/",
+          "https://votemate.org/bc2026provincial/candidates/14878?riding=2130"
+        ],
+        "David Evans": [
+          "https://bcgreens.ca/candidates-2026/david-evans/",
+          "https://votemate.org/bc2026provincial/candidates/14752?riding=2130"
+        ],
+        "Jeff Brown": [
+          "https://votemate.org/bc2026provincial/candidates/14947?riding=2130"
+        ],
+        "Shane Friesen": [
+          "https://votemate.org/bc2026provincial/candidates/14948?riding=2130"
+        ],
+        "Dana Lajeunesse": [
+          "https://votemate.org/bc2026provincial/candidates/14842?riding=2130"
+        ]
+      },
+      "KAC": {
+        "Peter Milobar": [
+          "https://conservativebc.ca/candidate/peter-milobar/",
+          "https://votemate.org/bc2026provincial/candidates/14735?riding=2196"
+        ],
+        "Annelise Beach": [
+          "https://bcgreens.ca/candidates-2026/annelise-beach/",
+          "https://votemate.org/bc2026provincial/candidates/14949?riding=2196"
+        ],
+        "Rocky McAfee": [
+          "https://votemate.org/bc2026provincial/candidates/14950?riding=2196"
+        ],
+        "Thaelo Proctor": [
+          "https://votemate.org/bc2026provincial/candidates/14951?riding=2196"
+        ],
+        "Mike Wisla": [
+          "https://votemate.org/bc2026provincial/candidates/14952?riding=2196"
+        ]
+      },
+      "KAN": {
+        "Ward Stamer": [
+          "https://conservativebc.ca/candidate/ward-stamer/",
+          "https://votemate.org/bc2026provincial/candidates/14741?riding=2214"
+        ],
+        "Kory Clark": [
+          "https://votemate.org/bc2026provincial/candidates/14953?riding=2214"
+        ],
+        "Deborah Friesen": [
+          "https://votemate.org/bc2026provincial/candidates/14954?riding=2214"
+        ]
+      },
+      "KEC": {
+        "Kristina Loewen": [
+          "https://conservativebc.ca/candidate/kristina-loewen/",
+          "https://votemate.org/bc2026provincial/candidates/14730?riding=2188"
+        ],
+        "Bill Desrosiers": [
+          "https://votemate.org/bc2026provincial/candidates/14955?riding=2188"
+        ],
+        "Loyal Wooldridge": [
+          "https://votemate.org/bc2026provincial/candidates/14802?riding=2188"
+        ]
+      },
+      "KLC": {
+        "Pavneet Singh": [
+          "https://conservativebc.ca/candidate/pavneet-singh/",
+          "https://votemate.org/bc2026provincial/candidates/14740?riding=2192"
+        ],
+        "Carter Mochinski": [
+          "https://bcgreens.ca/candidates-2026/carter-mochinski/",
+          "https://votemate.org/bc2026provincial/candidates/14957?riding=2192"
+        ],
+        "Binny Boparai": [
+          "https://votemate.org/bc2026provincial/candidates/14956?riding=2192"
+        ],
+        "Alexandra Wright": [
+          "https://votemate.org/bc2026provincial/candidates/14865?riding=2192"
+        ]
+      },
+      "KLM": {
+        "Gavin Dew": [
+          "https://conservativebc.ca/candidate/gavin-dew/",
+          "https://votemate.org/bc2026provincial/candidates/14721?riding=2190"
+        ],
+        "Saoirse MacKinnon": [
+          "https://bcgreens.ca/candidates-2026/saoirse-mackinnon/",
+          "https://votemate.org/bc2026provincial/candidates/14958?riding=2190"
+        ],
+        "Abraham Nordine": [
+          "https://votemate.org/bc2026provincial/candidates/14959?riding=2190"
+        ],
+        "Miriam Rycroft": [
+          "https://votemate.org/bc2026provincial/candidates/14960?riding=2190"
+        ]
+      },
+      "KOC": {
+        "Gordon Skulnec": [
+          "https://conservativebc.ca/candidate/gordon-skulnec/",
+          "https://votemate.org/bc2026provincial/candidates/14857?riding=2204"
+        ],
+        "Nicole Charlwood": [
+          "https://bcgreens.ca/candidates-2026/nicole-charlwood/",
+          "https://votemate.org/bc2026provincial/candidates/14961?riding=2204"
+        ],
+        "Brittny Anderson": [
+          "https://votemate.org/bc2026provincial/candidates/14795?riding=2204"
+        ],
+        "Hunter Corrigal": [
+          "https://votemate.org/bc2026provincial/candidates/14830?riding=2204"
+        ]
+      },
+      "KOM": {
+        "Warren Mirko": [
+          "https://conservativebc.ca/candidate/warren-mirko/",
+          "https://votemate.org/bc2026provincial/candidates/14853?riding=2199"
+        ],
+        "Connie Larochelle": [
+          "https://bcgreens.ca/candidates-2026/connie-larochelle/",
+          "https://votemate.org/bc2026provincial/candidates/14963?riding=2199"
+        ],
+        "Stephen Hill": [
+          "https://votemate.org/bc2026provincial/candidates/14962?riding=2199"
+        ],
+        "Steve Morissette": [
+          "https://votemate.org/bc2026provincial/candidates/14845?riding=2199"
+        ]
+      },
+      "KOR": {
+        "Pete Davis": [
+          "https://conservativebc.ca/candidate/pete-davis/",
+          "https://votemate.org/bc2026provincial/candidates/14719?riding=2206"
+        ],
+        "Keenan Dennehy": [
+          "https://bcgreens.ca/candidates-2026/keenan-dennehy/",
+          "https://votemate.org/bc2026provincial/candidates/14965?riding=2206"
+        ],
+        "Paul Heywood": [
+          "https://www.centrebc.ca/candidates/paul-heywood/",
+          "https://votemate.org/bc2026provincial/candidates/14966?riding=2206"
+        ],
+        "Norma Blissett": [
+          "https://votemate.org/bc2026provincial/candidates/14964?riding=2206"
+        ],
+        "AJ Wolfe": [
+          "https://votemate.org/bc2026provincial/candidates/14829?riding=2206"
+        ]
+      },
+      "LAO": {
+        "Kris McNichol": [
+          "https://conservativebc.ca/candidate/kris-mcnichol/",
+          "https://votemate.org/bc2026provincial/candidates/14768?riding=2141"
+        ],
+        "Charlene Smylie": [
+          "https://bcgreens.ca/candidates-2026/charlene-smylie/",
+          "https://votemate.org/bc2026provincial/candidates/14967?riding=2141"
+        ],
+        "Stephanie Higginson": [
+          "https://votemate.org/bc2026provincial/candidates/14778?riding=2141"
+        ]
+      },
+      "LFH": {
+        "Cindy Scott": [
+          "https://conservativebc.ca/candidate/cindy-scott/",
+          "https://votemate.org/bc2026provincial/candidates/14904?riding=2138"
+        ],
+        "Christopher Moon": [
+          "https://bcgreens.ca/candidates-2026/christopher-moon/",
+          "https://votemate.org/bc2026provincial/candidates/14969?riding=2138"
+        ],
+        "Sean Flynn": [
+          "https://www.centrebc.ca/candidates/sean-flynn/",
+          "https://votemate.org/bc2026provincial/candidates/14832?riding=2138"
+        ],
+        "Christian McCay": [
+          "https://votemate.org/bc2026provincial/candidates/14968?riding=2138"
+        ],
+        "Ravi Parmar": [
+          "https://votemate.org/bc2026provincial/candidates/14783?riding=2138"
+        ],
+        "Alex Thurlborn": [
+          "https://votemate.org/bc2026provincial/candidates/14970?riding=2138"
+        ]
+      },
+      "LLA": {
+        "Harman Bhangu": [
+          "https://conservativebc.ca/candidate/harman-bhangu/",
+          "https://votemate.org/bc2026provincial/candidates/14715?riding=2173"
+        ],
+        "Melissa Snazell": [
+          "https://bcgreens.ca/candidates-2026/melissa-snazell/",
+          "https://votemate.org/bc2026provincial/candidates/14973?riding=2173"
+        ],
+        "Shelly Jan": [
+          "https://votemate.org/bc2026provincial/candidates/14971?riding=2173"
+        ],
+        "Alex Joehl": [
+          "https://votemate.org/bc2026provincial/candidates/14921?riding=2173"
+        ],
+        "Erin Osborne": [
+          "https://votemate.org/bc2026provincial/candidates/14972?riding=2173"
+        ]
+      },
+      "LWG": {
+        "Misty Van Popta": [
+          "https://conservativebc.ca/candidate/misty-van-popta/",
+          "https://votemate.org/bc2026provincial/candidates/14744?riding=2174"
+        ],
+        "Kyle Stevenson": [
+          "https://www.centrebc.ca/candidates/kyle-stevenson/",
+          "https://votemate.org/bc2026provincial/candidates/14976?riding=2174"
+        ],
+        "Holly Isaac": [
+          "https://votemate.org/bc2026provincial/candidates/14974?riding=2174"
+        ],
+        "Sam Meyer": [
+          "https://votemate.org/bc2026provincial/candidates/14975?riding=2174"
+        ]
+      },
+      "LWI": {
+        "Jody Toor": [
+          "https://conservativebc.ca/candidate/jody-toor/",
+          "https://votemate.org/bc2026provincial/candidates/14743?riding=2172"
+        ],
+        "Shubham Joshi": [
+          "https://votemate.org/bc2026provincial/candidates/14867?riding=2172"
+        ],
+        "Andrew Mercier": [
+          "https://votemate.org/bc2026provincial/candidates/14977?riding=2172"
+        ]
+      },
+      "MAE": {
+        "Lawrence Mok": [
+          "https://conservativebc.ca/candidate/lawrence-mok/",
+          "https://votemate.org/bc2026provincial/candidates/14736?riding=2183"
+        ],
+        "Daniel Kite": [
+          "https://bcgreens.ca/candidates-2026/daniel-kite/",
+          "https://votemate.org/bc2026provincial/candidates/14980?riding=2183"
+        ],
+        "Hudson Campbell": [
+          "https://votemate.org/bc2026provincial/candidates/14978?riding=2183"
+        ],
+        "Chris Hatchwell": [
+          "https://votemate.org/bc2026provincial/candidates/14979?riding=2183"
+        ]
+      },
+      "MAP": {
+        "Doug Morneau": [
+          "https://conservativebc.ca/candidate/doug-morneau/",
+          "https://votemate.org/bc2026provincial/candidates/14883?riding=2197"
+        ],
+        "Jordan Simmons": [
+          "https://www.centrebc.ca/candidates/jordan-simmons/",
+          "https://votemate.org/bc2026provincial/candidates/14895?riding=2197"
+        ],
+        "Lisa Beare": [
+          "https://votemate.org/bc2026provincial/candidates/14773?riding=2197"
+        ],
+        "Susan Einarsson": [
+          "https://votemate.org/bc2026provincial/candidates/14864?riding=2197"
+        ]
+      },
+      "MPR": {
+        "Joshua Dahling": [
+          "https://conservativebc.ca/candidate/joshua-dahling/",
+          "https://votemate.org/bc2026provincial/candidates/14764?riding=2202"
+        ],
+        "Gracie MacDonald": [
+          "https://bcgreens.ca/candidates-2026/gracie-macdonald/",
+          "https://votemate.org/bc2026provincial/candidates/14981?riding=2202"
+        ],
+        "Josie Osborne": [
+          "https://votemate.org/bc2026provincial/candidates/14712?riding=2202"
+        ]
+      },
+      "NAI": {
+        "Mark MacDonald": [
+          "https://conservativebc.ca/candidate/mark-macdonald/",
+          "https://votemate.org/bc2026provincial/candidates/14852?riding=2142"
+        ],
+        "Anna Mary McKenzie": [
+          "https://bcgreens.ca/candidates-2026/anna-mary-mckenzie/",
+          "https://votemate.org/bc2026provincial/candidates/14887?riding=2142"
+        ],
+        "Sheila Malcolmson": [
+          "https://votemate.org/bc2026provincial/candidates/14781?riding=2142"
+        ]
+      },
+      "NAL": {
+        "Kelsey Pringle": [
+          "https://conservativebc.ca/candidate/kelsey-pringle/",
+          "https://votemate.org/bc2026provincial/candidates/14854?riding=2139"
+        ],
+        "Sharleen Weatherley": [
+          "https://bcgreens.ca/candidates-2026/sharleen-weatherley/",
+          "https://votemate.org/bc2026provincial/candidates/14983?riding=2139"
+        ],
+        "George Anderson": [
+          "https://votemate.org/bc2026provincial/candidates/14772?riding=2139"
+        ],
+        "Pepper Saltman": [
+          "https://votemate.org/bc2026provincial/candidates/14982?riding=2139"
+        ]
+      },
+      "NEC": {
+        "Diane Black": [
+          "https://conservativebc.ca/candidate/diane-black/",
+          "https://votemate.org/bc2026provincial/candidates/14900?riding=2215"
+        ],
+        "Jesse Gervais": [
+          "https://votemate.org/bc2026provincial/candidates/14839?riding=2215"
+        ],
+        "Clint Lambert": [
+          "https://votemate.org/bc2026provincial/candidates/14984?riding=2215"
+        ]
+      },
+      "NMC": {
+        "Michele Lau": [
+          "https://conservativebc.ca/candidate/michele-lau/",
+          "https://votemate.org/bc2026provincial/candidates/14880?riding=2171"
+        ],
+        "Maureen Curran": [
+          "https://bcgreens.ca/candidates-2026/maureen-curran/",
+          "https://votemate.org/bc2026provincial/candidates/14788?riding=2171"
+        ],
+        "Gerry Lenoski": [
+          "https://votemate.org/bc2026provincial/candidates/14985?riding=2171"
+        ],
+        "Jennifer Whiteside": [
+          "https://votemate.org/bc2026provincial/candidates/14801?riding=2171"
+        ]
+      },
+      "NOH": {
+        "Rodney Proskiw": [
+          "https://conservativebc.ca/candidate/rodney-proskiw/",
+          "https://votemate.org/bc2026provincial/candidates/14884?riding=2207"
+        ],
+        "Francis Racy": [
+          "https://bcgreens.ca/candidates-2026/francis-racy/",
+          "https://votemate.org/bc2026provincial/candidates/14786?riding=2207"
+        ],
+        "Tamara Davidson": [
+          "https://votemate.org/bc2026provincial/candidates/14986?riding=2207"
+        ]
+      },
+      "NOI": {
+        "Anna Kindy": [
+          "https://conservativebc.ca/candidate/anna-kindy/",
+          "https://votemate.org/bc2026provincial/candidates/14728?riding=2210"
+        ],
+        "Benjamin Olsson": [
+          "https://bcgreens.ca/candidates-2026/benjamin-olsson/",
+          "https://votemate.org/bc2026provincial/candidates/14989?riding=2210"
+        ],
+        "Richard Lambert": [
+          "https://votemate.org/bc2026provincial/candidates/14987?riding=2210"
+        ],
+        "Sara Lopez": [
+          "https://votemate.org/bc2026provincial/candidates/14988?riding=2210"
+        ]
+      },
+      "NVL": {
+        "Trevor Withers": [
+          "https://conservativebc.ca/candidate/trevor-withers/",
+          "https://votemate.org/bc2026provincial/candidates/14819?riding=2164"
+        ],
+        "Joshua A Singer Johnson": [
+          "https://bcgreens.ca/candidates-2026/joshua-a-singer-johnson/",
+          "https://votemate.org/bc2026provincial/candidates/14990?riding=2164"
+        ],
+        "Bowinn Ma": [
+          "https://votemate.org/bc2026provincial/candidates/14711?riding=2164"
+        ]
+      },
+      "NVS": {
+        "Lynne Block": [
+          "https://conservativebc.ca/candidate/lynne-block/",
+          "https://votemate.org/bc2026provincial/candidates/14717?riding=2165"
+        ],
+        "Ben Holt": [
+          "https://bcgreens.ca/candidates-2026/ben-holt/",
+          "https://votemate.org/bc2026provincial/candidates/14993?riding=2165"
+        ],
+        "Lori Climenhaga": [
+          "https://www.centrebc.ca/candidates/lori-climenhaga/",
+          "https://votemate.org/bc2026provincial/candidates/14992?riding=2165"
+        ],
+        "Susie Chant": [
+          "https://votemate.org/bc2026provincial/candidates/14991?riding=2165"
+        ],
+        "Frederick Thiele": [
+          "https://votemate.org/bc2026provincial/candidates/14994?riding=2165"
+        ]
+      },
+      "OBG": {
+        "Stan Sipos": [
+          "https://conservativebc.ca/candidate/stan-sipos/",
+          "https://votemate.org/bc2026provincial/candidates/14816?riding=2131"
+        ],
+        "Andrew Appleton": [
+          "https://bcgreens.ca/candidates-2026/andrew-appleton/",
+          "https://votemate.org/bc2026provincial/candidates/14861?riding=2131"
+        ],
+        "Andrew Weaver": [
+          "https://www.centrebc.ca/candidates/andrew-weaver/",
+          "https://votemate.org/bc2026provincial/candidates/14758?riding=2131"
+        ],
+        "Diana Gibson": [
+          "https://votemate.org/bc2026provincial/candidates/14840?riding=2131"
+        ]
+      },
+      "PCN": {
+        "Curtis Whitford": [
+          "https://conservativebc.ca/candidate/curtis-whitford/",
+          "https://votemate.org/bc2026provincial/candidates/14818?riding=2218"
+        ],
+        "Jordan Kealy": [
+          "https://votemate.org/bc2026provincial/candidates/14995?riding=2218"
+        ]
+      },
+      "PCS": {
+        "Larry Neufeld": [
+          "https://conservativebc.ca/candidate/larry-neufeld/",
+          "https://votemate.org/bc2026provincial/candidates/14737?riding=2203"
+        ],
+        "Marsha Rose Dufresne": [
+          "https://votemate.org/bc2026provincial/candidates/14996?riding=2203"
+        ],
+        "Helen Scott": [
+          "https://votemate.org/bc2026provincial/candidates/14997?riding=2203"
+        ]
+      },
+      "POC": {
+        "Keenan Adams": [
+          "https://conservativebc.ca/candidate/keenan-adams/",
+          "https://votemate.org/bc2026provincial/candidates/14763?riding=2175"
+        ],
+        "Lee-Ann Bates": [
+          "https://votemate.org/bc2026provincial/candidates/15000?riding=2175"
+        ],
+        "Lewis C. Dahlby": [
+          "https://votemate.org/bc2026provincial/candidates/14922?riding=2175"
+        ],
+        "Mike Farnworth": [
+          "https://votemate.org/bc2026provincial/candidates/14710?riding=2175"
+        ],
+        "Stephanie Hendy": [
+          "https://votemate.org/bc2026provincial/candidates/15001?riding=2175"
+        ]
+      },
+      "POM": {
+        "John McEwen": [
+          "https://conservativebc.ca/candidate/john-mcewen/",
+          "https://votemate.org/bc2026provincial/candidates/14809?riding=2169"
+        ],
+        "Wei Chou": [
+          "https://bcgreens.ca/candidates-2026/wei-chou/",
+          "https://votemate.org/bc2026provincial/candidates/15002?riding=2169"
+        ],
+        "Freddy Rawji": [
+          "https://www.centrebc.ca/candidates/freddy-rawji/",
+          "https://votemate.org/bc2026provincial/candidates/14870?riding=2169"
+        ],
+        "Rick Glumac": [
+          "https://votemate.org/bc2026provincial/candidates/15003?riding=2169"
+        ]
+      },
+      "POR": {
+        "John Henderson": [
+          "https://conservativebc.ca/candidate/john-henderson/",
+          "https://votemate.org/bc2026provincial/candidates/14877?riding=2201"
+        ],
+        "Griffin Leonard Lea": [
+          "https://bcgreens.ca/candidates-2026/griffin-leonard-lea/",
+          "https://votemate.org/bc2026provincial/candidates/15004?riding=2201"
+        ],
+        "Randene Neill": [
+          "https://votemate.org/bc2026provincial/candidates/14782?riding=2201"
+        ]
+      },
+      "PRM": {
+        "Kiel Giddens": [
+          "https://conservativebc.ca/candidate/kiel-giddens/",
+          "https://votemate.org/bc2026provincial/candidates/14724?riding=2211"
+        ],
+        "Teri Young": [
+          "https://bcgreens.ca/candidates-2026/teri-young/",
+          "https://votemate.org/bc2026provincial/candidates/15006?riding=2211"
+        ],
+        "Ian McMahon": [
+          "https://votemate.org/bc2026provincial/candidates/15005?riding=2211"
+        ]
+      },
+      "PRO": {
+        "Sheldon Clare": [
+          "https://conservativebc.ca/candidate/sheldon-clare/",
+          "https://votemate.org/bc2026provincial/candidates/14718?riding=2208"
+        ],
+        "Denice Bardua": [
+          "https://votemate.org/bc2026provincial/candidates/15007?riding=2208"
+        ],
+        "Randy Thompson": [
+          "https://votemate.org/bc2026provincial/candidates/15008?riding=2208"
+        ]
+      },
+      "PRV": {
+        "Rosalyn Bird": [
+          "https://conservativebc.ca/candidate/rosalyn-bird/",
+          "https://votemate.org/bc2026provincial/candidates/14716?riding=2216"
+        ],
+        "Jodie Capling": [
+          "https://bcgreens.ca/candidates-2026/jodie-capling/",
+          "https://votemate.org/bc2026provincial/candidates/15010?riding=2216"
+        ],
+        "Carol Bourque": [
+          "https://votemate.org/bc2026provincial/candidates/15009?riding=2216"
+        ],
+        "Mitchell Lukoni": [
+          "https://votemate.org/bc2026provincial/candidates/14825?riding=2216"
+        ]
+      },
+      "RCB": {
+        "Teresa Wat": [
+          "https://conservativebc.ca/candidate/teresa-wat/",
+          "https://votemate.org/bc2026provincial/candidates/14746?riding=2140"
+        ],
+        "Linda Li": [
+          "https://votemate.org/bc2026provincial/candidates/15014?riding=2140"
+        ]
+      },
+      "RCC": {
+        "Sacha Peter": [
+          "https://conservativebc.ca/candidate/sacha-peter/",
+          "https://sachapeter.ca/",
+          "https://votemate.org/bc2026provincial/candidates/14769?riding=2148"
+        ],
+        "Calvin Dang": [
+          "https://bcgreens.ca/candidates-2026/calvin-dang/",
+          "https://votemate.org/bc2026provincial/candidates/15012?riding=2148"
+        ],
+        "Henry Yao": [
+          "https://henryyao.bcndp.ca/",
+          "https://votemate.org/bc2026provincial/candidates/15013?riding=2148"
+        ],
+        "Lawrence Chen": [
+          "https://votemate.org/bc2026provincial/candidates/15011?riding=2148"
+        ]
+      },
+      "RCQ": {
+        "Steve Kooner": [
+          "https://conservativebc.ca/candidate/steve-kooner/",
+          "https://votemate.org/bc2026provincial/candidates/14729?riding=2149"
+        ],
+        "Luc Burns": [
+          "https://bcgreens.ca/candidates-2026/luc-burns/",
+          "https://votemate.org/bc2026provincial/candidates/15015?riding=2149"
+        ],
+        "Dhar Grewal": [
+          "https://votemate.org/bc2026provincial/candidates/15016?riding=2149"
+        ]
+      },
+      "RCS": {
+        "Gordon Zhang": [
+          "https://conservativebc.ca/candidate/gordon-zhang/",
+          "https://votemate.org/bc2026provincial/candidates/14820?riding=2150"
+        ],
+        "Barry Wosk": [
+          "https://www.centrebc.ca/candidates/barry-wosk/",
+          "https://votemate.org/bc2026provincial/candidates/14897?riding=2150"
+        ],
+        "Robert Evans": [
+          "https://votemate.org/bc2026provincial/candidates/15017?riding=2150"
+        ],
+        "Bruce Kong": [
+          "https://votemate.org/bc2026provincial/candidates/15018?riding=2150"
+        ],
+        "Keenan Yang": [
+          "https://votemate.org/bc2026provincial/candidates/15019?riding=2150"
+        ]
+      },
+      "SAN": {
+        "Ryan Windsor": [
+          "https://conservativebc.ca/candidate/ryan-windsor/",
+          "https://votemate.org/bc2026provincial/candidates/14771?riding=2133"
+        ],
+        "Emily Lowan": [
+          "https://bcgreens.ca/candidates-2026/emily-lowan-2/",
+          "https://votemate.org/bc2026provincial/candidates/14749?riding=2133"
+        ],
+        "Richard Smith": [
+          "https://www.centrebc.ca/candidates/richard-smith/",
+          "https://votemate.org/bc2026provincial/candidates/14894?riding=2133"
+        ],
+        "Kala Bryson": [
+          "https://votemate.org/bc2026provincial/candidates/15020?riding=2133"
+        ]
+      },
+      "SAS": {
+        "Cathie Ounsted": [
+          "https://conservativebc.ca/candidate/cathie-ounsted/",
+          "https://votemate.org/bc2026provincial/candidates/14812?riding=2132"
+        ],
+        "Lisa Lapointe": [
+          "https://bcgreens.ca/candidates-2026/lisa-lapointe/",
+          "https://votemate.org/bc2026provincial/candidates/14886?riding=2132"
+        ],
+        "Richard Zussman": [
+          "https://votemate.org/bc2026provincial/candidates/14785?riding=2132"
+        ]
+      },
+      "SKE": {
+        "Claire Rattée": [
+          "https://conservativebc.ca/candidate/claire-rattee/",
+          "https://votemate.org/bc2026provincial/candidates/14739?riding=2200"
+        ],
+        "Nick Gottlieb": [
+          "https://bcgreens.ca/candidates-2026/nick-gottlieb/",
+          "https://votemate.org/bc2026provincial/candidates/14787?riding=2200"
+        ],
+        "Larry Eugene Taylor": [
+          "https://votemate.org/bc2026provincial/candidates/15025?riding=2200"
+        ],
+        "Sarah Zimmerman": [
+          "https://votemate.org/bc2026provincial/candidates/14760?riding=2200"
+        ]
+      },
+      "SRC": {
+        "Zeeshan Wahla": [
+          "https://conservativebc.ca/candidate/zeeshan-wahla/",
+          "https://votemate.org/bc2026provincial/candidates/14817?riding=2177"
+        ],
+        "Raman Sharma": [
+          "https://www.centrebc.ca/candidates/raman-sharma/",
+          "https://votemate.org/bc2026provincial/candidates/14790?riding=2177"
+        ],
+        "Amna Shah": [
+          "https://votemate.org/bc2026provincial/candidates/14798?riding=2177"
+        ],
+        "Oliver Wildfong": [
+          "https://votemate.org/bc2026provincial/candidates/15026?riding=2177"
+        ]
+      },
+      "SRD": {
+        "Nicholas Cartmell": [
+          "https://conservativebc.ca/candidate/nicholas-cartmell/",
+          "https://votemate.org/bc2026provincial/candidates/14849?riding=2186"
+        ],
+        "Pat McCutcheon": [
+          "https://bcgreens.ca/candidates-2026/patrick-mccutcheon/",
+          "https://votemate.org/bc2026provincial/candidates/15036?riding=2186"
+        ],
+        "Sargy Chima": [
+          "https://votemate.org/bc2026provincial/candidates/15033?riding=2186"
+        ],
+        "Stephen Dooley": [
+          "https://votemate.org/bc2026provincial/candidates/15034?riding=2186"
+        ],
+        "Travis Marchenski": [
+          "https://votemate.org/bc2026provincial/candidates/15035?riding=2186"
+        ]
+      },
+      "SRF": {
+        "Garry Purewal": [
+          "https://conservativebc.ca/candidate/garry-purewal/",
+          "https://votemate.org/bc2026provincial/candidates/14855?riding=2176"
+        ],
+        "Tim Binnema": [
+          "https://bcgreens.ca/candidates-2026/tim-binnema/",
+          "https://votemate.org/bc2026provincial/candidates/15037?riding=2176"
+        ],
+        "Paul Brar": [
+          "https://www.centrebc.ca/candidates/paul-brar/",
+          "https://votemate.org/bc2026provincial/candidates/14757?riding=2176"
+        ],
+        "Jagrup Brar": [
+          "https://votemate.org/bc2026provincial/candidates/14775?riding=2176"
+        ],
+        "Carolyn Hofbauer": [
+          "https://votemate.org/bc2026provincial/candidates/14826?riding=2176"
+        ]
+      },
+      "SRG": {
+        "Garry Thind": [
+          "https://conservativebc.ca/candidate/garry-thind/",
+          "https://votemate.org/bc2026provincial/candidates/14859?riding=2184"
+        ],
+        "Garry Begg": [
+          "https://votemate.org/bc2026provincial/candidates/14774?riding=2184"
+        ],
+        "Jodi Murphy": [
+          "https://votemate.org/bc2026provincial/candidates/15038?riding=2184"
+        ],
+        "James Yaroshuk": [
+          "https://votemate.org/bc2026provincial/candidates/15039?riding=2184"
+        ]
+      },
+      "SUP": {
+        "Bryan Tepper": [
+          "https://conservativebc.ca/candidate/bryan-tepper/",
+          "https://votemate.org/bc2026provincial/candidates/14742?riding=2179"
+        ],
+        "Nolen Scott": [
+          "https://bcgreens.ca/candidates-2026/nolen-scott/",
+          "https://votemate.org/bc2026provincial/candidates/15042?riding=2179"
+        ],
+        "Manav Manro": [
+          "https://www.centrebc.ca/candidates/manav-manro/",
+          "https://votemate.org/bc2026provincial/candidates/15041?riding=2179"
+        ],
+        "Jinny Sims": [
+          "https://votemate.org/bc2026provincial/candidates/14714?riding=2179"
+        ]
+      },
+      "SUR": {
+        "Jessy Sahota": [
+          "https://conservativebc.ca/candidate/jessy-sahota/",
+          "https://votemate.org/bc2026provincial/candidates/14856?riding=2187"
+        ],
+        "Judy Higginbotham": [
+          "https://votemate.org/bc2026provincial/candidates/15043?riding=2187"
+        ],
+        "Todd Holowchak": [
+          "https://votemate.org/bc2026provincial/candidates/15044?riding=2187"
+        ],
+        "Sikander Kang": [
+          "https://votemate.org/bc2026provincial/candidates/14841?riding=2187"
+        ],
+        "Errol Povah": [
+          "https://votemate.org/bc2026provincial/candidates/15046?riding=2187"
+        ]
+      },
+      "SUS": {
+        "Megan Knight": [
+          "https://conservativebc.ca/candidate/megan-knight/",
+          "https://votemate.org/bc2026provincial/candidates/14767?riding=2185"
+        ],
+        "Bill McConnell": [
+          "https://bcgreens.ca/candidates-2026/bill-mcconnell/",
+          "https://votemate.org/bc2026provincial/candidates/15031?riding=2185"
+        ],
+        "Denis R Hurtubise": [
+          "https://votemate.org/bc2026provincial/candidates/15030?riding=2185"
+        ],
+        "Elenore Sturko": [
+          "https://votemate.org/bc2026provincial/candidates/14759?riding=2185"
+        ],
+        "Parik Tahlan": [
+          "https://votemate.org/bc2026provincial/candidates/15032?riding=2185"
+        ]
+      },
+      "SWR": {
+        "Trevor Halford": [
+          "https://conservativebc.ca/candidate/trevor-halford/",
+          "https://votemate.org/bc2026provincial/candidates/14725?riding=2181"
+        ],
+        "Christine Kinnie": [
+          "https://bcgreens.ca/candidates-2026/christine-kinnie/",
+          "https://votemate.org/bc2026provincial/candidates/15049?riding=2181"
+        ],
+        "Waqas Rana": [
+          "https://www.centrebc.ca/candidates/waqas-rana/",
+          "https://votemate.org/bc2026provincial/candidates/15050?riding=2181"
+        ],
+        "Kevin Diakiw": [
+          "https://votemate.org/bc2026provincial/candidates/15047?riding=2181"
+        ],
+        "Amanda James": [
+          "https://votemate.org/bc2026provincial/candidates/15048?riding=2181"
+        ],
+        "Darryl Walker": [
+          "https://votemate.org/bc2026provincial/candidates/15051?riding=2181"
+        ]
+      },
+      "VFV": {
+        "Deep Sandhu": [
+          "https://conservativebc.ca/candidate/deep-sandhu/",
+          "https://votemate.org/bc2026provincial/candidates/14815?riding=2154"
+        ],
+        "Aman Singh": [
+          "https://votemate.org/bc2026provincial/candidates/14873?riding=2154"
+        ],
+        "Francoise Raunet": [
+          "https://bcgreens.ca/candidates-2026/francoise-raunet/"
+        ]
+      },
+      "VHA": {
+        "Phyllis Tang": [
+          "https://conservativebc.ca/candidate/phyllis-tang/",
+          "https://votemate.org/bc2026provincial/candidates/14906?riding=2155"
+        ],
+        "Kyra Philbert": [
+          "https://bcgreens.ca/candidates-2026/kyra-philbert/",
+          "https://votemate.org/bc2026provincial/candidates/14909?riding=2155"
+        ],
+        "Christian Bosio": [
+          "https://www.centrebc.ca/candidates/christian-bosio/",
+          "https://votemate.org/bc2026provincial/candidates/15052?riding=2155"
+        ],
+        "Kimball Cariou": [
+          "https://votemate.org/bc2026provincial/candidates/15053?riding=2155"
+        ],
+        "Niki Sharma": [
+          "https://votemate.org/bc2026provincial/candidates/14799?riding=2155"
+        ],
+        "Phil Webb": [
+          "https://votemate.org/bc2026provincial/candidates/14923?riding=2155"
+        ]
+      },
+      "VKE": {
+        "Aron Lageri": [
+          "https://conservativebc.ca/candidate/aron-lageri/",
+          "https://votemate.org/bc2026provincial/candidates/14851?riding=2152"
+        ],
+        "Adam Hawk": [
+          "https://bcgreens.ca/candidates-2026/adam-hawk/",
+          "https://votemate.org/bc2026provincial/candidates/15054?riding=2152"
+        ],
+        "Mable Elmore": [
+          "https://votemate.org/bc2026provincial/candidates/14777?riding=2152"
+        ]
+      },
+      "VLA": {
+        "Jaime Stein": [
+          "https://conservativebc.ca/candidate/jaime-stein/",
+          "https://votemate.org/bc2026provincial/candidates/14770?riding=2157"
+        ],
+        "John Atoyebi": [
+          "https://bcgreens.ca/candidates-2026/john-atoyebi/",
+          "https://votemate.org/bc2026provincial/candidates/14910?riding=2157"
+        ],
+        "Alan Beesley": [
+          "https://votemate.org/bc2026provincial/candidates/15055?riding=2157"
+        ],
+        "Sunita Dhir": [
+          "https://votemate.org/bc2026provincial/candidates/14837?riding=2157"
+        ]
+      },
+      "VLM": {
+        "Alex Muir": [
+          "https://conservativebc.ca/candidate/alex-muir/",
+          "https://votemate.org/bc2026provincial/candidates/14811?riding=2151"
+        ],
+        "Sarah MacLeod": [
+          "https://bcgreens.ca/candidates-2026/sarah-macleod/",
+          "https://votemate.org/bc2026provincial/candidates/15056?riding=2151"
+        ],
+        "Christine Boyle": [
+          "https://votemate.org/bc2026provincial/candidates/14834?riding=2151"
+        ]
+      },
+      "VNP": {
+        "Alex McMillan": [
+          "https://conservativebc.ca/candidate/alex-mcmillan/",
+          "https://votemate.org/bc2026provincial/candidates/14810?riding=2135"
+        ],
+        "Beatrice Sharpe": [
+          "https://bcgreens.ca/candidates-2026/beatrice-sharpe/",
+          "https://votemate.org/bc2026provincial/candidates/15057?riding=2135"
+        ],
+        "Michael Davis": [
+          "https://www.centrebc.ca/candidates/michael-davis/",
+          "https://votemate.org/bc2026provincial/candidates/14792?riding=2135"
+        ],
+        "David Eby": [
+          "https://votemate.org/bc2026provincial/candidates/14708?riding=2135"
+        ]
+      },
+      "VNQ": {
+        "Carson Binda": [
+          "https://conservativebc.ca/candidate/carson-binda/",
+          "https://votemate.org/bc2026provincial/candidates/14874?riding=2134"
+        ],
+        "Douglas Courtemanche": [
+          "https://bcgreens.ca/candidates-2026/douglas-courtemanche/",
+          "https://votemate.org/bc2026provincial/candidates/14913?riding=2134"
+        ],
+        "Petra Kuret": [
+          "https://www.centrebc.ca/candidates/petra-kuret/",
+          "https://votemate.org/bc2026provincial/candidates/14869?riding=2134"
+        ],
+        "Dallas Brodie": [
+          "https://votemate.org/bc2026provincial/candidates/14753?riding=2134"
+        ],
+        "Callista Ryan": [
+          "https://votemate.org/bc2026provincial/candidates/14796?riding=2134"
+        ]
+      },
+      "VNR": {
+        "Tom Ikonomou": [
+          "https://conservativebc.ca/candidate/tom-ikonomou/",
+          "https://votemate.org/bc2026provincial/candidates/14902?riding=2156"
+        ],
+        "Rebecca Haber": [
+          "https://bcgreens.ca/candidates-2026/rebecca-haber/",
+          "https://votemate.org/bc2026provincial/candidates/15058?riding=2156"
+        ],
+        "Lisa Prescott": [
+          "https://www.centrebc.ca/candidates/lisa-prescott/",
+          "https://votemate.org/bc2026provincial/candidates/14893?riding=2156"
+        ],
+        "Adrian Dix": [
+          "https://votemate.org/bc2026provincial/candidates/14709?riding=2156"
+        ]
+      },
+      "VNS": {
+        "Lisa Phillips": [
+          "https://conservativebc.ca/candidate/lisa-phillips/",
+          "https://votemate.org/bc2026provincial/candidates/14814?riding=2161"
+        ],
+        "Colin Smith": [
+          "https://www.centrebc.ca/candidates/colin-smith/",
+          "https://votemate.org/bc2026provincial/candidates/14917?riding=2161"
+        ],
+        "Maria J Cruz": [
+          "https://votemate.org/bc2026provincial/candidates/14862?riding=2161"
+        ],
+        "Lara Honrado": [
+          "https://votemate.org/bc2026provincial/candidates/15059?riding=2161"
+        ],
+        "Salvatore Vetro": [
+          "https://votemate.org/bc2026provincial/candidates/14866?riding=2161"
+        ]
+      },
+      "VNW": {
+        "Dion Weisner": [
+          "https://conservativebc.ca/candidate/dion-weisner/",
+          "https://votemate.org/bc2026provincial/candidates/14908?riding=2159"
+        ],
+        "Scott MacDonald": [
+          "https://bcgreens.ca/candidates-2026/donald-scott-macdonald/",
+          "https://votemate.org/bc2026provincial/candidates/14822?riding=2159"
+        ],
+        "Spencer Chandra Herbert": [
+          "https://votemate.org/bc2026provincial/candidates/14872?riding=2159"
+        ]
+      },
+      "VNY": {
+        "Margareta Dovgal": [
+          "https://conservativebc.ca/candidate/margareta-dovgal/",
+          "https://votemate.org/bc2026provincial/candidates/14806?riding=2153"
+        ],
+        "Priyan Samarakoone": [
+          "https://bcgreens.ca/candidates-2026/priyan-samarakoone/",
+          "https://votemate.org/bc2026provincial/candidates/15061?riding=2153"
+        ],
+        "Sam Chandola": [
+          "https://www.centrebc.ca/candidates/sam-chandola/",
+          "https://votemate.org/bc2026provincial/candidates/14868?riding=2153"
+        ],
+        "Timothy Webster": [
+          "https://votemate.org/bc2026provincial/candidates/15062?riding=2153"
+        ],
+        "Terry Yung": [
+          "https://votemate.org/bc2026provincial/candidates/14803?riding=2153"
+        ]
+      },
+      "VRL": {
+        "Kevin Acton": [
+          "https://conservativebc.ca/candidate/kevin-acton/",
+          "https://votemate.org/bc2026provincial/candidates/14804?riding=2189"
+        ],
+        "Blair Visscher": [
+          "https://bcgreens.ca/candidates-2026/blair-visscher/",
+          "https://votemate.org/bc2026provincial/candidates/15063?riding=2189"
+        ],
+        "Chantel Gibbs": [
+          "https://votemate.org/bc2026provincial/candidates/14824?riding=2189"
+        ],
+        "Harwinder Sandhu": [
+          "https://votemate.org/bc2026provincial/candidates/14797?riding=2189"
+        ]
+      },
+      "VTS": {
+        "Tim Taylor": [
+          "https://conservativebc.ca/candidate/tim-taylor/",
+          "https://votemate.org/bc2026provincial/candidates/14907?riding=2137"
+        ],
+        "Carolyn Howe": [
+          "https://bcgreens.ca/candidates-2026/carolyn-howe/",
+          "https://votemate.org/bc2026provincial/candidates/14823?riding=2137"
+        ],
+        "Nina Krieger": [
+          "https://votemate.org/bc2026provincial/candidates/14780?riding=2137"
+        ]
+      },
+      "WKP": {
+        "Macklin McCall": [
+          "https://conservativebc.ca/candidate/macklin-mccall/",
+          "https://votemate.org/bc2026provincial/candidates/14733?riding=2191"
+        ],
+        "Adam Frank": [
+          "https://bcgreens.ca/candidates-2026/adam-frank/",
+          "https://votemate.org/bc2026provincial/candidates/15064?riding=2191"
+        ],
+        "George Morgan": [
+          "https://votemate.org/bc2026provincial/candidates/15065?riding=2191"
+        ]
+      },
+      "WVC": {
+        "Caroline Elliott": [
+          "https://conservativebc.ca/candidate/caroline-elliott/",
+          "https://votemate.org/bc2026provincial/candidates/14766?riding=2162"
+        ],
+        "Arwa Shurab": [
+          "https://bcgreens.ca/candidates-2026/arwa-shurab/",
+          "https://votemate.org/bc2026provincial/candidates/14912?riding=2162"
+        ],
+        "Honieh Barzegari": [
+          "https://votemate.org/bc2026provincial/candidates/15066?riding=2162"
+        ],
+        "Naomi Chocyk": [
+          "https://votemate.org/bc2026provincial/candidates/15067?riding=2162"
+        ]
+      },
+      "WVS": {
+        "Ayla Dumais": [
+          "https://conservativebc.ca/candidate/ayla-dumais/",
+          "https://votemate.org/bc2026provincial/candidates/14765?riding=2212"
+        ],
+        "Jeremy Valeriote": [
+          "https://bcgreens.ca/candidates-2026/jeremy-valeriote-2/",
+          "https://votemate.org/bc2026provincial/candidates/14750?riding=2212"
+        ],
+        "Dan Wood": [
+          "https://www.centrebc.ca/candidates/dan-wood/",
+          "https://votemate.org/bc2026provincial/candidates/14791?riding=2212"
+        ],
+        "Michelle Livaja": [
+          "https://votemate.org/bc2026provincial/candidates/15068?riding=2212"
+        ]
+      },
+      "CQM": {
+        "Nicola Spurling": [
+          "https://bcgreens.ca/candidates-2026/nicola-spurling/",
+          "https://votemate.org/bc2026provincial/candidates/14942?riding=2170"
+        ],
+        "Jennifer Blatherwick": [
+          "https://votemate.org/bc2026provincial/candidates/14930?riding=2170"
+        ],
+        "Matt Liang": [
+          "https://conservativebc.ca/candidate/matthew-liang/"
+        ]
+      },
+      "SHU": {
+        "Jed Wiebe": [
+          "https://bcgreens.ca/candidates-2026/jed-wiebe/",
+          "https://votemate.org/bc2026provincial/candidates/15024?riding=2198"
+        ],
+        "Denise Reimer": [
+          "https://www.centrebc.ca/candidates/denise-reimer/",
+          "https://votemate.org/bc2026provincial/candidates/15023?riding=2198"
+        ],
+        "Gloria Morgan": [
+          "https://votemate.org/bc2026provincial/candidates/15021?riding=2198"
+        ],
+        "Barbara Presch": [
+          "https://votemate.org/bc2026provincial/candidates/15022?riding=2198"
+        ],
+        "David L Williams": [
+          "https://votemate.org/bc2026provincial/candidates/14747?riding=2198"
+        ]
+      },
+      "SUN": {
+        "Yudhbir Gill": [
+          "https://bcgreens.ca/candidates-2026/yudhbir-gill/",
+          "https://votemate.org/bc2026provincial/candidates/15028?riding=2180"
+        ],
+        "Jag Bhandari": [
+          "https://votemate.org/bc2026provincial/candidates/15027?riding=2180"
+        ],
+        "Parm Bhandol": [
+          "https://votemate.org/bc2026provincial/candidates/14892?riding=2180"
+        ],
+        "Mandeep Singh Dhaliwal": [
+          "https://votemate.org/bc2026provincial/candidates/14722?riding=2180"
+        ],
+        "Tanya Gupta": [
+          "https://votemate.org/bc2026provincial/candidates/14863?riding=2180"
+        ],
+        "Sahib Thind": [
+          "https://votemate.org/bc2026provincial/candidates/15029?riding=2180"
+        ]
+      },
+      "VNT": {
+        "Tanya Webking": [
+          "https://bcgreens.ca/candidates-2026/tanya-webking/",
+          "https://votemate.org/bc2026provincial/candidates/14911?riding=2158"
+        ],
+        "Amanda Burrows": [
+          "https://votemate.org/bc2026provincial/candidates/14871?riding=2158"
+        ],
+        "Robert Crooks": [
+          "https://votemate.org/bc2026provincial/candidates/15060?riding=2158"
+        ],
+        "Jordan Zheng McIntosh": [
+          "https://votemate.org/bc2026provincial/candidates/14903?riding=2158"
+        ]
+      },
+      "SRN": {
+        "Harman Preet Singh": [
+          "https://www.centrebc.ca/candidates/harman-preet-singh/",
+          "https://votemate.org/bc2026provincial/candidates/15040?riding=2178"
+        ],
+        "Harj Dhaliwal": [
+          "https://votemate.org/bc2026provincial/candidates/14850?riding=2178"
+        ],
+        "Jessie Sunner": [
+          "https://votemate.org/bc2026provincial/candidates/14784?riding=2178"
+        ]
+      },
+      "VTB": {
+        "Joachim Agou": [
+          "https://votemate.org/bc2026provincial/candidates/14899?riding=2136"
+        ],
+        "Grace Lore": [
+          "https://votemate.org/bc2026provincial/candidates/14843?riding=2136"
+        ],
+        "Rajinder S. Sahota": [
+          "https://votemate.org/bc2026provincial/candidates/14751?riding=2136"
+        ]
+      },
+      "PES": {
+        "Bradley Sean Bartsch": [
+          "https://votemate.org/bc2026provincial/candidates/14998?riding=2193"
+        ],
+        "Warren Hamm": [
+          "https://votemate.org/bc2026provincial/candidates/14755?riding=2193"
+        ],
+        "Tina Lee": [
+          "https://votemate.org/bc2026provincial/candidates/14999?riding=2193"
+        ],
+        "Tracy St Claire": [
+          "https://votemate.org/bc2026provincial/candidates/14858?riding=2193"
+        ]
+      },
+      "CHC": {
+        "Kelli Paddon": [
+          "https://votemate.org/bc2026provincial/candidates/14713?riding=2195"
+        ],
+        "A'aliya Warbus": [
+          "https://conservativebc.ca/candidate/aaliya-warbus/"
+        ]
+      },
+      "CBC": {
+        "Kathryn Askew": [
+          "https://votemate.org/bc2026provincial/candidates/14928?riding=2209"
+        ],
+        "Lorne Doerkson": [
+          "https://votemate.org/bc2026provincial/candidates/14723?riding=2209"
+        ],
+        "Douglas Gook": [
+          "https://votemate.org/bc2026provincial/candidates/14938?riding=2209"
+        ]
+      }
+    }
+  }
+}

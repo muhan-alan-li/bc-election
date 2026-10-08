@@ -5,6 +5,7 @@ from pathlib import Path
 
 from .storage import SourceStore, read_json
 from .finder import build_finder
+from .platforms import collect_parties, collect_candidates, latest_attempt
 from .workflow import load_roster, run_district, validate
 
 
@@ -18,6 +19,13 @@ def main():
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("build-finder", help="Import free BC postal locations and official boundaries")
     commands.add_parser("list-districts", help="Read constituency names/codes from the official roster")
+    parties = commands.add_parser("collect-party-platforms", help="Collect shared party platform source material")
+    parties.add_argument("--party", help="Exact official party name; defaults to all parties")
+    parties.add_argument("--max-pages", type=int, default=12)
+    candidates = commands.add_parser("collect-candidate-platforms", help="Collect individual candidate platform source material")
+    candidates.add_argument("--district", help="Official constituency name or code; defaults to all")
+    candidates.add_argument("--candidate", help="Exact ballot name")
+    candidates.add_argument("--max-pages", type=int, default=12)
     run = commands.add_parser("run", help="Collect and publish one constituency")
     run.add_argument("--district", required=True, help="Exact official name or ED code")
     run.add_argument("--download-documents", action="store_true", help="Save disclosure PDFs and extract page text with pdftotext")
@@ -43,7 +51,20 @@ def main():
             print("Valid constituency dataset")
         else:
             config = read_json(args.config)
-            if args.command == "list-districts":
+            if args.command in {"collect-party-platforms", "collect-candidate-platforms"}:
+                if args.command == "collect-party-platforms":
+                    paths = collect_parties(store, config, args.storage, party=args.party, max_pages=args.max_pages)
+                else:
+                    paths = collect_candidates(store, config, args.storage, district=args.district,
+                                               candidate=args.candidate, max_pages=args.max_pages)
+                for path in paths:
+                    output = read_json(path)
+                    print(f"{output['coverage']['status']}: {path}")
+                    attempt = path.with_suffix(".attempt.json")
+                    if attempt.exists() and read_json(attempt)["generated_at"] > output["generated_at"]:
+                        print(f"  Failed collection; previous publication retained. See {attempt}")
+                return int(any(latest_attempt(path)["coverage"]["errors"] for path in paths))
+            elif args.command == "list-districts":
                 districts, _, _ = load_roster(store, config)
                 for code, name in sorted(districts.items(), key=lambda item: item[1]):
                     print(f"{code}\t{name}")
