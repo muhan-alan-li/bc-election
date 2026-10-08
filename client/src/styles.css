@@ -184,6 +184,7 @@ input, select { min-height: 42px; padding: 9px 11px; font-size: 15px; }
 .district-option.selected { border: 1px solid var(--accent); box-shadow: inset 3px 0 var(--accent); padding: 14px 16px; }
 .note { border-left: 4px solid var(--accent); background: var(--panel); padding: 13px 16px; margin: 18px 0 24px; font-size: 16px; color: var(--ink2); }
 .filters { gap: 10px; margin-top: 0; }
+.filters input, .filters select { height: 46px; }
 .result-count { font-size: 13.5px; margin: 12px 0; }
 .result-count + .table-scroll { margin-top: 12px; }
 .coverage-summary { gap: 6px; margin: 11px 0 16px; }
@@ -217,6 +218,7 @@ input:focus { outline: none; box-shadow: none; border-color: var(--ink3); }
 .constituency-tools { display: flex; flex-wrap: wrap; gap: 20px; align-items: end; }
 .constituency-tools > div { flex: 1; min-width: min(100%, 280px); }
 .constituency-tools input, .constituency-tools > button { height: 46px; }
+.starred-filter[aria-pressed="true"] { background: var(--panel); border-color: var(--accent); color: var(--accent); }
 .constituency-tools > a { padding-bottom: 8px; font-size: 15px; }
 .constituency-table tbody th, .candidate-table tbody th { background: var(--bg); color: var(--ink); font-size: 15px; text-transform: none; letter-spacing: 0; font-weight: 600; }
 .constituency-table td, .constituency-table tbody th, .candidate-table td, .candidate-table tbody th { padding: 14px 16px; }

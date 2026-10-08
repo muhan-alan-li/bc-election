@@ -6,14 +6,17 @@ import { useAdaptivePageSize } from '../hooks/useAdaptivePageSize.js';
 
 export function Constituencies({ districts, onFind }) {
     const [query, setQuery] = useState('');
+    const [starredOnly, setStarredOnly] = useState(false);
     const [page, setPage] = useState(1);
     const { starred, toggleStar } = useStarredConstituencies();
 
     const matches = districts
-        .filter((row) =>
-            `${row.name} ${row.official_code}`
-                .toLocaleLowerCase()
-                .includes(query.trim().toLocaleLowerCase()),
+        .filter(
+            (row) =>
+                (!starredOnly || starred.includes(row.official_code)) &&
+                `${row.name} ${row.official_code}`
+                    .toLocaleLowerCase()
+                    .includes(query.trim().toLocaleLowerCase()),
         )
         .sort((a, b) => a.name.localeCompare(b.name, 'en-CA'));
     const { pageSize, tableRef, paginationRef } = useAdaptivePageSize(
@@ -47,11 +50,21 @@ export function Constituencies({ districts, onFind }) {
                         }}
                     />
                 </div>
+                <button
+                    type="button"
+                    class="secondary starred-filter"
+                    aria-pressed={starredOnly}
+                    onClick={() => {
+                        setStarredOnly((value) => !value);
+                        setPage(1);
+                    }}
+                >
+                    <span aria-hidden="true">★</span> Starred only
+                </button>
                 <button class="secondary" onClick={onFind}>
                     Find my constituency
                 </button>
             </div>
-
             <p class="result-count" role="status">
                 {matches.length} constituencies · Alphabetical order
             </p>
@@ -117,9 +130,13 @@ export function Constituencies({ districts, onFind }) {
                 </div>
             ) : (
                 <p class="empty">
-                    {districts.length
-                        ? 'No published constituencies match your search.'
-                        : 'No constituency research has been published yet.'}
+                    {!districts.length
+                        ? 'No constituency research has been published yet.'
+                        : starredOnly
+                          ? query.trim()
+                              ? 'No starred constituencies match your search.'
+                              : 'No starred constituencies to show. Star a constituency in the full list to save it here.'
+                          : 'No published constituencies match your search.'}
                 </p>
             )}
             <Pagination
