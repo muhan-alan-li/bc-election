@@ -11,10 +11,12 @@ from election.workflow import load_roster
 
 
 def run(config, storage, *, offline=False, refresh=False, workers=4,
-        party_max_pages=12, candidate_max_pages=3):
+        party_max_pages=60, candidate_max_pages=3, only="all"):
     election_id, _ = settings(config, storage)
     if not 1 <= party_max_pages <= 100 or not 1 <= candidate_max_pages <= 100:
         raise ValueError("Page limits must be between 1 and 100")
+    if only not in {"all", "parties", "candidates"}:
+        raise ValueError("Unknown collection selection")
     started = monotonic()
     def store():
         return SourceStore(storage, offline=offline, refresh=refresh)
@@ -31,6 +33,8 @@ def run(config, storage, *, offline=False, refresh=False, workers=4,
         ("parties", party_job, sorted({row["party_name"] for row in rows if row["party_name"]})),
         ("candidates", candidate_job, sorted(districts)),
     ]:
+        if only != "all" and only != kind:
+            continue
         paths, failures = [], []
         with ThreadPoolExecutor(max_workers=workers) as pool:
             futures = {pool.submit(job, selection): selection for selection in selections}
@@ -64,18 +68,19 @@ def main(argv=None):
     mode.add_argument("--offline", action="store_true")
     mode.add_argument("--refresh", action="store_true")
     parser.add_argument("--workers", type=int, choices=range(1, 9), default=4)
-    parser.add_argument("--party-max-pages", type=int, choices=range(1, 101), default=12)
+    parser.add_argument("--party-max-pages", type=int, choices=range(1, 101), default=60)
     parser.add_argument("--candidate-max-pages", type=int, choices=range(1, 101), default=3)
+    parser.add_argument("--only", choices=("all", "parties", "candidates"), default="all")
     args = parser.parse_args(argv)
     try:
         summary = run(read_json(args.config), args.storage, offline=args.offline,
                       refresh=args.refresh, workers=args.workers,
-                      party_max_pages=args.party_max_pages, candidate_max_pages=args.candidate_max_pages)
+                      party_max_pages=args.party_max_pages, candidate_max_pages=args.candidate_max_pages, only=args.only)
     except (ValueError, OSError, KeyError, TypeError) as error:
         print(f"error: {error}")
         return 1
     print(summary)
-    return int(any(summary[kind]["errors"] for kind in ("parties", "candidates")))
+    return int(any(summary[kind]["errors"] for kind in ("parties", "candidates") if kind in summary))
 
 
 if __name__ == "__main__":

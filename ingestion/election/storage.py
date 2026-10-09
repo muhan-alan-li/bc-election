@@ -46,11 +46,12 @@ class SourceError(ValueError):
 
 
 class SourceStore:
-    def __init__(self, root, *, offline=False, refresh=False):
+    def __init__(self, root, *, offline=False, refresh=False, http_hosts=()):
         self.root = Path(root) / "raw"
         self.offline = offline
         self.refresh = refresh
         self.used = {}
+        self.http_hosts = set(http_hosts)
 
     def import_file(self, url, path):
         """Import a separately downloaded source, never treating it as reviewed."""
@@ -58,10 +59,9 @@ class SourceStore:
         self._check_url(url)
         return self._save(url, Path(path).read_bytes())
 
-    @staticmethod
-    def _check_url(url):
+    def _check_url(self, url):
         parsed = urlparse(url)
-        if parsed.scheme != "https" or not parsed.hostname:
+        if not parsed.hostname or (parsed.scheme != "https" and not (parsed.scheme == "http" and parsed.hostname in self.http_hosts)):
             raise SourceError(f"Source must have an HTTPS URL: {url}")
 
     def _save(self, url, data):

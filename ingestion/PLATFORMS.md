@@ -26,8 +26,7 @@ exact official party names, district codes and exact candidate ballot names:
 
 These URLs are illustrative. The checked-in registry includes the sources found
 in the first province-wide collection. Explicit seeds can include questionnaires
-on other hosts. The collectors discover additional links mentioning platforms,
-priorities, policies, commitments, manifestos or PDFs within seeded hosts. They do
+on other hosts. Both collectors discover platform, priority, policy, commitment, manifesto and PDF links within seeded hosts. Party collection additionally follows plan and announcement pages, full-news-release links, and issue-page “Read More” links from policy indexes. It excludes older platform archives but retains older articles linked by a current platform. They do
 not search the whole web, execute JavaScript or transcribe videos.
 
 ## Commands
@@ -44,8 +43,7 @@ python3 -m election --offline collect-candidate-platforms --district RCC
 python3 -m election --refresh collect-party-platforms
 ```
 
-`--max-pages` controls the number of attempted URLs per party/candidate (default
-12, maximum 100). Seed URLs count toward that limit. Sources are cached by default;
+`--max-pages` controls attempted URLs (party default 60, candidate default 12, maximum 100). Seed URLs count toward that limit. Sources are cached by default;
 use `--refresh` to check for changes and `--offline` to prohibit network access.
 Optional Poppler `pdftotext` extracts PDF text, retaining page numbers. Without it,
 PDF bytes are still cached and coverage reports unavailable extraction.
@@ -105,3 +103,20 @@ On the macOS Python installation used for the first run, set
 `SSL_CERT_FILE=/etc/ssl/cert.pem` to use the system CA bundle. Keep certificate
 verification enabled. Fresh checkouts include the source registry but not cached
 snapshots or generated publications: run online once before using offline mode.
+
+## Deeper party-only collection
+
+```sh
+SSL_CERT_FILE=/etc/ssl/cert.pem python3 run_platform_collection.py --only parties --party-max-pages 60
+python3 run_platform_collection.py --only parties --offline
+```
+
+`--only parties` skips all candidate jobs; `--only candidates` skips party jobs.
+The batch party limit now defaults to 60. Hosts with and without `www` are treated
+as the same discovery scope. External documents require an explicit curated seed.
+HTTP remains rejected by default. Party collection allows HTTP only for hosts
+explicitly configured with an HTTP seed (currently CanWest); it never retries an
+HTTPS failure over HTTP or disables certificate checks.
+
+See [the deeper collection report](PARTY_COLLECTION_2026-10-08.md) for counts,
+PDF extraction and limitations. The frontend's editorial summaries remain separate.

@@ -40,6 +40,33 @@ class PlatformTests(unittest.TestCase):
                 self.assertEqual(row["coverage"]["status"], "not_configured")
         self.assertNotIn("hidden promise", alex["documents"][0]["pages"][0]["text"])
 
+    def test_party_detail_follows_issue_pages_but_not_candidate_or_external_links(self):
+        index = self.url + "2026-platform/"
+        self.store._save(index, b'<html><a href="/2024/08/health-care">Read More</a>'
+                         b'<a href="/plan/energy">Energy</a><a href="/2024-platform">Old platform</a>'
+                         b'<a href="https://unrelated.example/plan/energy">Plan</a></html>')
+        self.store._save(self.url + "2024/08/health-care", b'<html><p>Fund rural care.</p></html>')
+        self.store._save(self.url + "plan/energy", b'<html><p>Build power.</p></html>')
+        output = collect_material(self.store, [index], detailed=True)
+        self.assertEqual(len(output["documents"]), 3)
+        self.assertEqual(output["coverage"]["status"], "collected")
+        candidate = collect_material(self.store, [index])
+        self.assertNotIn(self.url + "2024/08/health-care", candidate["coverage"]["sources_checked"])
+
+    def test_http_requires_explicit_host(self):
+        with self.assertRaises(ValueError):
+            self.store._check_url("http://campaign.example/")
+        self.store.http_hosts.add("campaign.example")
+        self.store._check_url("http://campaign.example/")
+        with self.assertRaises(ValueError):
+            self.store._check_url("http://unrelated.example/")
+
+    def test_party_only_batch_skips_candidate_collector(self):
+        with patch("run_platform_collection.collect_candidates", side_effect=AssertionError("Candidate job ran")):
+            summary = run(self.config, self.root, offline=True, only="parties")
+        self.assertIn("parties", summary)
+        self.assertNotIn("candidates", summary)
+
     def test_bounds_errors_and_unsupported_formats_visible(self):
         bounded = collect_material(self.store, [self.url], max_pages=1)
         self.assertEqual(bounded["coverage"]["status"], "partial")

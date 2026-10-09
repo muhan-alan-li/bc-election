@@ -21,7 +21,7 @@ def main():
     commands.add_parser("list-districts", help="Read constituency names/codes from the official roster")
     parties = commands.add_parser("collect-party-platforms", help="Collect shared party platform source material")
     parties.add_argument("--party", help="Exact official party name; defaults to all parties")
-    parties.add_argument("--max-pages", type=int, default=12)
+    parties.add_argument("--max-pages", type=int, default=60)
     candidates = commands.add_parser("collect-candidate-platforms", help="Collect individual candidate platform source material")
     candidates.add_argument("--district", help="Official constituency name or code; defaults to all")
     candidates.add_argument("--candidate", help="Exact ballot name")

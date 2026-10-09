@@ -63,15 +63,34 @@ def extract(data):
     return "html", [{"page": None, "text": PageText(text).text()}], "extracted"
 
 
-def collect_material(store, seeds, *, max_pages=12):
+def platform_link(url, text, hosts, *, detailed=False, policy_index=False):
+    parsed = urlparse(url)
+    host = (parsed.hostname or "").removeprefix("www.")
+    if parsed.scheme not in {"https", "http"} or host not in hosts:
+        return False
+    if re.search(r"privacy|cookie|terms|donat|membership|constitution|bylaws|financial|nomination", parsed.path, re.I):
+        return False
+    if detailed and re.search(r"/(?:2020|2024)-platform|/category/[^?]*(?:platform2020|platform2024)", parsed.path, re.I):
+        return False
+    if detailed and re.search(r"\b(?:2020|2024) platform\b", text, re.I):
+        return False
+    if detailed and policy_index and re.fullmatch(r"read more|read|learn more", text.strip(), re.I):
+        return True
+    pattern = r"platform|priorit|polic|commitment|manifesto|\.pdf(?:$|\?)"
+    if detailed:
+        pattern += r"|/plan(?:/|$)|/priorities(?:/|$)|/releases/|/announcements/|full (?:plan|news release)|economic vision|mission\.htm"
+    return bool(re.search(pattern, parsed.path + " " + text, re.I))
+
+
+def collect_material(store, seeds, *, max_pages=12, detailed=False):
     if not isinstance(max_pages, int) or not 1 <= max_pages <= 100:
         raise ValueError("max_pages must be between 1 and 100")
     if not isinstance(seeds, list) or any(not isinstance(url, str) for url in seeds):
-        raise ValueError("Platform sources must be a list of HTTPS URLs")
+        raise ValueError("Platform sources must be a list of source URLs")
     for url in seeds:
         store._check_url(url)
     queue = deque(dict.fromkeys(urldefrag(url)[0] for url in seeds))
-    hosts = {urlparse(url).netloc for url in seeds}
+    hosts = {(urlparse(url).hostname or "").removeprefix("www.") for url in seeds}
     seen, documents, errors = set(), [], []
     while queue and len(seen) < max_pages:
         url = queue.popleft()
@@ -88,12 +107,9 @@ def collect_material(store, seeds, *, max_pages=12):
             if kind == "html":
                 for link in Links(data.decode("utf-8-sig", errors="replace"), url).links:
                     target = urldefrag(link["url"])[0]
-                    parsed = urlparse(target)
-                    if (parsed.scheme == "https" and parsed.netloc in hosts
-                            and target not in seen and target not in queue
-                            and not re.search(r"privacy|cookie|terms|donat|membership", parsed.path, re.I)
-                            and re.search(r"platform|priorit|polic|commitment|manifesto|\.pdf(?:$|\?)",
-                                          target + " " + link["text"], re.I)):
+                    if (target not in seen and target not in queue
+                            and platform_link(target, link["text"], hosts, detailed=detailed,
+                                              policy_index=bool(re.search(r"platform|/plan|priorit|polic", urlparse(url).path, re.I)))):
                         queue.append(target)
         except (SourceError, ValueError, OSError, UnicodeError, subprocess.SubprocessError) as error:
             errors.append({"url": url, "error": str(error)})
@@ -104,7 +120,7 @@ def collect_material(store, seeds, *, max_pages=12):
              "partial" if incomplete else "collected")
     return {"documents": documents, "commitments": [], "parsing_status": "not_run",
             "coverage": {"status": status, "sources_checked": sorted(seen), "errors": errors,
-                         "pending_urls": list(queue), "max_pages": max_pages,
+                         "pending_urls": list(queue), "max_pages": max_pages, "discovery_mode": "party_detail" if detailed else "standard",
                          "limitation": "Configured sources and selected same-host links only; collected text is not a verified platform or a completeness finding."}}
 
 
@@ -135,7 +151,7 @@ def latest_attempt(path):
     return publication
 
 
-def collect_parties(store, config, root, *, party=None, max_pages=12):
+def collect_parties(store, config, root, *, party=None, max_pages=60):
     election_id, registry = settings(config, root)
     _, rows, roster_meta = load_roster(store, config)
     names = sorted({row["party_name"] for row in rows if row["party_name"]}, key=name_key)
@@ -143,6 +159,10 @@ def collect_parties(store, config, root, *, party=None, max_pages=12):
         names = [name for name in names if name_key(name) == name_key(party)]
         if not names:
             raise ValueError(f"Unknown party: {party}")
+    # Permit HTTP only for explicitly curated party hosts, without HTTPS fallback.
+    store.http_hosts.update(urlparse(url).hostname for name in names
+                            for url in registry.get("parties", {}).get(name, [])
+                            if urlparse(url).scheme == "http")
     paths = []
     for name in names:
         party_id = stable_id("party", name)
@@ -150,7 +170,7 @@ def collect_parties(store, config, root, *, party=None, max_pages=12):
                   "id": stable_id("party-platform", election_id, party_id),
                   "party": {"id": party_id, "name": name}, "generated_at": now(),
                   "roster_source": source_ref(roster_meta, "Official candidate list", "Elections BC"),
-                  **collect_material(store, registry.get("parties", {}).get(name, []), max_pages=max_pages)}
+                  **collect_material(store, registry.get("parties", {}).get(name, []), max_pages=max_pages, detailed=True)}
         path = Path(root) / "published" / "platforms" / election_id / "parties" / f"{party_id}.json"
         publish(path, output)
         paths.append(path)
