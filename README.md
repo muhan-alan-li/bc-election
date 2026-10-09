@@ -52,10 +52,30 @@ The API reads `ingestion/storage/published/<election-id>/<district-code>.json` o
 - `GET /api/districts?q=richmond`: search constituencies with published research.
 - `GET /api/districts/RCC`: public Richmond Centre dataset, including candidates, affiliations, voting records, disclosures, interests, and coverage.
 - `GET /health`: server liveness.
+- `GET /api/platforms/parties`: polished party source records, commitments and coverage.
+- `GET /api/platforms/candidates?district=RCC`: polished candidate source records for a district; omit the query for all candidates.
+- `GET /api/platforms/{parties|candidates}/{id}`: one record by its platform ID.
+
+The client data hook loads party and candidate platforms alongside district data,
+without changing their presentation. All endpoints read polished files only and
+support ETag revalidation.
 
 API responses support ETag revalidation. Invalid published data returns an error rather than being displayed. The constituency search does not imply province-wide coverage.
 
 ## Python workflow
+
+Research follows **raw → normalized → curated → polished**. See
+[pipeline stages, review rules and retention](ingestion/PIPELINE.md).
+`storage/published/` contains the polished client files. Rebuild them without raw
+downloads using `make data-build`; deploy only that directory with the app.
+Use `--ephemeral-raw` during collection to discard HTML/PDF bytes after extracting
+the evidence needed for review.
+
+All `ingestion/storage/` data and `client/src/data/` content modules are local and
+ignored by Git, including reviewed inputs. Existing tracked files have been
+removed from the index while kept on disk. Fresh checkouts need these local
+inputs restored from a backup before rebuilding research or the current client.
+The configuration, collector code, and synthetic test fixtures remain in Git.
 
 Python 3.12+, with no Python dependencies. Optional Poppler `pdftotext` extracts disclosure page text.
 
