@@ -131,6 +131,7 @@ func newHandler(clientDir, dataDir, electionID string, finderURLs ...string) htt
 		finderURL = finderURLs[0]
 	}
 	registerFinderProxy(mux, finderURL)
+	registerPlatforms(mux, dataDir, electionID)
 	apiError := func(w http.ResponseWriter, status int, message string) {
 		w.Header().Set("Content-Type", "application/json; charset=utf-8")
 		w.Header().Set("Cache-Control", "no-store")

@@ -1,11 +1,18 @@
 import { useEffect, useState } from 'preact/hooks';
-import { getJSON } from '../helpers/api.js';
+import {
+    getJSON,
+    getCandidatePlatforms,
+    getPartyPlatforms,
+} from '../helpers/api.js';
 import { parseRoute } from '../helpers/routes.js';
 
 export function useElectionData() {
     const [route, setRoute] = useState(parseRoute);
     const [districts, setDistricts] = useState([]);
     const [loaded, setLoaded] = useState(null);
+    const [candidatePlatforms, setCandidatePlatforms] = useState([]);
+    const [partyPlatforms, setPartyPlatforms] = useState([]);
+    const [platformError, setPlatformError] = useState('');
     const [catalogLoading, setCatalogLoading] = useState(true);
     const [loading, setLoading] = useState(false);
     const [catalogError, setCatalogError] = useState('');
@@ -34,6 +41,28 @@ export function useElectionData() {
 
         return () => controller.abort();
     }, [retry]);
+
+    useEffect(() => {
+        const controller = new AbortController();
+        setCandidatePlatforms([]);
+        setPartyPlatforms([]);
+        setPlatformError('');
+        Promise.all([
+            getPartyPlatforms(controller.signal),
+            getCandidatePlatforms(route.code, controller.signal),
+        ])
+            .then(([parties, candidates]) => {
+                if (!controller.signal.aborted) {
+                    setPartyPlatforms(parties);
+                    setCandidatePlatforms(candidates);
+                }
+            })
+            .catch((error) => {
+                if (!controller.signal.aborted) setPlatformError(error.message);
+            });
+
+        return () => controller.abort();
+    }, [route.code, retry]);
 
     useEffect(() => {
         setError('');
@@ -68,6 +97,9 @@ export function useElectionData() {
         route,
         districts,
         dataset,
+        partyPlatforms,
+        candidatePlatforms,
+        platformError,
         catalogLoading,
         loading,
         catalogError,
