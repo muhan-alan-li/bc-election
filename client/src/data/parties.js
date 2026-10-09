@@ -52,14 +52,17 @@ export const parties = [
         platform: 'https://conservativebc.ca/plan/',
         status: 'Selected commitments from the party’s campaign plan.',
         promises: [
-            ['Taxes', 'Pledge no tax increases during its term in government.'],
+            [
+                'Taxes',
+                'Raise the personal income tax exemption to $32,000 and pledge no tax increases during its term.',
+            ],
             [
                 'Health care',
                 'Maintain health spending and invest in doctors and nurses to keep emergency rooms and maternity wards open.',
             ],
             [
                 'Energy',
-                'Double BC’s LNG production by 2032 and triple it by 2035.',
+                'Expand natural gas and LNG production, with growth targets for 2032 and 2035.',
             ],
             [
                 'Indigenous policy',
@@ -107,13 +110,37 @@ export const otherParties = [
         color: '#65518b',
         leader: 'Elenore Sturko',
         platform: 'https://www.centrebc.ca/our-policy/',
+        status: 'Platform in development. The party lists affordability, health care, economic growth, fiscal responsibility, sustainability and Indigenous relations as policy areas, but has not published specific commitments on this page.',
     },
     {
         id: 'chp',
         name: 'Christian Heritage Party of BC',
         color: '#315580',
         leader: 'Christian McCay',
-        platform: 'https://www.chpbc.ca/policies/',
+        platform: 'https://www.chpbc.ca/platform-priorities/',
+        status: 'Selected commitments from the party’s published platform priorities.',
+        promises: [
+            [
+                'Indigenous policy',
+                'Repeal DRIPA and replace it with a reconciliation framework that respects constitutional and treaty rights and includes materially affected parties.',
+            ],
+            [
+                'Health care',
+                'Direct more resources to frontline care and establish independent oversight of medical assistance in dying.',
+            ],
+            [
+                'Housing',
+                'Use suitable public land, long-term leases and faster approvals to lower housing costs.',
+            ],
+            [
+                'Education',
+                'Stop using SOGI 123 in schools and focus teaching on core academic subjects and practical skills.',
+            ],
+            [
+                'Addiction',
+                'Expand detox, residential treatment and recovery services, with medically overseen involuntary admission when legal criteria are met.',
+            ],
+        ],
     },
     {
         id: 'communist',
@@ -121,14 +148,48 @@ export const otherParties = [
         color: '#a33333',
         leader: 'Robert Crooks',
         platform: 'https://cpcbc.ca/our-platform/',
+        status: 'Selected commitments from the party’s 2026 provincial election platform.',
+        promises: [
+            [
+                'Taxes',
+                'Eliminate income tax on earnings below $50,000 and increase the contribution from corporations and wealthy taxpayers.',
+            ],
+            [
+                'Housing',
+                'Build 100,000 new or renovated public housing units, tie rent controls to units and limit rents to 20% of household income.',
+            ],
+            [
+                'Workers',
+                'Raise the minimum wage to $30 with inflation adjustments and reduce the work week to 32 hours without reducing pay.',
+            ],
+            [
+                'Transit',
+                'Make public transit free and create an accessible province-wide bus system.',
+            ],
+            [
+                'Climate',
+                'End LNG subsidies, cancel Ksi Lisims LNG and support a transition to renewable energy with retraining at union wages.',
+            ],
+        ],
     },
     {
         id: 'canwest',
         name: 'CanWest Party (CWP)',
         color: '#536473',
         leader: 'Wei Ping Chen',
-        platform: null,
-        note: 'Platform source could not be collected.',
+        platform: 'http://www.canada2.net/',
+        status: 'Broad goals from the party’s undated website; no costs or timelines are provided. The site still refers to a 2028 provincial election.',
+        promises: [
+            ['Economy & taxes', 'Develop the economy and keep taxes low.'],
+            [
+                'Community',
+                'Promote community safety and good relations between neighbours.',
+            ],
+            [
+                'Equality & environment',
+                'Support racial equality and a better environment.',
+            ],
+        ],
     },
     {
         id: 'freedom',
@@ -136,6 +197,29 @@ export const otherParties = [
         color: '#766126',
         leader: 'Amrit Birring',
         platform: 'https://freedompartybc.ca/',
+        status: 'Selected positions from the party’s undated website platform; these have not been identified as a newly issued 2026 platform.',
+        promises: [
+            [
+                'Housing',
+                'End foreign ownership of BC housing and agricultural land until further notice.',
+            ],
+            [
+                'Education',
+                'Remove SOGI 123 and Critical Race Theory from schools and strengthen parental authority over education and medical decisions.',
+            ],
+            [
+                'Health policy',
+                'Rehire employees dismissed under COVID policies and repeal Bill 36, the Health Professions and Occupations Act.',
+            ],
+            [
+                'Taxes',
+                'Lower taxes and end repeated taxation on used-car sales.',
+            ],
+            [
+                'Resources',
+                'Support development of BC’s natural resource industries.',
+            ],
+        ],
     },
     {
         id: 'libertarian',
@@ -143,6 +227,26 @@ export const otherParties = [
         color: '#806822',
         leader: 'Alex Joehl',
         platform: 'https://libertarian.bc.ca/2026-platform/',
+        status: 'Selected commitments from the party’s 2026 platform and policy page.',
+        promises: [
+            [
+                'Housing',
+                'Simplify development regulations and expand opportunities for housing supply.',
+            ],
+            ['Insurance', 'End ICBC’s monopoly on basic auto insurance.'],
+            [
+                'Taxes & spending',
+                'Cut government spending, return savings to taxpayers and reduce provincial debt. End PST on private vehicle sales.',
+            ],
+            [
+                'Health care',
+                'Allow private surgery options alongside public health care.',
+            ],
+            [
+                'Education',
+                'Move decisions toward local school districts and develop a system where funding follows students to parents’ chosen education options.',
+            ],
+        ],
     },
     {
         id: 'onebc',
@@ -150,7 +254,34 @@ export const otherParties = [
         color: '#773a44',
         leader: 'Dallas Brodie',
         leaderNote: 'Interim party leader',
-        platform: 'https://1bc.ca/',
+        platform: 'https://1bc.ca/priorities',
+        status: 'Selected commitments from the party’s published priorities.',
+        promises: [
+            [
+                'Taxes & debt',
+                'Cut taxes by 25% in every income bracket, including corporate taxes, reduce PST by 2 percentage points and balance the budget within four years.',
+            ],
+            [
+                'Indigenous policy',
+                'Repeal DRIPA, declare UNDRIP without force in BC and halt voluntary transfers of cash, land and resource control to band governments.',
+            ],
+            [
+                'Health care',
+                'Allow private care alongside fully funded public care and shift administrative spending toward frontline services.',
+            ],
+            [
+                'Education',
+                'Remove SOGI 123, restore standardized testing and introduce a Parental Bill of Rights.',
+            ],
+            [
+                'Housing',
+                'Eliminate the Step Code and block municipal rent control programs.',
+            ],
+            [
+                'Addiction',
+                'End safer supply and drug consumption programs, convert consumption sites to recovery centres and introduce involuntary rehabilitation for severe addiction.',
+            ],
+        ],
         note: 'Represented in the legislature; classified as a major party by Elections BC.',
     },
 ].map((party) => ({
