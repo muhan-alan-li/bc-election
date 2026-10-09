@@ -9,6 +9,8 @@ import { Finder } from './components/finder/Finder.jsx';
 import { Constituencies } from './routes/Constituencies.jsx';
 import { District } from './routes/District.jsx';
 import { Candidate } from './routes/Candidate.jsx';
+import { Platform } from './routes/Platform.jsx';
+import { parties, otherParties } from './data/parties.js';
 import { Parties } from './routes/Parties.jsx';
 import { NotFound } from './routes/NotFound.jsx';
 
@@ -24,18 +26,24 @@ export function App() {
         error,
         retry,
     } = useElectionData();
+    const party = [...parties, ...otherParties].find(
+        (row) => row.id === route.partyID,
+    );
+    const displayRoute =
+        route.view === 'platform' && !party ? { view: 'missing' } : route;
     const candidate = dataset?.candidacies.find(
         (row) => row.id === route.candidateID,
     );
 
     return (
         <>
-            <SiteHeader route={route} />
+            <SiteHeader route={displayRoute} />
             <main class="shell">
                 <PageHeader
-                    route={route}
+                    route={displayRoute}
                     dataset={dataset}
                     candidate={candidate}
+                    party={party}
                 />
                 {route.view === 'constituencies' && (
                     <>
@@ -77,7 +85,10 @@ export function App() {
                     </>
                 )}
                 {route.view === 'parties' && <Parties />}
-                {route.view === 'missing' && <NotFound />}
+                {route.view === 'platform' && party && (
+                    <Platform key={party.id} party={party} />
+                )}
+                {displayRoute.view === 'missing' && <NotFound />}
             </main>
             {finderOpen && <Finder onClose={() => setFinderOpen(false)} />}
             <SiteFooter />

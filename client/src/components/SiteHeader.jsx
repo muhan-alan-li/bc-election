@@ -23,7 +23,9 @@ export function SiteHeader({ route }) {
                     <a
                         href="#/parties"
                         aria-current={
-                            route.view === 'parties' ? 'page' : undefined
+                            ['parties', 'platform'].includes(route.view)
+                                ? 'page'
+                                : undefined
                         }
                     >
                         Parties

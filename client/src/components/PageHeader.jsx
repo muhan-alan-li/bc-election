@@ -1,7 +1,7 @@
 import { Breadcrumbs } from './Breadcrumbs.jsx';
 import { partyName } from '../helpers/candidates.js';
 
-export function PageHeader({ route, dataset, candidate }) {
+export function PageHeader({ route, dataset, candidate, party }) {
     let title = 'Constituencies';
     let context = 'BC election guide';
     let description =
@@ -12,6 +12,11 @@ export function PageHeader({ route, dataset, candidate }) {
         context = '2026 BC provincial election';
         description =
             'Meet the party leaders and compare their main campaign promises.';
+    } else if (route.view === 'platform') {
+        title = `${party.name} platform`;
+        context = '2026 BC provincial election';
+        description =
+            'Explore the party’s commitments. Select a policy for its proposed plan of action.';
     } else if (route.view === 'district') {
         title = dataset?.district.name || route.code;
         context = dataset?.election.title || 'BC election guide';
@@ -34,6 +39,7 @@ export function PageHeader({ route, dataset, candidate }) {
                 route={route}
                 dataset={dataset}
                 candidate={candidate}
+                party={party}
             />
             <p class="page-header-context" title={context}>
                 {context}

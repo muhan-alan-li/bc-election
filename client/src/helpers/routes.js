@@ -1,3 +1,6 @@
+export const platformHref = (id) =>
+    `#/parties/${encodeURIComponent(id)}/platform`;
+
 export const districtHref = (code) =>
     `#/constituencies/${encodeURIComponent(code)}`;
 
@@ -12,6 +15,13 @@ export function parseRoute() {
             .map(decodeURIComponent);
         if (parts[0] === 'parties' && parts.length === 1)
             return { view: 'parties' };
+        if (
+            parts[0] === 'parties' &&
+            parts[1] &&
+            parts[2] === 'platform' &&
+            parts.length === 3
+        )
+            return { view: 'platform', partyID: parts[1] };
         if (!parts[0] || (parts[0] === 'constituencies' && parts.length === 1))
             return { view: 'constituencies' };
         if (parts[0] === 'constituencies' && parts[1] && parts.length === 2)
