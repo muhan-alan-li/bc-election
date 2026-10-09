@@ -168,7 +168,7 @@ def identity_registry(root, election_id, district_code, candidates):
     return registry
 
 
-def validate(dataset):
+def validate(dataset, *, client=False):
     """Reject broken identity/source references before replacing a publication."""
     def require(condition, message):
         if not condition:
@@ -182,7 +182,20 @@ def validate(dataset):
     require(dataset["schema_version"] == 2, "Unsupported schema version")
     people = ids(dataset["people"])
     parties = ids(dataset["parties"])
-    sources = ids(dataset["sources"])
+    sources = ids(dataset["sources"]) if not client else set()
+    if client:
+        def citations(value):
+            if isinstance(value, dict):
+                if 'source_id' in value:
+                    require(bool(value.get('url')) and bool(value.get('sha256')) and bool(value.get('retrieved_at')),
+                            'Client citation requires URL, hash, and retrieval date')
+                    sources.add(value['source_id'])
+                for item in value.values():
+                    citations(item)
+            elif isinstance(value, list):
+                for item in value:
+                    citations(item)
+        citations(dataset)
     ids(dataset["candidacies"])
     ids(dataset["votes"])
     ids(dataset["interests"])
@@ -194,9 +207,10 @@ def validate(dataset):
     for person in dataset["people"]:
         if person.get("reviewed_at"):
             date.fromisoformat(person["reviewed_at"])
-            require(bool(person["identity_sources"]), "Reviewed identity requires sources")
+            if not client:
+                require(bool(person["identity_sources"]), "Reviewed identity requires sources")
         else:
-            require(not person["legislative_aliases"] and not person["disclosure_aliases"],
+            require(not person.get("legislative_aliases") and not person.get("disclosure_aliases"),
                     "Source aliases require a reviewed identity")
     for candidate in dataset["candidacies"]:
         require(candidate["person_id"] in people, "Broken person reference")
@@ -233,7 +247,7 @@ def validate(dataset):
     require({row["person_id"] for row in dataset["coverage"]} == people, "Missing candidate coverage")
 
 
-def run_district(store, config, root, selection, *, download_documents=False):
+def run_district(store, config, root, selection, *, download_documents=False, publish=True):
     root = Path(root)
     if not re.fullmatch(r"[a-zA-Z0-9_-]+", config["election"]["id"]):
         raise ValueError("Election ID must contain only letters, numbers, underscores or hyphens")
@@ -330,5 +344,9 @@ def run_district(store, config, root, selection, *, download_documents=False):
     validate(output)
     relative = Path(election["id"]) / f"{code}.json"
     atomic_json(root / "normalized" / relative, output)
-    atomic_json(root / "published" / relative, output)
+    if not publish:
+        return output, root / 'normalized' / relative
+    from .pipeline import curate, polish
+    curate(root, election['id'], code)
+    polish(root, election['id'], code)
     return output, root / "published" / relative

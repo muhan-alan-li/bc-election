@@ -1,12 +1,14 @@
 import argparse
 import json
 import sys
+import tempfile
 from pathlib import Path
 
 from .storage import SourceStore, read_json
 from .finder import build_finder
 from .platforms import collect_parties, collect_candidates, latest_attempt
 from .workflow import load_roster, run_district, validate
+from .pipeline import curate, polish, migrate_evidence
 
 
 def main():
@@ -16,9 +18,19 @@ def main():
     parser.add_argument("--storage", type=Path, default=base / "storage")
     parser.add_argument("--offline", action="store_true", help="Use cached snapshots only")
     parser.add_argument("--refresh", action="store_true", help="Fetch fresh sources; never silently fall back to stale data")
+    parser.add_argument("--ephemeral-raw", action="store_true", help="Download into temporary storage; keep extracted evidence, discard raw bytes after this command")
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("build-finder", help="Import free BC postal locations and official boundaries")
     commands.add_parser("list-districts", help="Read constituency names/codes from the official roster")
+    commands.add_parser('migrate-evidence', help='Copy legacy published platform research into normalized storage')
+    for name in ('curate', 'polish', 'build-data'):
+        stage = commands.add_parser(name, help={'curate': 'Apply reviewed registries to normalized evidence, offline',
+                                   'polish': 'Build compact client files from curated snapshots, offline',
+                                   'build-data': 'Curate and polish existing evidence without downloads'}[name])
+        stage.add_argument('--district', help='District code; defaults to all available datasets')
+    normalize = commands.add_parser('normalize', help='Collect constituency evidence without client publication')
+    normalize.add_argument('--district', help='Official name or code; defaults to all districts')
+    normalize.add_argument('--download-documents', action='store_true')
     parties = commands.add_parser("collect-party-platforms", help="Collect shared party platform source material")
     parties.add_argument("--party", help="Exact official party name; defaults to all parties")
     parties.add_argument("--max-pages", type=int, default=60)
@@ -34,10 +46,15 @@ def main():
     seed.add_argument("--file", type=Path, required=True)
     check = commands.add_parser("validate", help="Validate a generated constituency dataset")
     check.add_argument("file", type=Path)
+    check.add_argument('--client', action='store_true', help='Validate a polished client file')
     args = parser.parse_args()
     if args.offline and args.refresh:
         parser.error("--offline and --refresh cannot be combined")
-    store = SourceStore(args.storage, offline=args.offline, refresh=args.refresh)
+    if args.ephemeral_raw and args.offline:
+        parser.error('--ephemeral-raw cannot be used with --offline (temporary cache starts empty)')
+    temporary = tempfile.TemporaryDirectory() if args.ephemeral_raw else None
+    store = SourceStore(args.storage, offline=args.offline, refresh=args.refresh,
+                        raw_root=temporary.name if temporary else None)
     try:
         if args.command == "import-source":
             _, meta = store.import_file(args.url, args.file)
@@ -47,11 +64,22 @@ def main():
             print(json.dumps(audit, indent=2))
             print(path)
         elif args.command == "validate":
-            validate(read_json(args.file))
+            validate(read_json(args.file), client=args.client)
             print("Valid constituency dataset")
         else:
             config = read_json(args.config)
-            if args.command in {"collect-party-platforms", "collect-candidate-platforms"}:
+            if args.command == 'migrate-evidence':
+                paths = migrate_evidence(args.storage, config['election']['id'])
+                print(f'Migrated {len(paths)} legacy research files')
+            elif args.command in {'curate', 'polish', 'build-data'}:
+                election_id = config['election']['id']
+                if args.command in {'curate', 'build-data'}:
+                    paths = curate(args.storage, election_id, args.district)
+                    print(f'Curated {len(paths)} datasets')
+                if args.command in {'polish', 'build-data'}:
+                    paths = polish(args.storage, election_id, args.district)
+                    print(f'Polished {len(paths)} client datasets in {args.storage / "published"}')
+            elif args.command in {"collect-party-platforms", "collect-candidate-platforms"}:
                 if args.command == "collect-party-platforms":
                     paths = collect_parties(store, config, args.storage, party=args.party, max_pages=args.max_pages)
                 else:
@@ -68,10 +96,16 @@ def main():
                 districts, _, _ = load_roster(store, config)
                 for code, name in sorted(districts.items(), key=lambda item: item[1]):
                     print(f"{code}\t{name}")
+            elif args.command == 'normalize':
+                selections = [args.district] if args.district else sorted(load_roster(store, config)[0])
+                for selection in selections:
+                    dataset, path = run_district(store, config, args.storage, selection,
+                                                download_documents=args.download_documents, publish=False)
+                    print(f"Normalized {dataset['district']['name']}: {len(dataset['candidacies'])} candidates; {path}")
             else:
                 dataset, path = run_district(store, config, args.storage, args.district,
-                                            download_documents=args.download_documents)
-                print(f"Published {dataset['district']['name']}: {len(dataset['candidacies'])} candidates, "
+                                            download_documents=args.download_documents, publish=args.command == 'run')
+                print(f"{'Published' if args.command == 'run' else 'Normalized'} {dataset['district']['name']}: {len(dataset['candidacies'])} candidates, "
                       f"{len(dataset['votes'])} indexed votes, {len(dataset['disclosures'])} disclosure documents")
                 print(path)
                 parties = {party["id"]: party["name"] for party in dataset["parties"]}
@@ -85,6 +119,9 @@ def main():
     except (ValueError, OSError, KeyError, TypeError) as error:
         print(f"error: {error}", file=sys.stderr)
         return 1
+    finally:
+        if temporary:
+            temporary.cleanup()
     return 0
 
 

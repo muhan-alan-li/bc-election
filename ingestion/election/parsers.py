@@ -104,17 +104,18 @@ class VoteIndex(HTMLParser):
             if name_key(member_name(path[0])) not in self.aliases:
                 return
             label = " ".join("".join(self.parts).split()).rstrip(" ,;")
-            position = re.search(r"\b(Yea|Nay)\s*$", label, re.I)
+            position = re.search(r"\b(Yea|Nay)(?:\s*\(casting vote as Chair\))?\s*$", label, re.I)
             if not position:
                 raise ValueError(f"Unrecognized vote position in index: {label}")
             url = urljoin(self.base, attrs["href"])
-            date = re.search(r"/(\d{4})(\d{2})(\d{2})[^/]*-Hansard", url, re.I)
+            date = re.search(r"/(\d{4})(\d{2})(\d{2})[^/]*-(?:Hansard|CommitteeWhole)", url, re.I)
             if not date:
                 raise ValueError(f"Vote link lacks a date: {url}")
             self.anchor = {
                 "member_label": path[0], "subject": "; ".join(path[1:]),
                 "stage": label[:position.start()].rstrip(" ,"),
                 "position": "yea" if position[1].casefold() == "yea" else "nay",
+                "vote_capacity": "chair_casting_vote" if "casting vote as chair" in position[0].casefold() else "member",
                 "date": "-".join(date.groups()), "transcript_url": url,
                 "locator": "", "question": None, "outcome": None,
                 "jurisdiction": "British Columbia Legislative Assembly",

@@ -46,8 +46,8 @@ class SourceError(ValueError):
 
 
 class SourceStore:
-    def __init__(self, root, *, offline=False, refresh=False, http_hosts=()):
-        self.root = Path(root) / "raw"
+    def __init__(self, root, *, offline=False, refresh=False, http_hosts=(), raw_root=None):
+        self.root = Path(raw_root) if raw_root is not None else Path(root) / "raw"
         self.offline = offline
         self.refresh = refresh
         self.used = {}

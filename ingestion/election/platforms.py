@@ -171,7 +171,7 @@ def collect_parties(store, config, root, *, party=None, max_pages=60):
                   "party": {"id": party_id, "name": name}, "generated_at": now(),
                   "roster_source": source_ref(roster_meta, "Official candidate list", "Elections BC"),
                   **collect_material(store, registry.get("parties", {}).get(name, []), max_pages=max_pages, detailed=True)}
-        path = Path(root) / "published" / "platforms" / election_id / "parties" / f"{party_id}.json"
+        path = Path(root) / "normalized" / "platforms" / election_id / "parties" / f"{party_id}.json"
         publish(path, output)
         paths.append(path)
     return paths
@@ -202,7 +202,7 @@ def collect_candidates(store, config, root, *, district=None, candidate=None, ma
                   "comparison_status": "not_run" if party_id else "not_applicable",
                   "roster_source": source_ref(roster_meta, "Official candidate list", "Elections BC"),
                   **collect_material(store, entry, max_pages=max_pages)}
-        path = Path(root) / "published" / "platforms" / election_id / "candidates" / f"{candidate_id}.json"
+        path = Path(root) / "normalized" / "platforms" / election_id / "candidates" / f"{candidate_id}.json"
         publish(path, output)
         paths.append(path)
     return paths

@@ -3,7 +3,7 @@
 PORT ?= 8000
 FINDER_PORT ?= 8001
 
-.PHONY: help setup build up down status finder-data test
+.PHONY: help setup build up down status finder-data test data-curate data-polish data-build
 
 help:
 	@echo "make up      Build and restart the app in the background"
@@ -13,6 +13,18 @@ help:
 	@echo "make setup   Install client dependencies"
 	@echo "make finder-data  Import/update free constituency finder data"
 	@echo "make test    Run the Go API and finder tests"
+	@echo "make data-build  Curate and polish collected evidence, without downloads"
+	@echo "make data-curate Apply reviewed identity and interest records"
+	@echo "make data-polish Build client files from curated snapshots"
+
+data-curate:
+	cd ingestion && python3 -m election curate
+
+data-polish:
+	cd ingestion && python3 -m election polish
+
+data-build:
+	cd ingestion && python3 -m election build-data
 
 setup:
 	cd client && npm install

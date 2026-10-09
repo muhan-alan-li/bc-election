@@ -50,9 +50,15 @@ PDF bytes are still cached and coverage reports unavailable extraction.
 
 ## Publications
 
-Outputs live under `storage/published/platforms/<election-id>/parties/` and
-`candidates/`. These are separate from constituency datasets and are not yet
-exposed by the Go API or frontend. A party platform is stored once per party and
+The pipeline now writes platform research to `storage/normalized/platforms/`.
+Run `python3 -m election build-data` to curate it and write compact, page-free
+client records to `storage/published/platforms/`. Reviewed commitments can be
+entered explicitly; extraction does not infer them. See [the pipeline](PIPELINE.md)
+for ephemeral downloads, review inputs, and migration of older publications.
+
+Normalized collector outputs live under `storage/normalized/platforms/<election-id>/parties/` and
+`candidates/`. Polished outputs are served through the platform API and loaded by
+the client data hook. A party platform is stored once per party and
 election. Candidate records reference its stable ID even before it is collected.
 Independent and unaffiliated candidates have no party-platform reference.
 

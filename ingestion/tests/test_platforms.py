@@ -7,6 +7,7 @@ from election.platforms import collect_candidates, collect_material, collect_par
 from election.storage import SourceStore, atomic_json, read_json
 from discover_platform_sources import discover
 from run_platform_collection import run
+from election.pipeline import curate, polish
 
 
 class PlatformTests(unittest.TestCase):
@@ -138,6 +139,41 @@ class PlatformTests(unittest.TestCase):
         self.assertIn(self.url, registry["candidates"]["SYN"]["Alex Example"])
         self.assertEqual(len(registry["candidates"]["SYN"]["Alex Example"]), 2)
         self.assertNotIn("OTH", registry["candidates"])
+
+    def test_review_gate_and_polish_without_raw_or_review_registry(self):
+        normalized = collect_parties(self.store, self.config, self.root)[0]
+        self.assertIn('normalized', normalized.parts)
+        material = read_json(normalized)
+        claim = {'id': 'claim-example', 'text': 'More buses.', 'reviewed_at': '2026-10-08',
+                 'document_id': material['documents'][1]['id'], 'locator': 'Platform: first paragraph'}
+        atomic_json(self.root / 'curated/platform-commitments.json', {material['id']: [claim]})
+        curate(self.root, 'test-election')
+        self.store.root.rename(self.root / 'unused-cache')
+        (self.root / 'curated/platform-commitments.json').unlink()
+        with patch('election.storage.urlopen', side_effect=AssertionError('Network called')):
+            paths = polish(self.root, 'test-election')
+        output = read_json(paths[0])
+        self.assertEqual(output['commitments'], [claim])
+        self.assertTrue(all('pages' not in doc for doc in output['documents']))
+        previous = paths[0].read_bytes()
+        snapshot = self.root / 'curated/datasets/platforms/test-election/parties' / normalized.name
+        broken = read_json(snapshot)
+        broken['commitments'][0]['document_id'] = 'unknown'
+        atomic_json(snapshot, broken)
+        with self.assertRaisesRegex(ValueError, 'document reference'):
+            polish(self.root, 'test-election')
+        self.assertEqual(paths[0].read_bytes(), previous)
+
+    def test_temporary_raw_cache_retains_normalized_text(self):
+        with tempfile.TemporaryDirectory() as folder:
+            temporary_store = SourceStore(self.root, offline=True, raw_root=folder)
+            for url in (self.config['roster_url'], self.url, self.url + 'platform'):
+                data, _ = self.store.get(url)
+                temporary_store._save(url, data)
+            path = collect_parties(temporary_store, self.config, self.root)[0]
+        self.assertFalse(Path(folder).exists())
+        output = read_json(path)
+        self.assertIn('More buses.', output['documents'][1]['pages'][0]['text'])
 
 
 if __name__ == "__main__":

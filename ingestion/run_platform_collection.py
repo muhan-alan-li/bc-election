@@ -1,5 +1,6 @@
 """Run party and candidate collectors with bounded concurrent jobs."""
 import argparse
+import tempfile
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -11,7 +12,7 @@ from election.workflow import load_roster
 
 
 def run(config, storage, *, offline=False, refresh=False, workers=4,
-        party_max_pages=60, candidate_max_pages=3, only="all"):
+        party_max_pages=60, candidate_max_pages=3, only="all", raw_root=None):
     election_id, _ = settings(config, storage)
     if not 1 <= party_max_pages <= 100 or not 1 <= candidate_max_pages <= 100:
         raise ValueError("Page limits must be between 1 and 100")
@@ -19,7 +20,7 @@ def run(config, storage, *, offline=False, refresh=False, workers=4,
         raise ValueError("Unknown collection selection")
     started = monotonic()
     def store():
-        return SourceStore(storage, offline=offline, refresh=refresh)
+        return SourceStore(storage, offline=offline, refresh=refresh, raw_root=raw_root)
     districts, rows, _ = load_roster(store(), config)
     summary = {"election_id": election_id, "generated_at": now(),
                "mode": "offline" if offline else "refresh" if refresh else "cached",
@@ -67,18 +68,26 @@ def main(argv=None):
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--offline", action="store_true")
     mode.add_argument("--refresh", action="store_true")
+    parser.add_argument('--ephemeral-raw', action='store_true', help='Discard temporary downloads after normalization')
     parser.add_argument("--workers", type=int, choices=range(1, 9), default=4)
     parser.add_argument("--party-max-pages", type=int, choices=range(1, 101), default=60)
     parser.add_argument("--candidate-max-pages", type=int, choices=range(1, 101), default=3)
     parser.add_argument("--only", choices=("all", "parties", "candidates"), default="all")
     args = parser.parse_args(argv)
+    if args.ephemeral_raw and args.offline:
+        parser.error('--ephemeral-raw cannot be combined with --offline')
+    temporary = tempfile.TemporaryDirectory() if args.ephemeral_raw else None
     try:
         summary = run(read_json(args.config), args.storage, offline=args.offline,
                       refresh=args.refresh, workers=args.workers,
-                      party_max_pages=args.party_max_pages, candidate_max_pages=args.candidate_max_pages, only=args.only)
+                      party_max_pages=args.party_max_pages, candidate_max_pages=args.candidate_max_pages, only=args.only,
+                      raw_root=temporary.name if temporary else None)
     except (ValueError, OSError, KeyError, TypeError) as error:
         print(f"error: {error}")
         return 1
+    finally:
+        if temporary:
+            temporary.cleanup()
     print(summary)
     return int(any(summary[kind]["errors"] for kind in ("parties", "candidates") if kind in summary))
 

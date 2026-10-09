@@ -6,6 +6,7 @@ from unittest.mock import patch
 from election.parsers import Disclosures, VoteIndex, roster
 from election.storage import SourceError, SourceStore, atomic_json, read_json
 from election.workflow import load_roster, run_district, validate
+from election.pipeline import curate, polish, curate_district
 
 FIXTURES = Path(__file__).parent / "fixtures"
 
@@ -40,6 +41,20 @@ class ParserTests(unittest.TestCase):
         text = (FIXTURES / "votes.html").read_text().replace("2R, Yea", "2R, Present")
         with self.assertRaisesRegex(ValueError, "position"):
             VoteIndex(text, "https://example.org/", ["Example, Alex"])
+
+    def test_chair_casting_vote_preserves_capacity_and_stage(self):
+        text = (FIXTURES / "votes.html").read_text().replace("2R, Yea", "2R, Yea (casting vote as Chair)")
+        votes = VoteIndex(text, "https://example.org/", ["Example, Alex"]).records
+        self.assertEqual(votes[0]["position"], "yea")
+        self.assertEqual(votes[0]["stage"], "2R")
+        self.assertEqual(votes[0]["vote_capacity"], "chair_casting_vote")
+        self.assertEqual(votes[1]["vote_capacity"], "member")
+
+    def test_committee_whole_transcript_date_is_retained(self):
+        text = (FIXTURES / "votes.html").read_text().replace('-Hansard-', '-CommitteeWhole-')
+        votes = VoteIndex(text, "https://example.org/", ["Example, Alex"]).records
+        self.assertEqual(len(votes), 2)
+        self.assertEqual(votes[0]["date"], "2024-03-05")
 
     def test_index_entry_can_reference_votes_on_multiple_dates(self):
         text = (FIXTURES / "votes.html").read_text().replace(
@@ -150,6 +165,78 @@ class WorkflowTests(unittest.TestCase):
         self.config["election"]["id"] = "../outside"
         with self.assertRaisesRegex(ValueError, "Election ID"):
             self.collect()
+
+    def test_rebuild_is_identical_without_raw_sources(self):
+        self.collect()
+        self.review_alex()
+        _, path = self.collect()
+        before = path.read_bytes()
+        self.store.root.rename(self.root / 'unused-source-cache')
+        with patch('election.storage.urlopen', side_effect=AssertionError('Network called')):
+            curate(self.root, 'synthetic-2026', 'SYN')
+            polish(self.root, 'synthetic-2026', 'SYN')
+        self.assertEqual(before, path.read_bytes())
+        public = read_json(path)
+        self.assertNotIn('sources', public)
+        self.assertNotIn('tasks', public)
+        self.assertNotIn('identity_leads', public)
+        self.assertNotIn('legislative_aliases', public['people'][0])
+        self.assertTrue(all('pages' not in doc for doc in public['disclosures']))
+        self.assertTrue(public['votes'][0]['source']['sha256'])
+
+    def test_normalize_does_not_publish_and_invalid_polish_retains_previous(self):
+        data, path = run_district(self.store, self.config, self.root, 'SYN', publish=False)
+        self.assertIn('normalized', str(path))
+        public_path = self.root / 'published/synthetic-2026/SYN.json'
+        self.assertFalse(public_path.exists())
+        curated_path = curate(self.root, 'synthetic-2026', 'SYN')[0]
+        polish(self.root, 'synthetic-2026', 'SYN')
+        before = public_path.read_bytes()
+        broken = read_json(curated_path)
+        broken['candidacies'][0]['person_id'] = 'missing'
+        atomic_json(curated_path, broken)
+        with self.assertRaisesRegex(ValueError, 'Broken person'):
+            polish(self.root, 'synthetic-2026', 'SYN')
+        self.assertEqual(before, public_path.read_bytes())
+
+    def test_review_revocation_removes_previously_attributed_records(self):
+        self.collect()
+        pid = self.review_alex()
+        data, _ = self.collect()
+        registry = read_json(self.root / 'curated/identities.json')
+        person = next(p for p in registry['people'] if p['id'] == pid)
+        person.update(reviewed_at=None, legislative_aliases=[], disclosure_aliases=[])
+        atomic_json(self.root / 'curated/identities.json', registry)
+        output = curate_district(data, self.root)
+        self.assertEqual(output['votes'], [])
+        self.assertEqual(output['disclosures'], [])
+
+    def test_provisional_evidence_requires_current_reviewed_aliases(self):
+        baseline, _ = self.collect()
+        pid = self.review_alex()
+        attributed, _ = self.collect()
+        candidate = next(c for c in attributed['candidacies'] if c['person_id'] == pid)
+        evidence = {
+            'person_id': pid, 'candidacy_id': candidate['id'], 'election_id': 'synthetic-2026',
+            'district_code': 'SYN', 'generated_at': attributed['generated_at'],
+            'vote_index_entries': attributed['votes'], 'disclosure_documents': attributed['disclosures'],
+            'sources': attributed['sources'], 'coverage': {'errors': []},
+        }
+        path = self.root / 'normalized/synthetic-2026/candidate-records' / f"{candidate['id']}.json"
+        atomic_json(path, evidence)
+        curated = curate_district(baseline, self.root)
+        self.assertEqual(len(curated['votes']), 2)
+        registry = read_json(self.root / 'curated/identities.json')
+        person = next(p for p in registry['people'] if p['id'] == pid)
+        person.update(legislative_aliases=['Another, Person'], disclosure_aliases=[])
+        atomic_json(self.root / 'curated/identities.json', registry)
+        curated = curate_district(baseline, self.root)
+        self.assertEqual(curated['votes'], [])
+        self.assertEqual(curated['disclosures'], [])
+        evidence['person_id'] = 'wrong-person'
+        atomic_json(path, evidence)
+        with self.assertRaisesRegex(ValueError, 'different identity'):
+            curate_district(baseline, self.root)
 
 
 if __name__ == "__main__":
