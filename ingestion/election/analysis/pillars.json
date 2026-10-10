@@ -1,0 +1,38 @@
+[
+  {
+    "id": "housing",
+    "label": "Housing",
+    "question": "Do the candidate’s choices support the housing policies they campaign on?",
+    "description": "Rental protections, housing supply, ownership and speculation."
+  },
+  {
+    "id": "healthcare",
+    "label": "Healthcare",
+    "question": "Do their choices support the care and access they promise?",
+    "description": "Doctor access, staffing, wait times, public and private care, and seniors’ care."
+  },
+  {
+    "id": "affordability",
+    "label": "Affordability and taxes",
+    "question": "Who benefits from their choices on household costs and taxes?",
+    "description": "Tax relief, benefits, childcare costs, insurance and other household expenses."
+  },
+  {
+    "id": "economy",
+    "label": "Jobs and economy",
+    "question": "Do their choices match their promises for workers and the economy?",
+    "description": "Worker protections, business conditions, trade resilience and resource development."
+  },
+  {
+    "id": "public_safety",
+    "label": "Public safety and addictions",
+    "question": "How do their choices balance safety, treatment and harm reduction?",
+    "description": "Policing, public drug consumption, addiction treatment and harm reduction."
+  },
+  {
+    "id": "climate",
+    "label": "Climate, energy and environment",
+    "question": "Do their choices match their environmental and energy commitments?",
+    "description": "Emissions, LNG, electricity, forestry and wildfire resilience."
+  }
+]

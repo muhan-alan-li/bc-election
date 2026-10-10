@@ -179,6 +179,9 @@ def curate(root, election_id, district=None):
             results.append(target)
     if not results:
         raise ValueError('No normalized datasets found')
+    if not district and list((root / 'normalized' / election_id / 'candidate-records').glob('candidacy*.json')):
+        from .political import build_profiles
+        build_profiles(root, election_id)
     return results
 
 
@@ -217,6 +220,9 @@ def polish(root, election_id, district=None):
             # Revalidate reviews before polishing; only explicit reviewed claims survive.
             validate_platform(data)
             pending.append((root / 'published/platforms' / election_id / path.parent.name / path.name, portable(data)))
+    if not district:
+        from .political import profile_publications
+        pending.extend(profile_publications(root, election_id))
     if not pending:
         raise ValueError('No curated datasets found')
     for path, output in pending:

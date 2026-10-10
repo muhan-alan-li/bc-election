@@ -1,0 +1,952 @@
+{
+  "candidate_id": "candidacy-ad2a2831-a961-58a4-b953-9f451113775b",
+  "person_id": "person-3ef45026-4de4-49dc-afcc-d5598d1cf383",
+  "party_name": "BC NDP",
+  "election_id": "bc-provincial-2026",
+  "scope": "Henry Yao pilot across six pillars: 2020–2024 named votes compared with dated party promises, later party positions and current policy context. This is a selective legislative record, not a complete platform audit or prediction of future performance.",
+  "sources": [
+    {
+      "id": "rent-promise",
+      "url": "https://www.bcndp.ca/releases/john-horgan-make-life-easier-renters",
+      "title": "2020 BC NDP renter commitments",
+      "publisher": "BC NDP"
+    },
+    {
+      "id": "housing-position",
+      "url": "https://www.bcndp.ca/releases/bc-conservatives-would-cancel-ebys-housing-plan-drive-costs-people",
+      "title": "2026 BC NDP housing position",
+      "publisher": "BC NDP"
+    },
+    {
+      "id": "candidate-position",
+      "url": "https://henryyao.bcndp.ca/",
+      "title": "Henry Yao campaign page, captured October 2026",
+      "publisher": "Henry Yao / BC NDP"
+    },
+    {
+      "id": "new-taxes",
+      "url": "https://www.bcndp.ca/releases/eby-turn-more-empty-condos-homes-people-can-afford",
+      "title": "2026 speculation and unsold condo tax promises",
+      "publisher": "BC NDP"
+    },
+    {
+      "id": "rent-bill",
+      "url": "https://www.bclaws.gov.bc.ca/civix/document/id/bills/billsprevious/1st42nd:gov07-1",
+      "title": "Bill 7, 2021 — introduced text",
+      "publisher": "Legislative Assembly of BC / BC Laws"
+    },
+    {
+      "id": "rent-debate",
+      "url": "https://api.lims.leg.bc.ca/hdms/file/Debates/42nd1st/20210302pm-Hansard-n18.html",
+      "title": "March 2, 2021 — Bill 7 second reading",
+      "publisher": "Legislative Assembly of BC"
+    },
+    {
+      "id": "rent-committee",
+      "url": "https://api.lims.leg.bc.ca/hdms/file/Debates/42nd1st/20210308pm-Hansard-n23.html",
+      "title": "March 8, 2021 — rent freeze scope",
+      "publisher": "Legislative Assembly of BC"
+    },
+    {
+      "id": "str-bill",
+      "url": "https://www.bclaws.gov.bc.ca/civix/document/id/bills/billsprevious/4th42nd:gov35-3",
+      "title": "Bill 35, 2023 — third-reading text",
+      "publisher": "Legislative Assembly of BC / BC Laws"
+    },
+    {
+      "id": "str-amendment",
+      "url": "https://api.lims.leg.bc.ca/hdms/file/Debates/42nd4th/20231025pm-Hansard-n347.html",
+      "title": "October 25, 2023 — short-term rental amendments",
+      "publisher": "Legislative Assembly of BC"
+    },
+    {
+      "id": "str-vote",
+      "url": "https://api.lims.leg.bc.ca/hdms/file/Debates/42nd4th/20231026pm-Hansard-n349.html",
+      "title": "October 26, 2023 — Bill 35 final vote",
+      "publisher": "Legislative Assembly of BC"
+    },
+    {
+      "id": "density-bill",
+      "url": "https://www.bclaws.gov.bc.ca/civix/document/id/bills/billsprevious/4th42nd:gov44-3",
+      "title": "Bill 44, 2023 — third-reading text",
+      "publisher": "Legislative Assembly of BC / BC Laws"
+    },
+    {
+      "id": "density-amendment",
+      "url": "https://api.lims.leg.bc.ca/hdms/file/Debates/42nd4th/20231127pm-Hansard-n370.html",
+      "title": "November 27, 2023 — proposed REIT restriction",
+      "publisher": "Legislative Assembly of BC"
+    },
+    {
+      "id": "density-vote",
+      "url": "https://api.lims.leg.bc.ca/hdms/file/Debates/42nd4th/20231129pm-Hansard-n373.html",
+      "title": "November 29, 2023 — Bill 44 final vote",
+      "publisher": "Legislative Assembly of BC"
+    },
+    {
+      "id": "workers-position",
+      "url": "https://www.bcndp.ca/latest/nine-ways-were-taking-action-working-people-british-columbia",
+      "title": "BC NDP worker-policy statement — August 28, 2025",
+      "publisher": "BC NDP"
+    },
+    {
+      "id": "health-position",
+      "url": "https://www.bcndp.ca/releases/ebys-plan-includes-more-doctors-and-nurses-fast-tracking-international-graduates",
+      "title": "2026 BC NDP primary-care and international-graduate promises",
+      "publisher": "BC NDP"
+    },
+    {
+      "id": "current-position",
+      "url": "https://www.bcndp.ca/action-for-you",
+      "title": "BC NDP current issue positions — captured October 2026",
+      "publisher": "BC NDP"
+    },
+    {
+      "id": "health-bill",
+      "url": "https://www.bclaws.gov.bc.ca/civix/document/id/bills/billsprevious/3rd42nd:gov36-3",
+      "title": "Bill 36, 2022 — third-reading licensing and oversight provisions",
+      "publisher": "Legislative Assembly of BC / BC Laws"
+    },
+    {
+      "id": "health-debate",
+      "url": "https://api.lims.leg.bc.ca/hdms/file/Debates/42nd3rd/20221027pm-Hansard-n241.html",
+      "title": "October 27, 2022 — health-profession reform debate",
+      "publisher": "Legislative Assembly of BC / BC Laws"
+    },
+    {
+      "id": "health-vote",
+      "url": "https://api.lims.leg.bc.ca/hdms/file/Debates/42nd3rd/20221124pm-Hansard-n255.html",
+      "title": "November 24, 2022 — Bill 36 final vote",
+      "publisher": "Legislative Assembly of BC / BC Laws"
+    },
+    {
+      "id": "sick-bill",
+      "url": "https://www.bclaws.gov.bc.ca/civix/document/id/bills/billsprevious/2nd42nd:gov13-3",
+      "title": "Bill 13, 2021 — third-reading paid-leave provisions",
+      "publisher": "Legislative Assembly of BC / BC Laws"
+    },
+    {
+      "id": "sick-debate",
+      "url": "https://api.lims.leg.bc.ca/hdms/file/Debates/42nd2nd/20210517pm-Hansard-n72.html",
+      "title": "May 17, 2021 — proposed legislative scrutiny of sick-leave regulations",
+      "publisher": "Legislative Assembly of BC / BC Laws"
+    },
+    {
+      "id": "sick-vote",
+      "url": "https://api.lims.leg.bc.ca/hdms/file/Debates/42nd2nd/20210518pm-Hansard-n74.html",
+      "title": "May 18, 2021 — vote on Furstenau’s scrutiny amendment",
+      "publisher": "Legislative Assembly of BC / BC Laws"
+    },
+    {
+      "id": "sick-clause-vote",
+      "url": "https://api.lims.leg.bc.ca/hdms/file/Debates/42nd2nd/20210519pm-Hansard-n75.html",
+      "title": "May 19, 2021 — vote on permanent sick-leave clause",
+      "publisher": "Legislative Assembly of BC / BC Laws"
+    },
+    {
+      "id": "union-bill",
+      "url": "https://www.bclaws.gov.bc.ca/civix/document/id/bills/billsprevious/3rd42nd:gov10-3",
+      "title": "Bill 10, 2022 — third-reading union-certification provisions",
+      "publisher": "Legislative Assembly of BC / BC Laws"
+    },
+    {
+      "id": "union-debate",
+      "url": "https://api.lims.leg.bc.ca/hdms/file/Debates/42nd3rd/20220505pm-Hansard-n199.html",
+      "title": "May 5, 2022 — union-certification debate",
+      "publisher": "Legislative Assembly of BC / BC Laws"
+    },
+    {
+      "id": "union-vote",
+      "url": "https://api.lims.leg.bc.ca/hdms/file/Debates/42nd3rd/20220517pm-Hansard-n210.html",
+      "title": "May 17, 2022 — Bill 10 final vote",
+      "publisher": "Legislative Assembly of BC / BC Laws"
+    },
+    {
+      "id": "public-bill",
+      "url": "https://www.bclaws.gov.bc.ca/civix/document/id/bills/billsprevious/4th42nd:gov34-3",
+      "title": "Bill 34, 2023 — third-reading public-consumption restrictions",
+      "publisher": "Legislative Assembly of BC / BC Laws"
+    },
+    {
+      "id": "public-vote",
+      "url": "https://api.lims.leg.bc.ca/hdms/file/Debates/42nd4th/20231108pm-Hansard-n359.html",
+      "title": "November 8, 2023 — Bill 34 final vote",
+      "publisher": "Legislative Assembly of BC / BC Laws"
+    },
+    {
+      "id": "public-debate",
+      "url": "https://api.lims.leg.bc.ca/hdms/file/Debates/42nd4th/20231023pm-Hansard-n344.html",
+      "title": "October 23, 2023 — public-consumption enforcement and harm-reduction debate",
+      "publisher": "Legislative Assembly of BC / BC Laws"
+    },
+    {
+      "id": "public-outcome",
+      "url": "https://news.gov.bc.ca/releases/2024PSSG0093-001673",
+      "title": "December 19, 2024 — minister confirms Bill 34 never came into force and was repealed",
+      "publisher": "Government of British Columbia"
+    },
+    {
+      "id": "climate-bill",
+      "url": "https://www.bclaws.gov.bc.ca/civix/document/id/bills/billsprevious/4th42nd:gov39-3",
+      "title": "Bill 39, 2023 — third-reading ZEV sales-target amendments",
+      "publisher": "Legislative Assembly of BC / BC Laws"
+    },
+    {
+      "id": "climate-announcement",
+      "url": "https://news.gov.bc.ca/releases/2023EMLI0043-001640",
+      "title": "October 24, 2023 — government explains the 100% ZEV sales target",
+      "publisher": "Government of British Columbia"
+    },
+    {
+      "id": "climate-revision",
+      "url": "https://news.gov.bc.ca/releases/2026ECS0009-000355",
+      "title": "April 1, 2026 — government announces softer ZEV mandate",
+      "publisher": "Government of British Columbia"
+    },
+    {
+      "id": "climate-base",
+      "url": "https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/19029",
+      "title": "Zero-Emission Vehicles Act — current consolidation captured October 2026",
+      "publisher": "Legislative Assembly of BC / BC Laws"
+    },
+    {
+      "id": "climate-vote",
+      "url": "https://api.lims.leg.bc.ca/hdms/file/Debates/42nd4th/20231109pm-Hansard-n361.html",
+      "title": "November 9, 2023 — Bill 39 final vote",
+      "publisher": "Legislative Assembly of BC / BC Laws"
+    },
+    {
+      "id": "pst-debate",
+      "url": "https://api.lims.leg.bc.ca/hdms/file/Debates/42nd3rd/20220406pm-Hansard-n183.html",
+      "title": "April 6, 2022 — proposed used-vehicle PST exemption and vote",
+      "publisher": "Legislative Assembly of BC / BC Laws"
+    },
+    {
+      "id": "gig-bill",
+      "url": "https://www.bclaws.gov.bc.ca/civix/document/id/bills/billsprevious/4th42nd:gov48-1",
+      "title": "Bill 48, 2023 — introduced platform-worker provisions",
+      "publisher": "Legislative Assembly of BC / BC Laws"
+    },
+    {
+      "id": "gig-debate",
+      "url": "https://api.lims.leg.bc.ca/hdms/file/Debates/42nd4th/20231122pm-Hansard-n366.html",
+      "title": "November 22, 2023 — platform-worker debate and second-reading vote",
+      "publisher": "Legislative Assembly of BC / BC Laws"
+    },
+    {
+      "id": "wait-position",
+      "url": "https://www.bcndp.ca/releases/getting-care-sooner-eby-will-cut-wait-times-add-new-diagnostic-equipment",
+      "title": "October 6, 2026 — BC NDP surgical and diagnostic promises",
+      "publisher": "BC NDP"
+    },
+    {
+      "id": "buy-position",
+      "url": "https://www.bcndp.ca/releases/eby-pledges-new-built-bc-and-canada-buying-rules",
+      "title": "September 24, 2026 — BC NDP domestic procurement promise",
+      "publisher": "BC NDP"
+    },
+    {
+      "id": "gas-position",
+      "url": "https://www.bcndp.ca/releases/ebys-plan-will-cut-gas-prices-30-cents-litre-crack-down-gouging",
+      "title": "October 1, 2026 — BC NDP gas-tax and pricing promises",
+      "publisher": "BC NDP"
+    },
+    {
+      "id": "lng-position",
+      "url": "https://www.bcndp.ca/releases/bc-conservatives-lng-plan-out-step-reality",
+      "title": "September 28, 2026 — BC NDP LNG expansion and net-zero-ready position",
+      "publisher": "BC NDP"
+    },
+    {
+      "id": "climate-debate",
+      "url": "https://api.lims.leg.bc.ca/hdms/file/Debates/42nd4th/20231031pm-Hansard-n353.html",
+      "title": "October 31, 2023 — ZEV debate, rural cost and availability arguments",
+      "publisher": "Legislative Assembly of BC / BC Laws"
+    }
+  ],
+  "cases": [
+    {
+      "id": "rent-freeze-2021",
+      "question": "Did Yao support the promised rent freeze through the end of 2021? Distinguish this from the separate permanent inflation-cap promise and renter rebate.",
+      "commitment": {
+        "summary": "Freeze rents through the end of 2021.",
+        "date": "2020-10-12",
+        "date_status": "published",
+        "scope": "party",
+        "owner": "BC NDP",
+        "kind": "promise",
+        "evidence_id": "rent-promise",
+        "quote": "will freeze rents to the end of 2021"
+      },
+      "action_ids": [
+        "political-vote-4e89b2ba-8262-54c7-8632-5591542a407a"
+      ],
+      "evidence": [
+        {
+          "id": "rent-promise",
+          "source_id": "rent-promise",
+          "role": "platform",
+          "start": "Horgan promised that a re-elected",
+          "end": "make that cap permanent."
+        },
+        {
+          "id": "rent-provision",
+          "source_id": "rent-bill",
+          "role": "operative_bill",
+          "start": "12 Part 3 of the Residential Tenancy Act",
+          "end": "13 Section 49 (6) (b) is repealed."
+        },
+        {
+          "id": "rent-scope",
+          "source_id": "rent-committee",
+          "role": "debate_context",
+          "start": "Hon. D. Eby: The member is right to note that students are not captured",
+          "end": "Under this bill and under this freeze, there is no student housing rent freeze.",
+          "fragment": "#tt5948"
+        },
+        {
+          "id": "rent-vote",
+          "source_id": "rent-debate",
+          "role": "vote_question",
+          "start": "We will now proceed with the deferred division.",
+          "end": "Second reading of Bill 7 approved unanimously on a division.",
+          "fragment": "#18B:1820"
+        }
+      ],
+      "pillar_id": "housing"
+    },
+    {
+      "id": "short-term-rentals-2023",
+      "question": "Do final approval of principal-residence restrictions and rejection of an extra non-primary-residence rental match the later party position defending short-term rental restrictions? Include the small-owner/student/tourism counterargument, without asserting rent outcomes.",
+      "commitment": {
+        "summary": "Defend provincial short-term rental restrictions as part of the housing plan.",
+        "date": "2026-09-25",
+        "date_status": "published",
+        "scope": "party",
+        "owner": "BC NDP",
+        "kind": "position",
+        "evidence_id": "str-position",
+        "quote": "gut short term rental restrictions"
+      },
+      "action_ids": [
+        "political-vote-c31d7f35-f0f0-532d-81e2-acf3dfa9670d",
+        "political-vote-164ec225-a2aa-56d5-a96d-40cb37a0b4a1"
+      ],
+      "evidence": [
+        {
+          "id": "str-position",
+          "source_id": "housing-position",
+          "role": "platform",
+          "start": "Examples of Conservative opposition",
+          "end": "back into empty units and driving up rents"
+        },
+        {
+          "id": "str-provision",
+          "source_id": "str-bill",
+          "role": "operative_bill",
+          "start": "14 (1) Subject to the regulations",
+          "end": "Requests for changes to exempt land"
+        },
+        {
+          "id": "str-amendment",
+          "source_id": "str-amendment",
+          "role": "operative_amendment",
+          "start": "K. Kirkpatrick: I move the first amendment on clause 14",
+          "end": "I do appreciate the member bringing this forward, but we disagree with the amendment.",
+          "fragment": "#tt13965"
+        },
+        {
+          "id": "str-amendment-vote",
+          "source_id": "str-amendment",
+          "role": "vote_question",
+          "start": "Seeing no further speakers, we will be holding the vote now on the proposed amendment to clause 14.",
+          "end": "Hon. R. Kahlon: Should we have a short break, Chair?",
+          "fragment": "#347B:1750"
+        },
+        {
+          "id": "str-final-vote",
+          "source_id": "str-vote",
+          "role": "vote_question",
+          "start": "Mr. Speaker: The question is third reading of Bill 35, Short-Term Rental Accommodations Act.",
+          "end": "Mr. Speaker: I would also ask the members to stay inside the chamber.",
+          "fragment": "#349B:1455"
+        }
+      ],
+      "pillar_id": "housing"
+    },
+    {
+      "id": "small-scale-housing-2023",
+      "question": "Does final approval of mandatory small-scale multi-family zoning align with the later party position defending that reform? Distinguish zoning capacity from built homes, below-market prices, and the REIT amendment assessed separately.",
+      "commitment": {
+        "summary": "Retain small-scale multi-unit housing reform.",
+        "date": "2026-09-25",
+        "date_status": "published",
+        "scope": "party",
+        "owner": "BC NDP",
+        "kind": "position",
+        "evidence_id": "density-position",
+        "quote": "repeal small scale multi-unit housing"
+      },
+      "action_ids": [
+        "political-vote-68f3fb8e-de97-55ad-bb16-8cd245d671be"
+      ],
+      "evidence": [
+        {
+          "id": "density-position",
+          "source_id": "housing-position",
+          "role": "platform",
+          "start": "Examples of Conservative opposition",
+          "end": "back into empty units and driving up rents"
+        },
+        {
+          "id": "density-provision",
+          "source_id": "density-bill",
+          "role": "operative_bill",
+          "start": "481.3 (1) In this section",
+          "end": "Regulations related to small-scale multi-family housing"
+        },
+        {
+          "id": "density-reit-context",
+          "source_id": "density-amendment",
+          "role": "debate_context",
+          "start": "A. Olsen: We’ve canvassed the minister extensively",
+          "end": "If we see that issue arise, we’ll consider that in the future, but at this time, there’s no indication that that’s an issue."
+        },
+        {
+          "id": "density-vote",
+          "source_id": "density-vote",
+          "role": "vote_question",
+          "start": "Mr. Speaker: Members, the question is third reading of Bill 44, Housing Statutes (Residential Development) Amendment Act, 2023.",
+          "end": "Questions of Privilege (Reservation of Right)",
+          "fragment": "#373B:1540"
+        }
+      ],
+      "pillar_id": "housing"
+    },
+    {
+      "id": "reit-restriction-2023",
+      "question": "What does rejecting the proposed REIT ownership guideline say about the campaign's broad anti-speculation message? The motion enabled ministerial policy guidelines, not an automatic comprehensive ban. The campaign does not specifically promise a REIT ban: do not manufacture a broken promise. Explain the narrow trade-off and competing rationale.",
+      "commitment": {
+        "summary": "Bring housing costs down rather than return control to speculators.",
+        "date": "2026-10-09",
+        "date_status": "observed_at_capture",
+        "scope": "party",
+        "owner": "BC NDP message displayed on Henry Yao’s campaign page",
+        "kind": "broad_position",
+        "evidence_id": "candidate-housing",
+        "quote": "Bringing housing costs down – not giving control back to speculators"
+      },
+      "action_ids": [
+        "political-vote-75cb98c4-5da8-5810-a5b6-2df04f928ef7"
+      ],
+      "evidence": [
+        {
+          "id": "candidate-housing",
+          "source_id": "candidate-position",
+          "role": "platform",
+          "start": "Bringing housing costs down",
+          "end": "not giving control back to speculators"
+        },
+        {
+          "id": "reit-amendment",
+          "source_id": "density-amendment",
+          "role": "operative_amendment",
+          "start": "A. Olsen: We’ve canvassed the minister extensively",
+          "end": "If we see that issue arise, we’ll consider that in the future, but at this time, there’s no indication that that’s an issue.",
+          "fragment": "#tt15259"
+        },
+        {
+          "id": "reit-vote",
+          "source_id": "density-amendment",
+          "role": "vote_question",
+          "start": "The question is on the proposed amendment to Bill 44 moved by the Third Party House Leader to clause 15.",
+          "end": "A. Walker: Looking through clause 15 here",
+          "fragment": "#370B:2005"
+        }
+      ],
+      "pillar_id": "housing"
+    },
+    {
+      "id": "health-credentials-2022",
+      "pillar_id": "healthcare",
+      "question": "What does approval of extrajurisdictional licensing rules establish about the later bridging-to-practice promise? Separate recognizing credentials from creating residency/training seats, clinics, attachment and waiting-time outcomes. This is a partial regulatory connection, not delivery of the 2026 program.",
+      "commitment": {
+        "summary": "Launch accelerated bridging-to-practice training for qualified international medical graduates already living in B.C.",
+        "quote": "bridging to practice",
+        "evidence_id": "health-platform",
+        "date": "2026-10-09",
+        "date_status": "published",
+        "scope": "party",
+        "owner": "BC NDP",
+        "kind": "promise"
+      },
+      "action_ids": [
+        "political-vote-337db88e-37b6-5a0a-994f-805259601758"
+      ],
+      "evidence": [
+        {
+          "id": "health-platform",
+          "source_id": "health-position",
+          "role": "platform",
+          "start": "Six actions David Eby will take",
+          "end": "Offer discounted tuition, loan forgiveness, and moving expenses to attract health care professionals to underserved rural areas facing staffing shortages."
+        },
+        {
+          "id": "health-credentials",
+          "source_id": "health-bill",
+          "role": "operative_bill",
+          "start": "Extrajurisdictional applicants 50 Without limiting",
+          "end": "Before making decision 51"
+        },
+        {
+          "id": "health-oversight",
+          "source_id": "health-bill",
+          "role": "operative_bill",
+          "start": "Establishment of superintendent's office 435 (1)",
+          "end": "Members of superintendent's office 436"
+        },
+        {
+          "id": "health-limits",
+          "source_id": "health-debate",
+          "role": "debate_context",
+          "start": "This legislation before us today is simply one piece in the issue of patient safety. It is not, by any means, ",
+          "end": "lenges currently putting health care staff under increasing pressure and patients at greater and serious risk."
+        },
+        {
+          "id": "health-final-vote",
+          "source_id": "health-vote",
+          "role": "vote_question",
+          "start": "BILL 36 — HEALTH PROFESSIONS AND OCCUPATIONS ACT Bill 36, Health Professions and Occupations Act, reported com",
+          "end": "ated, and as soon as we get further instructions, we’ll let you know. Question of Privilege (Speaker’s Ruling)",
+          "fragment": "#255B:1710"
+        }
+      ]
+    },
+    {
+      "id": "paid-sick-leave-2021",
+      "pillar_id": "affordability",
+      "question": "Did Yao support income protection during illness, and what scrutiny safeguard did he reject? Clause 2 creates permanent paid leave after 90 days with number set by regulation. Furstenau’s amendment required a report and legislative committee approval of that number: it did NOT propose extra days or remove the 90-day rule. Compare with the later 2025 party defence of five days, not a 2026 promise or proof that this bill itself enacted five days.",
+      "commitment": {
+        "summary": "Defend paid sick leave so workers do not have to choose between health and their paycheque (2025 party statement).",
+        "quote": "five paid sick days every year",
+        "evidence_id": "sick-platform",
+        "date": "2025-08-28",
+        "date_status": "published",
+        "scope": "party",
+        "owner": "BC NDP",
+        "kind": "position"
+      },
+      "action_ids": [
+        "political-vote-33585a8c-bc26-576d-bb61-250144203c59",
+        "political-vote-71231379-33a3-5ece-869b-b9fb038d6e9c"
+      ],
+      "evidence": [
+        {
+          "id": "sick-platform",
+          "source_id": "workers-position",
+          "role": "platform",
+          "start": "Safer, Healthier Workplaces",
+          "end": "Respecting All Workers"
+        },
+        {
+          "id": "sick-provision",
+          "source_id": "sick-bill",
+          "role": "operative_bill",
+          "start": "2 Section 49.1 is amended",
+          "end": "3 The following section is added:"
+        },
+        {
+          "id": "sick-scrutiny",
+          "source_id": "sick-debate",
+          "role": "operative_amendment",
+          "start": "S. Furstenau: Being one who likes to propose solutions when I see challenges, or ways that I think the governm",
+          "end": " p.m., when the vote on this proposed amendment will take place. Hon. H. Bains: I move that the committee rise"
+        },
+        {
+          "id": "sick-amendment-vote",
+          "source_id": "sick-vote",
+          "role": "vote_question",
+          "start": "The question is on the amendment proposed by the Leader of the Third Party to clause 2 of Bill 13, Employment ",
+          "end": " Yao The Chair: I understand that the official opposition critic has further questions on clause 2 of Bill 13.",
+          "fragment": "#74B:1820"
+        },
+        {
+          "id": "sick-clause-vote",
+          "source_id": "sick-clause-vote",
+          "role": "vote_question",
+          "start": "The question is whether clause 2 of Bill 13, Employment Standards Amendment Act (No. 2), 2021, shall pass. [6:45 p.m. - ",
+          "end": "ort and Third Reading of Bills BILL 13 — EMPLOYMENT STANDARDS AMENDMENT ACT (No. 2), 2021 Bill 13, Employment Standards ",
+          "fragment": "#75B:1850"
+        }
+      ]
+    },
+    {
+      "id": "used-car-pst-2022",
+      "pillar_id": "affordability",
+      "question": "Explain rejection of a zero-percent PST exemption for previously purchased passenger vehicles driven at least 6000km and priced below $20000, regardless of powertrain. Compare with the current broad lower-costs position. No specific campaign promise to exempt these cars exists in supplied evidence; do not manufacture a broken promise or infer opposition to all affordability measures. Preserve the minister’s undervaluation concern AND the proposer’s response that book-value rules were unchanged.",
+      "commitment": {
+        "summary": "Lower household costs (a broad current party position, not a promise of this particular used-car exemption).",
+        "quote": "lower costs",
+        "evidence_id": "cost-platform",
+        "date": "2026-10-09",
+        "date_status": "observed_at_capture",
+        "scope": "party",
+        "owner": "BC NDP",
+        "kind": "broad_position"
+      },
+      "action_ids": [
+        "political-vote-b0a85aa7-33f2-5969-81af-46528fd35a91"
+      ],
+      "evidence": [
+        {
+          "id": "cost-platform",
+          "source_id": "current-position",
+          "role": "platform",
+          "start": "Protection from rising costs – Not giving the rich tax breaks",
+          "end": "The conservative parties would give tax breaks to the wealthiest"
+        },
+        {
+          "id": "pst-amendment",
+          "source_id": "pst-debate",
+          "role": "operative_amendment",
+          "start": "(g) by adding the following subsection: (6.2) (a) In this subsection, “used passenger vehicle” means a passeng",
+          "end": " Routley Sandhu Sharma Simons Sims A. Singh Starchuk Walker Whiteside Yao Clauses 58 to 79 inclusive approved.",
+          "fragment": "#183B:1600"
+        }
+      ]
+    },
+    {
+      "id": "union-certification-2022",
+      "pillar_id": "economy",
+      "question": "Does final approval of single-step certification match the 2025 party endorsement? Explain automatic certification at at least 55% membership, remaining ballot pathway at 45%-under55%, and statutory board discretion. Address employer intimidation versus secret-ballot safeguards without treating either argument as proven coercion or employment outcomes.",
+      "commitment": {
+        "summary": "Make joining a union easier through single-step certification (2025 party statement).",
+        "quote": "single-step certification",
+        "evidence_id": "union-platform",
+        "date": "2025-08-28",
+        "date_status": "published",
+        "scope": "party",
+        "owner": "BC NDP",
+        "kind": "position"
+      },
+      "action_ids": [
+        "political-vote-38640f49-2ada-5361-8598-ec9a42d6f5a3"
+      ],
+      "evidence": [
+        {
+          "id": "union-platform",
+          "source_id": "workers-position",
+          "role": "platform",
+          "start": "Supporting Union Jobs",
+          "end": "Safer, Healthier Workplaces"
+        },
+        {
+          "id": "union-provision",
+          "source_id": "union-bill",
+          "role": "operative_bill",
+          "start": "4 The following section is added: Certification 23",
+          "end": "6 The following section is added:"
+        },
+        {
+          "id": "union-counterargument",
+          "source_id": "union-debate",
+          "role": "debate_context",
+          "start": "If 55 percent of union cards are signed, there’s an automatic certification that takes place. The presen",
+          "end": "secret ballot, where that decision can be confirmed by the workers, free of any coercion or any pressure"
+        },
+        {
+          "id": "union-final-vote",
+          "source_id": "union-vote",
+          "role": "vote_question",
+          "start": "BILL 10 — LABOUR RELATIONS CODE AMENDMENT ACT, 2022 Mr. Speaker: The question is third reading of Bill 10. Div",
+          "end": "s Paton Ross Rustad Shypitka Stewart Stone Sturdy Tegart Wat Hon. M. Farnworth moved adjournment of the House.",
+          "fragment": "#210B:1825"
+        }
+      ]
+    },
+    {
+      "id": "platform-workers-2023",
+      "pillar_id": "economy",
+      "question": "What does unanimous SECOND READING of the platform-worker framework reveal? Use the introduced text, employee/worker deeming for prescribed work, scope and commencement left to regulations. The 2025 party claim of better wages is not an independently measured outcome. Do not claim this vote guaranteed all benefits, paid waiting time, a particular wage or final passage.",
+      "commitment": {
+        "summary": "Support better wages and protections for app-based gig workers (2025 party statement).",
+        "quote": "better wages and protections",
+        "evidence_id": "gig-platform",
+        "date": "2025-08-28",
+        "date_status": "published",
+        "scope": "party",
+        "owner": "BC NDP",
+        "kind": "position"
+      },
+      "action_ids": [
+        "political-vote-672dc2fa-2756-5a6d-aab3-d0abbf88fbac"
+      ],
+      "evidence": [
+        {
+          "id": "gig-platform",
+          "source_id": "workers-position",
+          "role": "platform",
+          "start": "Respecting All Workers",
+          "end": "Looking to the future, and moving forward together."
+        },
+        {
+          "id": "gig-employment",
+          "source_id": "gig-bill",
+          "role": "operative_bill",
+          "start": "1 Section 1 (1) of the Employment Standards Act",
+          "end": "3 Section 76 (3) is amended"
+        },
+        {
+          "id": "gig-compensation",
+          "source_id": "gig-bill",
+          "role": "operative_bill",
+          "start": "8 Section 1 of the Workers Compensation Act",
+          "end": "11 The provisions of this Act"
+        },
+        {
+          "id": "gig-counterargument",
+          "source_id": "gig-debate",
+          "role": "debate_context",
+          "start": "The decision to regulate the status and rights of online platform workers and operators through regulation rat",
+          "end": "ny of these firms if they had less ability to choose the days or times that they worked. This is about choice."
+        },
+        {
+          "id": "gig-vote",
+          "source_id": "gig-debate",
+          "role": "vote_question",
+          "start": "Mr. Speaker: Members, the question is second reading o",
+          "end": "reading of Bill 48 approved unanimously on a division.",
+          "fragment": "#366B:1610"
+        }
+      ]
+    },
+    {
+      "id": "public-drug-use-2023",
+      "pillar_id": "public_safety",
+      "question": "Does approval of public-consumption restrictions illustrate an enforcement choice alongside the party’s current enforcement-and-services position? Identify offence as failure to comply with a police direction, not simple possession or all drug use. Explain availability-of-safe-spaces counterargument. State the 2024 minister confirmed this particular Act never came into force and was repealed; do not describe it as current law or infer successful treatment or community-safety outcomes. Final vote 77-4 is broadly bipartisan, not distinctive personal ideology.",
+      "commitment": {
+        "summary": "Strengthen enforcement while addressing the underlying causes of crime (current broad party position).",
+        "quote": "strengthening enforcement to fight crime",
+        "evidence_id": "safety-platform",
+        "date": "2026-10-09",
+        "date_status": "observed_at_capture",
+        "scope": "party",
+        "owner": "BC NDP",
+        "kind": "broad_position"
+      },
+      "action_ids": [
+        "political-vote-dbb02ece-6755-5ab8-ab03-1a86aa01fc52"
+      ],
+      "evidence": [
+        {
+          "id": "safety-platform",
+          "source_id": "current-position",
+          "role": "platform",
+          "start": "Safe, inclusive communities – Not ignoring gun laws and cutting victim services",
+          "end": "The conservative parties’ cuts would mean fewer resources"
+        },
+        {
+          "id": "public-provision",
+          "source_id": "public-bill",
+          "role": "operative_bill",
+          "start": "Consumption of illegal substances 3 (1)",
+          "end": "Power to make regulations 9"
+        },
+        {
+          "id": "public-counterargument",
+          "source_id": "public-debate",
+          "role": "debate_context",
+          "start": "S. Furstenau: I rise to speak to Bill 34, Restricting Public Consumption of Illegal Substances Act. I’ve liste",
+          "end": "ere it to be so simple. There just simply isn’t that kind of infrastructure that exists in B.C. at this point.",
+          "fragment": "#344B:1735"
+        },
+        {
+          "id": "public-question",
+          "source_id": "public-vote",
+          "role": "vote_question",
+          "start": "Hon. L. Beare: I move third reading for Bill 34, Restricting Public Consumption of Illegal Substances Act. Mr.",
+          "end": "gh Starchuk Stewart Stone Sturdy Sturko Tegart Walker Wat Whiteside Yao NAYS — 4 Banman Furstenau Olsen Rustad",
+          "fragment": "#359B:1440"
+        },
+        {
+          "id": "public-outcome",
+          "source_id": "public-outcome",
+          "role": "implementation_context",
+          "start": "Garry Begg, Minister of Public Safety and Solicitor General, has released the following statement in response ",
+          "end": "e available to enforce the rules and help to connect individuals to support services.” A backgrounder follows."
+        }
+      ]
+    },
+    {
+      "id": "zev-target-2023",
+      "pillar_id": "climate",
+      "question": "Explain Yao’s final vote for the 2023 accelerated ZEV sales mandate and compare it to current broad EV-promotion messaging. The 2023 law targeted 100% new light-duty sales by 2035, not banning existing cars or requiring everyone to own an EV. Crucially the April2026 government announcement AND current captured consolidated Act soften the 2035 target to75%; Yao has no indexed vote on that revision. Do not pretend his past vote establishes support for the current75% target or all climate/LNG policy. Note rural cost and readiness arguments as arguments, not established harms. Inconclusive on alignment with the precise present policy is appropriate.",
+      "commitment": {
+        "summary": "Support greener personal choices, including EV charging (a broad current party position).",
+        "quote": "green choices",
+        "evidence_id": "climate-platform",
+        "date": "2026-10-09",
+        "date_status": "observed_at_capture",
+        "scope": "party",
+        "owner": "BC NDP",
+        "kind": "broad_position"
+      },
+      "action_ids": [
+        "political-vote-8baec52f-ac9a-5bd3-9760-18a7e00507fe"
+      ],
+      "evidence": [
+        {
+          "id": "climate-platform",
+          "source_id": "current-position",
+          "role": "platform",
+          "start": "Protecting our air, land, and water – Not tearing up environmental protections",
+          "end": "The risk is the conservative parties’ approach."
+        },
+        {
+          "id": "climate-provision",
+          "source_id": "climate-bill",
+          "role": "operative_bill",
+          "start": "5 Section 6 is repealed",
+          "end": "10 Section 9 is amended"
+        },
+        {
+          "id": "climate-targets",
+          "source_id": "climate-announcement",
+          "role": "policy_context",
+          "start": "Amendments to the Zero-Emission Vehicles Act implement accelerated sales targets for new light-duty ",
+          "end": "f light-duty (cars and trucks) vehicle sales in the province are ZEVs, 90% by 2030 and 100% by 2035."
+        },
+        {
+          "id": "climate-revision",
+          "source_id": "climate-revision",
+          "role": "policy_update",
+          "start": "The specific amendments that are being made to the act are: reducing the 2035 ZEV sales target from 100% to 75",
+          "end": "g to reduce air pollution and emissions from B.C.’s largest emitting sector. Expanding charging infrastructure"
+        },
+        {
+          "id": "climate-current-law",
+          "source_id": "climate-base",
+          "role": "operative_bill",
+          "start": "Provincial target 7 The following target",
+          "end": "Provincial target report 8"
+        },
+        {
+          "id": "climate-counterargument",
+          "source_id": "climate-debate",
+          "role": "debate_context",
+          "start": "We heard some of my colleagues earlier talk about how this is going to impact people’s pocketbooks. These vehi",
+          "end": "You will not be able to purchase in the province of British Columbia in a few short years. It is shortsighted."
+        },
+        {
+          "id": "climate-vote",
+          "source_id": "climate-vote",
+          "role": "vote_question",
+          "start": "Bill 39, Zero-Emission Vehicles Amendment Act, 2023, reported complete without amendment, read a third time and passed o",
+          "end": "d Kyllo Lee Letnick Merrifield Milobar Morris Paton Rustad Shypitka Stewart Stone Sturdy Tegart Wat ",
+          "fragment": "#361B:1340"
+        }
+      ]
+    }
+  ],
+  "unassessed_commitments": [
+    {
+      "id": "unsold-condo-tax-2026",
+      "summary": "Introduce a new tax on finished condos left unsold for more than a year.",
+      "date": "2026-09-25",
+      "scope": "party",
+      "owner": "BC NDP",
+      "source_id": "new-taxes",
+      "quote": "introduce a new Unsold Condo Tax",
+      "reason": "This is a new 2026 promise. The collected Yao votes end in April 2024; they cannot establish delivery of it.",
+      "date_status": "published",
+      "pillar_id": "housing"
+    },
+    {
+      "id": "diagnostics-waitlists-2026",
+      "pillar_id": "healthcare",
+      "source_id": "wait-position",
+      "scope": "party",
+      "owner": "BC NDP",
+      "summary": "Coordinate regional surgical waitlists and add eight MRI machines and ten CT scanners.",
+      "quote": "eight new MRI machines and 10 CT scanners",
+      "date": "2026-10-06",
+      "date_status": "published",
+      "reason": "The reviewed regulatory vote does not approve these facilities or demonstrate shorter waits. These are new promises after the collected voting record ends in April 2024."
+    },
+    {
+      "id": "gas-costs-2026",
+      "pillar_id": "affordability",
+      "source_id": "gas-position",
+      "scope": "party",
+      "owner": "BC NDP",
+      "summary": "Suspend part of the gas tax and introduce pricing rules to lower fuel costs.",
+      "quote": "suspend a portion of the provincial gas tax",
+      "date": "2026-10-01",
+      "date_status": "published",
+      "reason": "The used-car tax vote concerns a different tax and an earlier period. It cannot establish delivery of this new gas-price plan or its advertised savings."
+    },
+    {
+      "id": "domestic-procurement-2026",
+      "pillar_id": "economy",
+      "source_id": "buy-position",
+      "scope": "party",
+      "owner": "BC NDP",
+      "summary": "Prefer B.C. and Canadian goods and materials on public projects where viable.",
+      "quote": "B.C. and Canadian-made goods and materials",
+      "date": "2026-09-24",
+      "date_status": "published",
+      "reason": "The labour votes concern worker rights, not procurement or the current trade response. No matched action in this collected record establishes delivery."
+    },
+    {
+      "id": "involuntary-care-capacity",
+      "pillar_id": "public_safety",
+      "source_id": "current-position",
+      "scope": "party",
+      "owner": "BC NDP",
+      "summary": "Expand involuntary-care facilities for people in severe crisis.",
+      "quote": "Building new involuntary care facilities across B.C.",
+      "date": "2026-10-09",
+      "date_status": "observed_at_capture",
+      "reason": "The public-consumption vote regulates places and police directions. It does not establish treatment-bed capacity, clinical benefit or safeguards for involuntary care."
+    },
+    {
+      "id": "lng-net-zero-ready-2026",
+      "pillar_id": "climate",
+      "source_id": "lng-position",
+      "scope": "party",
+      "owner": "BC NDP",
+      "summary": "Support LNG expansion while requiring new projects to be net-zero-ready by 2030.",
+      "quote": "new LNG projects must be net-zero-ready by 2030",
+      "date": "2026-09-28",
+      "date_status": "published",
+      "reason": "The EV sales vote concerns transport. It does not establish a stance on LNG approvals, the meaning of net-zero-ready, or project emissions outcomes."
+    }
+  ],
+  "research_notes": [
+    {
+      "lead": "Finance Statutes Amendment Act, 2020 (Bill 3)",
+      "disposition": "not_selected",
+      "reason": "Operative text changes budget reporting and home-owner grant administration; it does not establish the separate 2020 recovery-benefit promise. Do not infer benefits from a finance-bill title."
+    },
+    {
+      "lead": "Package-wide budgets, supply and ministry estimates",
+      "disposition": "not_selected",
+      "reason": "Cannot isolate staffing, treatment, childcare or household-benefit commitments."
+    },
+    {
+      "lead": "Health Professions and Occupations Act, 2022 (Bill 36)",
+      "disposition": "selected_narrowly",
+      "reason": "Section50 directly addresses extrajurisdictional credentials; it does not create residency seats or establish shorter wait times."
+    },
+    {
+      "lead": "Employment Standards Amendment Act, 2021 (Bill 13), Furstenau amendment",
+      "disposition": "selected",
+      "reason": "Original May17 wording concerns committee scrutiny of regulations, not extra sick days. Deferred May18 vote alone omits this operative text."
+    },
+    {
+      "lead": "Other votes and policy areas",
+      "disposition": "not_assessed",
+      "reason": "Omission is not proof of weak signal, alignment or absence of work."
+    }
+  ]
+}

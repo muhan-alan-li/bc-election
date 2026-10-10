@@ -10,3 +10,6 @@ ingestion/storage/
 client/src/data/
 constituency-finder/bin/
 bc-election-history.bundle
+.env
+.env.*
+!.env.example

@@ -365,3 +365,146 @@ button:disabled { opacity: .45; cursor: default; }
 @media (max-width: 600px) { .platform-overview, .policy-grid { grid-template-columns: 1fr; } .platform-overview { gap: 16px; } .policy-dialog { padding: 22px; width: calc(100% - 28px); max-height: calc(100dvh - 28px); } .policy-summary { font-size: 19px; } }
 
 .policy-citations { display: inline-flex; gap: 4px; font-size: .8em; vertical-align: super; line-height: 1; white-space: nowrap; }
+
+/* Candidate political records: a list with source context alongside. */
+.candidate-profile-intro { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; font-size: 15px; color: var(--ink2); }
+.candidate-profile-intro > a { flex-shrink: 0; font-size: 14px; }
+.candidate-profile .office-history { padding: 16px 20px; margin-bottom: 24px; background: var(--panel); border-left: 3px solid var(--accent); }
+.candidate-profile .office-history p { margin-bottom: 0; }
+.record-summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--line2); margin-bottom: 24px; }
+.record-summary > div { display: flex; flex-direction: column; padding: 20px 24px; min-width: 0; }
+.record-summary > div + div { border-left: 1px solid var(--line); }
+.record-summary strong { font-size: 34px; font-weight: 650; line-height: 1.2; letter-spacing: -.03em; }
+.record-summary span { font-size: 15px; font-weight: 650; margin-top: 6px; }
+.record-summary small { font-size: 12px; color: var(--ink3); margin-top: 4px; }
+.record-controls { display: grid; grid-template-columns: 1fr 1fr 1.5fr; gap: 16px; padding: 20px; background: var(--panel); border: 1px solid var(--line); margin-bottom: 30px; }
+.political-layout { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(280px, 1fr); gap: 32px; align-items: start; }
+.record-main, .platform-evidence { min-width: 0; }
+.record-list-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+.record-list-heading h2, .platform-evidence h2 { font-size: 24px; line-height: 1.3; }
+.record-list-heading > span { font-size: 12px; color: var(--ink3); white-space: nowrap; }
+.record-review, .record-intro { font-size: 13px; color: var(--ink3); line-height: 1.6; margin: 10px 0 16px; }
+.record-results { font-size: 13px; color: var(--ink3); margin: 16px 0 12px; }
+.action-list { border-top: 1px solid var(--line2); }
+.action-record { padding: 22px 0; border-bottom: 1px solid var(--line); }
+.action-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; font-size: 12px; color: var(--ink3); }
+.action-meta > span:first-child { font-weight: 700; }
+.vote-position { margin-left: auto; padding: 2px 10px; border: 1px solid var(--line2); border-radius: 3px; color: var(--ink2); font-weight: 700; }
+.vote-position.vote-yea { background: #edf4ee; border-color: #cfddd0; color: #31593b; }
+.vote-position.vote-nay { background: #f6eeee; border-color: #e2d1d1; color: #854242; }
+.action-record .action-title { font-size: 19px; line-height: 1.45; letter-spacing: -.015em; text-transform: none; color: var(--ink); margin: 12px 0 6px; font-weight: 650; }
+.action-stage { color: var(--ink2); font-size: 14px; margin-bottom: 12px; }
+.record-topics { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+.record-topics span { font-size: 11px; color: var(--ink3); padding: 2px 8px; background: var(--panel); border: 1px solid var(--line); }
+.action-sources { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 13px; margin: 14px 0; }
+.action-evidence { border-top: 1px dashed var(--line); padding-top: 8px; }
+.action-evidence summary, .policy-passage summary { font-size: 13px; }
+.action-evidence dl { font-size: 14px; margin: 16px 0; }
+.action-evidence dl > div { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 12px; margin-block: 12px; }
+.action-evidence dt { color: var(--ink3); }
+.action-evidence dd { margin: 0; overflow-wrap: anywhere; }
+.source-excerpt { white-space: pre-wrap; overflow-wrap: anywhere; padding: 12px 16px; margin: 12px 0; background: var(--panel); border-left: 3px solid var(--line2); font-size: 13px; max-height: 360px; overflow-y: auto; }
+.more-records { margin-top: 20px; }
+.platform-evidence { border: 1px solid var(--line2); border-top: 3px solid var(--accent); padding: 22px; }
+.evidence-scopes { display: flex; flex-wrap: wrap; gap: 8px; margin-block: 16px; }
+.evidence-scopes button { padding: 7px 10px; background: white; color: var(--ink2); font-size: 12px; }
+.evidence-scopes button[aria-pressed="true"] { color: var(--accent); background: #edf2f6; border-color: var(--accent); font-weight: 700; }
+.policy-passage { border-top: 1px solid var(--line); padding: 16px 0; }
+.passage-kind { font-size: 11px; font-weight: 700; color: var(--ink3); margin-bottom: 8px; }
+.policy-passage > blockquote { margin: 0 0 12px; font-size: 14px; line-height: 1.65; overflow-wrap: anywhere; }
+.policy-passage > a { font-size: 12px; overflow-wrap: anywhere; }
+.policy-passage > details { margin-top: 10px; }
+.alignment-status { background: var(--panel); padding: 16px; margin-top: 20px; font-size: 13px; color: var(--ink2); }
+.alignment-status p { margin: 6px 0 0; }
+.record-empty-panel { padding: 28px; border: 1px dashed var(--line2); background: var(--panel); }
+.record-empty-panel h3 { text-transform: none; letter-spacing: 0; font-size: 18px; color: var(--ink); margin: 0 0 10px; }
+.record-empty-panel p, .record-empty { font-size: 14px; color: var(--ink3); }
+.research-coverage { margin-top: 24px; border-top: 1px solid var(--line); padding-top: 14px; }
+.research-coverage p { font-size: 14px; color: var(--ink2); margin: 12px 0; }
+.candidate-disclosures { margin-top: 36px; border-top: 1px solid var(--line2); padding-top: 20px; }
+.candidate-disclosures > summary { font-size: 18px; color: var(--ink); }
+.record-load-error { border-left: 3px solid var(--accent); padding: 16px; background: var(--panel); margin-bottom: 20px; font-size: 14px; }
+@media (max-width: 850px) { .political-layout { grid-template-columns: 1fr; gap: 28px; } .record-controls { grid-template-columns: 1fr 1fr; } .record-controls > div:last-child { grid-column: 1 / -1; } }
+@media (max-width: 550px) { .record-summary { grid-template-columns: 1fr; } .record-summary > div { padding: 16px 20px; } .record-summary > div + div { border-left: 0; border-top: 1px solid var(--line); } .record-summary strong { font-size: 28px; } .record-controls { grid-template-columns: 1fr; padding: 16px; } .candidate-profile-intro { flex-direction: column; gap: 0; } .action-evidence dl > div { grid-template-columns: 1fr; gap: 3px; } .platform-evidence { padding: 18px; } }
+
+/* Cited issue patterns */
+.issue-patterns { border: 1px solid var(--line2); padding: 24px; margin-bottom: 32px; }
+.issue-patterns h2 { font-size: 24px; margin: 0; }
+.issue-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; }
+.analysis-label, .issue-topic { font-size: 12px; color: var(--ink3); }
+.analysis-label { border: 1px solid var(--line); padding: 4px 9px; }
+.issue-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.issue-card { border: 1px solid var(--line); padding: 18px; min-width: 0; }
+.issue-card h3 { text-transform: none; letter-spacing: 0; color: var(--ink); font-size: 17px; line-height: 1.5; margin: 12px 0 16px; }
+.issue-status { font-size: 12px; color: var(--ink2); }
+.status-evidence_suggests_support, .status-evidence_suggests_opposition { color: var(--accent); }
+.issue-counts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin: 0; }
+.issue-counts dt { font-size: 11px; color: var(--ink3); }
+.issue-counts dd { font-size: 24px; margin: 3px 0 0; }
+.issue-date { font-size: 12px; color: var(--ink3); margin: 8px 0 12px; }
+.issue-evidence { border-top: 1px dashed var(--line); padding-top: 12px; margin-top: 16px; }
+.issue-evidence summary { font-size: 13px; }
+.issue-evidence-entry { border-top: 1px solid var(--line); margin-top: 16px; padding-top: 12px; font-size: 13px; overflow-wrap: anywhere; }
+.issue-evidence-entry p { margin: 8px 0; }
+.issue-empty, .issue-alignment { font-size: 13px; line-height: 1.6; color: var(--ink2); }
+.issue-alignment { margin: 20px 0 0; padding-top: 16px; border-top: 1px solid var(--line); }
+@media (max-width: 850px) { .issue-grid { grid-template-columns: 1fr; } }
+@media (max-width: 550px) { .issue-patterns { padding: 16px; } .issue-card { padding: 14px; } .issue-counts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Commitment comparisons: conclusions first, evidence on demand. */
+.platform-alignment { max-width: 900px; margin: 1.5rem auto; }
+.alignment-eyebrow { color: var(--color-muted, #52625b); font-size: .8rem; font-weight: 650; letter-spacing: .06em; text-transform: uppercase; }
+.alignment-intro h2 { margin: .35rem 0 1rem; font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.2; }
+.alignment-takeaway { font-size: 1.1rem; line-height: 1.65; max-width: 75ch; }
+.alignment-scope { color: #52625b; font-size: .9rem; line-height: 1.6; }
+.alignment-findings { display: grid; gap: 1.4rem; margin: 1.8rem 0; }
+.alignment-finding { border: 1px solid #d8e0da; border-radius: 12px; background: #fff; padding: 1.5rem; }
+.alignment-finding-heading h3 { font-size: 1.35rem; line-height: 1.35; margin: .75rem 0 1rem; }
+.alignment-status { display: inline-block; font-size: .76rem; font-weight: 650; border-radius: 5px; padding: .3rem .6rem; background: #edf0ef; color: #394b44; }
+.alignment-status-supports_commitment, .alignment-status-consistent_with_later_position { background: #eaf3ec; color: #25593e; }
+.alignment-status-potential_tension { background: #f7eee0; color: #745323; }
+.alignment-promise { border-left: 3px solid #d1ded5; padding: .2rem 0 .2rem 1rem; margin-bottom: 1.2rem; }
+.alignment-label { color: #52625b; font-size: .78rem; }
+.alignment-promise p { margin: .35rem 0; font-weight: 550; }
+.alignment-actions { list-style: none; padding: 0; display: grid; gap: .8rem; }
+.alignment-actions li { padding: .75rem 1rem; background: #f5f7f5; border-radius: 6px; line-height: 1.5; }
+.alignment-actions li span { display: block; font-size: .8rem; color: #52625b; margin: .25rem 0; }
+.alignment-effect, .alignment-assessment { line-height: 1.7; }
+.alignment-assessment { font-weight: 550; }
+.alignment-context { border-top: 1px solid #e2e7e3; padding-top: .9rem; margin-top: 1rem; font-size: .9rem; line-height: 1.65; }
+.alignment-context summary, .alignment-method summary, .alignment-archive summary { cursor: pointer; font-weight: 550; }
+.alignment-context figure { margin: 1rem 0; }
+.alignment-context blockquote { margin: 0 0 .3rem; border-left: 2px solid #d1ded5; padding: .1rem .8rem; color: #52625b; }
+.alignment-context figcaption { font-size: .8rem; }
+.alignment-unassessed { background: #f5f7f5; border-radius: 8px; padding: 1.2rem 1.5rem; line-height: 1.65; }
+.alignment-unassessed h3 { margin-top: 0; font-size: 1rem; }
+.alignment-unassessed p { margin-bottom: 0; font-size: .9rem; }
+.alignment-method, .alignment-archive { margin-top: 1.2rem; padding: 1rem 0; border-top: 1px solid #d8e0da; line-height: 1.65; }
+.alignment-method p { color: #52625b; font-size: .9rem; }
+.alignment-archive label { display: block; margin: 1rem 0 .35rem; font-size: .9rem; }
+.alignment-archive input { width: 100%; max-width: 480px; box-sizing: border-box; padding: .65rem .8rem; border: 1px solid #c9d5cd; border-radius: 6px; }
+@media (max-width: 600px) {
+    .alignment-finding { padding: 1rem; }
+    .alignment-takeaway { font-size: 1rem; }
+    .alignment-actions li { padding: .65rem .75rem; }
+    .alignment-unassessed { padding: 1rem; }
+}
+.alignment-effect, .alignment-assessment { margin-top: .8rem; }
+.alignment-context p + p, .alignment-method p { margin-top: .8rem; }
+.alignment-scope { margin-top: .8rem; }
+.candidate-records .office-history.office-history-compact { background: transparent; border: 0; padding: 0; margin: 0 auto; max-width: 900px; color: var(--ink3); }
+.platform-alignment .alignment-finding-heading h3 { text-transform: none; letter-spacing: normal; color: var(--ink); }
+
+.alignment-tabs { display: flex; flex-wrap: wrap; gap: .45rem; margin: 1.4rem 0; }
+.alignment-tabs button { padding: .65rem .85rem; border: 1px solid #ccd7cf; border-radius: .4rem; background: #fff; color: var(--ink); font: inherit; cursor: pointer; }
+.alignment-tabs button[aria-selected="true"] { background: #e6efe8; border-color: #53755d; font-weight: 650; }
+.alignment-tabs button:focus-visible, .platform-alignment [role="tabpanel"]:focus-visible { outline: 3px solid #53755d; outline-offset: 3px; }
+.alignment-pillar-intro { margin: 1.2rem 0; line-height: 1.65; }
+.platform-alignment .alignment-pillar-intro h3, .platform-alignment .alignment-empty h3 { text-transform: none; letter-spacing: normal; color: var(--ink); }
+.alignment-pillar-intro > p:first-of-type { color: #52625b; }
+.alignment-empty { padding: 1.3rem; background: #f5f7f5; border: 1px solid #d8e0da; border-radius: .5rem; line-height: 1.65; }
+.platform-alignment [role="tabpanel"][hidden] { display: none; }
+@media (max-width: 600px) {
+    .alignment-tabs { flex-wrap: nowrap; overflow-x: auto; padding: .25rem .2rem .65rem; }
+    .alignment-tabs button { flex: 0 0 auto; white-space: nowrap; }
+}

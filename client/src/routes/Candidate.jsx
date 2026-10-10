@@ -1,8 +1,8 @@
-import { partyName } from '../helpers/candidates.js';
 import { CandidateRecords } from '../components/candidate/CandidateRecords.jsx';
+import { usePoliticalProfile } from '../hooks/usePoliticalProfile.js';
 
 export function Candidate({ candidate, dataset }) {
-    const party = partyName(candidate, dataset);
+    const research = usePoliticalProfile(candidate, dataset);
 
     return (
         <>
@@ -10,7 +10,7 @@ export function Candidate({ candidate, dataset }) {
                 key={candidate.id}
                 candidate={candidate}
                 dataset={dataset}
-                party={party}
+                research={research}
             />
         </>
     );

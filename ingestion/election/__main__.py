@@ -23,6 +23,21 @@ def main():
     commands.add_parser("build-finder", help="Import free BC postal locations and official boundaries")
     commands.add_parser("list-districts", help="Read constituency names/codes from the official roster")
     commands.add_parser('migrate-evidence', help='Copy legacy published platform research into normalized storage')
+    political = commands.add_parser('collect-political-records', help='Collect Assembly transcript evidence for all candidate voting records')
+    political.add_argument('--workers', type=int, choices=range(1, 9), default=4)
+    commands.add_parser('build-political-profiles', help='Organize existing actions and platform evidence by topic, offline')
+    for name in ('collect-alignment-evidence', 'analyze-platform-alignment', 'build-platform-alignment'):
+        alignment = commands.add_parser(name, help='Collect, draft or publish selective commitment comparisons')
+        alignment.add_argument('--pilot', type=Path, default=base / 'election/analysis/pilots/henry-yao.json')
+        alignment.add_argument('--review', type=Path, help='Source-checked editorial review, required for build')
+        alignment.add_argument('--max-calls', type=int, default=4)
+        if name == 'analyze-platform-alignment':
+            from .analysis.alignment import PILLAR_IDS
+            alignment.add_argument('--pillar', choices=sorted(PILLAR_IDS), help='Draft only cases in this pillar; publication still checks the complete review')
+    for name in ('estimate-political-analysis', 'analyze-political-records'):
+        analysis = commands.add_parser(name, help='Prepare shared decisions and estimate usage' if name.startswith('estimate') else 'Interpret decisions and summarize candidate issue patterns')
+        analysis.add_argument('--district', help='District code; defaults to all candidates')
+        analysis.add_argument('--max-calls', type=int, default=20, help='Maximum new model calls; cached interpretations are reused')
     for name in ('curate', 'polish', 'build-data'):
         stage = commands.add_parser(name, help={'curate': 'Apply reviewed registries to normalized evidence, offline',
                                    'polish': 'Build compact client files from curated snapshots, offline',
@@ -68,7 +83,55 @@ def main():
             print("Valid constituency dataset")
         else:
             config = read_json(args.config)
-            if args.command == 'migrate-evidence':
+            if args.command in {'collect-alignment-evidence', 'analyze-platform-alignment', 'build-platform-alignment'}:
+                from .analysis.alignment import run as align, build_reviewed
+                from .analysis.service import load_env
+                manifest = read_json(args.pilot)
+                if args.command == 'build-platform-alignment':
+                    if not args.review:
+                        parser.error('--review is required for source-checked publication')
+                    dossier = build_reviewed(args.storage, manifest, read_json(args.review))
+                    from .political import build_profiles, polish_profiles
+                    build_profiles(args.storage, manifest['election_id'])
+                    polish_profiles(args.storage, manifest['election_id'])
+                    summary = {'findings': len(dossier['findings']), 'coverage': dossier['coverage']}
+                else:
+                    if args.command == 'analyze-platform-alignment' and not args.offline and args.max_calls:
+                        load_env(base.parent / '.env')
+                    summary = align(args.storage, config, manifest, pillar=getattr(args, 'pillar', None), max_calls=args.max_calls,
+                        offline=args.offline, refresh=args.refresh, collect_only=args.command == 'collect-alignment-evidence')
+                print(json.dumps(summary, indent=2))
+                return int(bool(summary.get('errors')))
+            elif args.command in {'estimate-political-analysis', 'analyze-political-records'}:
+                from .analysis.service import prepare, estimate, provider_from_config, run as analyze, load_env
+                provider = provider_from_config(config)
+                election_id = config['election']['id']
+                if args.command == 'estimate-political-analysis':
+                    _, jobs, _ = prepare(args.storage, election_id, district=args.district)
+                    summary = estimate(jobs, provider, args.storage, election_id, config.get('political_analysis', {}).get('pricing', {'input_per_million': .30, 'output_per_million': 1.20}))
+                else:
+                    if not args.offline and args.max_calls:
+                        load_env(base.parent / '.env')
+                    summary = analyze(args.storage, config, district=args.district, provider=provider,
+                                      max_calls=args.max_calls, offline=args.offline)
+                    from .political import build_profiles, polish_profiles
+                    build_profiles(args.storage, election_id)
+                    polish_profiles(args.storage, election_id)
+                print(json.dumps(summary, indent=2))
+                return int(bool(summary.get('errors')))
+            elif args.command in {'collect-political-records', 'build-political-profiles'}:
+                from .political import collect_transcripts, build_profiles, polish_profiles
+                election_id = config['election']['id']
+                if args.command == 'collect-political-records':
+                    collect_transcripts(args.storage, election_id, offline=args.offline,
+                                        refresh=args.refresh, workers=args.workers,
+                                        raw_root=temporary.name if temporary else None)
+                summary = build_profiles(args.storage, election_id)
+                paths = polish_profiles(args.storage, election_id)
+                print(json.dumps(summary, indent=2))
+                print(f'Polished {len(paths)} political profiles')
+                return int(bool(summary['transcript_errors']))
+            elif args.command == 'migrate-evidence':
                 paths = migrate_evidence(args.storage, config['election']['id'])
                 print(f'Migrated {len(paths)} legacy research files')
             elif args.command in {'curate', 'polish', 'build-data'}:

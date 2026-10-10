@@ -1,0 +1,369 @@
+{
+  "candidate_id": "candidacy-ad2a2831-a961-58a4-b953-9f451113775b",
+  "review_status": "source_checked",
+  "reviewer": "codex_source_review",
+  "reviewed_at": "2026-10-09",
+  "takeaway": "Specific votes show support for housing reforms, paid leave, union certification, gig-worker protections and stronger historical EV targets, alongside rejected safeguards and tax relief. Current healthcare, treatment, trade and climate promises remain only partly answerable from this earlier record.",
+  "findings": {
+    "rent-freeze-2021": {
+      "input_hash": "f21f7eaa421b5dd72563107d2d93714107ac27cf28ad5bc16e7d8bf8b66be075",
+      "result": {
+        "case_id": "rent-freeze-2021",
+        "status": "supports_commitment",
+        "headline": "Supported the promised 2021 rent freeze",
+        "policy_effect": "Yao voted for second reading of Bill 7. Its rent-increase provision invalidated specified annual increase notices taking effect before January 1, 2022, extending the freeze for tenancies covered by the Residential Tenancy Act.",
+        "assessment": "This is direct legislative support for the BC NDP’s October 2020 rent-freeze promise. It is a narrow finding: second reading approved the bill’s principle, and the vote was unanimous. It shows support for this measure, but offers little evidence that distinguishes Yao from other MLAs.",
+        "counterargument": "The freeze did not cover student housing outside the Residential Tenancy Act. Supporting this bill also does not establish delivery of the separate $400 renter rebate or the promised permanent inflation cap.",
+        "limits": "This comparison establishes a recorded vote for the proposed freeze, not Yao’s personal authorship, final enactment, implementation or the fulfillment of every renter promise.",
+        "citations": [
+          {
+            "evidence_id": "rent-promise",
+            "quote": "will freeze rents to the end of 2021"
+          },
+          {
+            "evidence_id": "rent-provision",
+            "quote": "before January 1, 2022."
+          },
+          {
+            "evidence_id": "rent-vote",
+            "quote": "Second reading of Bill 7 approved unanimously on a division."
+          },
+          {
+            "evidence_id": "rent-scope",
+            "quote": "Under this bill and under this freeze, there is no student housing rent freeze."
+          }
+        ]
+      }
+    },
+    "short-term-rentals-2023": {
+      "input_hash": "85b02c952446af24fc09c77296c5558d54b620e96d1b3641f7f9f7b5f5e05c56",
+      "result": {
+        "case_id": "short-term-rentals-2023",
+        "status": "consistent_with_later_position",
+        "headline": "Backed principal-residence limits on short-term rentals",
+        "policy_effect": "Yao voted against allowing an additional short-term rental in a property that was not a primary residence, then voted for final passage of Bill 35. In covered areas, the bill limited short-term rentals to the host’s principal residence and, subject to regulations, one associated secondary suite or accessory dwelling.",
+        "assessment": "The amendment vote identifies a specific choice within the broader housing policy: keep the tighter principal-residence rule instead of allowing an additional investment property. Both votes are consistent with the BC NDP’s September 2026 defence of short-term rental restrictions. They do not establish delivery of a later promise or prove rents fell because of his vote.",
+        "counterargument": "Supporters of the amendment argued that people who could not afford a house with a secondary suite were disadvantaged by the narrower rule. They also raised concerns about student accommodation and tourism. These were competing policy arguments, not demonstrated effects or Yao’s stated reasons.",
+        "limits": "The two votes concern one bill, not two independent tests of a recurring stance. Exceptions and regulation-making powers remain. The record does not establish Yao’s motives, enforcement success or effects on rental prices.",
+        "citations": [
+          {
+            "evidence_id": "str-position",
+            "quote": "gut short term rental restrictions"
+          },
+          {
+            "evidence_id": "str-provision",
+            "quote": "in the property host's principal residence"
+          },
+          {
+            "evidence_id": "str-amendment",
+            "quote": "a residential property that is not a primary residence"
+          },
+          {
+            "evidence_id": "str-amendment-vote",
+            "quote": "Amendment negatived on the following division:"
+          },
+          {
+            "evidence_id": "str-final-vote",
+            "quote": "read a third time and passed on the following division:"
+          }
+        ]
+      }
+    },
+    "small-scale-housing-2023": {
+      "input_hash": "b0e94e1d2bb1152fe1cbd9babb5bce6df21502697a046746039e6f55a5843b29",
+      "result": {
+        "case_id": "small-scale-housing-2023",
+        "status": "consistent_with_later_position",
+        "headline": "Supported provincial rules allowing more homes per lot",
+        "policy_effect": "Yao voted for final passage of Bill 44. It required local governments to allow additional housing in restricted single-family zones and prescribed minimum unit counts in specified areas, subject to exemptions. It also limited the conditions local governments could attach to the minimum permitted density.",
+        "assessment": "This supports a concrete policy instrument: provincial intervention in local zoning to allow more housing. It is consistent with the BC NDP’s later defence of small-scale multi-unit housing reform. Permission to build is not evidence that homes were built or became affordable; the vote does not establish either outcome.",
+        "counterargument": "The affordability dispute was substantive. The bill limited conditional density rules for the minimum units, while Olsen argued that market housing alone would not meet low-income housing needs. His separate REIT ownership amendment was rejected, including by Yao; that choice is examined below.",
+        "limits": "The 2023 vote predates the 2026 party position. It cannot demonstrate fulfillment of a 2026 promise, establish below-market rents or attribute housing construction to Yao personally.",
+        "citations": [
+          {
+            "evidence_id": "density-position",
+            "quote": "repeal small scale multi-unit housing"
+          },
+          {
+            "evidence_id": "density-provision",
+            "quote": "must permit the use of land, buildings and other structures, and the density of use"
+          },
+          {
+            "evidence_id": "density-vote",
+            "quote": "read a third time and passed on the following division:"
+          }
+        ]
+      }
+    },
+    "reit-restriction-2023": {
+      "input_hash": "c1b97a45a7d5d76a9cc455cbb48c73030a7706c60a247f869da57543e710f697",
+      "result": {
+        "case_id": "reit-restriction-2023",
+        "status": "inconclusive",
+        "headline": "Rejected a proposed REIT ownership safeguard",
+        "policy_effect": "Yao voted against Olsen’s amendment to Bill 44, which would have explicitly allowed ministerial policy guidelines covering prohibitions on housing ownership by real estate investment trusts (REITs). It was discretionary guideline authority, not an automatic ownership ban. Rejection left the underlying bill unchanged.",
+        "assessment": "This places a limit on what the anti-speculation message tells us: Yao supported housing supply reform while rejecting this particular institutional-ownership safeguard. The campaign message does not specifically promise a REIT ban, so the vote cannot establish a broken promise. It does reveal a concrete choice a voter may want to scrutinize.",
+        "counterargument": "Olsen argued that REIT purchases could turn the new housing into financial assets rather than affordable homes. Housing Minister Kahlon disputed the need for this safeguard, saying he had not seen evidence of REITs buying threeplexes or fourplexes and would reconsider if that changed. Neither argument establishes Yao’s personal motivation.",
+        "limits": "A vote against this amendment is not a general endorsement of speculation or proof that REITs harmed affordability. The broad party message was observed on Yao’s campaign page in October 2026; its original publication date is not established.",
+        "citations": [
+          {
+            "evidence_id": "candidate-housing",
+            "quote": "Bringing housing costs down – not giving control back to speculators"
+          },
+          {
+            "evidence_id": "reit-amendment",
+            "quote": "prohibitions on the ownership of housing units by Real Estate Investment Trusts"
+          },
+          {
+            "evidence_id": "reit-vote",
+            "quote": "Amendment negatived on the following division:"
+          }
+        ]
+      }
+    },
+    "health-credentials-2022": {
+      "input_hash": "6c544712d2e7bd3af13cb38f6e6ed8b2644c812dc4c93ff2c8fe21ce91cff8b7",
+      "result": {
+        "case_id": "health-credentials-2022",
+        "status": "inconclusive",
+        "headline": "Supported credential-recognition rules, not the new training-seat promise",
+        "policy_effect": "Yao supported final passage of Bill 36 in 2022. Section 50 required college bylaws on recognizing equivalent outside-B.C. credentials, assessing other credentials, provisional licences and removing unnecessary licensing barriers. This was a regulatory framework for access to practice.",
+        "assessment": "Those provisions relate to internationally trained professionals, but the October 2026 promise is an accelerated training program for graduates blocked by a lack of residency seats. A vote for licensing rules does not demonstrate creation of those seats or delivery of that later program.",
+        "counterargument": "Credential recognition and provisional licences can help practitioners enter the workforce. That is a relevant connection, not an unrelated vote. But licensing eligibility and clinical training capacity are different barriers, and the debate acknowledged this bill would not solve the wider healthcare crisis.",
+        "limits": "The record establishes legislative support for credential-recognition rules. It does not establish implementation, a staffing increase, new clinics, more attached patients or shorter waits. It cannot deliver a promise made four years later.",
+        "citations": [
+          {
+            "evidence_id": "health-platform",
+            "quote": "bridging to practice"
+          },
+          {
+            "evidence_id": "health-credentials",
+            "quote": "the issuance of provisional licences to extrajurisdictional practitioners while an equivalency determination is being made"
+          },
+          {
+            "evidence_id": "health-limits",
+            "quote": "not, by any means, going to cure what currently ails our health care system"
+          }
+        ]
+      }
+    },
+    "paid-sick-leave-2021": {
+      "input_hash": "d5ce57b1251b523e3534e8f34c8adfbaa51ba8f54e3a5a02f1c7f684a881eadc",
+      "result": {
+        "case_id": "paid-sick-leave-2021",
+        "status": "consistent_with_later_position",
+        "headline": "Supported paid sick leave; rejected committee approval of its rules",
+        "policy_effect": "Yao voted for clause 2 of Bill 13: permanent paid leave for illness or injury after 90 consecutive days with an employer, with the number of paid days set by regulation. He also voted against an amendment requiring a ministerial report and legislative committee approval of that number.",
+        "assessment": "Support for the paid-leave framework is consistent with the party’s 2025 defence of income protection during illness. The same record shows a choice against additional legislative scrutiny. The rejected amendment did not propose more sick days or remove the 90-day qualifying period.",
+        "counterargument": "Furstenau argued that legislators should examine the day count before it was prescribed. The minister argued that her process would delay a permanent solution and preferred passing the framework, then consulting before January 2022. His explanation is not evidence of Yao’s personal motive.",
+        "limits": "The selected clause left the number of days to regulations; it did not itself specify five. This is not verification of the party’s later five-day outcome claim, actual payments, coverage of every worker or Yao’s personal authorship.",
+        "citations": [
+          {
+            "evidence_id": "sick-platform",
+            "quote": "five paid sick days every year"
+          },
+          {
+            "evidence_id": "sick-provision",
+            "quote": "After 90 consecutive days of employment with an employer"
+          },
+          {
+            "evidence_id": "sick-provision",
+            "quote": "paid leave for up to the number of days prescribed"
+          },
+          {
+            "evidence_id": "sick-scrutiny",
+            "quote": "the committee approves the proposed number of days"
+          },
+          {
+            "evidence_id": "sick-scrutiny",
+            "quote": "delay the process"
+          }
+        ]
+      }
+    },
+    "used-car-pst-2022": {
+      "input_hash": "7b4eb661441ea31d4cd4323eea9d705eb804925f8d66d580d52b1fa9a145dc93",
+      "result": {
+        "case_id": "used-car-pst-2022",
+        "status": "inconclusive",
+        "headline": "Rejected a proposed tax exemption for used cars below $20,000",
+        "policy_effect": "Yao voted against a clause-58 amendment that would set PST at zero on a previously purchased passenger vehicle driven at least 6,000 kilometres and priced below $20,000, regardless of powertrain. Rejecting it left the bill without this proposed exemption.",
+        "assessment": "This is a concrete decision against one form of household tax relief. It is worth comparing with the party’s broad lower-costs message, but the supplied platform does not promise this specific exemption. The vote establishes neither a broken promise nor general opposition to making life affordable.",
+        "counterargument": "Milobar argued the exemption would help buyers of cheaper used vehicles. The minister raised undervaluation concerns and said the government was not contemplating this significant change. Milobar replied that existing book-value rules were unchanged. Both arguments matter; neither explains Yao’s personal reasoning.",
+        "limits": "This record does not establish the effects of an exemption that was defeated, or Yao’s stance on all taxes. Used-car PST is different from the new 2026 gas-tax promise, insurance premiums, childcare costs and targeted benefits.",
+        "citations": [
+          {
+            "evidence_id": "cost-platform",
+            "quote": "lower costs"
+          },
+          {
+            "evidence_id": "pst-amendment",
+            "quote": "less than $20 000"
+          },
+          {
+            "evidence_id": "pst-amendment",
+            "quote": "potential risk of undervaluing a vehicle"
+          },
+          {
+            "evidence_id": "pst-amendment",
+            "quote": "the provision around book value was in previous sections"
+          }
+        ]
+      }
+    },
+    "union-certification-2022": {
+      "input_hash": "824cfbda18e178586f1b02029d092523cc91a986d0cdc2dc7a766b47ab7d563f",
+      "result": {
+        "case_id": "union-certification-2022",
+        "status": "consistent_with_later_position",
+        "headline": "Backed single-step union certification at 55% membership",
+        "policy_effect": "Yao supported final passage of Bill 10. The board must certify a union when at least 55% of employees in an appropriate unit are members in good standing. The bill retained a ballot pathway at 45% to under 55% and authority for the board to order a representation vote.",
+        "assessment": "The mechanism directly matches the party’s later endorsement of single-step certification. This is evidence of support for that particular worker-rights policy, not fulfillment of a statement published in 2025 or proof that the policy created jobs or raised wages.",
+        "counterargument": "Opponents argued a mandatory secret ballot lets workers confirm their choice privately and helps protect against pressure. The change relies on demonstrated membership at the higher threshold instead. The legislation leaves board oversight and voting pathways in place; it does not eliminate every ballot.",
+        "limits": "The comparison establishes a vote for the certification mechanism. It does not establish coercion by employers or unions, actual certification outcomes, wage effects, Yao’s motives or his response to the current trade war.",
+        "citations": [
+          {
+            "evidence_id": "union-platform",
+            "quote": "single-step certification"
+          },
+          {
+            "evidence_id": "union-provision",
+            "quote": "at least 55% of the employees in the unit are members in good standing"
+          },
+          {
+            "evidence_id": "union-provision",
+            "quote": "but less than 55%"
+          },
+          {
+            "evidence_id": "union-counterargument",
+            "quote": "free of any coercion or any pressure"
+          }
+        ]
+      }
+    },
+    "platform-workers-2023": {
+      "input_hash": "5807c3eff51df80589583674243e9be6ec81804152fbacdd89b891ebac65ff26",
+      "result": {
+        "case_id": "platform-workers-2023",
+        "status": "consistent_with_later_position",
+        "headline": "Supported the principle of employment protections for gig workers",
+        "policy_effect": "Yao voted for second reading of Bill 48. The introduced bill deemed people doing prescribed online-platform work employees for employment-standards purposes and workers for workers-compensation purposes, with platform operators treated as employers. Covered work and commencement depended on regulations.",
+        "assessment": "That is a specific step toward the protections endorsed in the party’s 2025 statement. Second reading supported the principle, not final passage or every eventual rule. The vote was unanimous, so it provides little evidence that distinguishes Yao from other MLAs.",
+        "counterargument": "The opposition critic questioned leaving details to regulations and raised concerns about worker flexibility and costs for users. Those are relevant trade-offs, not demonstrated harms. The framework establishes a protection mechanism, but the selected text does not settle all wage, benefit or waiting-time details.",
+        "limits": "This comparison does not verify the party’s claim that workers received better wages, a particular hourly rate or paid waiting time. It does not establish implementation, enforcement, improved earnings or a broader job-creation record.",
+        "citations": [
+          {
+            "evidence_id": "gig-platform",
+            "quote": "better wages and protections"
+          },
+          {
+            "evidence_id": "gig-employment",
+            "quote": "an online platform worker is to be considered an employee"
+          },
+          {
+            "evidence_id": "gig-compensation",
+            "quote": "an online platform worker is to be considered a worker"
+          },
+          {
+            "evidence_id": "gig-counterargument",
+            "quote": "the full impact"
+          },
+          {
+            "evidence_id": "gig-vote",
+            "quote": "approved unanimously on a division"
+          }
+        ]
+      }
+    },
+    "public-drug-use-2023": {
+      "input_hash": "009f55520ee53568f83e5d38956e3a65f3ede628b65d4caaf329c9aea8fe2069",
+      "result": {
+        "case_id": "public-drug-use-2023",
+        "status": "consistent_with_later_position",
+        "headline": "Backed public drug-use restrictions; this law never took effect",
+        "policy_effect": "Yao supported final passage of Bill 34. It would restrict consumption in specified areas near playgrounds, parks, entrances and transit stops. Police could direct people to stop or leave; failure to comply was the offence, enabling arrest and seizure. It was not a general offence of simple possession.",
+        "assessment": "The vote shows support for a particular enforcement tool, consistent with the party’s later enforcement emphasis. But the minister confirmed in December 2024 that the Act never came into force and was repealed after different federal-exemption rules addressed public use. It cannot be counted as delivery of an operating law.",
+        "counterargument": "Furstenau challenged the assumption that people could simply move to safe-consumption sites when that infrastructure was inadequate. This is the central enforcement-versus-access trade-off. A direction to move does not itself supply a safe place, treatment or housing.",
+        "limits": "The 77–4 final vote was broadly supported across parties, offering limited evidence of a distinctive personal stance. The vote does not establish better community safety, fewer overdoses or treatment capacity. This account describes the 2023 proposal, not current drug law.",
+        "citations": [
+          {
+            "evidence_id": "safety-platform",
+            "quote": "strengthening enforcement to fight crime"
+          },
+          {
+            "evidence_id": "public-provision",
+            "quote": "A person who fails to comply with a direction given under section 4 commits an offence."
+          },
+          {
+            "evidence_id": "public-counterargument",
+            "quote": "There just simply isn’t that kind of infrastructure that exists in B.C. at this point."
+          },
+          {
+            "evidence_id": "public-outcome",
+            "quote": "has never been brought into force"
+          },
+          {
+            "evidence_id": "public-outcome",
+            "quote": "we are repealing this legislation"
+          },
+          {
+            "evidence_id": "public-question",
+            "quote": "NAYS — 4 Banman Furstenau Olsen Rustad"
+          }
+        ]
+      }
+    },
+    "zev-target-2023": {
+      "input_hash": "469e5b5f140cea0bc0982c32ca70755a204b9bcb6f3683b54bdbd7df240ce9a2",
+      "result": {
+        "case_id": "zev-target-2023",
+        "status": "inconclusive",
+        "headline": "Backed a stricter EV sales target than the current law",
+        "policy_effect": "Yao supported final passage of Bill 39 in 2023. It accelerated the new light-duty ZEV sales framework to 26% in 2026, 90% in 2030 and 100% in 2035, five years earlier than the previous full-target year. It concerned new vehicle sales, not a requirement to replace everyone’s existing car.",
+        "assessment": "This is a clear past choice for a stronger sales mandate. The party’s current message promotes greener choices and EV charging, but does not specify that same mandate. The April 2026 government update and current Act instead set a 75% target for 2035. The collected record cannot tell us whether Yao supports that rollback.",
+        "counterargument": "The government justified the 2026 revision by pointing to slower adoption, supply-chain disruptions and tariffs, while continuing to invest in charging. A more flexible mandate can still pursue EV adoption. Those reasons do not establish Yao’s current view or prove the old target caused harm.",
+        "limits": "The record establishes support for the 2023 target, not delivery of future sales or emissions outcomes. It does not establish support for the 2026 revision, opposition to it, or alignment on LNG, forestry and every other climate policy.",
+        "citations": [
+          {
+            "evidence_id": "climate-platform",
+            "quote": "green choices"
+          },
+          {
+            "evidence_id": "climate-provision",
+            "quote": "by striking out \"2040\" and substituting \"2035\""
+          },
+          {
+            "evidence_id": "climate-targets",
+            "quote": "100% by 2035"
+          },
+          {
+            "evidence_id": "climate-current-law",
+            "quote": "75% of all specified motor vehicles sold or leased in British Columbia must be zero-emission vehicles"
+          },
+          {
+            "evidence_id": "climate-revision",
+            "quote": "reducing the 2035 ZEV sales target from 100% to 75%"
+          }
+        ]
+      }
+    }
+  },
+  "pillar_takeaways": {
+    "housing": "Yao supported rent protections, tighter short-term rental rules and provincial zoning reform. Those votes match specific parts of the BC NDP’s housing agenda. He also rejected a proposed REIT ownership safeguard. This record shows legislative choices; it does not establish cheaper housing or delivery of the new 2026 promises.",
+    "healthcare": "Yao backed rules for recognizing outside-B.C. credentials. That is a relevant regulatory choice, but it does not show delivery of the new international-graduate training program, clinics or shorter waits.",
+    "affordability": "Yao supported a paid-sick-leave framework, while rejecting additional committee scrutiny. He also opposed a specific used-car tax exemption. These show choices about income protection and tax relief; they do not establish an overall affordability stance.",
+    "economy": "Yao supported single-step union certification and the principle of gig-worker protections, consistent with the party’s stated worker policies. These votes do not establish job creation or delivery of its new trade and procurement agenda.",
+    "public_safety": "Yao backed public drug-use enforcement powers, but that particular law never took effect. The choice illustrates his past enforcement approach; it does not demonstrate successful treatment or safer communities.",
+    "climate": "Yao supported the 2023 mandate for 100% new light-duty ZEV sales by 2035. Current law has softened that target to 75%. His earlier vote cannot establish his stance on that change or on LNG."
+  },
+  "review_notes": [
+    "Seven new DeepSeek attempts were retained privately. All failed schema, length, chronology or quotation validation; none was promoted automatically.",
+    "Separate Codex source review corrected quotations and rewrote the editorial text; human review has not been recorded.",
+    "The union draft incorrectly labeled a 2022 action as supporting a 2025 commitment; corrected to consistent with later position.",
+    "The used-car PST draft overstated consistency with a broad lower-costs message; corrected to inconclusive.",
+    "Added the full public-consumption tally and corrected the research prompt from 77–2 to the source’s 77–4. This changed that case input hash after drafting; the source-reviewed editorial result uses the corrected input.",
+    "Paid-sick-leave amendment was checked against May17 original wording: committee approval of regulations, not additional days.",
+    "Current consolidated ZEV Act was checked alongside the April2026 policy announcement: historical 100% target differs from the current75% target.",
+    "The finance-bill recovery-benefit lead was excluded after reading operative text."
+  ]
+}

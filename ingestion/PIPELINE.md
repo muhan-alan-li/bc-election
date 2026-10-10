@@ -119,3 +119,91 @@ text. Raw snapshots can then be deleted after validating the retained evidence a
 polished output. Later client builds do not require them; later collection must
 download sources again or use temporary downloads. Offline collection requires a
 cache, while offline curating and polishing do not.
+
+## Candidate political profiles
+
+Political evidence now has its own pipeline under
+`normalized/political/<election-id>/`, `curated/datasets/political/<election-id>/`
+and `published/political/<election-id>/`. Every collected candidate gets a
+profile, including candidates with no voting-index match. Party policy evidence
+is stored once and referenced by `party_platform_id`.
+
+```sh
+# Candidate records and platform sources must already have been collected.
+SSL_CERT_FILE=/etc/ssl/cert.pem python3 -m election collect-political-records --workers 4
+# Rebuild/reclassify retained evidence without downloads:
+python3 -m election build-political-profiles
+# Subsequent ordinary builds include these profiles:
+python3 -m election build-data
+```
+
+`collect-political-records` fetches each distinct Assembly sitting-day transcript
+referenced by candidate voting indexes once. It retains normalized paragraph,
+speaker and timestamp evidence, and resumes from successful normalized downloads.
+`--refresh` refetches; `--offline` uses retained evidence/cache; `--ephemeral-raw`
+discards downloads while retaining extracted transcript evidence. Unsupported
+responses and fetch failures are recorded in `transcript-audit.json` and
+`.attempt.json` files, preserving earlier successful evidence. Parser-version
+changes reparse available raw snapshots. Collection failures produce a nonzero
+exit status; the full diagnostics remain in `summary.json`.
+
+Profiles contain:
+
+- **Actions:** source-linked voting-index entries enriched with nearby transcript
+  evidence, plus explicit first-person motions, amendment motions and bill
+  introductions from those sitting days. Index question/outcome fields remain
+  unchanged; suggested extracted questions, outcomes and tallies live separately
+  in `transcript_context`. Multiple divisions, missing anchors and duplicate
+  ambiguous anchors remain unresolved. All transcript extraction needs review.
+- **Policy passages:** verbatim topic-bearing source lines and explicit promise
+  language with page/line locators and adjacent context. These are unreviewed
+  leads, not verified commitments. Passage dates are unknown until reviewed;
+  retrieved dates do not establish when a promise was made. Navigation,
+  biographies, third-party questionnaires and historical policy pages can still
+  produce leads needing rejection. Explicit reviewed commitments continue to
+  come from `curated/platform-commitments.json`.
+- **Topic groups:** many-to-many action and candidate/party passage references.
+  Suggested keyword classifications cover housing, healthcare, education,
+  economy/taxation, environment/energy, public safety/justice, transportation,
+  Indigenous relations, government/democracy and social policy/rights, with an
+  `uncategorized` fallback. Matched keywords and method version are retained.
+- **Comparisons:** reserved separately and empty. A shared topic does not imply
+  support, contradiction, causation or fulfillment. Party commitments are not
+  represented as personal promises.
+- **Coverage:** identity review, index matches, context counts, collection errors,
+  known prior offices and explicit gaps. Municipal/council voting, committees and
+  sitting days without collected voting entries require additional adapters.
+
+Full-name index matches and shortened Hansard speaker matches remain private
+attribution leads. Public profiles contain voting actions only where the reviewed
+identity registry explicitly permits the member alias. Shortened speaker matches
+remain private even when the candidate identity is reviewed. Topic references are
+filtered accordingly. Revoking identity review removes those actions on the next
+build. Public coverage counts describe research evidence; `published_action_count`
+reports the subset actually included in the profile.
+
+`build-political-profiles` validates profiles before replacing curated snapshots;
+polishing validates the selected political batch before replacing its files.
+Publication is atomic per file. Rebuilding identical evidence produces identical
+profile bytes. The outputs are ready for a future site/API presentation, but this
+change does not expose a new endpoint or change the UI. Generated research remains
+Git-ignored: back up normalized evidence and reviewed inputs.
+
+## Decision interpretation and candidate issue patterns
+
+The optional LLM analysis service in `election/analysis/` interprets shared
+decisions once, validates cited evidence and derives candidate issue patterns
+locally. It supports DeepSeek and other OpenAI-compatible chat endpoints.
+See [analysis configuration, usage, evidence rules and storage](ANALYSIS.md).
+
+```sh
+python3 -m election estimate-political-analysis
+python3 -m election analyze-political-records --district RCC --max-calls 12
+python3 -m election --offline analyze-political-records
+```
+
+Model results stay separate from source facts and retain
+`machine_generated_needs_review` status. Current public findings can be embedded
+in polished candidate profiles as `issue_analysis`. Ordinary profile builds use
+existing analysis only, never call a model, and discard stale findings when
+source evidence or reviewed candidate attribution changes.

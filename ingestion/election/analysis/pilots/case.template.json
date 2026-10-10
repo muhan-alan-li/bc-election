@@ -1,0 +1,39 @@
+{
+  "id": "replace-with-unique-case-id",
+  "pillar_id": "healthcare",
+  "question": "Replace with a narrow action-to-commitment question.",
+  "action_ids": ["replace-with-reviewed-action-id"],
+  "commitment": {
+    "owner": "Replace with verified party or candidate name",
+    "scope": "party",
+    "kind": "promise",
+    "date": "YYYY-MM-DD",
+    "date_status": "published",
+    "summary": "Replace with the specific sourced commitment.",
+    "quote": "Replace with an exact quotation of at most 25 words.",
+    "evidence_id": "platform"
+  },
+  "evidence": [
+    {
+      "id": "platform",
+      "source_id": "replace-with-manifest-platform-source-id",
+      "role": "platform",
+      "start": "Replace with a unique source window start.",
+      "end": "Replace with the end of the relevant statement."
+    },
+    {
+      "id": "operative-policy",
+      "source_id": "replace-with-versioned-bill-or-amendment-source-id",
+      "role": "operative_bill",
+      "start": "Replace with the start of the operative section.",
+      "end": "Replace with the end, including relevant exceptions."
+    },
+    {
+      "id": "competing-arguments",
+      "source_id": "replace-with-debate-source-id",
+      "role": "debate",
+      "start": "Replace with the start of the competing policy arguments.",
+      "end": "Replace with the end of the relevant debate."
+    }
+  ]
+}

@@ -26,6 +26,21 @@ JavaScript and Preact, bundled with esbuild. Frontend source lives in `client/sr
 
 Use `npm run format` to apply Prettier and `npm run format:check` to check the four-space JavaScript/JSX formatting.
 
+Candidate pages show a topic-filtered political record, expandable voting
+decisions and source excerpts, and candidate/party platform passages alongside
+the records. Disclosures remain available in a secondary expandable section.
+Unreviewed identity matches are shown as pending research counts rather than
+attributed actions; platform passages and topic tags retain review labels.
+
+The client build packages only polished political profiles from
+`ingestion/storage/published/political/` as separate versioned JSON assets in
+`client/dist/data/political/`. Profiles load on demand on candidate pages; no
+server endpoint change is required. Rebuild the client after research updates
+(`npm run dev` watches the profile files). Use `ELECTION_ID=<id> npm run build`
+when serving an election other than `bc-provincial-2026`. Deploy the entire client
+`dist` directory, including its `data` folder. When profiles are unavailable,
+candidate pages fall back to their existing district voting-index records.
+
 ```sh
 cd client
 npm install
@@ -101,6 +116,23 @@ python3 -m election collect-candidate-platforms --district 'Richmond Centre'
 The curated registry includes first-pass campaign source URLs. Unconfigured entries are published with
 explicit `not_configured` coverage, rather than inferred platforms.
 
+Candidate voting and political-work evidence can now be collected and grouped
+with candidate and party policy passages under shared topics:
+
+```sh
+cd ingestion
+python3 -m election collect-political-records --workers 4
+python3 -m election build-political-profiles # rebuild retained evidence offline
+```
+
+This adds `storage/published/political/<election-id>/` profiles for site
+presentation. Unreviewed identity matches remain in normalized research;
+extracted passages, transcript context and topic tags retain review status.
+General alignment judgments remain unassessed; Henry Yao has a selective six-pillar
+pilot using dated positions and operative bill/amendment text. See
+[selective comparisons and the pilot workflow](ingestion/ALIGNMENT.md), and the political-profile section of
+[the pipeline guide](ingestion/PIPELINE.md) for coverage and collection limits.
+
 ```sh
 cd content-server
 go test ./...
@@ -120,6 +152,22 @@ The constituency finder opens from **Find my constituency** on the constituency 
 Run `make finder-data` once before starting the finder. This reuses cached source snapshots. To download updated snapshots, run `cd ingestion && python3 -m election --refresh build-finder`. To rebuild without network access, use `python3 -m election --offline build-finder` from `ingestion`. Restart the finder service after rebuilding: finder data is loaded into memory on its first lookup. Generated data is ignored by Git and must be imported on each new deployment.
 
 See [finder sources, audit and API](ingestion/FINDER.md) for coverage limits and source attribution.
+
+Political record interpretation runs in ingestion using DeepSeek's OpenAI-compatible endpoint.
+Put `DEEPSEEK_API_KEY` in the repository-root `.env`; endpoint, model, rate limit and pricing
+are configured in `ingestion/config.json`. From `ingestion`, run
+`python3 -m election estimate-political-analysis` to preview usage, then
+`python3 -m election analyze-political-records --max-calls 20` for a bounded, resumable batch.
+It reuses interpretations of shared decisions across candidates and produces cited issue
+findings with explicit evidence gaps. See [analysis configuration and safeguards](ingestion/ANALYSIS.md).
+
+Henry Yao’s pilot view groups 11 specific platform comparisons into six issue
+tabs, with explicit limits and unanswered commitments. Run `collect-alignment-evidence` to
+fetch the targeted primary sources and `analyze-platform-alignment --pillar affordability --max-calls 2`
+to draft comparisons. `build-platform-alignment --review
+election/analysis/pilots/henry-yao.review.json` validates the separate source check
+and publishes the findings. See [ALIGNMENT.md](ingestion/ALIGNMENT.md) for scope,
+limits and exact commands. The complete voting record remains expandable.
 
 
 The finder runs as a separate Go service in `constituency-finder`, listening on `127.0.0.1:8001` by default. The content server proxies `/api/constituency-finder` to it, streaming the response; the client uses the same public URL as before. `make up`, `make down`, and `make status` manage both services. Override ports with `make up PORT=8080 FINDER_PORT=8081`. Logs are `.run/server.log` and `.run/finder.log`.
