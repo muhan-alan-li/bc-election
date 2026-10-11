@@ -1,25 +1,11 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { mkdtemp, mkdir, writeFile, readFile, rm } from 'node:fs/promises';
-import { tmpdir } from 'node:os';
-import { join } from 'node:path';
 import { loadComponents, walk as walkComponent } from './helpers/components.js';
 import {
     filterActions,
     visibleActions,
     filterPassages,
 } from '../src/helpers/political.js';
-import { preparePoliticalAssets } from '../build/political-assets.js';
-
-const pillars = JSON.parse(
-    await readFile(
-        new URL(
-            '../../ingestion/election/analysis/pillars.json',
-            import.meta.url,
-        ),
-        'utf8',
-    ),
-);
 
 const actions = [
     {
@@ -102,97 +88,6 @@ test('only attributed actions display; missing profiles fall back to the distric
     assert.equal(fallback.length, 1);
     assert.equal(fallback[0].record_type, 'recorded_vote');
     assert.deepEqual(fallback[0].topics, ['uncategorized']);
-});
-
-test('build packages polished records as separate versioned assets and rejects attribution leads', async () => {
-    const folder = await mkdtemp(join(tmpdir(), 'bc-political-assets-'));
-    try {
-        const input = join(folder, 'input'),
-            output = join(folder, 'output');
-        await mkdir(join(input, 'election/candidates'), { recursive: true });
-        const record = {
-            schema_version: 1,
-            kind: 'candidate_political_profile',
-            id: 'candidate-1',
-            election_id: 'election',
-            actions: [actions[0]],
-            documents: [],
-        };
-        const file = join(input, 'election/candidates/candidate-1.json');
-        await writeFile(file, JSON.stringify(record));
-        const catalog = await preparePoliticalAssets(input, output, 'election');
-        const url = catalog.candidates['candidate-1'];
-        assert.deepEqual(
-            JSON.parse(await readFile(join(output, url), 'utf8')),
-            record,
-        );
-        assert.deepEqual(
-            await preparePoliticalAssets(input, output, 'election'),
-            catalog,
-        );
-        await writeFile(file, JSON.stringify({ ...record, actions: [] }));
-        const revised = await preparePoliticalAssets(input, output, 'election');
-        assert.notEqual(revised.candidates['candidate-1'], url);
-        await assert.rejects(readFile(join(output, url)), { code: 'ENOENT' });
-        await writeFile(
-            file,
-            JSON.stringify({ ...record, actions: [actions[3]] }),
-        );
-        await assert.rejects(
-            preparePoliticalAssets(input, output, 'election'),
-            /Unreviewed candidate attribution/,
-        );
-        await writeFile(
-            file,
-            JSON.stringify({ ...record, documents: [{ pages: [] }] }),
-        );
-        await assert.rejects(
-            preparePoliticalAssets(input, output, 'election'),
-            /Raw research/,
-        );
-        const analysis = {
-            id: record.id,
-            election_id: record.election_id,
-            coverage: { scope: 'includes_unconfirmed_attribution_leads' },
-            review_status: 'machine_generated_needs_review',
-            issue_findings: [],
-        };
-        await writeFile(
-            file,
-            JSON.stringify({ ...record, issue_analysis: analysis }),
-        );
-        await assert.rejects(
-            preparePoliticalAssets(input, output, 'election'),
-            /Invalid public issue analysis/,
-        );
-        analysis.coverage.scope = 'reviewed_attributions';
-        analysis.issue_findings = [
-            {
-                evidence: [
-                    {
-                        action_id: 'unavailable',
-                        attribution_status: 'reviewed',
-                    },
-                ],
-            },
-        ];
-        await writeFile(
-            file,
-            JSON.stringify({ ...record, issue_analysis: analysis }),
-        );
-        await assert.rejects(
-            preparePoliticalAssets(input, output, 'election'),
-            /Invalid public issue analysis/,
-        );
-        const absent = await preparePoliticalAssets(
-            join(folder, 'missing'),
-            output,
-            'election',
-        );
-        assert.deepEqual(absent.candidates, {});
-    } finally {
-        await rm(folder, { recursive: true, force: true });
-    }
 });
 
 const {
@@ -377,76 +272,6 @@ test('commitment comparisons lead with specific conclusions and preserve ownersh
     );
     profile.alignment_analysis.review_status = 'draft';
     assert.equal(PlatformAlignment({ profile }), null);
-});
-
-test('asset publication rejects draft comparisons and altered vote positions', async () => {
-    const folder = await mkdtemp(join(tmpdir(), 'bc-alignment-assets-'));
-    try {
-        const source = join(folder, 'sources'),
-            dist = join(folder, 'dist');
-        await mkdir(join(source, 'e', 'candidates'), { recursive: true });
-        const record = {
-            schema_version: 1,
-            kind: 'candidate_political_profile',
-            id: 'c',
-            person_id: 'p',
-            election_id: 'e',
-            actions: [actions[0]],
-            alignment_analysis: {
-                schema_version: 1,
-                kind: 'candidate_alignment_analysis',
-                id: 'c',
-                person_id: 'p',
-                election_id: 'e',
-                review_status: 'source_checked',
-                pillars: pillars.map((pillar) => ({
-                    ...pillar,
-                    takeaway:
-                        pillar.id === 'housing' ? 'Housing finding.' : null,
-                })),
-                findings: [
-                    {
-                        pillar_id: 'housing',
-                        actions: [{ ...actions[0] }],
-                        citations: [
-                            {
-                                quote: 'Evidence.',
-                                source: {
-                                    sha256: 'hash',
-                                    url: 'https://example.org/source',
-                                },
-                            },
-                        ],
-                    },
-                ],
-            },
-        };
-        const path = join(source, 'e', 'candidates', 'c.json');
-        await writeFile(path, JSON.stringify(record));
-        await preparePoliticalAssets(source, dist, 'e');
-        record.alignment_analysis.review_status = 'draft';
-        await writeFile(path, JSON.stringify(record));
-        await assert.rejects(
-            preparePoliticalAssets(source, dist, 'e'),
-            /Invalid public platform alignment/,
-        );
-        record.alignment_analysis.review_status = 'source_checked';
-        record.alignment_analysis.findings[0].pillar_id = 'invented';
-        await writeFile(path, JSON.stringify(record));
-        await assert.rejects(
-            preparePoliticalAssets(source, dist, 'e'),
-            /Invalid public platform alignment/,
-        );
-        record.alignment_analysis.findings[0].pillar_id = 'housing';
-        record.alignment_analysis.findings[0].actions[0].position = 'nay';
-        await writeFile(path, JSON.stringify(record));
-        await assert.rejects(
-            preparePoliticalAssets(source, dist, 'e'),
-            /Invalid public platform alignment/,
-        );
-    } finally {
-        await rm(folder, { recursive: true, force: true });
-    }
 });
 
 test('issue patterns retain inconclusive counts, actual votes, sources and alignment limits', () => {

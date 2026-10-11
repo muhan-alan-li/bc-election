@@ -124,20 +124,20 @@ func entityIDs(records []json.RawMessage) (map[string]bool, error) {
 	return ids, nil
 }
 
-func newHandler(clientDir, dataDir, electionID string, finderURLs ...string) http.Handler {
+func newHandler(clientDir, dataDir, electionID string, options ...string) http.Handler {
 	mux := http.NewServeMux()
 	finderURL := "http://127.0.0.1:8001"
-	if len(finderURLs) > 0 {
-		finderURL = finderURLs[0]
+	if len(options) > 0 {
+		finderURL = options[0]
 	}
 	registerFinderProxy(mux, finderURL)
 	registerPlatforms(mux, dataDir, electionID)
-	apiError := func(w http.ResponseWriter, status int, message string) {
-		w.Header().Set("Content-Type", "application/json; charset=utf-8")
-		w.Header().Set("Cache-Control", "no-store")
-		w.WriteHeader(status)
-		_ = json.NewEncoder(w).Encode(map[string]string{"error": message})
+	contentDir := "content"
+	if len(options) > 1 {
+		contentDir = options[1]
 	}
+	registerGuide(mux, contentDir, electionID)
+	registerPolitical(mux, dataDir, contentDir, electionID)
 	folder := filepath.Join(dataDir, electionID)
 	mux.HandleFunc("GET /health", func(w http.ResponseWriter, r *http.Request) {
 		writeJSON(w, r, map[string]string{"status": "ok"})

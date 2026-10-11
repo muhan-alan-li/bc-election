@@ -1,23 +1,26 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
+import { readFile } from 'node:fs/promises';
 import { loadComponents, walk } from './helpers/components.js';
 
-const {
-    PolicyDetails,
-    PolicySources,
-    PolicyCard,
-    parties,
-    otherParties,
-    getPlatformItems,
-} = await loadComponents(`
+const { PolicyDetails, PolicySources, PolicyCard } = await loadComponents(`
         export { PolicyDetails } from './src/components/platform/PolicyDetails.jsx';
         export { PolicySources } from './src/components/platform/PolicySources.jsx';
         export { PolicyCard } from './src/components/platform/PolicyCard.jsx';
-        export { parties, otherParties } from './src/data/parties.js';
-        export { getPlatformItems } from './src/data/platform-details.js';
     `);
 
-const items = [...parties, ...otherParties].flatMap(getPlatformItems);
+const guide = JSON.parse(
+    await readFile(
+        new URL(
+            '../../content-server/content/bc-provincial-2026/guide.json',
+            import.meta.url,
+        ),
+        'utf8',
+    ),
+);
+const items = [...guide.parties, ...guide.otherParties].flatMap(
+    (party) => party.items,
+);
 
 test('every expanded policy renders bullet text and the correct numbered citations', () => {
     assert.equal(items.length, 53);

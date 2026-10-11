@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'preact/hooks';
-import catalog from 'political-profile-catalog';
 import { getJSON } from '../helpers/api.js';
 
 export function usePoliticalProfile(candidate, dataset) {
@@ -14,15 +13,11 @@ export function usePoliticalProfile(candidate, dataset) {
         setLoaded(null);
         setError('');
         setPartyError('');
-        const path =
-            catalog.electionID === electionID &&
-            catalog.candidates[candidate.id];
-        if (!path) {
-            setLoading(false);
-            return () => controller.abort();
-        }
         setLoading(true);
-        getJSON(path, controller.signal)
+        getJSON(
+            `/api/political/candidates/${encodeURIComponent(candidate.id)}`,
+            controller.signal,
+        )
             .then(async (profile) => {
                 if (
                     profile.id !== candidate.id ||
@@ -37,11 +32,10 @@ export function usePoliticalProfile(candidate, dataset) {
                 }
                 if (controller.signal.aborted) return;
                 setLoaded({ id: candidate.id, profile, party: null });
-                const partyPath = catalog.parties[profile.party_platform_id];
-                if (partyPath) {
+                if (profile.party_platform_id) {
                     try {
                         const party = await getJSON(
-                            partyPath,
+                            `/api/political/parties/${encodeURIComponent(profile.party_platform_id)}`,
                             controller.signal,
                         );
                         if (
@@ -55,13 +49,14 @@ export function usePoliticalProfile(candidate, dataset) {
                         if (!controller.signal.aborted)
                             setLoaded({ id: candidate.id, profile, party });
                     } catch (cause) {
-                        if (!controller.signal.aborted)
+                        if (!controller.signal.aborted && cause.status !== 404)
                             setPartyError(cause.message);
                     }
                 }
             })
             .catch((cause) => {
-                if (!controller.signal.aborted) setError(cause.message);
+                if (!controller.signal.aborted && cause.status !== 404)
+                    setError(cause.message);
             })
             .finally(() => {
                 if (!controller.signal.aborted) setLoading(false);

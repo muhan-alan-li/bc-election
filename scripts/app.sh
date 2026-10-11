@@ -36,7 +36,7 @@ case "$action" in
         if ! alive server; then
             nohup "$root/content-server/bin/content-server" -addr "127.0.0.1:$app_port" \
                 -client-dir "$root/client/dist" -data-dir "$root/ingestion/storage/published" \
-                -finder-url "http://127.0.0.1:$finder_port" \
+                -finder-url "http://127.0.0.1:$finder_port" -content-dir "$root/content-server/content" \
                 > "$run_dir/server.log" 2>&1 < /dev/null &
             echo $! > "$run_dir/server.pid"
             sleep 1

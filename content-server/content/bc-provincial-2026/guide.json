@@ -1,0 +1,2048 @@
+{
+  "schema_version": 1,
+  "election_id": "bc-provincial-2026",
+  "reviewedOn": "October 8, 2026",
+  "partyRosterSource": "https://elections.bc.ca/2026-provincial-election/candidate-list/",
+  "parties": [
+    {
+      "id": "ndp",
+      "portrait": "/content/assets/leaders/david-eby.jpg",
+      "portraitSource": "https://www.bcndp.ca/about-david",
+      "portraitPosition": "60% center",
+      "name": "BC NDP",
+      "color": "#c85316",
+      "leader": "David Eby",
+      "leaderSource": "https://www.bcndp.ca/releases/david-eby-launches-election-plan-build-bc-strong-amid-trumps-attacks",
+      "leaderNote": "Incumbent premier",
+      "platform": "https://www.bcndp.ca/releases/david-eby-launches-election-plan-build-bc-strong-amid-trumps-attacks",
+      "status": "Campaign launch priorities; further details are being announced.",
+      "items": [
+        {
+          "topic": "Economy",
+          "summary": "Support workers and businesses affected by tariffs and expand trade into markets beyond the United States.",
+          "points": [
+            {
+              "text": "Expand trade beyond the United States and support tariff-affected workers and businesses.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Double skilled trades training by 2028–29 to prepare BC residents for jobs in major projects.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Target $200 billion in major project investment by 2035.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Use the Manufacturing Jobs Fund, Rural Economic Diversification and Infrastructure Program, Integrated Marketplace and BuyBC to support businesses and market diversification.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.bcndp.ca/action-for-you",
+              "label": "Action for You: ongoing plans and party record"
+            }
+          ],
+          "note": "Ongoing program and investment goals; $200 billion refers to major project investment, not a provincial spending allocation."
+        },
+        {
+          "topic": "Affordability",
+          "summary": "Keep family costs down and build the housing and infrastructure BC needs.",
+          "points": [
+            {
+              "text": "Continue policies aimed at reducing household costs through housing supply, child care, public auto insurance and electricity rates.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Continue child care fee reductions and ICBC rate freezes.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Maintain property transfer tax relief for first-time homebuyers.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.bcndp.ca/action-for-you",
+              "label": "Action for You: ongoing plans and party record"
+            }
+          ],
+          "note": "The party presents these as ongoing policies and projects, alongside its record in government. The reviewed material does not set out a new across-the-board cash benefit or a new tax-cut amount."
+        },
+        {
+          "topic": "Health care",
+          "summary": "Recruit more health workers and strengthen health care and public services.",
+          "points": [
+            {
+              "text": "Continue recruiting and training doctors, nurses and other health workers, including recruitment from the United States.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Continue work on 24 new or expanded hospitals, including nine already completed, and new community and First Nations primary care centres.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Continue training physicians through SFU’s Surrey medical school and expanding nurse practitioner-led care.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Continue developing 37 long-term care homes.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.bcndp.ca/action-for-you",
+              "label": "Action for You: ongoing plans and party record"
+            }
+          ],
+          "note": "The party presents these as ongoing policies and projects, alongside its record in government."
+        },
+        {
+          "topic": "Canadian trade",
+          "summary": "Choose Canadian goods where possible and maintain the US alcohol ban until a fair deal for forest workers.",
+          "points": [
+            {
+              "text": "Keep US alcohol off shelves until a fair deal is reached for BC forest workers.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Coordinate with the federal government and other provinces on Canadian countermeasures.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Expand BuyBC beyond agriculture to help more local businesses find markets.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Buy Canadian goods and maintain public procurement restrictions on US suppliers.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.bcndp.ca/action-for-you",
+              "label": "Action for You: ongoing plans and party record"
+            }
+          ],
+          "note": "The party presents these as ongoing policies and projects, alongside its record in government."
+        },
+        {
+          "topic": "Housing",
+          "summary": "Continue housing supply reforms, short-term rental restrictions and measures against speculation.",
+          "points": [
+            {
+              "text": "Continue zoning reforms intended to permit more middle-class housing across BC.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Maintain short-term rental restrictions and the Speculation and Vacancy Tax.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Use the $1 billion Growing Communities Fund to support local infrastructure, including transportation, recreation and child care facilities.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Maintain zoning changes intended to allow 300,000 additional homes.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.bcndp.ca/action-for-you",
+              "label": "Action for You: ongoing plans and party record"
+            }
+          ],
+          "note": "Ongoing housing policies. The 300,000-home figure describes capacity enabled by zoning changes."
+        },
+        {
+          "topic": "Mental health & addiction",
+          "summary": "Expand access to treatment, youth mental health services and care for people in severe crisis.",
+          "points": [
+            {
+              "text": "Continue expanding the Road to Recovery program and Access Central for assessment and entry into treatment.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Open 15 additional Foundry centres for young people, alongside the 20 centres already operating.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Continue building involuntary care capacity for people in severe crisis and supportive housing for people who need it.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Maintain free opioid agonist treatment medications and access to free or low-cost counselling.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.bcndp.ca/action-for-you",
+              "label": "Action for You: ongoing plans and party record"
+            }
+          ],
+          "note": "The party presents these as ongoing policies and projects, alongside its record in government."
+        }
+      ]
+    },
+    {
+      "id": "conservative",
+      "portrait": "/content/assets/leaders/lorne-doerkson.jpg",
+      "portraitSource": "https://conservativebc.ca/candidate/lorne-doerkson/",
+      "portraitPosition": "center 25%",
+      "name": "Conservative Party of BC",
+      "color": "#245b8a",
+      "leader": "Lorne Doerkson",
+      "leaderSource": "https://conservativebc.ca/candidate/lorne-doerkson/",
+      "leaderNote": "Party leader",
+      "platform": "https://conservativebc.ca/plan/",
+      "status": "Selected commitments from the party’s campaign plan.",
+      "items": [
+        {
+          "topic": "Taxes",
+          "summary": "Raise the personal income tax exemption to $32,000 and pledge no tax increases during its term.",
+          "points": [
+            {
+              "text": "Raise the basic personal income tax exemption from $13,216 to $32,000.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Target annual income tax savings of $1,000 per working person and $2,000 per average couple, according to the party’s estimates.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Commit to no tax increases throughout its term in government.",
+              "sourceIndices": [
+                1
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://conservativebc.ca/plan/conservatives-will-cut-your-taxes-by-1000/",
+              "label": "Income tax proposal — October 8, 2026"
+            },
+            {
+              "url": "https://conservativebc.ca/plan/conservative-party-of-bc-pledges-no-new-taxes-on-british-columbians/",
+              "label": "No new taxes pledge"
+            }
+          ],
+          "pointSources": [
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "note": "Savings are party estimates and depend on taxable income."
+        },
+        {
+          "topic": "Health care",
+          "summary": "Maintain health spending and invest in doctors and nurses to keep emergency rooms and maternity wards open.",
+          "points": [
+            {
+              "text": "Create a $50 million emergency fund and support rural medical practices at risk of closure.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Recruit and retain more doctors and nurses while protecting current health funding and keeping the system universal and publicly funded.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Train more doctors in BC, bring back Canadians who studied medicine abroad and accelerate international credential recognition.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Launch an expert commission within the first 100 days to identify approaches from other public health systems and reduce wait times.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Keep covered care accessible with a health card.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://conservativebc.ca/plan/keep-emergency-rooms-open/",
+              "label": "Health care announcement — October 5, 2026"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "topic": "Energy",
+          "summary": "Expand natural gas and LNG production, with growth targets for 2032 and 2035.",
+          "points": [
+            {
+              "text": "Double natural gas production by 2032 and triple it by 2035, as stated in the detailed announcement.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Accelerate project approvals and reduce regulatory barriers to new energy development.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Build the power supply and infrastructure needed for expansion.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Promote First Nations partnerships and ownership in new projects.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://conservativebc.ca/plan/make-british-columbia-an-energy-superpower/",
+              "label": "Energy plan announcement"
+            },
+            {
+              "url": "https://conservativebc.ca/wp-content/uploads/2026/10/BC-ENERGY-SUPERPOWER_5-1_compressed.pdf",
+              "label": "Full energy plan (PDF)"
+            }
+          ],
+          "note": "The plan overview refers to LNG, while the detailed announcement calls the targets natural gas production; the sources use different descriptions.",
+          "pointSources": [
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ]
+        },
+        {
+          "topic": "Indigenous policy",
+          "summary": "Repeal the Declaration on the Rights of Indigenous Peoples Act (DRIPA).",
+          "points": [
+            {
+              "text": "Repeal the Declaration on the Rights of Indigenous Peoples Act (DRIPA).",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Pursue economic reconciliation through development projects built in partnership with First Nations.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://conservativebc.ca/plan/first-nations-dripa/",
+              "label": "DRIPA and economic reconciliation — October 7, 2026"
+            }
+          ],
+          "note": "The party describes financial and social success through these partnerships but does not specify a replacement legislative framework in this announcement."
+        },
+        {
+          "topic": "Public safety & addiction",
+          "summary": "Expand police and court capacity, treatment services and mandatory care interventions.",
+          "points": [
+            {
+              "text": "Add 250 police officers through expanded Police Academy capacity, plus 500 RCMP officers and 150 civilian staff over five years.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Hire 50 Crown prosecutors and work with Ottawa on funding 20 additional trial judges, alongside more sheriff and court capacity.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Expand psychiatric services, crisis response and residential treatment; amend the Mental Health Act to connect people with mandatory care.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "End safer supply, expand naloxone access and prohibit illegal drug use in hospitals, shelters and publicly funded supportive housing.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Publish measures of repeat offending, court delays, treatment access and long-term recovery.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://conservativebc.ca/plan/safe-streets-for-bc/",
+              "label": "Safe Streets plan — October 6, 2026"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "topic": "Insurance",
+          "summary": "Expand insurance choice and compensation rights for serious injuries while retaining ICBC.",
+          "points": [
+            {
+              "text": "Introduce a hybrid insurance approach giving people seriously injured by reckless drivers rights to compensation and legal representation.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Preserve ICBC as a public insurance option while expanding consumer choice where competition could improve price and service.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Protect access to treatment and rehabilitation, with legal fee limits intended to control litigation costs.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Require clear service standards and public reporting.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://conservativebc.ca/plan/insurance/",
+              "label": "Auto insurance policy — October 7, 2026"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "topic": "Wildfires",
+          "summary": "Buy firefighting aircraft and invest in fuel reduction, prescribed burns and early detection.",
+          "points": [
+            {
+              "text": "Procure firefighting aircraft, including waterbombers.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Reduce forest fuels around communities and simplify prescribed-burn approvals without lowering safety standards.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Allow qualified firefighting resources to respond more quickly during emergencies.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Create a dedicated fund for early detection and prevention technology, with preparation intended for the next fire season.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://conservativebc.ca/plan/fighting-wildfires-protecting-communities/",
+              "label": "Wildfire Action Plan — October 5, 2026"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "topic": "Education",
+          "summary": "Remove SOGI from schools while committing to student safety.",
+          "points": [
+            {
+              "text": "Remove SOGI from schools.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Maintain safe places for children to learn.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://conservativebc.ca/plan/safe-schools/",
+              "label": "Safe Schools statement — October 7, 2026"
+            }
+          ],
+          "note": "The reviewed statement does not provide replacement curriculum details or a rollout timetable."
+        }
+      ]
+    },
+    {
+      "id": "green",
+      "portrait": "/content/assets/leaders/emily-lowan.jpg",
+      "portraitSource": "https://bcgreens.ca/emily-lowan-leader/",
+      "portraitPosition": "center 30%",
+      "name": "BC Green Party",
+      "color": "#38634b",
+      "leader": "Emily Lowan",
+      "leaderSource": "https://bcgreens.ca/emily-lowan-leader/",
+      "leaderNote": "Party leader",
+      "platform": "https://bcgreens.ca/our-plan/",
+      "status": "Published priorities; the party says its full platform is coming soon.",
+      "items": [
+        {
+          "topic": "Housing",
+          "summary": "Build and protect 26,000 permanently affordable non-market homes annually and limit rent increases between tenants.",
+          "points": [
+            {
+              "text": "Build and protect 26,000 permanently affordable non-market homes each year.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Simplify and accelerate construction of all forms of housing.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Introduce vacancy control so rent limits stay with the unit when tenants change.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://bcgreens.ca/our-plan/",
+              "label": "2026 campaign priorities"
+            }
+          ],
+          "note": "The annual target includes new construction and protection of existing affordable homes."
+        },
+        {
+          "topic": "Transit",
+          "summary": "Make public transit frequent, fast and free.",
+          "points": [
+            {
+              "text": "Eliminate transit fares and increase service speed and frequency.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Use proposed wealth and corporate revenue measures to help finance public transit.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://bcgreens.ca/our-plan/",
+              "label": "2026 campaign priorities"
+            }
+          ],
+          "note": "The priorities page does not yet provide individual route plans, service-frequency targets or a rollout schedule."
+        },
+        {
+          "topic": "Health care",
+          "summary": "Build community health centres in every region and cover mental health care through the public system.",
+          "points": [
+            {
+              "text": "Build team-based community health centres in every region, with long-term patient support.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Complete implementation of safe nurse-to-patient ratios.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Provide publicly covered mental health care and direct public health dollars to public care.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Invest in harm reduction and voluntary addiction treatment.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://bcgreens.ca/our-plan/",
+              "label": "2026 campaign priorities"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "topic": "Climate & democracy",
+          "summary": "Stop new fossil fuel development and introduce proportional representation legislation within the first 100 days.",
+          "points": [
+            {
+              "text": "Stop new fossil fuel development and support clean energy and home retrofits.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Fully fund old-growth logging deferrals with compensation for First Nations and forestry communities.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Support selective logging, value-added industries and mining-law reforms for renewable-energy resources.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Introduce proportional representation legislation within the first 100 days.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://bcgreens.ca/our-plan/",
+              "label": "2026 campaign priorities"
+            }
+          ],
+          "note": "The 100-day deadline applies to introducing legislation."
+        },
+        {
+          "topic": "Home solar & batteries",
+          "summary": "Make solar and home batteries easier to approve and finance, including options for apartment residents.",
+          "points": [
+            {
+              "text": "Restore one-for-one net metering for homes and small businesses until their solar generation supplies about 5% of provincial electricity demand.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Create one provincial application portal covering incentives, municipal permits, electrical approval and BC Hydro connections.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Use certified equipment and pre-approved designs to speed up standard rooftop solar and battery installations.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Create a legal and technical pathway for plug-in balcony solar, including systems usable by renters and apartment residents.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Offer low-cost BC Hydro financing repaid through electricity bills, with early repayment allowed without a penalty.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://bcgreens.ca/wp-content/uploads/2026/10/BCG_Economic-Vision.pdf#page=19",
+              "label": "Economic vision, pages 19–20"
+            }
+          ],
+          "note": "This proposal is from the economic vision, which the party distinguishes from its forthcoming full platform."
+        },
+        {
+          "topic": "Wealth & public finances",
+          "summary": "Tax extreme wealth to fund public services and strengthen provincial finances.",
+          "points": [
+            {
+              "text": "Introduce a one-time progressive tax on net wealth above $50 million, followed by an annual wealth tax.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "The proposed one-time rates are 5% on $50 million+, 10% on $100 million+ and 20% on $1 billion+; annual rates are 2%, 3% and 5% at those thresholds.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "The party estimates $22.2 billion in one-time revenue and about $5.4 billion annually; these are its modelling estimates.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Strengthen valuation, reporting and enforcement to limit avoidance and use revenue for services, infrastructure and provincial finances.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://bcgreens.ca/wp-content/uploads/2026/10/BCG_Economic-Vision.pdf#page=35",
+              "label": "Economic vision, pages 35–36"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "topic": "Small businesses",
+          "summary": "Protect commercial tenants and give communities more tools to keep businesses locally rooted.",
+          "points": [
+            {
+              "text": "Limit commercial rent increases during leases, at renewal and between tenants, supported by a provincial rent registry.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Begin by collecting rent and lease data, then phase in the protections across BC.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Give municipalities authority to tax vacant commercial property, with exemptions for genuine redevelopment and insufficient demand.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Create purchase opportunities for commercial tenants, First Nations, cooperatives and community organizations.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://bcgreens.ca/wp-content/uploads/2026/10/BCG_Economic-Vision.pdf#page=10",
+              "label": "Economic vision, pages 10–11"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "topic": "Child care & income support",
+          "summary": "Expand affordable child care and raise income supports and worker protections.",
+          "points": [
+            {
+              "text": "Restart expansion of $10-a-day child care and work toward universal access with fair pay for early childhood educators.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Raise social and disability assistance above the poverty line, index payments to inflation and end clawbacks.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Increase the minimum wage toward a living wage and expand opportunities for workers to organize through sectoral bargaining.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://bcgreens.ca/our-plan/",
+              "label": "2026 campaign priorities"
+            }
+          ],
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "otherParties": [
+    {
+      "leaderNote": "Party leader",
+      "leaderSource": "https://elections.bc.ca/docs/fin/Registered-Political-Parties-Information.pdf",
+      "status": "Platform in development. The party lists affordability, health care, economic growth, fiscal responsibility, sustainability and Indigenous relations as policy areas, but has not published specific commitments on this page.",
+      "id": "centre",
+      "name": "CentreBC",
+      "color": "#65518b",
+      "leader": "Elenore Sturko",
+      "platform": "https://www.centrebc.ca/our-policy/",
+      "items": []
+    },
+    {
+      "leaderNote": "Party leader",
+      "leaderSource": "https://elections.bc.ca/docs/fin/Registered-Political-Parties-Information.pdf",
+      "status": "Selected commitments from the party’s published platform priorities.",
+      "id": "chp",
+      "name": "Christian Heritage Party of BC",
+      "color": "#315580",
+      "leader": "Christian McCay",
+      "platform": "https://www.chpbc.ca/platform-priorities/",
+      "items": [
+        {
+          "topic": "Indigenous policy",
+          "summary": "Repeal DRIPA and replace it with a reconciliation framework that respects constitutional and treaty rights and includes materially affected parties.",
+          "points": [
+            {
+              "text": "Repeal DRIPA and review laws, agreements, land measures and commitments introduced under it.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Retain constitutional Aboriginal and treaty rights and existing binding obligations.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Bring First Nations and other materially affected communities, landowners, workers and businesses into the replacement framework.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Define responsibilities, land and resource arrangements, revenue sharing and measurable outcomes.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "note": "",
+          "sources": [
+            {
+              "url": "https://www.chpbc.ca/platform-priorities/",
+              "label": "CHP-BC — Platform Priorities"
+            }
+          ]
+        },
+        {
+          "topic": "Health care",
+          "summary": "Direct more resources to frontline care and establish independent oversight of medical assistance in dying.",
+          "points": [
+            {
+              "text": "Reduce administrative costs and direct resources to frontline, mental health, home and palliative care.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Create a MAID oversight body independent of the Ministry of Health and health authorities.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Authorize case audits and complaint investigations, with public reporting on safeguards, consent and access to alternative care.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Protect conscience rights for health professionals and institutions.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "note": "",
+          "sources": [
+            {
+              "url": "https://www.chpbc.ca/platform-priorities/",
+              "label": "CHP-BC — Platform Priorities"
+            }
+          ]
+        },
+        {
+          "topic": "Housing",
+          "summary": "Use suitable public land, long-term leases and faster approvals to lower housing costs.",
+          "points": [
+            {
+              "text": "Identify serviceable Crown and other public land near communities for housing.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Use long-term leases, partnerships and carefully structured land releases to lower land costs.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Fast-track approvals where infrastructure supports development while maintaining environmental and property protections.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Publish project targets for homes, affordability, final cost, completion and taxpayer contributions.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "note": "",
+          "sources": [
+            {
+              "url": "https://www.chpbc.ca/platform-priorities/",
+              "label": "CHP-BC — Platform Priorities"
+            }
+          ]
+        },
+        {
+          "topic": "Education",
+          "summary": "Stop using SOGI 123 in schools and focus teaching on core academic subjects and practical skills.",
+          "points": [
+            {
+              "text": "Stop use of SOGI 123 and gender-identity teaching described in its platform.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Give parents visibility into teaching materials and sensitive subjects.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Focus instruction on literacy, mathematics, science, history, civics and practical skills.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Protect students from bullying and mistreatment.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "note": "",
+          "sources": [
+            {
+              "url": "https://www.chpbc.ca/platform-priorities/",
+              "label": "CHP-BC — Platform Priorities"
+            }
+          ]
+        },
+        {
+          "topic": "Addiction",
+          "summary": "Expand detox, residential treatment and recovery services, with medically overseen involuntary admission when legal criteria are met.",
+          "points": [
+            {
+              "text": "Expand detox, residential treatment, psychiatric care and long-term recovery.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Connect crisis care to supportive housing, employment and independence.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Use involuntary admission when the legal threshold is met, with medical oversight and regular review.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Coordinate police, prosecutors, corrections and treatment services.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "note": "",
+          "sources": [
+            {
+              "url": "https://www.chpbc.ca/platform-priorities/",
+              "label": "CHP-BC — Platform Priorities"
+            }
+          ]
+        },
+        {
+          "topic": "Government accountability",
+          "summary": "Review provincial spending and require public reporting of budgets, deadlines and results.",
+          "points": [
+            {
+              "text": "Require major programs to have a budget, deadline and measurable outcome.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Review spending ministry by ministry, including consulting contracts, administrative growth and duplication.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Publish promised and actual spending, results, missed deadlines and corrective action.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Correct, replace or end programs that repeatedly fail to achieve their objectives.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "note": "",
+          "sources": [
+            {
+              "url": "https://www.chpbc.ca/platform-priorities/",
+              "label": "CHP-BC — Platform Priorities"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "leaderNote": "Party leader",
+      "leaderSource": "https://elections.bc.ca/docs/fin/Registered-Political-Parties-Information.pdf",
+      "status": "Selected commitments from the party’s 2026 provincial election platform.",
+      "id": "communist",
+      "name": "Communist Party of BC",
+      "color": "#a33333",
+      "leader": "Robert Crooks",
+      "platform": "https://cpcbc.ca/our-platform/",
+      "items": [
+        {
+          "topic": "Taxes",
+          "summary": "Eliminate income tax on earnings below $50,000 and increase the contribution from corporations and wealthy taxpayers.",
+          "points": [
+            {
+              "text": "End provincial income tax on earnings below $50,000.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Reverse the 2001 tax reductions for wealthy people and corporations.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Fund housing, education, transit and social services through progressive provincial taxation.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "note": "",
+          "sources": [
+            {
+              "url": "https://cpcbc.ca/our-platform/",
+              "label": "Communist Party of BC — Our Platform (2026)"
+            }
+          ]
+        },
+        {
+          "topic": "Housing",
+          "summary": "Build 100,000 new or renovated public housing units, tie rent controls to units and limit rents to 20% of household income.",
+          "points": [
+            {
+              "text": "Build 100,000 new or renovated social and low-income public housing units.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Tie rent controls to units and legislate rents at no more than 20% of household income.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Prohibit renovictions, demovictions and economic or no-fault evictions.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Use homes vacant for more than two years as social housing and stop encampment clearing until permanent housing is available.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "note": "",
+          "sources": [
+            {
+              "url": "https://cpcbc.ca/our-platform/",
+              "label": "Communist Party of BC — Our Platform (2026)"
+            }
+          ]
+        },
+        {
+          "topic": "Workers",
+          "summary": "Raise the minimum wage to $30 with inflation adjustments and reduce the work week to 32 hours without reducing pay.",
+          "points": [
+            {
+              "text": "Raise the minimum wage to $30, with annual inflation adjustments.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Reduce the work week to 32 hours without reducing pay.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Extend sectoral bargaining, picketing rights and protections for domestic, agricultural and migrant workers.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Strengthen card-check certification, anti-scab legislation and penalties for union-busting.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "note": "",
+          "sources": [
+            {
+              "url": "https://cpcbc.ca/our-platform/",
+              "label": "Communist Party of BC — Our Platform (2026)"
+            }
+          ]
+        },
+        {
+          "topic": "Transit",
+          "summary": "Make public transit free and create an accessible province-wide bus system.",
+          "points": [
+            {
+              "text": "Make transit fare-free and create an accessible province-wide bus system.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Create and enforce transit-only lanes in major cities.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Keep transit publicly owned and under democratic control.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "note": "",
+          "sources": [
+            {
+              "url": "https://cpcbc.ca/our-platform/",
+              "label": "Communist Party of BC — Our Platform (2026)"
+            }
+          ]
+        },
+        {
+          "topic": "Climate",
+          "summary": "End LNG subsidies, cancel Ksi Lisims LNG and support a transition to renewable energy with retraining at union wages.",
+          "points": [
+            {
+              "text": "Cancel public LNG subsidies and Ksi Lisims LNG.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Prioritize renewable energy and conservation.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Retrain fossil-fuel workers into other jobs at union wages.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Make polluting corporations pay for reversing environmental damage.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "note": "",
+          "sources": [
+            {
+              "url": "https://cpcbc.ca/our-platform/",
+              "label": "Communist Party of BC — Our Platform (2026)"
+            }
+          ]
+        },
+        {
+          "topic": "Health care",
+          "summary": "Expand public health coverage, staffing and hospital capacity.",
+          "points": [
+            {
+              "text": "Expand public coverage for medicines, dental, optical and mental health care.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Increase hospital beds, train doctors and nurses and fund hospitals to prevent emergency closures.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "End privatization and contracting out of health services.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Offer incentives for students from remote communities to return there to practise.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "note": "",
+          "sources": [
+            {
+              "url": "https://cpcbc.ca/our-platform/",
+              "label": "Communist Party of BC — Our Platform (2026)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "leaderNote": "Party leader",
+      "leaderSource": "https://elections.bc.ca/docs/fin/Registered-Political-Parties-Information.pdf",
+      "status": "Broad goals from the party’s undated website; no costs or timelines are provided. The site still refers to a 2028 provincial election.",
+      "id": "canwest",
+      "name": "CanWest Party (CWP)",
+      "color": "#536473",
+      "leader": "Wei Ping Chen",
+      "platform": "http://www.canada2.net/",
+      "items": [
+        {
+          "topic": "Economy & taxes",
+          "summary": "Develop the economy and keep taxes low.",
+          "points": [
+            {
+              "text": "Encourage local industrial and commercial businesses to invest and create jobs.",
+              "sourceIndices": [
+                1
+              ]
+            },
+            {
+              "text": "Keep taxes low.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "http://www.canada2.net/",
+              "label": "Party homepage"
+            },
+            {
+              "url": "http://www.canada2.net/mission.htm",
+              "label": "Party mission page"
+            }
+          ],
+          "note": "The website gives no named tax changes, budget or implementation schedule. Broad goals from the party’s undated website; no costs or timelines are provided. The site still refers to a 2028 provincial election.",
+          "pointSources": [
+            [
+              1
+            ],
+            [
+              0
+            ]
+          ]
+        },
+        {
+          "topic": "Community",
+          "summary": "Promote community safety and good relations between neighbours.",
+          "points": [
+            {
+              "text": "Strengthen public security so residents can live safely.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Promote mutual respect, understanding and assistance between communities.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "http://www.canada2.net/mission.htm",
+              "label": "Party mission page"
+            }
+          ],
+          "note": "The mission page uses a different party heading; its goals are shown as undated website material. The mission page does not specify policing changes, programs, funding or deadlines. Broad goals from the party’s undated website; no costs or timelines are provided. The site still refers to a 2028 provincial election."
+        },
+        {
+          "topic": "Equality & environment",
+          "summary": "Support racial equality and a better environment.",
+          "points": [
+            {
+              "text": "Promote racial equality and harmonious coexistence across ethnic groups.",
+              "sourceIndices": [
+                0,
+                1
+              ]
+            },
+            {
+              "text": "Strengthen environmental protection and improve the local environment.",
+              "sourceIndices": [
+                1
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "http://www.canada2.net/",
+              "label": "Party homepage"
+            },
+            {
+              "url": "http://www.canada2.net/mission.htm",
+              "label": "Party mission page"
+            }
+          ],
+          "note": "The available goals have no emissions targets, named legislation or costed investments. Broad goals from the party’s undated website; no costs or timelines are provided. The site still refers to a 2028 provincial election.",
+          "pointSources": [
+            [
+              0,
+              1
+            ],
+            [
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "leaderNote": "Party leader",
+      "leaderSource": "https://elections.bc.ca/docs/fin/Registered-Political-Parties-Information.pdf",
+      "status": "Selected positions from the party’s undated website platform; these have not been identified as a newly issued 2026 platform.",
+      "id": "freedom",
+      "name": "Freedom Party of BC",
+      "color": "#766126",
+      "leader": "Amrit Birring",
+      "platform": "https://freedompartybc.ca/",
+      "items": [
+        {
+          "topic": "Housing",
+          "summary": "End foreign ownership of BC housing and agricultural land until further notice.",
+          "points": [
+            {
+              "text": "End foreign ownership of residential and agricultural land until further notice.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Call on the federal government to provide housing for newcomers it sends to BC.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "note": "The website does not specify enforcement mechanisms, exemptions or a construction target. Selected positions from the party’s undated website platform; these have not been identified as a newly issued 2026 platform.",
+          "sources": [
+            {
+              "url": "https://freedompartybc.ca/",
+              "label": "Freedom Party of BC — Our Platform"
+            }
+          ]
+        },
+        {
+          "topic": "Education",
+          "summary": "Remove SOGI 123 and Critical Race Theory from schools and strengthen parental authority over education and medical decisions.",
+          "points": [
+            {
+              "text": "Remove SOGI 123 and Critical Race Theory from BC schools.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Strengthen parental authority over education and medical decisions.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Overhaul child and family services to prioritize parental decisions about children’s interests.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Aim to make K–12 academics competitive with international standards.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "note": "Selected positions from the party’s undated website platform; these have not been identified as a newly issued 2026 platform.",
+          "sources": [
+            {
+              "url": "https://freedompartybc.ca/",
+              "label": "Freedom Party of BC — Our Platform"
+            }
+          ]
+        },
+        {
+          "topic": "Health policy",
+          "summary": "Rehire employees dismissed under COVID policies and repeal Bill 36, the Health Professions and Occupations Act.",
+          "points": [
+            {
+              "text": "Rehire workers dismissed under COVID policies, with an apology.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Repeal Bill 36, the Health Professions and Occupations Act.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Oppose vaccine passports, forced masking and government interference in medical choices.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "note": "The undated page does not give a delivery timeline. Selected positions from the party’s undated website platform; these have not been identified as a newly issued 2026 platform.",
+          "sources": [
+            {
+              "url": "https://freedompartybc.ca/",
+              "label": "Freedom Party of BC — Our Platform"
+            }
+          ]
+        },
+        {
+          "topic": "Taxes",
+          "summary": "Lower taxes and end repeated taxation on used-car sales.",
+          "points": [
+            {
+              "text": "Lower taxes across the economy to encourage growth and employment.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "End repeated taxation when used vehicles are resold.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Lower liquor taxes.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "note": "The page does not supply rates, revenue estimates or a costed budget. Selected positions from the party’s undated website platform; these have not been identified as a newly issued 2026 platform.",
+          "sources": [
+            {
+              "url": "https://freedompartybc.ca/",
+              "label": "Freedom Party of BC — Our Platform"
+            }
+          ]
+        },
+        {
+          "topic": "Resources",
+          "summary": "Support development of BC’s natural resource industries.",
+          "points": [
+            {
+              "text": "Support development of oil, gas, minerals, forestry, agriculture and cattle industries.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Use resource development to support prosperity for BC residents.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "note": "The platform does not identify specific new projects or investment amounts. Selected positions from the party’s undated website platform; these have not been identified as a newly issued 2026 platform.",
+          "sources": [
+            {
+              "url": "https://freedompartybc.ca/",
+              "label": "Freedom Party of BC — Our Platform"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "leaderNote": "Party leader",
+      "leaderSource": "https://elections.bc.ca/docs/fin/Registered-Political-Parties-Information.pdf",
+      "status": "Selected commitments from the party’s 2026 platform and policy page.",
+      "id": "libertarian",
+      "name": "Libertarian",
+      "color": "#806822",
+      "leader": "Alex Joehl",
+      "platform": "https://libertarian.bc.ca/2026-platform/",
+      "items": [
+        {
+          "topic": "Housing",
+          "summary": "Simplify development regulations and expand opportunities for housing supply.",
+          "points": [
+            {
+              "text": "Make the Agricultural Land Commission advisory and allow non-arable land to leave the Agricultural Land Reserve, with a one-time levy when such land is sold or developed.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Simplify municipal zoning into broader industrial, commercial, mixed-use, housing and recreational categories.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Reduce or eliminate property transfer tax and end the School Tax, speculation, empty-home and home-flipping taxes.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Ease rent controls, revise tenancy rules to encourage rental supply and pause the Step Code.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Phase out rental assistance programs.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://libertarian.bc.ca/2024/08/17/affordable-housing-2/",
+              "label": "Detailed housing policy"
+            }
+          ],
+          "note": "These policy articles are linked by the 2026 platform; their original publication dates are in 2024."
+        },
+        {
+          "topic": "Insurance",
+          "summary": "End ICBC’s monopoly on basic auto insurance.",
+          "points": [
+            {
+              "text": "Allow competing providers for basic and optional auto insurance.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Convert ICBC’s insurance business into a member-owned cooperative, with members able to choose another insurer.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Repeal no-fault legislation and restore access to pain-and-suffering compensation and legal representation.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Return licensing and registration responsibilities to provincial and regional offices.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Sell the North Vancouver head office property and use proceeds for liabilities and provincial debt.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://libertarian.bc.ca/2024/08/17/ending-icbc/",
+              "label": "Detailed ICBC policy"
+            }
+          ],
+          "note": "These policy articles are linked by the 2026 platform; their original publication dates are in 2024."
+        },
+        {
+          "topic": "Taxes & spending",
+          "summary": "Cut government spending, return savings to taxpayers and reduce provincial debt. End PST on private vehicle sales.",
+          "points": [
+            {
+              "text": "Raise the personal income tax exemption to $50,000 and reduce the number of tax brackets.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Eliminate direct fuel taxes, carbon taxes, the Employer Health Tax and tobacco and liquor taxes listed in the policy.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Replace the provincial charitable donation credit with an annual donation refund of up to $1,000.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Cut spending, tie program funding to outcomes and use savings for tax relief and debt repayment.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "End PST on private vehicle sales.",
+              "sourceIndices": [
+                1
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://libertarian.bc.ca/2024/08/17/tax-policy-2/",
+              "label": "Detailed tax policy"
+            },
+            {
+              "url": "https://libertarian.bc.ca/2026-platform/",
+              "label": "2026 platform: private vehicle sales"
+            }
+          ],
+          "note": "These policy articles are linked by the 2026 platform; their original publication dates are in 2024.",
+          "pointSources": [
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "topic": "Health care",
+          "summary": "Allow private surgery options alongside public health care.",
+          "points": [
+            {
+              "text": "Legalize private delivery options while retaining public payment for services covered by the public system.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Encourage providers to establish specialized facilities for patients whose needs are better served outside acute hospitals.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Emphasize preventative, primary and long-term care.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Use competition between health care providers to reform service delivery and patient access.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://libertarian.bc.ca/2024/08/17/healthcare-focused-on-patients/",
+              "label": "Detailed patient-care policy"
+            }
+          ],
+          "note": "These policy articles are linked by the 2026 platform; their original publication dates are in 2024."
+        },
+        {
+          "topic": "Education",
+          "summary": "Move decisions toward local school districts and develop a system where funding follows students to parents’ chosen education options.",
+          "points": [
+            {
+              "text": "Shift decision-making from the Ministry of Education toward local school districts.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Consult education providers on an opt-in system in which public funding follows the student.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Allow parents to direct that funding across an expanded range of education options.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://libertarian.bc.ca/2024/08/17/education-2/",
+              "label": "Detailed education policy"
+            }
+          ],
+          "note": "These policy articles are linked by the 2026 platform; their original publication dates are in 2024. The source does not specify a per-student funding amount or an implementation date."
+        }
+      ]
+    },
+    {
+      "leaderNote": "Interim party leader",
+      "leaderSource": "https://elections.bc.ca/docs/fin/Registered-Political-Parties-Information.pdf",
+      "status": "Selected commitments from the party’s published priorities.",
+      "id": "onebc",
+      "name": "OneBC",
+      "color": "#773a44",
+      "leader": "Dallas Brodie",
+      "platform": "https://1bc.ca/priorities",
+      "note": "Represented in the legislature; classified as a major party by Elections BC.",
+      "items": [
+        {
+          "topic": "Taxes & debt",
+          "summary": "Cut taxes by 25% in every income bracket, including corporate taxes, reduce PST by 2 percentage points and balance the budget within four years.",
+          "points": [
+            {
+              "text": "Cut taxes by 25% across personal tax brackets and corporate taxes.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Reduce PST by two percentage points.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Balance the budget within four years, aiming for surpluses afterward.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Direct a portion of surpluses to debt repayment.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "note": "",
+          "sources": [
+            {
+              "url": "https://1bc.ca/priorities",
+              "label": "OneBC — Our Priorities"
+            }
+          ]
+        },
+        {
+          "topic": "Indigenous policy",
+          "summary": "Repeal DRIPA, declare UNDRIP without force in BC and halt voluntary transfers of cash, land and resource control to band governments.",
+          "points": [
+            {
+              "text": "Repeal DRIPA and declare UNDRIP without force in BC.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Halt voluntary transfers of cash, land and resource control to band governments.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Restore oversight of band spending and end mandatory land acknowledgements in government-funded institutions.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Seek constitutional reforms to the Indian Act and reserve system; these changes extend beyond provincial legislative authority.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "note": "",
+          "sources": [
+            {
+              "url": "https://1bc.ca/priorities",
+              "label": "OneBC — Our Priorities"
+            }
+          ]
+        },
+        {
+          "topic": "Health care",
+          "summary": "Allow private care alongside fully funded public care and shift administrative spending toward frontline services.",
+          "points": [
+            {
+              "text": "Allow private health care alongside fully funded public services.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Redirect administration and human-resources spending to frontline staff and care.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Repeal the Health Professions and Occupations Act.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Use the findings of the Allison Inquiry to inform vaccine protocols.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "note": "",
+          "sources": [
+            {
+              "url": "https://1bc.ca/priorities",
+              "label": "OneBC — Our Priorities"
+            }
+          ]
+        },
+        {
+          "topic": "Education",
+          "summary": "Remove SOGI 123, restore standardized testing and introduce a Parental Bill of Rights.",
+          "points": [
+            {
+              "text": "Restore standardized testing in reading, writing and mathematics.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Remove SOGI 123 and politicized content from classrooms.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Introduce a Parental Bill of Rights providing informed consent and classroom transparency for parents of minors.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "note": "",
+          "sources": [
+            {
+              "url": "https://1bc.ca/priorities",
+              "label": "OneBC — Our Priorities"
+            }
+          ]
+        },
+        {
+          "topic": "Housing",
+          "summary": "Eliminate the Step Code and block municipal rent control programs.",
+          "points": [
+            {
+              "text": "Eliminate Step Code requirements for buildings.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Block municipal rent control programs.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "note": "The priorities page does not provide a construction target or a costed housing program.",
+          "sources": [
+            {
+              "url": "https://1bc.ca/priorities",
+              "label": "OneBC — Our Priorities"
+            }
+          ]
+        },
+        {
+          "topic": "Addiction",
+          "summary": "End safer supply and drug consumption programs, convert consumption sites to recovery centres and introduce involuntary rehabilitation for severe addiction.",
+          "points": [
+            {
+              "text": "End safer supply and drug consumption programs.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Cancel new consumption sites and convert existing sites into recovery centres.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Introduce involuntary rehabilitation and housing for severe addiction.",
+              "sourceIndices": [
+                0
+              ]
+            },
+            {
+              "text": "Roll back drug decriminalization programs and increase enforcement against open drug use.",
+              "sourceIndices": [
+                0
+              ]
+            }
+          ],
+          "note": "",
+          "sources": [
+            {
+              "url": "https://1bc.ca/priorities",
+              "label": "OneBC — Our Priorities"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,8 +1,7 @@
-import { parties, otherParties, partyRosterSource } from '../data/parties.js';
 import { PartyCard } from '../components/parties/PartyCard.jsx';
 import { SourceLink } from '../components/ui/SourceLink.jsx';
 
-export function Parties() {
+export function Parties({ parties, otherParties, partyRosterSource }) {
     return (
         <>
             <div class="parties-grid">

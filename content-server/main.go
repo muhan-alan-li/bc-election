@@ -13,11 +13,12 @@ func main() {
 	dataDir := flag.String("data-dir", "../ingestion/storage/published", "directory containing published election data")
 	electionID := flag.String("election-id", "bc-provincial-2026", "election to serve")
 	finderURL := flag.String("finder-url", "http://127.0.0.1:8001", "constituency finder service URL")
+	contentDir := flag.String("content-dir", "content", "directory containing reviewed guide content and portraits")
 	flag.Parse()
 
 	server := &http.Server{
 		Addr:              *addr,
-		Handler:           newHandler(*clientDir, *dataDir, *electionID, *finderURL),
+		Handler:           newHandler(*clientDir, *dataDir, *electionID, *finderURL, *contentDir),
 		ReadHeaderTimeout: 5 * time.Second,
 	}
 

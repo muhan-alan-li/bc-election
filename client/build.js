@@ -1,11 +1,12 @@
-import { mkdir, copyFile } from 'node:fs/promises';
+import { mkdir, copyFile, rm } from 'node:fs/promises';
 import * as esbuild from 'esbuild';
-import { preparePoliticalAssets } from './build/political-assets.js';
-
-let politicalCatalog;
 
 await mkdir('dist', { recursive: true });
 await copyFile('index.html', 'dist/index.html');
+// Retire snapshots from the previous build pipeline. Research now comes from
+// validated backend endpoints and must not remain in the public asset folder.
+await rm('dist/data/political', { recursive: true, force: true });
+await rm('dist/assets', { recursive: true, force: true });
 
 const options = {
     entryPoints: ['src/main.jsx'],
@@ -15,40 +16,7 @@ const options = {
     jsxImportSource: 'preact',
     sourcemap: true,
     target: ['es2022'],
-    loader: { '.png': 'dataurl', '.jpg': 'file' },
-    assetNames: 'assets/[name]-[hash]',
-    plugins: [
-        {
-            name: 'political-profiles',
-            setup(build) {
-                build.onStart(async () => {
-                    politicalCatalog = await preparePoliticalAssets(
-                        '../ingestion/storage/published/political',
-                        'dist',
-                        process.env.ELECTION_ID || 'bc-provincial-2026',
-                    );
-                });
-                build.onResolve(
-                    { filter: /^political-profile-catalog$/ },
-                    () => ({ path: 'catalog', namespace: 'political' }),
-                );
-                build.onLoad({ filter: /.*/, namespace: 'political' }, () => ({
-                    contents: JSON.stringify(politicalCatalog),
-                    loader: 'json',
-                    watchFiles: ['candidates', 'parties'].flatMap((kind) =>
-                        Object.keys(politicalCatalog[kind]).map(
-                            (id) =>
-                                `../ingestion/storage/published/political/${politicalCatalog.electionID}/${kind}/${id}.json`,
-                        ),
-                    ),
-                    watchDirs: ['candidates', 'parties'].map(
-                        (kind) =>
-                            `../ingestion/storage/published/political/${politicalCatalog.electionID}/${kind}`,
-                    ),
-                }));
-            },
-        },
-    ],
+    loader: { '.png': 'dataurl' },
 };
 
 if (process.argv.includes('--watch')) {

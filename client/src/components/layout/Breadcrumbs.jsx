@@ -9,7 +9,9 @@ export function Breadcrumbs({ route, dataset, candidate, party }) {
                         <a href="#/parties">Parties</a>
                     </li>
                     <li>
-                        <span aria-current="page">{party.name} platform</span>
+                        <span aria-current="page">
+                            {party?.name || 'Party'} platform
+                        </span>
                     </li>
                 </ol>
             </nav>

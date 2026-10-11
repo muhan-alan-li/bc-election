@@ -1,13 +1,11 @@
-import { reviewedOn } from '../data/parties.js';
-import { getPlatformItems } from '../data/platform-details.js';
 import { useState } from 'preact/hooks';
 import { ExpandedPolicy } from '../components/platform/ExpandedPolicy.jsx';
 import { PolicyCard } from '../components/platform/PolicyCard.jsx';
 import { PlatformOverview } from '../components/platform/PlatformOverview.jsx';
 
-export function Platform({ party }) {
+export function Platform({ party, reviewedOn }) {
     const [selected, setSelected] = useState(null);
-    const items = getPlatformItems(party);
+    const items = party.items;
     return (
         <section
             class="party-platform"

@@ -1,6 +1,3 @@
-import pillars from '../../../../ingestion/election/analysis/pillars.json';
-import { candidateAlignmentNotes } from '../../content/candidate-alignment-notes.js';
-import { candidateFindingCopy } from '../../content/candidate-finding-copy.js';
 import { dateLabel } from '../../helpers/labels.js';
 import { Table } from '../ui/Table.jsx';
 import { useState } from 'preact/hooks';
@@ -159,7 +156,7 @@ function FindingEvidence({ finding }) {
     );
 }
 
-export function PillarPanel({ analysis, pillar }) {
+export function PillarPanel({ analysis, pillar, copy = {} }) {
     const findings = analysis.findings.filter(
         (finding) => finding.pillar_id === pillar.id,
     );
@@ -178,8 +175,6 @@ export function PillarPanel({ analysis, pillar }) {
             )}
             <div class="alignment-findings">
                 {findings.map((finding) => {
-                    const copy =
-                        candidateFindingCopy[analysis.id]?.[finding.id];
                     return (
                         <details class="alignment-finding" key={finding.id}>
                             <summary>
@@ -193,7 +188,10 @@ export function PillarPanel({ analysis, pillar }) {
                                 </span>
                             </summary>
                             <div class="alignment-finding-content">
-                                <FindingContent finding={finding} copy={copy} />
+                                <FindingContent
+                                    finding={finding}
+                                    copy={copy[finding.id]}
+                                />
                             </div>
                         </details>
                     );
@@ -214,7 +212,7 @@ function PillarGuide({ analysis, profile }) {
     return (
         <>
             <div class="policy-grid alignment-cards">
-                {pillars.map((pillar) => (
+                {analysis.pillars.map((pillar) => (
                     <PolicyCard
                         key={pillar.id}
                         item={{
@@ -226,7 +224,7 @@ function PillarGuide({ analysis, profile }) {
                                 pillar.id,
                             ),
                             alignmentNote:
-                                candidateAlignmentNotes[profile.id]?.[
+                                profile.presentation?.alignment_notes?.[
                                     pillar.id
                                 ] ||
                                 fallbackNotes[
@@ -246,7 +244,11 @@ function PillarGuide({ analysis, profile }) {
                     closeLabel="Close promises and actions"
                     onClose={() => setSelected(null)}
                 >
-                    <PillarPanel analysis={analysis} pillar={selected} />
+                    <PillarPanel
+                        analysis={analysis}
+                        pillar={selected}
+                        copy={profile.presentation?.findings}
+                    />
                 </PolicyDialog>
             )}
         </>

@@ -1,11 +1,10 @@
 import { Breadcrumbs } from './Breadcrumbs.jsx';
 import { partyName } from '../../helpers/candidates.js';
-import { parties, otherParties } from '../../data/parties.js';
 
-export function PageHeader({ route, dataset, candidate, party }) {
+export function PageHeader({ route, dataset, candidate, party, parties = [] }) {
     const affiliation =
         route.view === 'candidate' && candidate && dataset
-            ? [...parties, ...otherParties].find(
+            ? parties.find(
                   (item) => item.name === partyName(candidate, dataset),
               )
             : null;
@@ -20,7 +19,7 @@ export function PageHeader({ route, dataset, candidate, party }) {
         description =
             'Meet the party leaders and compare their main campaign promises.';
     } else if (route.view === 'platform') {
-        title = `${party.name} platform`;
+        title = `${party?.name || 'Party'} platform`;
         context = '2026 BC provincial election';
         description =
             'Explore the party’s commitments. Select a policy for its proposed plan of action.';

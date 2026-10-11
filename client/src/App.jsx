@@ -10,7 +10,7 @@ import { Constituencies } from './routes/Constituencies.jsx';
 import { District } from './routes/District.jsx';
 import { Candidate } from './routes/Candidate.jsx';
 import { Platform } from './routes/Platform.jsx';
-import { parties, otherParties } from './data/parties.js';
+import { useGuide } from './hooks/useGuide.js';
 import { Parties } from './routes/Parties.jsx';
 import { NotFound } from './routes/NotFound.jsx';
 
@@ -26,11 +26,21 @@ export function App() {
         error,
         retry,
     } = useElectionData();
-    const party = [...parties, ...otherParties].find(
-        (row) => row.id === route.partyID,
-    );
+    const {
+        guide,
+        loading: guideLoading,
+        error: guideError,
+        retry: retryGuide,
+    } = useGuide();
+    const guideParties = [
+        ...(guide?.parties || []),
+        ...(guide?.otherParties || []),
+    ];
+    const party = guideParties.find((row) => row.id === route.partyID);
     const displayRoute =
-        route.view === 'platform' && !party ? { view: 'missing' } : route;
+        route.view === 'platform' && guide && !party
+            ? { view: 'missing' }
+            : route;
     const candidate = dataset?.candidacies.find(
         (row) => row.id === route.candidateID,
     );
@@ -44,6 +54,7 @@ export function App() {
                     dataset={dataset}
                     candidate={candidate}
                     party={party}
+                    parties={guideParties}
                 />
                 {route.view === 'constituencies' && (
                     <>
@@ -84,9 +95,19 @@ export function App() {
                         )}
                     </>
                 )}
-                {route.view === 'parties' && <Parties />}
+                {['parties', 'platform'].includes(route.view) &&
+                    (guideLoading ? (
+                        <p role="status">Loading party content…</p>
+                    ) : guideError ? (
+                        <RetryError error={guideError} onRetry={retryGuide} />
+                    ) : null)}
+                {route.view === 'parties' && guide && <Parties {...guide} />}
                 {route.view === 'platform' && party && (
-                    <Platform key={party.id} party={party} />
+                    <Platform
+                        key={party.id}
+                        party={party}
+                        reviewedOn={guide.reviewedOn}
+                    />
                 )}
                 {displayRoute.view === 'missing' && <NotFound />}
             </main>

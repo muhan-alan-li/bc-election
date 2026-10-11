@@ -2,9 +2,9 @@
 
 The client uses Preact, hash-based routes, and esbuild. Run commands from this directory:
 
-- `npm run build` rebuilds JavaScript, CSS, and versioned political profile assets in `dist/`.
-- `npm run dev` watches frontend source and published political profiles. The Go content server serves the built files; refresh the browser after changes.
-- `npm test` runs component, helper, and political asset-publication checks.
+- `npm run build` rebuilds the JavaScript and CSS in `dist/`.
+- `npm run dev` watches frontend source. The Go content server serves the built files; refresh the browser after changes.
+- `npm test` runs component and helper checks. Backend validation runs with `go test ./...` from `content-server/`.
 - `npm run format:check` checks source, styles, and tests.
 
 ## Where code belongs
@@ -20,12 +20,23 @@ The client uses Preact, hash-based routes, and esbuild. Run commands from this d
 | `src/components/finder/`    | Constituency finder form, map, and results.                                                                                              |
 | `src/hooks/`                | Browser state and effects: requests, routing, saved stars, and adaptive pagination sizing.                                               |
 | `src/helpers/`              | Data access and pure transformations, labels, pagination, and route URLs.                                                                |
-| `src/content/`              | Candidate editorial notes and finding copy.                                                                                              |
-| `src/data/`                 | Local party and policy modules; currently gitignored. Restore these inputs before building a fresh checkout.                             |
-| `build/`                    | Validation and packaging of published political profiles.                                                                                |
 | `src/styles/`               | Base tokens and typography, shared UI/layout styles, and feature-specific styles. `src/styles.css` defines import order.                 |
 | `tests/`                    | Behavioral checks; `tests/helpers/` contains shared component loading and traversal.                                                     |
 | `dist/`                     | Generated output. Rebuild it after source changes; do not edit it directly.                                                              |
+
+## Backend content
+
+The frontend contains presentation code, not election datasets or editorial content. It requests:
+
+- `/api/guide` for party leaders, metadata, and normalized policy details.
+- `/api/districts` and `/api/districts/{code}` for constituency datasets.
+- `/api/political/candidates/{id}` for a reviewed candidate profile and its editorial `presentation` notes.
+- `/api/political/parties/{id}` for a candidate’s affiliated party source context.
+- `/content/assets/leaders/{filename}` for portraits.
+
+Reviewed guide content and candidate copy live in `content-server/content/{election-id}/`. Political research remains in `ingestion/storage/published/political/{election-id}/`. The server validates public records and rereads content on each request, with ETags for revalidation. Content changes do not require a client rebuild. A fresh client checkout builds without election data; the running backend needs its published research datasets.
+
+The content server accepts `-content-dir`; `make up` supplies the repository’s content directory automatically. Run backend tests before publishing changes to content or research validation.
 
 ## Shared components
 

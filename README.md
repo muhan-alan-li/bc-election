@@ -32,14 +32,16 @@ the records. Disclosures remain available in a secondary expandable section.
 Unreviewed identity matches are shown as pending research counts rather than
 attributed actions; platform passages and topic tags retain review labels.
 
-The client build packages only polished political profiles from
-`ingestion/storage/published/political/` as separate versioned JSON assets in
-`client/dist/data/political/`. Profiles load on demand on candidate pages; no
-server endpoint change is required. Rebuild the client after research updates
-(`npm run dev` watches the profile files). Use `ELECTION_ID=<id> npm run build`
-when serving an election other than `bc-provincial-2026`. Deploy the entire client
-`dist` directory, including its `data` folder. When profiles are unavailable,
-candidate pages fall back to their existing district voting-index records.
+Party summaries, policy details, candidate editorial notes, and portraits live in
+`content-server/content/` and load through backend endpoints. Candidate political
+profiles are read from `ingestion/storage/published/political/<election-id>/` by
+`GET /api/political/candidates/{id}`; affiliated party profiles use
+`GET /api/political/parties/{id}`. The backend validates published records before
+serving them and rereads files on each request. Updating content or research no
+longer requires rebuilding the frontend. Missing profiles fall back to the
+constituency’s existing voting-index records. Deploy `client/dist/`, the backend
+content directory, and published research together; use `-content-dir` when the
+content directory is outside the server’s working directory.
 
 ```sh
 cd client
@@ -66,12 +68,15 @@ The API reads `ingestion/storage/published/<election-id>/<district-code>.json` o
 
 - `GET /api/districts?q=richmond`: search constituencies with published research.
 - `GET /api/districts/RCC`: public Richmond Centre dataset, including candidates, affiliations, voting records, disclosures, interests, and coverage.
+- `GET /api/guide`: reviewed party leaders, summaries, and policy details.
+- `GET /api/political/{candidates|parties}/{id}`: a validated political profile, including candidate editorial notes where available.
+- `GET /content/assets/leaders/{filename}`: leader portraits.
 - `GET /health`: server liveness.
 - `GET /api/platforms/parties`: polished party source records, commitments and coverage.
 - `GET /api/platforms/candidates?district=RCC`: polished candidate source records for a district; omit the query for all candidates.
 - `GET /api/platforms/{parties|candidates}/{id}`: one record by its platform ID.
 
-The client data hook loads party and candidate platforms alongside district data,
+The client loads reviewed guide content and candidate political profiles separately from district data,
 without changing their presentation. All endpoints read polished files only and
 support ETag revalidation.
 
@@ -82,15 +87,15 @@ API responses support ETag revalidation. Invalid published data returns an error
 Research follows **raw → normalized → curated → polished**. See
 [pipeline stages, review rules and retention](ingestion/PIPELINE.md).
 `storage/published/` contains the polished client files. Rebuild them without raw
-downloads using `make data-build`; deploy only that directory with the app.
+downloads using `make data-build`; deploy that research directory alongside the backend guide content.
 Use `--ephemeral-raw` during collection to discard HTML/PDF bytes after extracting
 the evidence needed for review.
 
-All `ingestion/storage/` data and `client/src/data/` content modules are local and
-ignored by Git, including reviewed inputs. Existing tracked files have been
-removed from the index while kept on disk. Fresh checkouts need these local
-inputs restored from a backup before rebuilding research or the current client.
-The configuration, collector code, and synthetic test fixtures remain in Git.
+Research datasets under `ingestion/storage/` are local and ignored by Git,
+including reviewed collection inputs. Fresh deployments need these datasets
+restored from a backup. Reviewed guide content and portraits under
+`content-server/content/` are tracked. The frontend builds without research
+inputs; configuration, collector code, and synthetic fixtures remain in Git.
 
 Python 3.12+, with no Python dependencies. Optional Poppler `pdftotext` extracts disclosure page text.
 
