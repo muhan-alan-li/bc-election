@@ -1,4 +1,8 @@
-export function PolicyCard({ item, onSelect }) {
+export function PolicyCard({
+    item,
+    onSelect,
+    actionLabel = 'Explore the plan',
+}) {
     return (
         <button
             type="button"
@@ -8,9 +12,18 @@ export function PolicyCard({ item, onSelect }) {
         >
             <span class="policy-card-topic">{item.topic}</span>
             <span class="policy-card-summary">{item.summary}</span>
-            <span class="policy-card-action">
-                Explore the plan <span aria-hidden="true">↗</span>
-            </span>
+            {item.alignmentTag && (
+                <span
+                    class={`policy-card-tag policy-card-tag-${item.alignmentTag}`}
+                >
+                    <strong>{item.alignmentTag}:</strong> {item.alignmentNote}
+                </span>
+            )}
+            {actionLabel && (
+                <span class="policy-card-action">
+                    {actionLabel} <span aria-hidden="true">↗</span>
+                </span>
+            )}
         </button>
     );
 }
