@@ -53,11 +53,10 @@ th, td { padding: 12px 10px; border-bottom: 1px solid var(--line); vertical-alig
 td small { display: block; color: var(--ink3); margin-top: 6px; }
 .date { white-space: nowrap; }
 .secondary { padding: 8px 12px; background: var(--panel); color: var(--link); }
-.interests { padding-left: 20px; }
-.interests li { padding-block: 12px; border-bottom: 1px solid var(--line); }
-.interests small { display: block; margin-top: 5px; color: var(--ink3); }
-.documents { margin-top: 18px; }
-.documents li { margin-block: 8px; overflow-wrap: anywhere; }
+.disclosure-content { margin-top: 12px; }
+.compact-table table { min-width: 760px; font-size: .8rem; line-height: 1.4; }
+.compact-table th, .compact-table td { padding: .4rem .5rem; overflow-wrap: anywhere; }
+.disclosure-table th:first-child { width: 38%; }
 .empty { padding: 24px; border: 1px dashed var(--line2); border-radius: var(--radius); }
 footer { margin-top: 40px !important; padding-block: 24px; font-size: .85rem; color: var(--ink3); border-top: 1px solid var(--line); }
 @media (max-width: 600px) {
@@ -426,7 +425,7 @@ button:disabled { opacity: .45; cursor: default; }
 .research-coverage { margin-top: 24px; border-top: 1px solid var(--line); padding-top: 14px; }
 .research-coverage p { font-size: 14px; color: var(--ink2); margin: 12px 0; }
 .candidate-disclosures { margin-top: 36px; border-top: 1px solid var(--line2); padding-top: 20px; }
-.candidate-disclosures > summary, .platform-alignment > summary { font-size: 18px; color: var(--ink); }
+.candidate-disclosures > summary, .platform-alignment > summary, .alignment-archive > summary { font-size: 18px; color: var(--ink); }
 .record-load-error { border-left: 3px solid var(--accent); padding: 16px; background: var(--panel); margin-bottom: 20px; font-size: 14px; }
 @media (max-width: 850px) { .political-layout { grid-template-columns: 1fr; gap: 28px; } .record-controls { grid-template-columns: 1fr 1fr; } .record-controls > div:last-child { grid-column: 1 / -1; } }
 @media (max-width: 550px) { .record-summary { grid-template-columns: 1fr; } .record-summary > div { padding: 16px 20px; } .record-summary > div + div { border-left: 0; border-top: 1px solid var(--line); } .record-summary strong { font-size: 28px; } .record-controls { grid-template-columns: 1fr; padding: 16px; } .candidate-profile-intro { flex-direction: column; gap: 0; } .action-evidence dl > div { grid-template-columns: 1fr; gap: 3px; } .platform-evidence { padding: 18px; } }
@@ -492,16 +491,21 @@ button:disabled { opacity: .45; cursor: default; }
 .alignment-evidence-table blockquote { margin: 0; }
 .alignment-evidence-meta { display: block; margin-top: .2rem; color: var(--ink2); }
 .alignment-evidence-disclaimer { margin-top: .75rem; color: var(--ink2); font-size: .8rem; }
-.alignment-method summary, .alignment-archive summary { cursor: pointer; font-weight: 550; }
-.alignment-method, .alignment-archive { margin-top: 1.2rem; padding: 1rem 0; border-top: 1px solid #d8e0da; line-height: 1.65; }
-.alignment-method p { color: #52625b; font-size: .9rem; }
+.alignment-archive > summary { cursor: pointer; font-weight: 550; }
+.alignment-archive { margin: 1.5rem 0; padding-top: 1rem; border-top: 1px solid var(--line2); line-height: 1.4; }
+.alignment-archive-table td:first-child { white-space: nowrap; }
+.alignment-archive-table td:nth-child(2) { width: 40%; }
+.alignment-archive-table .voting-source-cell { min-width: 170px; }
+.voting-source-links { display: flex; flex-wrap: wrap; gap: .2rem .75rem; }
+.voting-source-links a { white-space: nowrap; }
+.alignment-archive-table th:nth-child(4), .alignment-archive-table td:nth-child(4) { width: 12%; min-width: 85px; white-space: nowrap; }
+.alignment-archive-table .vote-position { display: inline-block; white-space: nowrap; padding: 1px 8px; }
 .alignment-archive label { display: block; margin: 1rem 0 .35rem; font-size: .9rem; }
 .alignment-archive input { width: 100%; max-width: 480px; box-sizing: border-box; padding: .65rem .8rem; border: 1px solid #c9d5cd; border-radius: 6px; }
 @media (max-width: 600px) {
     .alignment-finding-content { grid-template-columns: minmax(0, 1fr); padding: 1rem; }
 }
 .alignment-assessment { margin-top: .4rem; }
-.alignment-method p { margin-top: .8rem; }
 .alignment-scope { margin-top: .35rem; }
 .alignment-cards { --party-color: #3f444a; margin: 1rem 0; }
 .alignment-empty h3 { text-transform: none; letter-spacing: normal; color: var(--ink); }

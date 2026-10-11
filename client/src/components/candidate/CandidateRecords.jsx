@@ -1,6 +1,7 @@
 import { SourceLink } from '../SourceLink.jsx';
 import { PoliticalRecord } from './PoliticalRecord.jsx';
 import { Interests } from './Interests.jsx';
+import { FullVotingRecord } from './FullVotingRecord.jsx';
 
 export function CandidateRecords({ candidate, dataset, research }) {
     const hasAlignment =
@@ -50,11 +51,14 @@ export function CandidateRecords({ candidate, dataset, research }) {
                     dataset={dataset}
                     research={research}
                 />
+                {hasAlignment && (
+                    <FullVotingRecord
+                        key={research.profile.id}
+                        actions={research.profile.actions}
+                    />
+                )}
                 <details class="candidate-disclosures">
-                    <summary>
-                        Disclosures and interests ({interests.length} reviewed
-                        entries)
-                    </summary>
+                    <summary>Disclosures and interests</summary>
                     <Interests
                         interests={interests}
                         documents={documents}

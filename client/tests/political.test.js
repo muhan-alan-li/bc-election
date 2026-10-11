@@ -355,9 +355,7 @@ test('commitment comparisons lead with specific conclusions and preserve ownersh
     );
     assert.ok(empty.includes('No published comparisons yet'));
     assert.ok(!empty.includes(finding.headline));
-    assert.ok(
-        content.includes('Human editorial review has not been recorded.'),
-    );
+    assert.ok(!content.includes('How these comparisons were selected'));
     assert.ok(!content.includes('Candidate-source passages'));
     assert.deepEqual(links, [
         'https://example.org/platform',

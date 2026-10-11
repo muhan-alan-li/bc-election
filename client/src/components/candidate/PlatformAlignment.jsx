@@ -5,8 +5,6 @@ import { PolicyCard } from '../platform/PolicyCard.jsx';
 import { PolicyDialog } from '../platform/PolicyDialog.jsx';
 import { candidateAlignmentNotes } from '../../content/candidate-alignment-notes.js';
 import { candidateFindingCopy } from '../../content/candidate-finding-copy.js';
-import { ActionRecord } from './ActionRecord.jsx';
-import { filterActions } from '../../helpers/political.js';
 
 export const alignmentLabels = {
     supports_commitment: 'Supports the promise',
@@ -41,45 +39,6 @@ function formatDate(value) {
         month: 'short',
         day: 'numeric',
     });
-}
-
-function VoteArchive({ actions }) {
-    const [query, setQuery] = useState('');
-    const [limit, setLimit] = useState(10);
-    const filtered = filterActions(actions, { query });
-    return (
-        <details class="alignment-archive">
-            <summary>Browse the voting record ({actions.length} votes)</summary>
-            <label for="archive-search">Find a bill or amendment</label>
-            <input
-                id="archive-search"
-                type="search"
-                placeholder="Search the voting record"
-                value={query}
-                onInput={(event) => {
-                    setQuery(event.currentTarget.value);
-                    setLimit(10);
-                }}
-            />
-            <p class="record-results" aria-live="polite">
-                {filtered.length} matching votes
-            </p>
-            <div class="action-list">
-                {filtered.slice(0, limit).map((action) => (
-                    <ActionRecord key={action.id} action={action} />
-                ))}
-            </div>
-            {limit < filtered.length && (
-                <button
-                    type="button"
-                    class="secondary more-records"
-                    onClick={() => setLimit((value) => value + 10)}
-                >
-                    Show more votes
-                </button>
-            )}
-        </details>
-    );
 }
 
 function FindingContent({ finding, copy }) {
@@ -326,43 +285,6 @@ export function PlatformAlignment({ profile }) {
                 analysis={analysis}
                 profile={profile}
             />
-            <details class="alignment-method">
-                <summary>How these comparisons were selected</summary>
-                <p>{analysis.scope}</p>
-                <p>
-                    Party promises and positions are identified in each
-                    comparison; they are not treated as personally authored
-                    promises. Each finding shows the dates and limits of the
-                    available record.
-                </p>
-                <p>
-                    {analysis.coverage.selected_votes} named votes were selected
-                    from {analysis.coverage.indexed_votes} indexed votes, across{' '}
-                    {analysis.coverage.distinct_legislation} bills. Selection
-                    pairs a specific action with bill or amendment provisions
-                    and a sourced campaign position. Supporting evidence and
-                    possible tensions are both included.
-                </p>
-                <p>
-                    Routine procedure and package-wide budget approvals do not
-                    establish alignment with individual promises. Other
-                    substantive votes remain unassessed outside the selected
-                    comparisons; their omission is not evidence of alignment.
-                </p>
-                <p>
-                    An earlier action can be consistent with a later position;
-                    it cannot deliver a later promise. Votes on the same bill
-                    are related decisions, not independent proof of a recurring
-                    stance. These findings describe choices, not motives or
-                    predictions of future performance.
-                </p>
-                <p>
-                    AI assisted the comparisons; a separate AI-assisted source
-                    check corrected and selected the published text. Human
-                    editorial review has not been recorded.
-                </p>
-            </details>
-            <VoteArchive actions={profile.actions} />
         </details>
     );
 }

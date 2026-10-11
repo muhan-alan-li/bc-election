@@ -27,9 +27,7 @@ function PartyCard({ party, compact = false }) {
                 <span class="party-label">{party.leaderNote}</span>
                 <span class="party-card-leader">{party.leader}</span>
                 <span class="party-card-action">
-                    {party.promises.length
-                        ? 'Explore promises'
-                        : 'View party details'}{' '}
+                    Learn more
                     <span aria-hidden="true">→</span>
                 </span>
             </span>
@@ -70,15 +68,6 @@ export function Parties() {
                     </SourceLink>
                 </p>
             </details>
-            <p class="note">
-                The premier leads a government that has the confidence of the
-                legislature. Other registered parties and independent candidates
-                also run in BC.{' '}
-                <a href="#/constituencies">
-                    Explore candidates in your constituency
-                </a>
-                .
-            </p>
         </>
     );
 }
