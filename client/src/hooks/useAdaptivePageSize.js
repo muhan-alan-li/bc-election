@@ -4,6 +4,7 @@ export function useAdaptivePageSize(query, matchCount, page) {
     const [pageSize, setPageSize] = useState(5);
     const tableRef = useRef(null);
     const paginationRef = useRef(null);
+    const controlsRef = useRef(null);
     const rowHeight = useRef(0);
     const tableWidth = useRef(0);
 
@@ -48,7 +49,7 @@ export function useAdaptivePageSize(query, matchCount, page) {
         fitRows();
         const observer = new ResizeObserver(fitRows);
         observer.observe(table);
-        observer.observe(document.querySelector('.constituency-tools'));
+        if (controlsRef.current) observer.observe(controlsRef.current);
         window.addEventListener('resize', fitRows);
 
         return () => {
@@ -57,5 +58,5 @@ export function useAdaptivePageSize(query, matchCount, page) {
         };
     }, [query, matchCount, currentPage]);
 
-    return { pageSize, tableRef, paginationRef };
+    return { pageSize, tableRef, paginationRef, controlsRef };
 }

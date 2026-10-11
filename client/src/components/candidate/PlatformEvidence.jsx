@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'preact/hooks';
 import { filterPassages } from '../../helpers/political.js';
-import { SourceLink } from '../SourceLink.jsx';
+import { SourceLink } from '../ui/SourceLink.jsx';
 
 export function PlatformEvidence({ profile, party, topic, partyError }) {
     const [scope, setScope] = useState('candidate');

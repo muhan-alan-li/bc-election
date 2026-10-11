@@ -1,9 +1,9 @@
+import { reviewedOn } from '../data/parties.js';
+import { getPlatformItems } from '../data/platform-details.js';
 import { useState } from 'preact/hooks';
 import { ExpandedPolicy } from '../components/platform/ExpandedPolicy.jsx';
 import { PolicyCard } from '../components/platform/PolicyCard.jsx';
 import { PlatformOverview } from '../components/platform/PlatformOverview.jsx';
-import { reviewedOn } from '../data/parties.js';
-import { getPlatformItems } from '../data/platform-details.js';
 
 export function Platform({ party }) {
     const [selected, setSelected] = useState(null);

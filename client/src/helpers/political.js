@@ -77,3 +77,11 @@ export function filterPassages(passages, topic) {
         (passage) => topic === 'all' || passage.topics?.includes(topic),
     );
 }
+
+export const stageLabel = (stage) =>
+    ({ '1R': 'First reading', '2R': 'Second reading', '3R': 'Third reading' })[
+        stage
+    ] || stage;
+
+export const votePositionLabel = (position) =>
+    ({ yea: 'Yea', nay: 'Nay' })[position] || 'Position not established';

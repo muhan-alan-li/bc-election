@@ -1,6 +1,6 @@
 import { Breadcrumbs } from './Breadcrumbs.jsx';
-import { partyName } from '../helpers/candidates.js';
-import { parties, otherParties } from '../data/parties.js';
+import { partyName } from '../../helpers/candidates.js';
+import { parties, otherParties } from '../../data/parties.js';
 
 export function PageHeader({ route, dataset, candidate, party }) {
     const affiliation =

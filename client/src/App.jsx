@@ -1,10 +1,10 @@
-import { RetryError } from './components/RetryError.jsx';
+import { RetryError } from './components/ui/RetryError.jsx';
 import { useState } from 'preact/hooks';
 import { useElectionData } from './hooks/useElectionData.js';
 import { districtHref } from './helpers/routes.js';
-import { PageHeader } from './components/PageHeader.jsx';
-import { SiteHeader } from './components/SiteHeader.jsx';
-import { SiteFooter } from './components/SiteFooter.jsx';
+import { PageHeader } from './components/layout/PageHeader.jsx';
+import { SiteHeader } from './components/layout/SiteHeader.jsx';
+import { SiteFooter } from './components/layout/SiteFooter.jsx';
 import { Finder } from './components/finder/Finder.jsx';
 import { Constituencies } from './routes/Constituencies.jsx';
 import { District } from './routes/District.jsx';

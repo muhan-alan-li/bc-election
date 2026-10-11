@@ -5,13 +5,11 @@ export function Candidate({ candidate, dataset }) {
     const research = usePoliticalProfile(candidate, dataset);
 
     return (
-        <>
-            <CandidateRecords
-                key={candidate.id}
-                candidate={candidate}
-                dataset={dataset}
-                research={research}
-            />
-        </>
+        <CandidateRecords
+            key={candidate.id}
+            candidate={candidate}
+            dataset={dataset}
+            research={research}
+        />
     );
 }

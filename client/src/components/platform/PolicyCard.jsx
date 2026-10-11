@@ -1,11 +1,12 @@
+import { Card } from '../ui/Card.jsx';
+
 export function PolicyCard({
     item,
     onSelect,
     actionLabel = 'Explore the plan',
 }) {
     return (
-        <button
-            type="button"
+        <Card
             class="policy-card"
             aria-haspopup="dialog"
             onClick={() => onSelect(item)}
@@ -24,6 +25,6 @@ export function PolicyCard({
                     {actionLabel} <span aria-hidden="true">↗</span>
                 </span>
             )}
-        </button>
+        </Card>
     );
 }

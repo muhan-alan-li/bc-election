@@ -1,15 +1,18 @@
 import { useEffect, useState } from 'preact/hooks';
 
+const storageKey = 'bc-election-starred-constituencies';
+
+function parseStars(value) {
+    const saved = JSON.parse(value || '[]');
+    return Array.isArray(saved)
+        ? saved.filter((code) => typeof code === 'string')
+        : [];
+}
+
 export function useStarredConstituencies() {
     const [starred, setStarred] = useState(() => {
         try {
-            const saved = JSON.parse(
-                localStorage.getItem('bc-election-starred-constituencies') ||
-                    '[]',
-            );
-            return Array.isArray(saved)
-                ? saved.filter((code) => typeof code === 'string')
-                : [];
+            return parseStars(localStorage.getItem(storageKey));
         } catch {
             return [];
         }
@@ -21,10 +24,7 @@ export function useStarredConstituencies() {
             : [...starred, code];
         setStarred(next);
         try {
-            localStorage.setItem(
-                'bc-election-starred-constituencies',
-                JSON.stringify(next),
-            );
+            localStorage.setItem(storageKey, JSON.stringify(next));
         } catch {
             /* Stars still work when browser storage is unavailable. */
         }
@@ -32,18 +32,9 @@ export function useStarredConstituencies() {
 
     useEffect(() => {
         function syncStars(event) {
-            if (
-                event.key !== 'bc-election-starred-constituencies' &&
-                event.key !== null
-            )
-                return;
+            if (event.key !== storageKey && event.key !== null) return;
             try {
-                const saved = JSON.parse(event.newValue || '[]');
-                setStarred(
-                    Array.isArray(saved)
-                        ? saved.filter((code) => typeof code === 'string')
-                        : [],
-                );
+                setStarred(parseStars(event.newValue));
             } catch {
                 /* Ignore malformed storage updates. */
             }

@@ -1,0 +1,89 @@
+/* Constituency and candidate directory views. */
+.filters {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+    margin-top: 0;
+}
+.filters input,
+.filters select {
+    height: 46px;
+}
+.result-count {
+    font-size: 13.5px;
+    margin: 12px 0;
+    color: var(--ink3);
+}
+.result-count + .table-scroll {
+    margin-top: 12px;
+}
+@media (max-width: 600px) {
+    .filters {
+        grid-template-columns: 1fr;
+    }
+}
+.constituency-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: end;
+}
+.constituency-tools > div {
+    flex: 1;
+    min-width: min(100%, 280px);
+}
+.constituency-tools input,
+.constituency-tools > button {
+    height: 46px;
+}
+.starred-filter[aria-pressed='true'] {
+    background: var(--panel);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+.constituency-tools > a {
+    padding-bottom: 8px;
+    font-size: 15px;
+}
+.constituency-table tbody th,
+.candidate-table tbody th {
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 15px;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 600;
+}
+.constituency-table td,
+.constituency-table tbody th,
+.candidate-table td,
+.candidate-table tbody th {
+    padding: 14px 16px;
+}
+.constituency-table tbody tr:hover,
+.candidate-table tbody tr:hover {
+    background: var(--panel);
+}
+.constituency-table tbody tr:hover th,
+.candidate-table tbody tr:hover th {
+    background: var(--panel);
+}
+.constituency-table .star-column {
+    width: 56px;
+    padding: 6px 10px;
+    text-align: center;
+}
+.star-button {
+    background: transparent;
+    color: var(--ink3);
+    padding: 4px 8px;
+    font-size: 24px;
+    line-height: 1;
+    border: 0;
+}
+.star-button[aria-pressed='true'] {
+    color: #946200;
+}
+.star-button:hover {
+    background: var(--panel);
+}

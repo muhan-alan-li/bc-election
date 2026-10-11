@@ -1,18 +1,32 @@
+import { paginate } from '../../helpers/pagination.js';
+import { VoteBadge } from './VoteBadge.jsx';
+import { stageLabel } from '../../helpers/political.js';
+import { Table } from '../ui/Table.jsx';
 import { useState } from 'preact/hooks';
-import { Pagination } from '../Pagination.jsx';
-import { SourceLink } from '../SourceLink.jsx';
+import { Pagination } from '../ui/Pagination.jsx';
+import { SourceLink } from '../ui/SourceLink.jsx';
 import { dateLabel } from '../../helpers/labels.js';
 import { filterActions } from '../../helpers/political.js';
+
+const columns = [
+    { label: 'Date' },
+    { label: 'Bill or amendment' },
+    { label: 'Stage' },
+    { label: 'Vote' },
+    { label: 'Sources' },
+];
 
 export function FullVotingRecord({ actions = [] }) {
     const [query, setQuery] = useState('');
     const [page, setPage] = useState(1);
     const pageSize = 10;
     const filtered = filterActions(actions, { type: 'votes', query });
-    const pages = Math.max(1, Math.ceil(filtered.length / pageSize));
-    const currentPage = Math.min(page, pages);
-    const start = (currentPage - 1) * pageSize;
-    const visible = filtered.slice(start, start + pageSize);
+    const {
+        pages,
+        currentPage,
+        start,
+        rows: visible,
+    } = paginate(filtered, page, pageSize);
     return (
         <details class="alignment-archive">
             <summary>Full voting record</summary>
@@ -32,82 +46,51 @@ export function FullVotingRecord({ actions = [] }) {
                     ? `Showing ${start + 1}–${start + visible.length} of ${filtered.length} votes`
                     : 'No matching votes'}
             </p>
-            <div
-                class="table-scroll compact-table alignment-archive-table"
-                role="region"
-                aria-label="Full voting record"
-                tabIndex={0}
+            <Table
+                label="Full voting record"
+                columns={columns}
+                class="alignment-archive-table"
+                compact
+                empty={!filtered.length}
+                emptyMessage="No votes to display."
             >
-                <table>
-                    <thead>
-                        <tr>
-                            <th scope="col">Date</th>
-                            <th scope="col">Bill or amendment</th>
-                            <th scope="col">Stage</th>
-                            <th scope="col">Vote</th>
-                            <th scope="col">Sources</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {visible.map((action) => (
-                            <tr key={action.id}>
-                                <td>
-                                    <time dateTime={action.date || undefined}>
-                                        {dateLabel(action.date)}
-                                    </time>
-                                </td>
-                                <td>
-                                    {action.subject || 'Parliamentary action'}
-                                </td>
-                                <td>
-                                    {{
-                                        '1R': 'First reading',
-                                        '2R': 'Second reading',
-                                        '3R': 'Third reading',
-                                    }[action.stage] ||
-                                        action.stage ||
-                                        'Not established'}
-                                    {action.vote_capacity ===
-                                        'chair_casting_vote' && (
-                                        <span class="alignment-evidence-meta">
-                                            Casting vote as chair
-                                        </span>
-                                    )}
-                                </td>
-                                <td>
-                                    <span
-                                        class={`vote-position ${action.position === 'yea' ? 'vote-yea' : action.position === 'nay' ? 'vote-nay' : ''}`}
-                                    >
-                                        {{ yea: 'Yea', nay: 'Nay' }[
-                                            action.position
-                                        ] || 'Position not established'}
-                                    </span>
-                                </td>
-                                <td class="voting-source-cell">
-                                    <div class="voting-source-links">
-                                        <SourceLink
-                                            href={
-                                                action.transcript_url ||
-                                                action.source?.url
-                                            }
-                                        >
-                                            Transcript
-                                        </SourceLink>
-                                        <SourceLink href={action.source?.url}>
-                                            Voting index
-                                        </SourceLink>
-                                    </div>
-                                </td>
-                            </tr>
-                        ))}
-                        {!filtered.length && (
-                            <tr>
-                                <td colSpan={5}>No votes to display.</td>
-                            </tr>
-                        )}
-                    </tbody>
-                </table>
-            </div>
+                {visible.map((action) => (
+                    <tr key={action.id}>
+                        <td>
+                            <time dateTime={action.date || undefined}>
+                                {dateLabel(action.date)}
+                            </time>
+                        </td>
+                        <td>{action.subject || 'Parliamentary action'}</td>
+                        <td>
+                            {stageLabel(action.stage) || 'Not established'}
+                            {action.vote_capacity === 'chair_casting_vote' && (
+                                <span class="alignment-evidence-meta">
+                                    Casting vote as chair
+                                </span>
+                            )}
+                        </td>
+                        <td>
+                            <VoteBadge position={action.position} />
+                        </td>
+                        <td class="voting-source-cell">
+                            <div class="voting-source-links">
+                                <SourceLink
+                                    href={
+                                        action.transcript_url ||
+                                        action.source?.url
+                                    }
+                                >
+                                    Transcript
+                                </SourceLink>
+                                <SourceLink href={action.source?.url}>
+                                    Voting index
+                                </SourceLink>
+                            </div>
+                        </td>
+                    </tr>
+                ))}
+            </Table>
             {filtered.length > 0 && (
                 <Pagination
                     currentPage={currentPage}

@@ -8,16 +8,15 @@ export function PolicyDetails({ item }) {
                         {point.sourceIndices.map((sourceIndex) => {
                             const source = item.sources[sourceIndex];
                             return (
-                                <a
+                                <SourceLink
                                     key={sourceIndex}
                                     href={source.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                    showIcon={false}
                                     aria-label={`Source ${sourceIndex + 1}: ${source.label} (opens in a new tab)`}
                                     title={source.label}
                                 >
                                     [{sourceIndex + 1}]
-                                </a>
+                                </SourceLink>
                             );
                         })}
                     </span>
@@ -26,3 +25,4 @@ export function PolicyDetails({ item }) {
         </ul>
     );
 }
+import { SourceLink } from '../ui/SourceLink.jsx';

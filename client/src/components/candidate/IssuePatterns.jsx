@@ -1,4 +1,5 @@
-import { SourceLink } from '../SourceLink.jsx';
+import { Card } from '../ui/Card.jsx';
+import { SourceLink } from '../ui/SourceLink.jsx';
 import { topicLabel } from '../../helpers/political.js';
 
 export const patternLabels = {
@@ -55,7 +56,7 @@ export function IssuePatterns({ profile, topic = 'all' }) {
             {findings.length ? (
                 <div class="issue-grid">
                     {findings.map((finding) => (
-                        <article class="issue-card" key={finding.id}>
+                        <Card class="issue-card" key={finding.id}>
                             <div class="issue-heading">
                                 <span class="issue-topic">
                                     {topicLabel(finding.topic)}
@@ -151,7 +152,7 @@ export function IssuePatterns({ profile, topic = 'all' }) {
                                     );
                                 })}
                             </details>
-                        </article>
+                        </Card>
                     ))}
                 </div>
             ) : (

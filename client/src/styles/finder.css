@@ -1,0 +1,85 @@
+.finder-panel {
+    position: fixed;
+    inset: 0 0 0 auto;
+    margin: 0;
+    width: min(620px, 100%);
+    height: 100dvh;
+    max-height: 100dvh;
+    max-width: 100%;
+    border: 0;
+    border-left: 1px solid var(--line2);
+    padding: 24px;
+    overflow-y: auto;
+    color: var(--ink);
+    background: var(--bg);
+}
+.finder-panel::backdrop {
+    background: rgba(32, 37, 43, 0.35);
+}
+.finder-head {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+.finder-head h2 {
+    margin: 0;
+    font-size: 26px;
+}
+.finder-input {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+.finder-input button {
+    flex-shrink: 0;
+}
+.finder-input input {
+    flex: 1;
+    min-width: 0;
+}
+.location-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.finder-map {
+    height: 340px;
+    border: 1px solid var(--line);
+    margin: 10px 0 20px;
+}
+.finder-map .leaflet-control-attribution {
+    font-size: 11px;
+}
+.finder-result h3 {
+    font-size: 15px;
+    margin: 0 0 12px;
+}
+.finder-district {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+    padding: 12px 0;
+}
+.finder-district span {
+    font-size: 14px;
+    color: var(--ink3);
+}
+.finder-sources {
+    font-size: 12.5px;
+    color: var(--ink3);
+}
+@media (max-width: 600px) {
+    .finder-panel {
+        padding: 18px;
+    }
+    .finder-map {
+        height: 280px;
+    }
+}

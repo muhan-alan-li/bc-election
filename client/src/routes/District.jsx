@@ -1,7 +1,15 @@
+import { Table } from '../components/ui/Table.jsx';
 import { useState } from 'preact/hooks';
 import { statusLabel } from '../helpers/labels.js';
 import { candidateHref } from '../helpers/routes.js';
 import { partyName } from '../helpers/candidates.js';
+
+const columns = [
+    { label: 'Candidate' },
+    { label: 'Party or affiliation' },
+    { label: 'Voting history' },
+    { label: 'Interests' },
+];
 
 export function District({ dataset }) {
     const [query, setQuery] = useState('');
@@ -54,58 +62,37 @@ export function District({ dataset }) {
                 Alphabetical order
             </p>
             {candidates.length ? (
-                <div
-                    class="table-scroll"
-                    role="region"
-                    aria-label="Candidates"
-                    tabIndex="0"
+                <Table
+                    label="Candidates"
+                    columns={columns}
+                    tableClass="candidate-table"
                 >
-                    <table class="candidate-table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Candidate</th>
-                                <th scope="col">Party or affiliation</th>
-                                <th scope="col">Voting history</th>
-                                <th scope="col">Interests</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {candidates.map((candidate) => {
-                                const coverage = dataset.coverage.find(
-                                    (row) =>
-                                        row.person_id === candidate.person_id,
-                                );
+                    {candidates.map((candidate) => {
+                        const coverage = dataset.coverage.find(
+                            (row) => row.person_id === candidate.person_id,
+                        );
 
-                                return (
-                                    <tr key={candidate.id}>
-                                        <th scope="row">
-                                            <a
-                                                href={candidateHref(
-                                                    dataset.district
-                                                        .official_code,
-                                                    candidate.id,
-                                                )}
-                                            >
-                                                {candidate.ballot_name}
-                                            </a>
-                                        </th>
-                                        <td>{affiliation(candidate)}</td>
-                                        <td>
-                                            {statusLabel(
-                                                coverage?.voting?.status,
-                                            )}
-                                        </td>
-                                        <td>
-                                            {statusLabel(
-                                                coverage?.interests?.status,
-                                            )}
-                                        </td>
-                                    </tr>
-                                );
-                            })}
-                        </tbody>
-                    </table>
-                </div>
+                        return (
+                            <tr key={candidate.id}>
+                                <th scope="row">
+                                    <a
+                                        href={candidateHref(
+                                            dataset.district.official_code,
+                                            candidate.id,
+                                        )}
+                                    >
+                                        {candidate.ballot_name}
+                                    </a>
+                                </th>
+                                <td>{affiliation(candidate)}</td>
+                                <td>{statusLabel(coverage?.voting?.status)}</td>
+                                <td>
+                                    {statusLabel(coverage?.interests?.status)}
+                                </td>
+                            </tr>
+                        );
+                    })}
+                </Table>
             ) : (
                 <p class="empty">
                     {dataset.candidacies.length

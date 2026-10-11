@@ -8,6 +8,7 @@ export function Pagination({
     return (
         <nav ref={paginationRef} class="pagination" aria-label={label}>
             <button
+                type="button"
                 class="secondary"
                 disabled={currentPage === 1}
                 onClick={() => onPageChange(currentPage - 1)}
@@ -18,6 +19,7 @@ export function Pagination({
                 Page {currentPage} of {pages}
             </span>
             <button
+                type="button"
                 class="secondary"
                 disabled={currentPage === pages}
                 onClick={() => onPageChange(currentPage + 1)}

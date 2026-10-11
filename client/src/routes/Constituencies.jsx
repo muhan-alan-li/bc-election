@@ -1,8 +1,18 @@
-import { Pagination } from '../components/Pagination.jsx';
+import { paginate } from '../helpers/pagination.js';
+import { Table } from '../components/ui/Table.jsx';
+import { Pagination } from '../components/ui/Pagination.jsx';
 import { useState } from 'preact/hooks';
 import { districtHref } from '../helpers/routes.js';
 import { useStarredConstituencies } from '../hooks/useStarredConstituencies.js';
 import { useAdaptivePageSize } from '../hooks/useAdaptivePageSize.js';
+
+const columns = [
+    { label: 'Star', class: 'star-column' },
+    { label: 'Constituency' },
+    { label: 'Code' },
+    { label: 'Candidates' },
+    { label: 'Roster' },
+];
 
 export function Constituencies({ districts, onFind }) {
     const [query, setQuery] = useState('');
@@ -19,22 +29,14 @@ export function Constituencies({ districts, onFind }) {
                     .includes(query.trim().toLocaleLowerCase()),
         )
         .sort((a, b) => a.name.localeCompare(b.name, 'en-CA'));
-    const { pageSize, tableRef, paginationRef } = useAdaptivePageSize(
-        query,
-        matches.length,
-        page,
-    );
+    const { pageSize, tableRef, paginationRef, controlsRef } =
+        useAdaptivePageSize(query, matches.length, page);
 
-    const pages = Math.max(1, Math.ceil(matches.length / pageSize));
-    const currentPage = Math.min(page, pages);
-    const rows = matches.slice(
-        (currentPage - 1) * pageSize,
-        currentPage * pageSize,
-    );
+    const { pages, currentPage, rows } = paginate(matches, page, pageSize);
 
     return (
         <>
-            <div class="constituency-tools">
+            <div ref={controlsRef} class="constituency-tools">
                 <div>
                     <label for="district-search">
                         Search by constituency name or code
@@ -69,65 +71,46 @@ export function Constituencies({ districts, onFind }) {
                 {matches.length} constituencies · Alphabetical order
             </p>
             {rows.length ? (
-                <div
-                    class="table-scroll"
-                    role="region"
-                    aria-label="Constituencies"
-                    tabIndex="0"
+                <Table
+                    label="Constituencies"
+                    columns={columns}
+                    tableClass="constituency-table"
+                    tableRef={tableRef}
                 >
-                    <table ref={tableRef} class="constituency-table">
-                        <thead>
-                            <tr>
-                                <th scope="col" class="star-column">
-                                    Star
-                                </th>
-                                <th scope="col">Constituency</th>
-                                <th scope="col">Code</th>
-                                <th scope="col">Candidates</th>
-                                <th scope="col">Roster</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {rows.map((row) => (
-                                <tr key={row.official_code}>
-                                    <td class="star-column">
-                                        <button
-                                            type="button"
-                                            class="star-button"
-                                            aria-pressed={starred.includes(
-                                                row.official_code,
-                                            )}
-                                            aria-label={`${starred.includes(row.official_code) ? 'Unstar' : 'Star'} ${row.name}`}
-                                            onClick={() =>
-                                                toggleStar(row.official_code)
-                                            }
-                                        >
-                                            {starred.includes(row.official_code)
-                                                ? '★'
-                                                : '☆'}
-                                        </button>
-                                    </td>
-                                    <th scope="row">
-                                        <a
-                                            href={districtHref(
-                                                row.official_code,
-                                            )}
-                                        >
-                                            {row.name}
-                                        </a>
-                                    </th>
-                                    <td>{row.official_code}</td>
-                                    <td>{row.candidate_count}</td>
-                                    <td>
-                                        {row.roster_status === 'final_roster'
-                                            ? 'Final candidate list'
-                                            : 'Provisional candidate list'}
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
+                    {rows.map((row) => (
+                        <tr key={row.official_code}>
+                            <td class="star-column">
+                                <button
+                                    type="button"
+                                    class="star-button"
+                                    aria-pressed={starred.includes(
+                                        row.official_code,
+                                    )}
+                                    aria-label={`${starred.includes(row.official_code) ? 'Unstar' : 'Star'} ${row.name}`}
+                                    onClick={() =>
+                                        toggleStar(row.official_code)
+                                    }
+                                >
+                                    {starred.includes(row.official_code)
+                                        ? '★'
+                                        : '☆'}
+                                </button>
+                            </td>
+                            <th scope="row">
+                                <a href={districtHref(row.official_code)}>
+                                    {row.name}
+                                </a>
+                            </th>
+                            <td>{row.official_code}</td>
+                            <td>{row.candidate_count}</td>
+                            <td>
+                                {row.roster_status === 'final_roster'
+                                    ? 'Final candidate list'
+                                    : 'Provisional candidate list'}
+                            </td>
+                        </tr>
+                    ))}
+                </Table>
             ) : (
                 <p class="empty">
                     {!districts.length

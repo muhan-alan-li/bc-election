@@ -1,46 +1,13 @@
-import { platformHref } from '../helpers/routes.js';
 import { parties, otherParties, partyRosterSource } from '../data/parties.js';
-import { SourceLink } from '../components/SourceLink.jsx';
-
-function PartyCard({ party, compact = false }) {
-    return (
-        <a
-            key={party.id}
-            class={`party-card${compact ? ' party-card-compact' : ''}`}
-            style={{ '--party-color': party.color }}
-            href={platformHref(party.id)}
-            aria-label={`View ${party.name} promises, led by ${party.leader}`}
-        >
-            <span class="party-card-name">{party.name}</span>
-            {party.portrait && (
-                <img
-                    class="party-portrait"
-                    src={party.portrait}
-                    alt={`Portrait of ${party.leader}`}
-                    style={{ objectPosition: party.portraitPosition }}
-                    width="400"
-                    height="360"
-                    loading={compact ? 'lazy' : 'eager'}
-                />
-            )}
-            <span class="party-card-body">
-                <span class="party-label">{party.leaderNote}</span>
-                <span class="party-card-leader">{party.leader}</span>
-                <span class="party-card-action">
-                    Learn more
-                    <span aria-hidden="true">→</span>
-                </span>
-            </span>
-        </a>
-    );
-}
+import { PartyCard } from '../components/parties/PartyCard.jsx';
+import { SourceLink } from '../components/ui/SourceLink.jsx';
 
 export function Parties() {
     return (
         <>
             <div class="parties-grid">
                 {parties.map((party) => (
-                    <PartyCard party={party} />
+                    <PartyCard key={party.id} party={party} />
                 ))}
             </div>
             <details class="other-parties">

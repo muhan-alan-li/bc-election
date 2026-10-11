@@ -1,4 +1,4 @@
-import { SourceLink } from '../SourceLink.jsx';
+import { SourceLink } from '../ui/SourceLink.jsx';
 
 export function PlatformOverview({ party }) {
     return (

@@ -1,4 +1,4 @@
-import { SourceLink } from '../SourceLink.jsx';
+import { SourceLink } from '../ui/SourceLink.jsx';
 import { PoliticalRecord } from './PoliticalRecord.jsx';
 import { Interests } from './Interests.jsx';
 import { FullVotingRecord } from './FullVotingRecord.jsx';

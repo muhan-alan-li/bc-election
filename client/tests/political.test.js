@@ -3,8 +3,7 @@ import test from 'node:test';
 import { mkdtemp, mkdir, writeFile, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { build } from 'esbuild';
-import { fileURLToPath } from 'node:url';
+import { loadComponents, walk as walkComponent } from './helpers/components.js';
 import {
     filterActions,
     visibleActions,
@@ -196,39 +195,28 @@ test('build packages polished records as separate versioned assets and rejects a
     }
 });
 
-const bundled = await build({
-    stdin: {
-        contents:
-            "export { ActionRecord } from './src/components/candidate/ActionRecord.jsx'; export { IssuePatterns } from './src/components/candidate/IssuePatterns.jsx'; export { PlatformAlignment, PillarPanel, pillarAlignmentTag } from './src/components/candidate/PlatformAlignment.jsx';",
-        resolveDir: fileURLToPath(new URL('../', import.meta.url)),
-    },
-    bundle: true,
-    write: false,
-    format: 'esm',
-    jsx: 'automatic',
-    jsxImportSource: 'preact',
-});
 const {
     ActionRecord,
     IssuePatterns,
     PlatformAlignment,
     PillarPanel,
     pillarAlignmentTag,
-} = await import(
-    `data:text/javascript;base64,${Buffer.from(bundled.outputFiles[0].text).toString('base64')}`
-);
+} = await loadComponents(`
+        export { ActionRecord } from './src/components/candidate/ActionRecord.jsx';
+        export { IssuePatterns } from './src/components/candidate/IssuePatterns.jsx';
+        export { PlatformAlignment, PillarPanel, pillarAlignmentTag } from './src/components/candidate/PlatformAlignment.jsx';
+    `);
+
 function walk(node, text, links) {
-    if (node == null || typeof node === 'boolean') return;
-    if (Array.isArray(node))
-        return node.forEach((child) => walk(child, text, links));
-    if (typeof node === 'string' || typeof node === 'number')
-        return text.push(String(node));
-    // Interactive archive is covered in the real-browser test; inspect the pure findings here.
-    if (['VoteArchive', 'PillarGuide'].includes(node.type?.name)) return;
-    if (typeof node.type === 'function')
-        return walk(node.type(node.props), text, links);
-    if (node.type === 'a') links.push(node.props.href);
-    walk(node.props.children, text, links);
+    walkComponent(
+        node,
+        (element) => {
+            if (typeof element === 'string' || typeof element === 'number')
+                text.push(String(element));
+            else if (element.type === 'a') links.push(element.props.href);
+        },
+        ['FullVotingRecord', 'PillarGuide'],
+    );
 }
 
 test('vote presentation preserves position, stage, citations and unresolved questions', () => {

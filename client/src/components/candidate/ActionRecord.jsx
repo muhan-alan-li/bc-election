@@ -1,18 +1,16 @@
+import { VoteBadge } from './VoteBadge.jsx';
 import { dateLabel } from '../../helpers/labels.js';
-import { actionLabel, isVote, topicLabel } from '../../helpers/political.js';
-import { SourceLink } from '../SourceLink.jsx';
-
-const stageLabel = (stage) =>
-    ({ '1R': 'First reading', '2R': 'Second reading', '3R': 'Third reading' })[
-        stage
-    ] || stage;
+import {
+    actionLabel,
+    isVote,
+    topicLabel,
+    stageLabel,
+} from '../../helpers/political.js';
+import { SourceLink } from '../ui/SourceLink.jsx';
 
 export function ActionRecord({ action }) {
     const vote = isVote(action);
     const context = action.transcript_context;
-    const position =
-        { yea: 'Yea', nay: 'Nay' }[action.position] ||
-        'Position not established';
     return (
         <article class="action-record">
             <div class="action-meta">
@@ -20,13 +18,7 @@ export function ActionRecord({ action }) {
                 <time dateTime={action.date || undefined}>
                     {dateLabel(action.date)}
                 </time>
-                {vote && (
-                    <span
-                        class={`vote-position ${action.position === 'yea' ? 'vote-yea' : action.position === 'nay' ? 'vote-nay' : ''}`}
-                    >
-                        {position}
-                    </span>
-                )}
+                {vote && <VoteBadge position={action.position} />}
             </div>
             <h3 class="action-title">
                 {action.subject || 'Parliamentary action'}

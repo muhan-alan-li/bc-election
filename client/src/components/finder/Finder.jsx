@@ -1,47 +1,17 @@
-import { useEffect, useRef, useState } from 'preact/hooks';
+import { SourceLink } from '../ui/SourceLink.jsx';
+import { useState } from 'preact/hooks';
+import { Dialog } from '../ui/Dialog.jsx';
 import { useConstituencyFinder } from '../../hooks/useConstituencyFinder.js';
 import { ConstituencyMap } from './ConstituencyMap.jsx';
 import { FinderResult } from './FinderResult.jsx';
 
 export function Finder({ onClose }) {
     const [postal, setPostal] = useState('');
-    const dialog = useRef(null);
     const { result, error, busy, lookup, useLocation } =
         useConstituencyFinder();
 
-    useEffect(() => {
-        const previousFocus = document.activeElement;
-        const previousOverflow = document.body.style.overflow;
-        document.body.style.overflow = 'hidden';
-        dialog.current.showModal();
-
-        return () => {
-            document.body.style.overflow = previousOverflow;
-            previousFocus?.focus();
-        };
-    }, []);
-
     return (
-        <dialog
-            ref={dialog}
-            class="finder-panel"
-            aria-labelledby="finder-title"
-            onCancel={(event) => {
-                event.preventDefault();
-                onClose();
-            }}
-            onClick={(event) => {
-                if (event.target !== dialog.current) return;
-                const bounds = dialog.current.getBoundingClientRect();
-                if (
-                    event.clientX < bounds.left ||
-                    event.clientX > bounds.right ||
-                    event.clientY < bounds.top ||
-                    event.clientY > bounds.bottom
-                )
-                    onClose();
-            }}
-        >
+        <Dialog class="finder-panel" titleId="finder-title" onClose={onClose}>
             <div class="finder-head">
                 <h2 id="finder-title">Find my constituency</h2>
                 <button
@@ -109,41 +79,34 @@ export function Finder({ onClose }) {
                 boundaries, location readings can be imprecise, and your current
                 location may differ from your home address. This finder does not
                 determine your official electoral district.{' '}
-                <a
-                    href="https://elections.bc.ca/resources/maps/find-your-district/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Confirm with Elections BC ↗
-                </a>
+                <SourceLink href="https://elections.bc.ca/resources/maps/find-your-district/">
+                    Confirm with Elections BC
+                </SourceLink>
                 .
             </p>
             <p class="finder-sources">
                 Postal locations:{' '}
-                <a
+                <SourceLink
                     href="https://www.geonames.org/export/zip/"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    showIcon={false}
                 >
                     GeoNames (CC BY 3.0, 2023 download)
-                </a>{' '}
+                </SourceLink>{' '}
                 and{' '}
-                <a
+                <SourceLink
                     href="https://www.statcan.gc.ca/en/lode/databases/oda"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    showIcon={false}
                 >
                     Statistics Canada ODA (2021, Open Government Licence –
                     Canada)
-                </a>
+                </SourceLink>
                 . Boundaries:{' '}
-                <a
+                <SourceLink
                     href="https://elections.bc.ca/resources/maps/gis-spatial-data/"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    showIcon={false}
                 >
                     Elections BC, 2023 redistribution
-                </a>
+                </SourceLink>
                 .
             </p>
             <p class="finder-sources">
@@ -151,6 +114,6 @@ export function Finder({ onClose }) {
                 from OpenStreetMap, which receives your IP and the map area you
                 view. We do not save your location.
             </p>
-        </dialog>
+        </Dialog>
     );
 }

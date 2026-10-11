@@ -1,10 +1,18 @@
-import { useState } from 'preact/hooks';
 import pillars from '../../../../ingestion/election/analysis/pillars.json';
-import { SourceLink } from '../SourceLink.jsx';
-import { PolicyCard } from '../platform/PolicyCard.jsx';
-import { PolicyDialog } from '../platform/PolicyDialog.jsx';
 import { candidateAlignmentNotes } from '../../content/candidate-alignment-notes.js';
 import { candidateFindingCopy } from '../../content/candidate-finding-copy.js';
+import { dateLabel } from '../../helpers/labels.js';
+import { Table } from '../ui/Table.jsx';
+import { useState } from 'preact/hooks';
+import { SourceLink } from '../ui/SourceLink.jsx';
+import { PolicyCard } from '../platform/PolicyCard.jsx';
+import { PolicyDialog } from '../platform/PolicyDialog.jsx';
+
+const columns = [
+    { label: 'Record' },
+    { label: 'Evidence' },
+    { label: 'Source' },
+];
 
 export const alignmentLabels = {
     supports_commitment: 'Supports the promise',
@@ -33,14 +41,6 @@ export function pillarAlignmentTag(analysis, pillarId) {
         : 'inconclusive';
 }
 
-function formatDate(value) {
-    return new Date(`${value}T12:00:00`).toLocaleDateString('en-CA', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-    });
-}
-
 function FindingContent({ finding, copy }) {
     const platformSource = finding.citations.find(
         (citation) => citation.role === 'platform',
@@ -59,7 +59,7 @@ function FindingContent({ finding, copy }) {
                     {finding.commitment.date_status === 'observed_at_capture'
                         ? 'Observed '
                         : ''}
-                    {formatDate(finding.commitment.date)}
+                    {dateLabel(finding.commitment.date)}
                     {' · '}
                     <SourceLink href={platformSource?.source.url}>
                         Campaign source
@@ -89,80 +89,68 @@ function FindingEvidence({ finding }) {
     return (
         <details class="alignment-evidence">
             <summary>Votes and sources</summary>
-            <div
+            <Table
+                label="Votes and supporting sources"
+                columns={columns}
                 class="alignment-evidence-table"
-                tabIndex={0}
-                role="region"
-                aria-label="Votes and supporting sources"
             >
-                <table>
-                    <thead>
-                        <tr>
-                            <th scope="col">Record</th>
-                            <th scope="col">Evidence</th>
-                            <th scope="col">Source</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {finding.actions.map((action) => (
-                            <tr key={action.id} class="alignment-evidence-vote">
-                                <td>
-                                    <strong>
-                                        {action.position === 'yea'
-                                            ? 'Voted for'
-                                            : action.position === 'nay'
-                                              ? 'Voted against'
-                                              : 'Not established'}
-                                    </strong>
-                                    <span class="alignment-evidence-meta">
-                                        {formatDate(action.date)}
-                                    </span>
-                                </td>
-                                <td>
-                                    {action.subject}
-                                    <span class="alignment-evidence-meta">
-                                        {action.stage === '2R'
-                                            ? 'Second reading'
-                                            : action.stage === '3R'
-                                              ? 'Final passage'
-                                              : action.stage}
-                                    </span>
-                                </td>
-                                <td>
-                                    <SourceLink href={action.transcript_url}>
-                                        Vote transcript
-                                    </SourceLink>
-                                </td>
-                            </tr>
-                        ))}
-                        {finding.citations.map((citation, index) => (
-                            <tr
-                                key={`citation-${index}`}
-                                class="alignment-evidence-source"
-                            >
-                                <td>
-                                    {citation.role === 'platform'
-                                        ? 'Party position'
-                                        : 'Supporting source'}
-                                </td>
-                                <td>
-                                    <blockquote>{citation.quote}</blockquote>
-                                </td>
-                                <td>
-                                    <SourceLink href={citation.source.url}>
-                                        {citation.source.title}
-                                    </SourceLink>
-                                    {citation.source.publisher && (
-                                        <span class="alignment-evidence-meta">
-                                            {citation.source.publisher}
-                                        </span>
-                                    )}
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
+                {finding.actions.map((action) => (
+                    <tr key={action.id} class="alignment-evidence-vote">
+                        <td>
+                            <strong>
+                                {action.position === 'yea'
+                                    ? 'Voted for'
+                                    : action.position === 'nay'
+                                      ? 'Voted against'
+                                      : 'Not established'}
+                            </strong>
+                            <span class="alignment-evidence-meta">
+                                {dateLabel(action.date)}
+                            </span>
+                        </td>
+                        <td>
+                            {action.subject}
+                            <span class="alignment-evidence-meta">
+                                {action.stage === '2R'
+                                    ? 'Second reading'
+                                    : action.stage === '3R'
+                                      ? 'Final passage'
+                                      : action.stage}
+                            </span>
+                        </td>
+                        <td>
+                            <SourceLink href={action.transcript_url}>
+                                Vote transcript
+                            </SourceLink>
+                        </td>
+                    </tr>
+                ))}
+                {finding.citations.map((citation, index) => (
+                    <tr
+                        key={`citation-${index}`}
+                        class="alignment-evidence-source"
+                    >
+                        <td>
+                            {citation.role === 'platform'
+                                ? 'Party position'
+                                : 'Supporting source'}
+                        </td>
+                        <td>
+                            <blockquote>{citation.quote}</blockquote>
+                        </td>
+                        <td>
+                            <SourceLink href={citation.source.url}>
+                                {citation.source.title}
+                            </SourceLink>
+                            {citation.source.publisher && (
+                                <span class="alignment-evidence-meta">
+                                    {citation.source.publisher}
+                                </span>
+                            )}
+                        </td>
+                    </tr>
+                ))}
+            </Table>
             <p class="alignment-evidence-disclaimer">
                 Votes show recorded decisions; they do not by themselves
                 establish implementation or outcomes.
