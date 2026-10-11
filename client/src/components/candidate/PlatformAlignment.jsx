@@ -1,6 +1,10 @@
 import { useState } from 'preact/hooks';
 import pillars from '../../../../ingestion/election/analysis/pillars.json';
 import { SourceLink } from '../SourceLink.jsx';
+import { PolicyCard } from '../platform/PolicyCard.jsx';
+import { PolicyDialog } from '../platform/PolicyDialog.jsx';
+import { candidateAlignmentNotes } from '../../content/candidate-alignment-notes.js';
+import { candidateFindingCopy } from '../../content/candidate-finding-copy.js';
 import { ActionRecord } from './ActionRecord.jsx';
 import { filterActions } from '../../helpers/political.js';
 
@@ -10,6 +14,26 @@ export const alignmentLabels = {
     potential_tension: 'Potential tension',
     inconclusive: 'Alignment inconclusive',
 };
+
+function findingAlignmentTag(status) {
+    if (
+        ['supports_commitment', 'consistent_with_later_position'].includes(
+            status,
+        )
+    )
+        return 'aligned';
+    if (status === 'potential_tension') return 'against';
+    return 'inconclusive';
+}
+
+export function pillarAlignmentTag(analysis, pillarId) {
+    const statuses = analysis.findings
+        .filter((finding) => finding.pillar_id === pillarId)
+        .map((finding) => findingAlignmentTag(finding.status));
+    return statuses.length && statuses.every((status) => status === statuses[0])
+        ? statuses[0]
+        : 'inconclusive';
+}
 
 function formatDate(value) {
     return new Date(`${value}T12:00:00`).toLocaleDateString('en-CA', {
@@ -58,23 +82,142 @@ function VoteArchive({ actions }) {
     );
 }
 
+function FindingContent({ finding, copy }) {
+    const platformSource = finding.citations.find(
+        (citation) => citation.role === 'platform',
+    );
+    return (
+        <>
+            <div class="alignment-promise">
+                <h4>Party position</h4>
+                <p>{finding.commitment.summary}</p>
+                <div class="alignment-label">
+                    {finding.commitment.owner} ·{' '}
+                    {finding.commitment.kind === 'promise'
+                        ? 'Promise'
+                        : 'Position'}{' '}
+                    ·{' '}
+                    {finding.commitment.date_status === 'observed_at_capture'
+                        ? 'Observed '
+                        : ''}
+                    {formatDate(finding.commitment.date)}
+                    {' · '}
+                    <SourceLink href={platformSource?.source.url}>
+                        Campaign source
+                    </SourceLink>
+                </div>
+            </div>
+            <div class="alignment-conclusion">
+                <h4>How it aligns</h4>
+                <p
+                    class={`alignment-verdict alignment-verdict-${finding.status}`}
+                >
+                    {alignmentLabels[finding.status]}
+                </p>
+                <p class="alignment-assessment">
+                    {copy?.summary || finding.assessment}
+                </p>
+                {copy?.analysis && (
+                    <p class="alignment-assessment">{copy.analysis}</p>
+                )}
+            </div>
+            <FindingEvidence finding={finding} />
+        </>
+    );
+}
+
+function FindingEvidence({ finding }) {
+    return (
+        <details class="alignment-evidence">
+            <summary>Votes and sources</summary>
+            <div
+                class="alignment-evidence-table"
+                tabIndex={0}
+                role="region"
+                aria-label="Votes and supporting sources"
+            >
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Record</th>
+                            <th scope="col">Evidence</th>
+                            <th scope="col">Source</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {finding.actions.map((action) => (
+                            <tr key={action.id} class="alignment-evidence-vote">
+                                <td>
+                                    <strong>
+                                        {action.position === 'yea'
+                                            ? 'Voted for'
+                                            : action.position === 'nay'
+                                              ? 'Voted against'
+                                              : 'Not established'}
+                                    </strong>
+                                    <span class="alignment-evidence-meta">
+                                        {formatDate(action.date)}
+                                    </span>
+                                </td>
+                                <td>
+                                    {action.subject}
+                                    <span class="alignment-evidence-meta">
+                                        {action.stage === '2R'
+                                            ? 'Second reading'
+                                            : action.stage === '3R'
+                                              ? 'Final passage'
+                                              : action.stage}
+                                    </span>
+                                </td>
+                                <td>
+                                    <SourceLink href={action.transcript_url}>
+                                        Vote transcript
+                                    </SourceLink>
+                                </td>
+                            </tr>
+                        ))}
+                        {finding.citations.map((citation, index) => (
+                            <tr
+                                key={`citation-${index}`}
+                                class="alignment-evidence-source"
+                            >
+                                <td>
+                                    {citation.role === 'platform'
+                                        ? 'Party position'
+                                        : 'Supporting source'}
+                                </td>
+                                <td>
+                                    <blockquote>{citation.quote}</blockquote>
+                                </td>
+                                <td>
+                                    <SourceLink href={citation.source.url}>
+                                        {citation.source.title}
+                                    </SourceLink>
+                                    {citation.source.publisher && (
+                                        <span class="alignment-evidence-meta">
+                                            {citation.source.publisher}
+                                        </span>
+                                    )}
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+            <p class="alignment-evidence-disclaimer">
+                Votes show recorded decisions; they do not by themselves
+                establish implementation or outcomes.
+            </p>
+        </details>
+    );
+}
+
 export function PillarPanel({ analysis, pillar }) {
     const findings = analysis.findings.filter(
         (finding) => finding.pillar_id === pillar.id,
     );
-    const unassessed = analysis.unassessed_commitments.filter(
-        (item) => item.pillar_id === pillar.id,
-    );
-    const published = analysis.pillars?.find((item) => item.id === pillar.id);
     return (
         <>
-            <header class="alignment-pillar-intro">
-                <h3>{pillar.question}</h3>
-                <p>{pillar.description}</p>
-                {published?.takeaway && (
-                    <p class="alignment-takeaway">{published.takeaway}</p>
-                )}
-            </header>
             {!findings.length && (
                 <div class="alignment-empty">
                     <h3>No published comparisons yet</h3>
@@ -88,192 +231,77 @@ export function PillarPanel({ analysis, pillar }) {
             )}
             <div class="alignment-findings">
                 {findings.map((finding) => {
-                    const platformSource = finding.citations.find(
-                        (citation) => citation.role === 'platform',
-                    );
+                    const copy =
+                        candidateFindingCopy[analysis.id]?.[finding.id];
                     return (
-                        <article class="alignment-finding" key={finding.id}>
-                            <div class="alignment-finding-heading">
-                                <span
-                                    class={`alignment-status alignment-status-${finding.status}`}
-                                >
-                                    {alignmentLabels[finding.status]}
+                        <details class="alignment-finding" key={finding.id}>
+                            <summary>
+                                <span class="alignment-finding-heading">
+                                    <span>{finding.headline}</span>
+                                    <span
+                                        class={`alignment-item-tag alignment-item-tag-${findingAlignmentTag(finding.status)}`}
+                                    >
+                                        {findingAlignmentTag(finding.status)}
+                                    </span>
                                 </span>
-                                <h3>{finding.headline}</h3>
+                            </summary>
+                            <div class="alignment-finding-content">
+                                <FindingContent finding={finding} copy={copy} />
                             </div>
-                            <div class="alignment-promise">
-                                <span class="alignment-label">
-                                    {finding.commitment.owner} ·{' '}
-                                    {finding.commitment.kind === 'promise'
-                                        ? 'Promise'
-                                        : 'Position'}{' '}
-                                    ·{' '}
-                                    {finding.commitment.date_status ===
-                                    'observed_at_capture'
-                                        ? 'Observed '
-                                        : ''}
-                                    {formatDate(finding.commitment.date)}
-                                </span>
-                                <p>{finding.commitment.summary}</p>
-                                <SourceLink href={platformSource?.source.url}>
-                                    Campaign source
-                                </SourceLink>
-                            </div>
-                            <ul class="alignment-actions">
-                                {finding.actions.map((action) => (
-                                    <li key={action.id}>
-                                        <strong>
-                                            {action.position === 'yea'
-                                                ? 'Voted for'
-                                                : 'Voted against'}
-                                        </strong>{' '}
-                                        {action.stage === '2R'
-                                            ? 'second reading'
-                                            : action.stage === '3R'
-                                              ? 'final passage'
-                                              : action.stage}
-                                        <span>
-                                            {formatDate(action.date)} ·{' '}
-                                            {action.subject}
-                                        </span>
-                                        <SourceLink
-                                            href={action.transcript_url}
-                                        >
-                                            Vote transcript
-                                        </SourceLink>
-                                    </li>
-                                ))}
-                            </ul>
-                            <p class="alignment-effect">
-                                {finding.policy_effect}
-                            </p>
-                            <p class="alignment-assessment">
-                                {finding.assessment}
-                            </p>
-                            <details class="alignment-context">
-                                <summary>
-                                    Trade-offs and supporting sources
-                                </summary>
-                                <p>
-                                    <strong>Other side of the decision:</strong>{' '}
-                                    {finding.counterargument}
-                                </p>
-                                <p>
-                                    <strong>
-                                        What this does not establish:
-                                    </strong>{' '}
-                                    {finding.limits}
-                                </p>
-                                {finding.citations.map((citation, index) => (
-                                    <figure key={index}>
-                                        <blockquote>
-                                            {citation.quote}
-                                        </blockquote>
-                                        <figcaption>
-                                            <SourceLink
-                                                href={citation.source.url}
-                                            >
-                                                {citation.source.title}
-                                            </SourceLink>
-                                        </figcaption>
-                                    </figure>
-                                ))}
-                            </details>
-                        </article>
+                        </details>
                     );
                 })}
             </div>
-            {unassessed.length > 0 && (
-                <aside class="alignment-unassessed">
-                    <h3>What the record cannot answer yet</h3>
-                    {unassessed.map((commitment) => (
-                        <p key={commitment.id}>
-                            <strong>{commitment.summary}</strong>{' '}
-                            {commitment.reason}{' '}
-                            <SourceLink href={commitment.source.url}>
-                                {commitment.owner} ·{' '}
-                                {commitment.date_status ===
-                                'observed_at_capture'
-                                    ? 'Observed '
-                                    : ''}
-                                {formatDate(commitment.date)}
-                            </SourceLink>
-                        </p>
-                    ))}
-                </aside>
-            )}
         </>
     );
 }
 
-function PillarGuide({ analysis }) {
-    const [active, setActive] = useState(
-        () =>
-            pillars.find((pillar) =>
-                analysis.findings.some(
-                    (finding) => finding.pillar_id === pillar.id,
-                ),
-            )?.id || pillars[0].id,
-    );
-    const pillar = pillars.find((item) => item.id === active);
-    const prefix = `alignment-${analysis.id}`;
+function PillarGuide({ analysis, profile }) {
+    const [selected, setSelected] = useState(null);
+    const name = profile.ballot_name?.split(' ')[0] || 'The candidate';
+    const fallbackNotes = {
+        aligned: `${name} has voted in support of the platform.`,
+        against: `${name} has voted against the platform.`,
+        inconclusive: `${name}’s record does not establish clear alignment.`,
+    };
     return (
         <>
-            <div
-                class="alignment-tabs"
-                role="tablist"
-                aria-label="Election pillars"
-                onKeyDown={(event) => {
-                    const keys = ['ArrowLeft', 'ArrowRight', 'Home', 'End'];
-                    if (!keys.includes(event.key)) return;
-                    event.preventDefault();
-                    const index = pillars.findIndex(
-                        (item) => item.id === active,
-                    );
-                    const next =
-                        event.key === 'Home'
-                            ? 0
-                            : event.key === 'End'
-                              ? pillars.length - 1
-                              : (index +
-                                    (event.key === 'ArrowRight' ? 1 : -1) +
-                                    pillars.length) %
-                                pillars.length;
-                    setActive(pillars[next].id);
-                    event.currentTarget
-                        .querySelectorAll('[role="tab"]')
-                        [next].focus();
-                }}
-            >
-                {pillars.map((item) => (
-                    <button
-                        key={item.id}
-                        type="button"
-                        role="tab"
-                        id={`${prefix}-tab-${item.id}`}
-                        aria-controls={`${prefix}-panel-${item.id}`}
-                        aria-selected={item.id === active}
-                        tabIndex={item.id === active ? 0 : -1}
-                        onClick={() => setActive(item.id)}
-                    >
-                        {item.label}
-                    </button>
+            <div class="policy-grid alignment-cards">
+                {pillars.map((pillar) => (
+                    <PolicyCard
+                        key={pillar.id}
+                        item={{
+                            ...pillar,
+                            topic: pillar.label,
+                            summary: pillar.description,
+                            alignmentTag: pillarAlignmentTag(
+                                analysis,
+                                pillar.id,
+                            ),
+                            alignmentNote:
+                                candidateAlignmentNotes[profile.id]?.[
+                                    pillar.id
+                                ] ||
+                                fallbackNotes[
+                                    pillarAlignmentTag(analysis, pillar.id)
+                                ],
+                        }}
+                        actionLabel={null}
+                        onSelect={setSelected}
+                    />
                 ))}
             </div>
-            {pillars.map((item) => (
-                <div
-                    key={item.id}
-                    role="tabpanel"
-                    id={`${prefix}-panel-${item.id}`}
-                    aria-labelledby={`${prefix}-tab-${item.id}`}
-                    hidden={item.id !== active}
-                    tabIndex={0}
+            {selected && (
+                <PolicyDialog
+                    title={selected.label}
+                    eyebrow="Promises and actions"
+                    color="var(--ink)"
+                    closeLabel="Close promises and actions"
+                    onClose={() => setSelected(null)}
                 >
-                    {item.id === active && (
-                        <PillarPanel analysis={analysis} pillar={pillar} />
-                    )}
-                </div>
-            ))}
+                    <PillarPanel analysis={analysis} pillar={selected} />
+                </PolicyDialog>
+            )}
         </>
     );
 }
@@ -282,25 +310,31 @@ export function PlatformAlignment({ profile }) {
     const analysis = profile?.alignment_analysis;
     if (analysis?.review_status !== 'source_checked') return null;
     return (
-        <section class="platform-alignment" aria-labelledby="alignment-title">
-            <header class="alignment-intro">
-                <p class="alignment-eyebrow">
-                    {profile.ballot_name} · Platform and record
-                </p>
-                <h2 id="alignment-title">
-                    Do their actions match the platform?
-                </h2>
-                <p class="alignment-scope">
-                    Explore specific promises and political choices by issue.
-                    Party promises and positions are identified below; they are
-                    not treated as personally authored promises. Each finding
-                    shows the dates and limits of the available record.
-                </p>
-            </header>
-            <PillarGuide key={profile.id} analysis={analysis} />
+        <details
+            class="platform-alignment"
+            style={{ '--party-color': 'var(--ink)' }}
+            aria-labelledby="alignment-title"
+            open
+        >
+            <summary id="alignment-title">Promises and actions</summary>
+            <p class="alignment-scope">
+                Compare campaign positions with recorded political choices,
+                issue by issue.
+            </p>
+            <PillarGuide
+                key={profile.id}
+                analysis={analysis}
+                profile={profile}
+            />
             <details class="alignment-method">
                 <summary>How these comparisons were selected</summary>
                 <p>{analysis.scope}</p>
+                <p>
+                    Party promises and positions are identified in each
+                    comparison; they are not treated as personally authored
+                    promises. Each finding shows the dates and limits of the
+                    available record.
+                </p>
                 <p>
                     {analysis.coverage.selected_votes} named votes were selected
                     from {analysis.coverage.indexed_votes} indexed votes, across{' '}
@@ -329,6 +363,6 @@ export function PlatformAlignment({ profile }) {
                 </p>
             </details>
             <VoteArchive actions={profile.actions} />
-        </section>
+        </details>
     );
 }

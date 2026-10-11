@@ -31,11 +31,9 @@ export function CandidateRecords({ candidate, dataset, research }) {
                 </div>
             )}
             <div class="candidate-records">
-                {person?.office_history?.length > 0 && (
-                    <div
-                        class={`office-history${hasAlignment ? ' office-history-compact' : ''}`}
-                    >
-                        {!hasAlignment && <h4>Previous offices</h4>}
+                {!hasAlignment && person?.office_history?.length > 0 && (
+                    <div class="office-history">
+                        <h4>Previous offices</h4>
                         {person.office_history.map((office, index) => (
                             <p key={index}>
                                 {office.office} · {office.district_name} ·{' '}

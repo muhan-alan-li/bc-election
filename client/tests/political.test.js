@@ -199,7 +199,7 @@ test('build packages polished records as separate versioned assets and rejects a
 const bundled = await build({
     stdin: {
         contents:
-            "export { ActionRecord } from './src/components/candidate/ActionRecord.jsx'; export { IssuePatterns } from './src/components/candidate/IssuePatterns.jsx'; export { PlatformAlignment, PillarPanel } from './src/components/candidate/PlatformAlignment.jsx';",
+            "export { ActionRecord } from './src/components/candidate/ActionRecord.jsx'; export { IssuePatterns } from './src/components/candidate/IssuePatterns.jsx'; export { PlatformAlignment, PillarPanel, pillarAlignmentTag } from './src/components/candidate/PlatformAlignment.jsx';",
         resolveDir: fileURLToPath(new URL('../', import.meta.url)),
     },
     bundle: true,
@@ -208,10 +208,15 @@ const bundled = await build({
     jsx: 'automatic',
     jsxImportSource: 'preact',
 });
-const { ActionRecord, IssuePatterns, PlatformAlignment, PillarPanel } =
-    await import(
-        `data:text/javascript;base64,${Buffer.from(bundled.outputFiles[0].text).toString('base64')}`
-    );
+const {
+    ActionRecord,
+    IssuePatterns,
+    PlatformAlignment,
+    PillarPanel,
+    pillarAlignmentTag,
+} = await import(
+    `data:text/javascript;base64,${Buffer.from(bundled.outputFiles[0].text).toString('base64')}`
+);
 function walk(node, text, links) {
     if (node == null || typeof node === 'boolean') return;
     if (Array.isArray(node))
@@ -263,7 +268,7 @@ test('vote presentation preserves position, stage, citations and unresolved ques
     assert.ok(!unknown.includes('Nay'));
 });
 
-test('commitment comparisons lead with specific conclusions and preserve ownership, time and counterarguments', () => {
+test('commitment comparisons lead with specific conclusions and preserve ownership, time and sources', () => {
     const finding = {
         id: 'housing',
         pillar_id: 'housing',
@@ -319,7 +324,7 @@ test('commitment comparisons lead with specific conclusions and preserve ownersh
         links = [];
     walk(PlatformAlignment({ profile }), text, links);
     const content = text.join(' ');
-    assert.ok(content.includes('Do their actions match the platform?'));
+    assert.ok(content.includes('Promises and actions'));
     walk(
         PillarPanel({
             analysis: profile.alignment_analysis,
@@ -335,7 +340,6 @@ test('commitment comparisons lead with specific conclusions and preserve ownersh
     const panel = text.join(' ');
     assert.ok(panel.includes('Consistent with later position'));
     assert.ok(panel.includes('Voted against'));
-    assert.ok(panel.includes('Small owners could face different burdens.'));
     const empty = [];
     walk(
         PillarPanel({
@@ -381,7 +385,10 @@ test('commitment comparisons lead with specific conclusions and preserve ownersh
         observed,
         [],
     );
-    assert.ok(observed.join(' ').includes('Observed'));
+    assert.ok(!observed.join(' ').includes('An undated position'));
+    assert.ok(
+        !observed.join(' ').includes('What the record cannot answer yet'),
+    );
     profile.alignment_analysis.review_status = 'draft';
     assert.equal(PlatformAlignment({ profile }), null);
 });
@@ -519,4 +526,28 @@ test('issue patterns retain inconclusive counts, actual votes, sources and align
     const privateText = [];
     walk(IssuePatterns({ profile }), privateText, []);
     assert.ok(!privateText.includes('Strengthen tenant protections.'));
+});
+
+test('pillar tags summarize reviewed findings and leave mixed or missing evidence inconclusive', () => {
+    const tag = (...statuses) =>
+        pillarAlignmentTag(
+            {
+                findings: statuses.map((status) => ({
+                    pillar_id: 'housing',
+                    status,
+                })),
+            },
+            'housing',
+        );
+    assert.equal(
+        tag('supports_commitment', 'consistent_with_later_position'),
+        'aligned',
+    );
+    assert.equal(tag('potential_tension'), 'against');
+    assert.equal(
+        tag('supports_commitment', 'potential_tension'),
+        'inconclusive',
+    );
+    assert.equal(tag('supports_commitment', 'inconclusive'), 'inconclusive');
+    assert.equal(tag(), 'inconclusive');
 });
