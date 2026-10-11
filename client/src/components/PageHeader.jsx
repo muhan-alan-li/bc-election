@@ -1,7 +1,14 @@
 import { Breadcrumbs } from './Breadcrumbs.jsx';
 import { partyName } from '../helpers/candidates.js';
+import { parties, otherParties } from '../data/parties.js';
 
 export function PageHeader({ route, dataset, candidate, party }) {
+    const affiliation =
+        route.view === 'candidate' && candidate && dataset
+            ? [...parties, ...otherParties].find(
+                  (item) => item.name === partyName(candidate, dataset),
+              )
+            : null;
     let title = 'Constituencies';
     let context = 'BC election guide';
     let description =
@@ -45,7 +52,12 @@ export function PageHeader({ route, dataset, candidate, party }) {
                 {context}
             </p>
             <h1 class="page-header-title">{title}</h1>
-            <p class="page-header-description">{description}</p>
+            <p
+                class="page-header-description"
+                style={affiliation ? { color: affiliation.color } : undefined}
+            >
+                {description}
+            </p>
         </header>
     );
 }
