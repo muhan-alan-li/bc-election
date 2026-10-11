@@ -41,10 +41,6 @@
     border-color: var(--accent);
     color: var(--accent);
 }
-.constituency-tools > a {
-    padding-bottom: 8px;
-    font-size: 15px;
-}
 .constituency-table tbody th,
 .candidate-table tbody th {
     background: var(--bg);

@@ -1,11 +1,14 @@
 :root {
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
+    font-synthesis: none;
+    line-height: 1.5;
+
     color-scheme: light;
     --sans: 'Atkinson Hyperlegible', sans-serif;
     --body: var(--sans);
     --body-size: 17px;
     --bg: #ffffff;
     --panel: #f6f7f8;
-    --panel2: #eceff1;
     --line: #e1e4e8;
     --line2: #c9cdd3;
     --ink: #20252b;
@@ -13,21 +16,6 @@
     --ink3: #616a76;
     --accent: #304e6b;
     --link: #245b8a;
-    --aligned: #38634b;
-    --aligned-bg: #eef2e9;
-    --aligned-line: #cad7c5;
-    --partial: #805d24;
-    --partial-bg: #f6efdf;
-    --partial-line: #dfcda7;
-    --contradicts: #984738;
-    --contradicts-bg: #f7ece5;
-    --contradicts-line: #e1bdb0;
-    --noev: #5c6570;
-    --noev-bg: #f4f5f6;
-    --noev-line: #d6dbe0;
-    --unrelated: #46616a;
-    --unrelated-bg: #edf0ed;
-    --unrelated-line: #cbd6d2;
     --radius: 2px;
     --maxw: 1200px;
 }
@@ -42,13 +30,7 @@ body {
     margin: 0;
     padding: 0;
 }
-:root {
-    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
-    color: var(--ink);
-    background: var(--bg);
-    font-synthesis: none;
-    line-height: 1.5;
-}
+
 body {
     background: var(--bg);
     color: var(--ink);

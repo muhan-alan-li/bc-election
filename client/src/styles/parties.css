@@ -1,24 +1,14 @@
 /* Party cards and platform pages share the selected party accent. */
-.parties-intro {
-    max-width: 80ch;
-    margin-bottom: 24px;
-}
 .parties-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
 }
 .party-card {
+    text-decoration: none;
     padding: 0;
     overflow: hidden;
-    border-top: 4px solid var(--party-color);
-    border-radius: 0;
-    display: flex;
-    flex-direction: column;
     transition: border-color 0.16s ease;
-}
-.party-card:hover {
-    border-color: var(--party-color);
 }
 .party-card-name {
     padding: 20px 22px;
@@ -54,13 +44,8 @@
     font-weight: 700;
 }
 .party-card-action {
-    display: flex;
-    justify-content: space-between;
     margin-top: 22px;
     padding-top: 16px;
-    border-top: 1px solid var(--line);
-    color: var(--party-color);
-    font-weight: 700;
 }
 .party-sources {
     font-size: 14px;
@@ -100,9 +85,6 @@
 @media (prefers-reduced-motion: reduce) {
     .party-card {
         transition: none;
-    }
-    .party-card:hover {
-        transform: none;
     }
 }
 
@@ -171,8 +153,4 @@
     .other-parties-grid {
         grid-template-columns: 1fr;
     }
-}
-
-.party-card {
-    text-decoration: none;
 }

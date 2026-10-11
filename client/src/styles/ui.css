@@ -38,11 +38,6 @@ td {
     border-bottom: 1px solid var(--line);
     vertical-align: top;
 }
-td small {
-    display: block;
-    color: var(--ink3);
-    margin-top: 6px;
-}
 .date {
     white-space: nowrap;
 }
@@ -68,4 +63,40 @@ td small {
     table {
         min-width: 600px;
     }
+}
+
+/* Shared interactive-card and modal behavior. */
+.card:is(a, button) {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0;
+    border-top: 4px solid var(--party-color);
+}
+.card:is(a, button):hover {
+    border-color: var(--party-color);
+}
+.card-action {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--line);
+    color: var(--party-color);
+    font-weight: 700;
+}
+.dialog {
+    position: fixed;
+    color: var(--ink);
+    background: var(--bg);
+    overflow-y: auto;
+}
+.comparison-tag {
+    background: var(--tag-bg, #fff2d0);
+    color: var(--tag-ink, #704b00);
+}
+.comparison-tag[data-tone='aligned'] {
+    --tag-bg: #d9f0df;
+    --tag-ink: #15562c;
+}
+.comparison-tag[data-tone='against'] {
+    --tag-bg: #fbdedb;
+    --tag-ink: #90251d;
 }

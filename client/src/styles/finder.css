@@ -1,5 +1,4 @@
 .finder-panel {
-    position: fixed;
     inset: 0 0 0 auto;
     margin: 0;
     width: min(620px, 100%);
@@ -9,8 +8,6 @@
     border: 0;
     border-left: 1px solid var(--line2);
     padding: 24px;
-    overflow-y: auto;
-    color: var(--ink);
     background: var(--bg);
 }
 .finder-panel::backdrop {

@@ -66,7 +66,8 @@ function FindingContent({ finding, copy }) {
             <div class="alignment-conclusion">
                 <h4>How it aligns</h4>
                 <p
-                    class={`alignment-verdict alignment-verdict-${finding.status}`}
+                    class="comparison-tag alignment-verdict"
+                    data-tone={findingAlignmentTag(finding.status)}
                 >
                     {alignmentLabels[finding.status]}
                 </p>
@@ -181,7 +182,10 @@ export function PillarPanel({ analysis, pillar, copy = {} }) {
                                 <span class="alignment-finding-heading">
                                     <span>{finding.headline}</span>
                                     <span
-                                        class={`alignment-item-tag alignment-item-tag-${findingAlignmentTag(finding.status)}`}
+                                        class="comparison-tag alignment-item-tag"
+                                        data-tone={findingAlignmentTag(
+                                            finding.status,
+                                        )}
                                     >
                                         {findingAlignmentTag(finding.status)}
                                     </span>

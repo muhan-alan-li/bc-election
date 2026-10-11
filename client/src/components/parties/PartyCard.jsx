@@ -24,7 +24,7 @@ export function PartyCard({ party, compact = false }) {
             <span class="party-card-body">
                 <span class="party-label">{party.leaderNote}</span>
                 <span class="party-card-leader">{party.leader}</span>
-                <span class="party-card-action">
+                <span class="card-action party-card-action">
                     Learn more
                     <span aria-hidden="true">→</span>
                 </span>

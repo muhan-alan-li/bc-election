@@ -38,16 +38,7 @@
     font-size: 0.75rem;
     font-weight: 700;
     white-space: nowrap;
-    background: #fff2d0;
     color: #704b00;
-}
-.alignment-item-tag-aligned {
-    background: #d9f0df;
-    color: #15562c;
-}
-.alignment-item-tag-against {
-    background: #fbdedb;
-    color: #90251d;
 }
 .alignment-finding > summary:hover {
     background: #f5f5f5;
@@ -62,9 +53,6 @@
     padding: 1.25rem;
 }
 .alignment-finding-content > .alignment-promise {
-    grid-column: 1 / -1;
-}
-.alignment-finding-content > .alignment-promise {
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--line);
 }
@@ -75,19 +63,8 @@
 .alignment-verdict {
     display: inline-block;
     padding: 0.25rem 0.5rem;
-    background: #fff2d0;
-    color: #704b00;
     font-size: 0.8rem;
     font-weight: 700;
-}
-.alignment-verdict-supports_commitment,
-.alignment-verdict-consistent_with_later_position {
-    background: #d9f0df;
-    color: #15562c;
-}
-.alignment-verdict-potential_tension {
-    background: #fbdedb;
-    color: #90251d;
 }
 .alignment-promise {
     line-height: 1.7;
@@ -118,17 +95,12 @@
     border: 0;
 }
 .alignment-evidence-table table {
-    width: 100%;
     min-width: 540px;
-    border-collapse: collapse;
     font-size: 0.8rem;
 }
 .alignment-evidence-table th,
 .alignment-evidence-table td {
     padding: 0.65rem 0.6rem;
-    text-align: left;
-    vertical-align: top;
-    border-bottom: 1px solid var(--line);
     overflow-wrap: anywhere;
 }
 .alignment-evidence-table th {
@@ -154,7 +126,6 @@
     font-size: 0.8rem;
 }
 .alignment-archive > summary {
-    cursor: pointer;
     font-weight: 550;
 }
 .alignment-archive {
@@ -197,16 +168,13 @@
     font-size: 0.9rem;
 }
 .alignment-archive input {
-    width: 100%;
     max-width: 480px;
-    box-sizing: border-box;
     padding: 0.65rem 0.8rem;
     border: 1px solid #c9d5cd;
     border-radius: 6px;
 }
 @media (max-width: 600px) {
     .alignment-finding-content {
-        grid-template-columns: minmax(0, 1fr);
         padding: 1rem;
     }
 }
