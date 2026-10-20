@@ -63,7 +63,7 @@ class PlatformTests(unittest.TestCase):
             self.store._check_url("http://unrelated.example/")
 
     def test_party_only_batch_skips_candidate_collector(self):
-        with patch("run_platform_collection.collect_candidates", side_effect=AssertionError("Candidate job ran")):
+        with patch("election.collection.platform_collection.collect_candidates", side_effect=AssertionError("Candidate job ran")):
             summary = run(self.config, self.root, offline=True, only="parties")
         self.assertIn("parties", summary)
         self.assertNotIn("candidates", summary)
