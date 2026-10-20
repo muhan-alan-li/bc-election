@@ -54,6 +54,16 @@ export function App() {
 
     return (
         <>
+            <a
+                class="skip-link"
+                href="#main-content"
+                onClick={(event) => {
+                    event.preventDefault();
+                    document.getElementById('main-content').focus();
+                }}
+            >
+                Skip to main content
+            </a>
             <SiteHeader route={displayRoute} />
             <main class="shell" id="main-content" tabIndex="-1">
                 <PageHeader

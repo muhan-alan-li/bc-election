@@ -1,3 +1,4 @@
+import { useEffect } from 'preact/hooks';
 import { Breadcrumbs } from './Breadcrumbs.jsx';
 
 export function PageHeader({ route, dataset, party }) {
@@ -15,7 +16,11 @@ export function PageHeader({ route, dataset, party }) {
         title = 'Page not found';
     }
 
-    return () => {
+    const routeKey = JSON.stringify(route);
+    useEffect(() => {
+        const previous = history.scrollRestoration;
+        history.scrollRestoration = 'manual';
+        return () => {
             history.scrollRestoration = previous;
         };
     }, []);
