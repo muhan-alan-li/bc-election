@@ -16,7 +16,17 @@
     --ink3: #616a76;
     --accent: #304e6b;
     --link: #245b8a;
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --text-small: 14px;
+    --text-body: 17px;
+    --text-title: 29px;
     --radius: 2px;
+    --radius-panel: 16px;
     --maxw: 1200px;
 }
 * {
@@ -84,7 +94,7 @@ summary:focus-visible,
     outline: 2px solid var(--link);
     outline-offset: 4px;
 }
-input:focus {
+input:focus:not(:focus-visible) {
     outline: none;
     box-shadow: none;
     border-color: var(--ink3);
@@ -110,7 +120,7 @@ h1 {
     margin-bottom: 18px;
 }
 h2 {
-    font-size: 29px;
+    font-size: var(--text-title);
     line-height: 1.3;
 }
 h3 {
