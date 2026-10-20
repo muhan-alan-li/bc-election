@@ -1,0 +1,39 @@
+name: Checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: client/package-lock.json
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: content-server/go.mod
+          cache: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+        working-directory: client
+      - run: npm run format:check && npm test && npm run build
+        working-directory: client
+      - run: go test -race ./... && go vet ./...
+        working-directory: content-server
+      - run: go test -race ./... && go vet ./...
+        working-directory: constituency-finder
+      - run: python3 -m unittest discover -s tests
+        working-directory: ingestion
+      - run: npm run test:browser
+        working-directory: client
+        env:
+          CHROME_BIN: /usr/bin/google-chrome
+      - run: npm run test:browser:static
+        working-directory: client
+        env:
+          CHROME_BIN: /usr/bin/google-chrome
