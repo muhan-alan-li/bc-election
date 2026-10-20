@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "boundary_version": "bc-2023-redistribution-set-11",
+  "generated_at": "2026-10-08T00:00:00Z",
+  "sources": [],
+  "postal_codes": {
+    "V6Y1N9": { "geonames": [[-123.15,49.16]] },
+    "V6Y1N8": { "geonames": [[-123.15,49.16]], "statcan": [[-123.05,49.16]] },
+    "V6Y1N7": { "geonames": [[-123.1,49.16]] },
+    "V6Y1N6": { "geonames": [[-125,48]] },
+    "V6Y1N5": { "geonames": [[-123.175,49.125]] },
+    "V6Y1N4": { "geonames": [[-124.0005,50.0005]] },
+    "V0A0A0": { "geonames": [[-123.05,49.16]] }
+  },
+  "boundaries": {
+    "features": [
+      {
+        "type": "Feature",
+        "properties": { "official_code": "RCC", "name": "Richmond Centre" },
+        "bbox": [-124.001,49.1,-123.1,50.001],
+        "geometry": {
+          "type": "MultiPolygon",
+          "coordinates": [
+            [
+              [[-123.2,49.1],[-123.15,49.1001],[-123.1,49.1],[-123.1,49.2],[-123.2,49.2],[-123.2,49.1]],
+              [[-123.18,49.12],[-123.17,49.12],[-123.17,49.13],[-123.18,49.13],[-123.18,49.12]]
+            ],
+            [[[-124.001,50],[-124,50],[-124,50.001],[-124.001,50.001],[-124.001,50]]]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": { "official_code": "OTH", "name": "Other Constituency" },
+        "bbox": [-123.1,49.1,-123,49.2],
+        "geometry": { "type": "Polygon", "coordinates": [[[-123.1,49.1],[-123,49.1],[-123,49.2],[-123.1,49.2],[-123.1,49.1]]] }
+      },
+      {
+        "type": "Feature",
+        "properties": { "official_code": "HPR", "name": "High Precision" },
+        "bbox": [-122.123456789012,49,-122,49.1],
+        "geometry": { "type": "Polygon", "coordinates": [[[-122.123456789012,49],[-122,49],[-122,49.1],[-122.123456789012,49.1],[-122.123456789012,49]]] }
+      }
+    ]
+  }
+}
