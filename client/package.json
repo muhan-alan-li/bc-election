@@ -8,9 +8,10 @@
   },
   "scripts": {
     "build": "node build.js",
+    "build:static": "node build.js --static",
     "dev": "node build.js --watch",
-    "format": "prettier --write build.js \"src/**/*.{js,jsx,css}\" \"tests/**/*.js\" index.html README.md",
-    "format:check": "prettier --check build.js \"src/**/*.{js,jsx,css}\" \"tests/**/*.js\" index.html README.md",
+    "format": "prettier --write build.js \"src/**/*.{js,jsx,css}\" \"tests/**/*.{js,mjs}\" index.html README.md",
+    "format:check": "prettier --check build.js \"src/**/*.{js,jsx,css}\" \"tests/**/*.{js,mjs}\" index.html README.md",
     "test": "node --test tests/*.test.js"
   },
   "dependencies": {

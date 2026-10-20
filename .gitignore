@@ -12,3 +12,6 @@ bc-election-history.bundle
 .env
 .env.*
 !.env.example
+
+client/dist-static/
+client/.static-build-*/
