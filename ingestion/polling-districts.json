@@ -1,0 +1,374 @@
+[
+  {
+    "code": "ABS",
+    "name": "Abbotsford South"
+  },
+  {
+    "code": "ABW",
+    "name": "Abbotsford West"
+  },
+  {
+    "code": "ABM",
+    "name": "Abbotsford-Mission"
+  },
+  {
+    "code": "BDS",
+    "name": "Boundary-Similkameen"
+  },
+  {
+    "code": "BLS",
+    "name": "Bulkley Valley-Stikine"
+  },
+  {
+    "code": "BNC",
+    "name": "Burnaby Centre"
+  },
+  {
+    "code": "BNE",
+    "name": "Burnaby East"
+  },
+  {
+    "code": "BNO",
+    "name": "Burnaby North"
+  },
+  {
+    "code": "BNS",
+    "name": "Burnaby South-Metrotown"
+  },
+  {
+    "code": "BNN",
+    "name": "Burnaby-New Westminster"
+  },
+  {
+    "code": "CBC",
+    "name": "Cariboo-Chilcotin"
+  },
+  {
+    "code": "CHN",
+    "name": "Chilliwack North"
+  },
+  {
+    "code": "CHC",
+    "name": "Chilliwack-Cultus Lake"
+  },
+  {
+    "code": "CLR",
+    "name": "Columbia River-Revelstoke"
+  },
+  {
+    "code": "CQB",
+    "name": "Coquitlam-Burke Mountain"
+  },
+  {
+    "code": "CQM",
+    "name": "Coquitlam-Maillardville"
+  },
+  {
+    "code": "CRC",
+    "name": "Courtenay-Comox"
+  },
+  {
+    "code": "CWV",
+    "name": "Cowichan Valley"
+  },
+  {
+    "code": "DLN",
+    "name": "Delta North"
+  },
+  {
+    "code": "DLS",
+    "name": "Delta South"
+  },
+  {
+    "code": "ESC",
+    "name": "Esquimalt-Colwood"
+  },
+  {
+    "code": "FRN",
+    "name": "Fraser-Nicola"
+  },
+  {
+    "code": "JFM",
+    "name": "Juan de Fuca-Malahat"
+  },
+  {
+    "code": "KAC",
+    "name": "Kamloops Centre"
+  },
+  {
+    "code": "KAN",
+    "name": "Kamloops-North Thompson"
+  },
+  {
+    "code": "KEC",
+    "name": "Kelowna Centre"
+  },
+  {
+    "code": "KLC",
+    "name": "Kelowna-Lake Country-Coldstream"
+  },
+  {
+    "code": "KLM",
+    "name": "Kelowna-Mission"
+  },
+  {
+    "code": "KOC",
+    "name": "Kootenay Central"
+  },
+  {
+    "code": "KOM",
+    "name": "Kootenay-Monashee"
+  },
+  {
+    "code": "KOR",
+    "name": "Kootenay-Rockies"
+  },
+  {
+    "code": "LAO",
+    "name": "Ladysmith-Oceanside"
+  },
+  {
+    "code": "LFH",
+    "name": "Langford-Highlands"
+  },
+  {
+    "code": "LLA",
+    "name": "Langley-Abbotsford"
+  },
+  {
+    "code": "LWG",
+    "name": "Langley-Walnut Grove"
+  },
+  {
+    "code": "LWI",
+    "name": "Langley-Willowbrook"
+  },
+  {
+    "code": "MAE",
+    "name": "Maple Ridge East"
+  },
+  {
+    "code": "MAP",
+    "name": "Maple Ridge-Pitt Meadows"
+  },
+  {
+    "code": "MPR",
+    "name": "Mid Island-Pacific Rim"
+  },
+  {
+    "code": "NAI",
+    "name": "Nanaimo-Gabriola Island"
+  },
+  {
+    "code": "NAL",
+    "name": "Nanaimo-Lantzville"
+  },
+  {
+    "code": "NEC",
+    "name": "Nechako Lakes"
+  },
+  {
+    "code": "NMC",
+    "name": "New Westminster-Coquitlam"
+  },
+  {
+    "code": "NOH",
+    "name": "North Coast-Haida Gwaii"
+  },
+  {
+    "code": "NOI",
+    "name": "North Island"
+  },
+  {
+    "code": "NVL",
+    "name": "North Vancouver-Lonsdale"
+  },
+  {
+    "code": "NVS",
+    "name": "North Vancouver-Seymour"
+  },
+  {
+    "code": "OBG",
+    "name": "Oak Bay-Gordon Head"
+  },
+  {
+    "code": "PCN",
+    "name": "Peace River North"
+  },
+  {
+    "code": "PCS",
+    "name": "Peace River South"
+  },
+  {
+    "code": "PES",
+    "name": "Penticton-Summerland"
+  },
+  {
+    "code": "POC",
+    "name": "Port Coquitlam"
+  },
+  {
+    "code": "POM",
+    "name": "Port Moody-Burquitlam"
+  },
+  {
+    "code": "POR",
+    "name": "Powell River-Sunshine Coast"
+  },
+  {
+    "code": "PRM",
+    "name": "Prince George-Mackenzie"
+  },
+  {
+    "code": "PRO",
+    "name": "Prince George-North Cariboo"
+  },
+  {
+    "code": "PRV",
+    "name": "Prince George-Valemount"
+  },
+  {
+    "code": "RCC",
+    "name": "Richmond Centre"
+  },
+  {
+    "code": "RCB",
+    "name": "Richmond-Bridgeport"
+  },
+  {
+    "code": "RCQ",
+    "name": "Richmond-Queensborough"
+  },
+  {
+    "code": "RCS",
+    "name": "Richmond-Steveston"
+  },
+  {
+    "code": "SAN",
+    "name": "Saanich North and the Islands"
+  },
+  {
+    "code": "SAS",
+    "name": "Saanich South"
+  },
+  {
+    "code": "SHU",
+    "name": "Salmon Arm-Shuswap"
+  },
+  {
+    "code": "SKE",
+    "name": "Skeena"
+  },
+  {
+    "code": "SRC",
+    "name": "Surrey City Centre"
+  },
+  {
+    "code": "SUN",
+    "name": "Surrey North"
+  },
+  {
+    "code": "SUS",
+    "name": "Surrey South"
+  },
+  {
+    "code": "SRD",
+    "name": "Surrey-Cloverdale"
+  },
+  {
+    "code": "SRF",
+    "name": "Surrey-Fleetwood"
+  },
+  {
+    "code": "SRG",
+    "name": "Surrey-Guildford"
+  },
+  {
+    "code": "SRN",
+    "name": "Surrey-Newton"
+  },
+  {
+    "code": "SUP",
+    "name": "Surrey-Panorama"
+  },
+  {
+    "code": "SUR",
+    "name": "Surrey-Serpentine River"
+  },
+  {
+    "code": "SWR",
+    "name": "Surrey-White Rock"
+  },
+  {
+    "code": "VFV",
+    "name": "Vancouver-Fraserview"
+  },
+  {
+    "code": "VHA",
+    "name": "Vancouver-Hastings"
+  },
+  {
+    "code": "VKE",
+    "name": "Vancouver-Kensington"
+  },
+  {
+    "code": "VLA",
+    "name": "Vancouver-Langara"
+  },
+  {
+    "code": "VLM",
+    "name": "Vancouver-Little Mountain"
+  },
+  {
+    "code": "VNP",
+    "name": "Vancouver-Point Grey"
+  },
+  {
+    "code": "VNQ",
+    "name": "Vancouver-Quilchena"
+  },
+  {
+    "code": "VNR",
+    "name": "Vancouver-Renfrew"
+  },
+  {
+    "code": "VNS",
+    "name": "Vancouver-South Granville"
+  },
+  {
+    "code": "VNT",
+    "name": "Vancouver-Strathcona"
+  },
+  {
+    "code": "VNW",
+    "name": "Vancouver-West End"
+  },
+  {
+    "code": "VNY",
+    "name": "Vancouver-Yaletown"
+  },
+  {
+    "code": "VRL",
+    "name": "Vernon-Lumby"
+  },
+  {
+    "code": "VTB",
+    "name": "Victoria-Beacon Hill"
+  },
+  {
+    "code": "VTS",
+    "name": "Victoria-Swan Lake"
+  },
+  {
+    "code": "WKP",
+    "name": "West Kelowna-Peachland"
+  },
+  {
+    "code": "WVC",
+    "name": "West Vancouver-Capilano"
+  },
+  {
+    "code": "WVS",
+    "name": "West Vancouver-Sea to Sky"
+  }
+]

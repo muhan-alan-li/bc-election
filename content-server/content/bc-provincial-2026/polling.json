@@ -1,0 +1,1215 @@
+{
+  "schema_version": 1,
+  "election_id": "bc-provincial-2026",
+  "collectedAt": "2026-10-18T06:40:01.653112+00:00",
+  "methodology": {
+    "url": "https://338canada.com/about.htm",
+    "label": "338Canada methodology"
+  },
+  "districts": [
+    {
+      "code": "ABS",
+      "name": "Abbotsford South",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1001e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "ABW",
+      "name": "Abbotsford West",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1002e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "ABM",
+      "name": "Abbotsford-Mission",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "likely",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1003e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "BDS",
+      "name": "Boundary-Similkameen",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1004e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "BLS",
+      "name": "Bulkley Valley-Stikine",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "likely",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1005e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "BNC",
+      "name": "Burnaby Centre",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1006e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "BNE",
+      "name": "Burnaby East",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1007e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "BNO",
+      "name": "Burnaby North",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1008e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "BNS",
+      "name": "Burnaby South-Metrotown",
+      "kind": "projection",
+      "leaderPartyID": null,
+      "outlook": "toss_up",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1009e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "BNN",
+      "name": "Burnaby-New Westminster",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "likely",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1010e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "CBC",
+      "name": "Cariboo-Chilcotin",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1011e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "CHN",
+      "name": "Chilliwack North",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "likely",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1012e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "CHC",
+      "name": "Chilliwack-Cultus Lake",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "likely",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1013e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "CLR",
+      "name": "Columbia River-Revelstoke",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1014e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "CQB",
+      "name": "Coquitlam-Burke Mountain",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1015e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "CQM",
+      "name": "Coquitlam-Maillardville",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1016e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "CRC",
+      "name": "Courtenay-Comox",
+      "kind": "projection",
+      "leaderPartyID": null,
+      "outlook": "toss_up",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1017e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "CWV",
+      "name": "Cowichan Valley",
+      "kind": "projection",
+      "leaderPartyID": null,
+      "outlook": "toss_up",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1018e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "DLN",
+      "name": "Delta North",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1019e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "DLS",
+      "name": "Delta South",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "likely",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1020e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "ESC",
+      "name": "Esquimalt-Colwood",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1021e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "FRN",
+      "name": "Fraser-Nicola",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1022e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "JFM",
+      "name": "Juan de Fuca-Malahat",
+      "kind": "projection",
+      "leaderPartyID": null,
+      "outlook": "toss_up",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1023e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "KAC",
+      "name": "Kamloops Centre",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "likely",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1024e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "KAN",
+      "name": "Kamloops-North Thompson",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1025e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "KEC",
+      "name": "Kelowna Centre",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1026e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "KLC",
+      "name": "Kelowna-Lake Country-Coldstream",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "likely",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1027e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "KLM",
+      "name": "Kelowna-Mission",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1028e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "KOC",
+      "name": "Kootenay Central",
+      "kind": "projection",
+      "leaderPartyID": null,
+      "outlook": "toss_up",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1029e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "KOM",
+      "name": "Kootenay-Monashee",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1030e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "KOR",
+      "name": "Kootenay-Rockies",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1031e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "LAO",
+      "name": "Ladysmith-Oceanside",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1032e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "LFH",
+      "name": "Langford-Highlands",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "likely",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1033e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "LLA",
+      "name": "Langley-Abbotsford",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1034e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "LWG",
+      "name": "Langley-Walnut Grove",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "likely",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1035e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "LWI",
+      "name": "Langley-Willowbrook",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "likely",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1036e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "MAE",
+      "name": "Maple Ridge East",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1037e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "MAP",
+      "name": "Maple Ridge-Pitt Meadows",
+      "kind": "projection",
+      "leaderPartyID": null,
+      "outlook": "toss_up",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1038e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "MPR",
+      "name": "Mid Island-Pacific Rim",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1039e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "NAI",
+      "name": "Nanaimo-Gabriola Island",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "likely",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1040e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "NAL",
+      "name": "Nanaimo-Lantzville",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1041e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "NEC",
+      "name": "Nechako Lakes",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1042e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "NMC",
+      "name": "New Westminster-Coquitlam",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1043e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "NOH",
+      "name": "North Coast-Haida Gwaii",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1044e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "NOI",
+      "name": "North Island",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1045e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "NVL",
+      "name": "North Vancouver-Lonsdale",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1046e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "NVS",
+      "name": "North Vancouver-Seymour",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "likely",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1047e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "OBG",
+      "name": "Oak Bay-Gordon Head",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1048e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "PCN",
+      "name": "Peace River North",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1049e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "PCS",
+      "name": "Peace River South",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1050e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "PES",
+      "name": "Penticton-Summerland",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1051e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "POC",
+      "name": "Port Coquitlam",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1052e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "POM",
+      "name": "Port Moody-Burquitlam",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1053e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "POR",
+      "name": "Powell River-Sunshine Coast",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1054e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "PRM",
+      "name": "Prince George-Mackenzie",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1055e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "PRO",
+      "name": "Prince George-North Cariboo",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1056e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "PRV",
+      "name": "Prince George-Valemount",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1057e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "RCC",
+      "name": "Richmond Centre",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1058e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "RCB",
+      "name": "Richmond-Bridgeport",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1059e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "RCQ",
+      "name": "Richmond-Queensborough",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "likely",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1060e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "RCS",
+      "name": "Richmond-Steveston",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1061e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "SAN",
+      "name": "Saanich North and the Islands",
+      "kind": "projection",
+      "leaderPartyID": "green",
+      "outlook": "likely",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1062e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "SAS",
+      "name": "Saanich South",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "likely",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1063e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "SHU",
+      "name": "Salmon Arm-Shuswap",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1064e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "SKE",
+      "name": "Skeena",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "likely",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1065e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "SRC",
+      "name": "Surrey City Centre",
+      "kind": "projection",
+      "leaderPartyID": null,
+      "outlook": "toss_up",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1066e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "SUN",
+      "name": "Surrey North",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "likely",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1067e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "SUS",
+      "name": "Surrey South",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "likely",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1068e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "SRD",
+      "name": "Surrey-Cloverdale",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "likely",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1069e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "SRF",
+      "name": "Surrey-Fleetwood",
+      "kind": "projection",
+      "leaderPartyID": null,
+      "outlook": "toss_up",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1070e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "SRG",
+      "name": "Surrey-Guildford",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1071e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "SRN",
+      "name": "Surrey-Newton",
+      "kind": "projection",
+      "leaderPartyID": null,
+      "outlook": "toss_up",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1072e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "SUP",
+      "name": "Surrey-Panorama",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1073e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "SUR",
+      "name": "Surrey-Serpentine River",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1074e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "SWR",
+      "name": "Surrey-White Rock",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "likely",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1075e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "VFV",
+      "name": "Vancouver-Fraserview",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "likely",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1076e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "VHA",
+      "name": "Vancouver-Hastings",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1077e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "VKE",
+      "name": "Vancouver-Kensington",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1078e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "VLA",
+      "name": "Vancouver-Langara",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1079e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "VLM",
+      "name": "Vancouver-Little Mountain",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1080e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "VNP",
+      "name": "Vancouver-Point Grey",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "likely",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1081e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "VNQ",
+      "name": "Vancouver-Quilchena",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "likely",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1082e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "VNR",
+      "name": "Vancouver-Renfrew",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1083e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "VNS",
+      "name": "Vancouver-South Granville",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1084e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "VNT",
+      "name": "Vancouver-Strathcona",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1085e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "VNW",
+      "name": "Vancouver-West End",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1086e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "VNY",
+      "name": "Vancouver-Yaletown",
+      "kind": "projection",
+      "leaderPartyID": null,
+      "outlook": "toss_up",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1087e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "VRL",
+      "name": "Vernon-Lumby",
+      "kind": "projection",
+      "leaderPartyID": null,
+      "outlook": "toss_up",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1088e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "VTB",
+      "name": "Victoria-Beacon Hill",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1089e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "VTS",
+      "name": "Victoria-Swan Lake",
+      "kind": "projection",
+      "leaderPartyID": "ndp",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1090e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "WKP",
+      "name": "West Kelowna-Peachland",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1091e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "WVC",
+      "name": "West Vancouver-Capilano",
+      "kind": "projection",
+      "leaderPartyID": "conservative",
+      "outlook": "safe",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1092e.htm",
+        "label": "338Canada riding projection"
+      }
+    },
+    {
+      "code": "WVS",
+      "name": "West Vancouver-Sea to Sky",
+      "kind": "projection",
+      "leaderPartyID": "green",
+      "outlook": "leaning",
+      "asOf": "2026-10-16",
+      "source": {
+        "url": "https://338canada.com/bc/1093e.htm",
+        "label": "338Canada riding projection"
+      }
+    }
+  ],
+  "surveys": [
+    {
+      "id": "leger-2026-10-13",
+      "pollster": "Léger",
+      "kind": "poll",
+      "scope": "province",
+      "publishedOn": "2026-10-13",
+      "fieldworkStart": "2026-10-09",
+      "fieldworkEnd": "2026-10-12",
+      "sampleSize": 1000,
+      "method": "Online panel",
+      "population": "Decided voters; unweighted subsample n=832 (weighted n=816), from 1,000 BC adults",
+      "uncertainty": "This online panel has no probability-sample margin of error. The report’s ±3.1-point comparison refers to a hypothetical random sample of 1,000, not the decided-voter subsample.",
+      "source": {
+        "url": "https://documents.leger360.com/hubfs/%C3%89tudes%20M%C3%A9diatiques/%C3%89tudes%20M%C3%A9diatiques%20-%202026/10.%20October%202026/Media%20Release%20-%20BC%20Election%20Polling%20October%2013,%202026.pdf",
+        "label": "Léger report: methodology and voting intentions (pages 2 and 7)"
+      },
+      "results": [
+        {
+          "partyID": "conservative",
+          "share": 42
+        },
+        {
+          "partyID": "ndp",
+          "share": 40
+        },
+        {
+          "partyID": "green",
+          "share": 9
+        },
+        {
+          "partyID": "onebc",
+          "share": 4
+        },
+        {
+          "partyID": "centre",
+          "share": 3
+        },
+        {
+          "partyID": "other",
+          "share": 2
+        }
+      ]
+    },
+    {
+      "id": "pallas-2026-10-13",
+      "pollster": "Pallas Data",
+      "kind": "poll",
+      "scope": "province",
+      "publishedOn": "2026-10-13",
+      "fieldworkStart": "2026-10-10",
+      "fieldworkEnd": "2026-10-11",
+      "sampleSize": 513,
+      "method": "Automated telephone interviews (IVR), landline and cellular",
+      "population": "Decided and leaning voters, drawn from 513 eligible BC adults",
+      "uncertainty": "The pollster reports ±4.3 percentage points, 95% confidence, for the total sample. Subsamples have larger uncertainty.",
+      "source": {
+        "url": "https://pallas-data.ca/2026/10/13/pallas-british-columbia-poll-conservative-43-ndp-38-green-11-onebc-5-and-doerkson-leads-eby-on-best-premier/",
+        "label": "Pallas Data: voting intentions and methodology"
+      },
+      "results": [
+        {
+          "partyID": "conservative",
+          "share": 43
+        },
+        {
+          "partyID": "ndp",
+          "share": 38
+        },
+        {
+          "partyID": "green",
+          "share": 11
+        },
+        {
+          "partyID": "onebc",
+          "share": 5
+        },
+        {
+          "partyID": "centre",
+          "share": 2
+        },
+        {
+          "partyID": "other",
+          "share": 1
+        }
+      ]
+    }
+  ]
+}

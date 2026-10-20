@@ -1,0 +1,88 @@
+[
+  {
+    "id": "leger-2026-10-13",
+    "pollster": "Léger",
+    "kind": "poll",
+    "scope": "province",
+    "publishedOn": "2026-10-13",
+    "fieldworkStart": "2026-10-09",
+    "fieldworkEnd": "2026-10-12",
+    "sampleSize": 1000,
+    "method": "Online panel",
+    "population": "Decided voters; unweighted subsample n=832 (weighted n=816), from 1,000 BC adults",
+    "uncertainty": "This online panel has no probability-sample margin of error. The report’s ±3.1-point comparison refers to a hypothetical random sample of 1,000, not the decided-voter subsample.",
+    "source": {
+      "url": "https://documents.leger360.com/hubfs/%C3%89tudes%20M%C3%A9diatiques/%C3%89tudes%20M%C3%A9diatiques%20-%202026/10.%20October%202026/Media%20Release%20-%20BC%20Election%20Polling%20October%2013,%202026.pdf",
+      "label": "Léger report: methodology and voting intentions (pages 2 and 7)"
+    },
+    "results": [
+      {
+        "partyID": "conservative",
+        "share": 42
+      },
+      {
+        "partyID": "ndp",
+        "share": 40
+      },
+      {
+        "partyID": "green",
+        "share": 9
+      },
+      {
+        "partyID": "onebc",
+        "share": 4
+      },
+      {
+        "partyID": "centre",
+        "share": 3
+      },
+      {
+        "partyID": "other",
+        "share": 2
+      }
+    ]
+  },
+  {
+    "id": "pallas-2026-10-13",
+    "pollster": "Pallas Data",
+    "kind": "poll",
+    "scope": "province",
+    "publishedOn": "2026-10-13",
+    "fieldworkStart": "2026-10-10",
+    "fieldworkEnd": "2026-10-11",
+    "sampleSize": 513,
+    "method": "Automated telephone interviews (IVR), landline and cellular",
+    "population": "Decided and leaning voters, drawn from 513 eligible BC adults",
+    "uncertainty": "The pollster reports ±4.3 percentage points, 95% confidence, for the total sample. Subsamples have larger uncertainty.",
+    "source": {
+      "url": "https://pallas-data.ca/2026/10/13/pallas-british-columbia-poll-conservative-43-ndp-38-green-11-onebc-5-and-doerkson-leads-eby-on-best-premier/",
+      "label": "Pallas Data: voting intentions and methodology"
+    },
+    "results": [
+      {
+        "partyID": "conservative",
+        "share": 43
+      },
+      {
+        "partyID": "ndp",
+        "share": 38
+      },
+      {
+        "partyID": "green",
+        "share": 11
+      },
+      {
+        "partyID": "onebc",
+        "share": 5
+      },
+      {
+        "partyID": "centre",
+        "share": 2
+      },
+      {
+        "partyID": "other",
+        "share": 1
+      }
+    ]
+  }
+]
