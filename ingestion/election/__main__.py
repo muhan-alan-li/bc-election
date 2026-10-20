@@ -26,9 +26,16 @@ def main():
     political = commands.add_parser('collect-political-records', help='Collect Assembly transcript evidence for all candidate voting records')
     political.add_argument('--workers', type=int, choices=range(1, 9), default=4)
     commands.add_parser('build-political-profiles', help='Organize existing actions and platform evidence by topic, offline')
+    research = commands.add_parser('research-candidates', help='Plan, initialize, collect, draft, or publish candidate comparisons')
+    research.add_argument('--stage', choices=['plan', 'init', 'collect', 'draft', 'publish'], default='plan')
+    research.add_argument('--district', help='District code; defaults to all constituencies')
+    research.add_argument('--candidate', help='Exact ballot name or candidacy ID; defaults to all candidates')
+    research.add_argument('--research-dir', type=Path, help='Research inputs root; defaults to storage/curated/research')
+    research.add_argument('--max-calls', type=int, default=0, help='Total new model calls across this batch; cached drafts are reused')
     for name in ('collect-alignment-evidence', 'analyze-platform-alignment', 'build-platform-alignment'):
         alignment = commands.add_parser(name, help='Collect, draft or publish selective commitment comparisons')
-        alignment.add_argument('--pilot', type=Path, default=base / 'election/analysis/pilots/henry-yao.json')
+        alignment.add_argument('--manifest', '--pilot', dest='manifest', type=Path, required=True,
+                               help='Candidate-specific research manifest (--pilot is a compatibility alias)')
         alignment.add_argument('--review', type=Path, help='Source-checked editorial review, required for build')
         alignment.add_argument('--max-calls', type=int, default=4)
         if name == 'analyze-platform-alignment':
@@ -83,10 +90,20 @@ def main():
             print("Valid constituency dataset")
         else:
             config = read_json(args.config)
-            if args.command in {'collect-alignment-evidence', 'analyze-platform-alignment', 'build-platform-alignment'}:
+            if args.command == 'research-candidates':
+                from .analysis.alignment.batch import research_candidates
+                if args.stage == 'draft' and not args.offline and args.max_calls:
+                    from .analysis.service import load_env
+                    load_env(base.parent / '.env')
+                summary = research_candidates(args.storage, config, stage=args.stage,
+                    district=args.district, candidate=args.candidate, research_dir=args.research_dir,
+                    max_calls=args.max_calls, offline=args.offline, refresh=args.refresh)
+                print(json.dumps(summary, indent=2))
+                return int(bool(summary['errors']))
+            elif args.command in {'collect-alignment-evidence', 'analyze-platform-alignment', 'build-platform-alignment'}:
                 from .analysis.alignment import run as align, build_reviewed
                 from .analysis.service import load_env
-                manifest = read_json(args.pilot)
+                manifest = read_json(args.manifest)
                 if args.command == 'build-platform-alignment':
                     if not args.review:
                         parser.error('--review is required for source-checked publication')

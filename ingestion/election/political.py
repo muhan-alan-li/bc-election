@@ -316,6 +316,8 @@ def build_profiles(root, election_id):
         alignment = project_alignment(root, election_id, public)
         if alignment:
             public['alignment_analysis'] = alignment
+        from .analysis.alignment.presentation import comparison_guide
+        public['comparison_guide'] = comparison_guide(public)
         pending.append((root / 'curated/datasets/political' / election_id / 'candidates' / (output['id'] + '.json'), public))
         summary['vote_entries'] += len(votes)
         summary['votes_with_context'] += coverage['voting']['contexts_found']
@@ -374,6 +376,10 @@ def validate_profile(output):
     if output.get('alignment_analysis'):
         from .analysis.alignment import validate_dossier
         validate_dossier(output['alignment_analysis'], output)
+    if output.get('comparison_guide') is not None:
+        from .analysis.alignment.presentation import comparison_guide
+        if output['comparison_guide'] != comparison_guide(output):
+            raise ValueError('Comparison guide must reflect the current reviewed findings')
 
 
 def profile_publications(root, election_id):
@@ -381,6 +387,9 @@ def profile_publications(root, election_id):
     pending = []
     for path in sorted((root / 'curated/datasets/political' / election_id).glob('*/*.json')):
         output = read_json(path)
+        if path.parent.name == 'candidates':
+            from .analysis.alignment.presentation import comparison_guide
+            output['comparison_guide'] = comparison_guide(output)
         validate_profile(output)
         if any(a['attribution_status'] != 'reviewed' for a in output.get('actions', [])):
             raise ValueError('Unreviewed candidate attribution cannot be published')
