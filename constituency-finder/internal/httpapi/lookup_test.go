@@ -1,4 +1,4 @@
-package main
+package httpapi
 
 import (
 	"encoding/json"
@@ -6,7 +6,6 @@ import (
 	"net/http/httptest"
 	"os"
 	"path/filepath"
-	"reflect"
 	"strings"
 	"testing"
 )
@@ -16,18 +15,6 @@ func finderRequest(handler http.Handler, body string) *httptest.ResponseRecorder
 	handler.ServeHTTP(response, httptest.NewRequest("POST", "/api/constituency-finder", strings.NewReader(body)))
 	return response
 }
-func TestFinderGeometry(t *testing.T) {
-	f := boundaryFeature{BBox: [4]float64{-124, 49, -122, 51}, Geometry: boundaryGeometry{polygons: [][][]locationPoint{{{{-124, 49}, {-122, 49}, {-122, 51}, {-124, 51}, {-124, 49}}, {{-123.5, 49.5}, {-123, 49.5}, {-123, 50}, {-123.5, 50}, {-123.5, 49.5}}}}}}
-	for _, test := range []struct {
-		p        locationPoint
-		accuracy float64
-		want     bool
-	}{{locationPoint{-123.8, 50}, 0, true}, {locationPoint{-123.2, 49.7}, 0, false}, {locationPoint{-124, 50}, 0, true}, {locationPoint{-124.001, 50}, 100, true}, {locationPoint{-124.01, 50}, 100, false}, {locationPoint{-123.2, 49.7}, 30000, true}} {
-		if got := f.matches(test.p, test.accuracy); got != test.want {
-			t.Fatalf("%v accuracy %v got %v", test.p, test.accuracy, got)
-		}
-	}
-}
 func TestFinderAPI(t *testing.T) {
 	root := t.TempDir()
 	body := `{"schema_version":1,"boundary_version":"bc-2023-redistribution-set-11","postal_codes":{"V6Y1N9":{"geonames":[[-123.5,49.5]],"statcan":[[-122.5,49.5]]}},"boundaries":{"features":[
@@ -36,7 +23,7 @@ func TestFinderAPI(t *testing.T) {
 	if err := os.WriteFile(filepath.Join(root, "finder.json"), []byte(body), 0644); err != nil {
 		t.Fatal(err)
 	}
-	handler := newFinderHandler(root, "synthetic")
+	handler := NewHandler(Config{DataDir: root, ElectionID: "synthetic"})
 	response := finderRequest(handler, `{"postal_code":"v6y 1n9"}`)
 	if response.Code != 200 || !strings.Contains(response.Body.String(), `"status":"ambiguous"`) || !strings.Contains(response.Body.String(), `"published":false`) {
 		t.Fatal(response.Code, response.Body.String())
@@ -89,17 +76,17 @@ func TestFinderAPI(t *testing.T) {
 			}
 		})
 	}
-	missing := newFinderHandler(t.TempDir(), "synthetic")
+	missing := NewHandler(Config{DataDir: t.TempDir(), ElectionID: "synthetic"})
 	if got := finderRequest(missing, `{"latitude":49,"longitude":-123}`); got.Code != 503 {
 		t.Fatal(got.Code)
 	}
 }
 func TestLocalFinderPublication(t *testing.T) {
-	path := "../ingestion/storage/published/finder.json"
+	path := "../../../ingestion/storage/published/finder.json"
 	if _, err := os.Stat(path); os.IsNotExist(err) {
 		t.Skip("Imported finder data absent")
 	}
-	handler := newFinderHandler("../ingestion/storage/published", "bc-provincial-2026")
+	handler := NewHandler(Config{DataDir: "../../../ingestion/storage/published", ElectionID: "bc-provincial-2026"})
 	for _, input := range []string{`{"postal_code":"V6Y1N9"}`, `{"latitude":49.17,"longitude":-123.14}`} {
 		got := finderRequest(handler, input)
 		var result struct {
@@ -115,38 +102,8 @@ func TestLocalFinderPublication(t *testing.T) {
 	}
 }
 
-func TestBoundaryGeometryRoundTrip(t *testing.T) {
-	for _, body := range []string{
-		`{"type":"Polygon","coordinates":[[[-123.123456789012,49.123456789012],[-122,49],[-122,50],[-123.123456789012,49.123456789012]],[[-122.8,49.2],[-122.5,49.2],[-122.5,49.5],[-122.8,49.2]]]}`,
-		`{"type":"MultiPolygon","coordinates":[[[[-124,49],[-123,49],[-123,50],[-124,49]]],[[[-122,49],[-121,49],[-121,50],[-122,49]]]]}`,
-	} {
-		var geometry boundaryGeometry
-		if err := json.Unmarshal([]byte(body), &geometry); err != nil {
-			t.Fatal(err)
-		}
-		encoded, err := json.Marshal(geometry)
-		if err != nil {
-			t.Fatal(err)
-		}
-		var before, after any
-		if err := json.Unmarshal([]byte(body), &before); err != nil {
-			t.Fatal(err)
-		}
-		if err := json.Unmarshal(encoded, &after); err != nil {
-			t.Fatal(err)
-		}
-		if !reflect.DeepEqual(before, after) {
-			t.Fatalf("Geometry changed: %s", encoded)
-		}
-	}
-	var postal postalLocations
-	if err := json.Unmarshal([]byte(`{"unknown":[[-123,49]]}`), &postal); err == nil {
-		t.Fatal("Unknown source accepted")
-	}
-}
-
 func TestHealthWithoutDataset(t *testing.T) {
-	handler := newFinderHandler(t.TempDir(), "synthetic")
+	handler := NewHandler(Config{DataDir: t.TempDir(), ElectionID: "synthetic"})
 	response := httptest.NewRecorder()
 	handler.ServeHTTP(response, httptest.NewRequest("GET", "/health", nil))
 	if response.Code != 200 || response.Body.String() != `{"status":"ok"}` {

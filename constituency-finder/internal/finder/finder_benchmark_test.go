@@ -1,4 +1,4 @@
-package main
+package finder
 
 import (
 	"os"
@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-const localFinderPath = "../ingestion/storage/published/finder.json"
+const localFinderPath = "../../../ingestion/storage/published/finder.json"
 
 func BenchmarkFinderLoad(b *testing.B) {
 	if _, err := os.Stat(localFinderPath); err != nil {
@@ -73,22 +73,6 @@ func BenchmarkFinderCoordinateMatch(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		for _, f := range data.Boundaries.Features {
 			f.matches(locationPoint{-123.14, 49.17}, 50)
-		}
-	}
-}
-func BenchmarkFinderPostalAPI(b *testing.B) {
-	if _, err := os.Stat(localFinderPath); err != nil {
-		b.Skip("Local finder data absent")
-	}
-	handler := newFinderHandler("../ingestion/storage/published", "bc-provincial-2026")
-	if got := finderRequest(handler, `{"postal_code":"V6Y1N9"}`); got.Code != 200 {
-		b.Fatal(got.Code)
-	}
-	b.ReportAllocs()
-	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
-		if got := finderRequest(handler, `{"postal_code":"V6Y1N9"}`); got.Code != 200 {
-			b.Fatal(got.Code)
 		}
 	}
 }
