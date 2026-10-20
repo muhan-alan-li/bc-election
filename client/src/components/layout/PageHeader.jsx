@@ -1,62 +1,46 @@
 import { Breadcrumbs } from './Breadcrumbs.jsx';
-import { partyName } from '../../helpers/candidates.js';
 
-export function PageHeader({ route, dataset, candidate, party, parties = [] }) {
-    const affiliation =
-        route.view === 'candidate' && candidate && dataset
-            ? parties.find(
-                  (item) => item.name === partyName(candidate, dataset),
-              )
-            : null;
+export function PageHeader({ route, dataset, party }) {
     let title = 'Constituencies';
-    let context = 'BC election guide';
-    let description =
-        'Find your constituency and explore the candidates running to represent you as an MLA.';
 
-    if (route.view === 'parties') {
+    if (route.view === 'match') {
+        title = 'Where do you stand?';
+    } else if (route.view === 'parties') {
         title = 'Parties';
-        context = '2026 BC provincial election';
-        description =
-            'Meet the party leaders and compare their main campaign promises.';
     } else if (route.view === 'platform') {
         title = `${party?.name || 'Party'} platform`;
-        context = '2026 BC provincial election';
-        description =
-            'Explore the party’s commitments. Select a policy for its proposed plan of action.';
     } else if (route.view === 'district') {
         title = dataset?.district.name || route.code;
-        context = dataset?.election.title || 'BC election guide';
-        description = 'Candidates for MLA · Listed alphabetically.';
-    } else if (route.view === 'candidate') {
-        title = candidate?.ballot_name || 'Candidate';
-        context = `${dataset?.district.name || route.code} · Candidate for MLA`;
-        description = candidate
-            ? partyName(candidate, dataset)
-            : 'Candidate details';
     } else if (route.view === 'missing') {
         title = 'Page not found';
-        description =
-            'Browse constituencies to find candidates and their records.';
     }
 
+    return () => {
+            history.scrollRestoration = previous;
+        };
+    }, []);
+    useEffect(() => {
+        document.title = `${title} · BC Election Guide`;
+    }, [title]);
+    useEffect(() => {
+        const heading = document.getElementById('page-title');
+        const position = history.state?.scrollY;
+        heading?.focus({ preventScroll: true });
+        window.scrollTo(0, typeof position === 'number' ? position : 0);
+        const remember = () =>
+            history.replaceState(
+                { ...history.state, scrollY: window.scrollY },
+                '',
+            );
+        window.addEventListener('scroll', remember, { passive: true });
+        return () => window.removeEventListener('scroll', remember);
+    }, [routeKey]);
     return (
         <header class="page-header">
-            <Breadcrumbs
-                route={route}
-                dataset={dataset}
-                candidate={candidate}
-                party={party}
-            />
-            <p class="page-header-context" title={context}>
-                {context}
-            </p>
-            <h1 class="page-header-title">{title}</h1>
-            <p
-                class="page-header-description"
-                style={affiliation ? { color: affiliation.color } : undefined}
-            >
-                {description}
-            </p>
+            <Breadcrumbs route={route} dataset={dataset} party={party} />
+            <h1 class="page-header-title" id="page-title" tabIndex="-1">
+                {title}
+            </h1>
         </header>
     );
 }

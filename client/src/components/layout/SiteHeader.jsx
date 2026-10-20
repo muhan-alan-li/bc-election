@@ -2,18 +2,22 @@ export function SiteHeader({ route }) {
     return (
         <header class="site-header">
             <div class="shell">
-                <a class="brand" href="#/constituencies">
+                <a class="brand" href="#/match">
                     BC election guide
                 </a>
                 <nav class="top-nav" aria-label="Main navigation">
                     <a
+                        href="#/match"
+                        aria-current={
+                            route.view === 'match' ? 'page' : undefined
+                        }
+                    >
+                        Compare your views
+                    </a>
+                    <a
                         href="#/constituencies"
                         aria-current={
-                            [
-                                'constituencies',
-                                'district',
-                                'candidate',
-                            ].includes(route.view)
+                            ['constituencies', 'district'].includes(route.view)
                                 ? 'page'
                                 : undefined
                         }

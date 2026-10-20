@@ -1,6 +1,14 @@
-import { districtHref } from '../../helpers/routes.js';
-
-export function Breadcrumbs({ route, dataset, candidate, party }) {
+export function Breadcrumbs({ route, dataset, party }) {
+    if (route.view === 'match')
+        return (
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <ol>
+                    <li>
+                        <span aria-current="page">Compare your views</span>
+                    </li>
+                </ol>
+            </nav>
+        );
     if (route.view === 'platform')
         return (
             <nav class="breadcrumbs" aria-label="Breadcrumb">
@@ -27,7 +35,7 @@ export function Breadcrumbs({ route, dataset, candidate, party }) {
             </nav>
         );
     return (
-        <nav class="breadcrumbs" aria-label="Breadcrumb" tabIndex="0">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
             <ol>
                 <li>
                     {route.view === 'constituencies' ? (
@@ -38,21 +46,8 @@ export function Breadcrumbs({ route, dataset, candidate, party }) {
                 </li>
                 {route.code && (
                     <li>
-                        {route.view === 'candidate' ? (
-                            <a href={districtHref(route.code)}>
-                                {dataset?.district.name || route.code}
-                            </a>
-                        ) : (
-                            <span aria-current="page">
-                                {dataset?.district.name || route.code}
-                            </span>
-                        )}
-                    </li>
-                )}
-                {route.view === 'candidate' && (
-                    <li>
                         <span aria-current="page">
-                            {candidate?.ballot_name || 'Candidate'}
+                            {dataset?.district.name || route.code}
                         </span>
                     </li>
                 )}

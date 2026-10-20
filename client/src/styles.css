@@ -7,6 +7,5 @@
 @import './styles/finder.css';
 @import './styles/parties.css';
 @import './styles/platform.css';
-@import './styles/candidate-records.css';
-@import './styles/candidate-issues.css';
-@import './styles/candidate-alignment.css';
+
+@import './styles/match.css';

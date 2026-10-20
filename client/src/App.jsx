@@ -1,18 +1,24 @@
 import { RetryError } from './components/ui/RetryError.jsx';
 import { useState } from 'preact/hooks';
+import { lazy, Suspense } from 'preact/compat';
+import { useVoterResource } from './hooks/useVoterResource.js';
 import { useElectionData } from './hooks/useElectionData.js';
-import { districtHref } from './helpers/routes.js';
 import { PageHeader } from './components/layout/PageHeader.jsx';
 import { SiteHeader } from './components/layout/SiteHeader.jsx';
 import { SiteFooter } from './components/layout/SiteFooter.jsx';
-import { Finder } from './components/finder/Finder.jsx';
 import { Constituencies } from './routes/Constituencies.jsx';
 import { District } from './routes/District.jsx';
-import { Candidate } from './routes/Candidate.jsx';
+import { Match } from './routes/Match.jsx';
 import { Platform } from './routes/Platform.jsx';
 import { useGuide } from './hooks/useGuide.js';
 import { Parties } from './routes/Parties.jsx';
 import { NotFound } from './routes/NotFound.jsx';
+
+const Finder = lazy(() =>
+    import('./components/finder/Finder.jsx').then((module) => ({
+        default: module.Finder,
+    })),
+);
 
 export function App() {
     const [finderOpen, setFinderOpen] = useState(false);
@@ -24,14 +30,18 @@ export function App() {
         loading,
         catalogError,
         error,
-        retry,
+        retryCatalog,
+        retryBallot,
     } = useElectionData();
     const {
         guide,
         loading: guideLoading,
         error: guideError,
         retry: retryGuide,
-    } = useGuide();
+    } = useGuide(['parties', 'platform'].includes(route.view));
+    const registry = useVoterResource(
+        ['match', 'district'].includes(route.view) ? '/api/parties' : null,
+    );
     const guideParties = [
         ...(guide?.parties || []),
         ...(guide?.otherParties || []),
@@ -41,27 +51,25 @@ export function App() {
         route.view === 'platform' && guide && !party
             ? { view: 'missing' }
             : route;
-    const candidate = dataset?.candidacies.find(
-        (row) => row.id === route.candidateID,
-    );
 
     return (
         <>
             <SiteHeader route={displayRoute} />
-            <main class="shell">
+            <main class="shell" id="main-content" tabIndex="-1">
                 <PageHeader
                     route={displayRoute}
                     dataset={dataset}
-                    candidate={candidate}
                     party={party}
-                    parties={guideParties}
                 />
                 {route.view === 'constituencies' && (
                     <>
                         {catalogLoading ? (
                             <p role="status">Loading constituencies…</p>
                         ) : catalogError ? (
-                            <RetryError error={catalogError} onRetry={retry} />
+                            <RetryError
+                                error={catalogError}
+                                onRetry={retryCatalog}
+                            />
                         ) : (
                             <Constituencies
                                 districts={districts}
@@ -75,23 +83,13 @@ export function App() {
                         {loading || (!dataset && !error) ? (
                             <p role="status">Loading candidates…</p>
                         ) : error ? (
-                            <RetryError error={error} onRetry={retry} />
-                        ) : route.view === 'district' ? (
-                            <District key={route.code} dataset={dataset} />
-                        ) : candidate ? (
-                            <Candidate
-                                key={candidate.id}
-                                candidate={candidate}
-                                dataset={dataset}
-                            />
+                            <RetryError error={error} onRetry={retryBallot} />
                         ) : (
-                            <p role="alert">
-                                Candidate not found in this constituency.{' '}
-                                <a href={districtHref(route.code)}>
-                                    View its candidates
-                                </a>
-                                .
-                            </p>
+                            <District
+                                key={route.code}
+                                dataset={dataset}
+                                registry={registry}
+                            />
                         )}
                     </>
                 )}
@@ -101,6 +99,7 @@ export function App() {
                     ) : guideError ? (
                         <RetryError error={guideError} onRetry={retryGuide} />
                     ) : null)}
+                {route.view === 'match' && <Match registry={registry} />}
                 {route.view === 'parties' && guide && <Parties {...guide} />}
                 {route.view === 'platform' && party && (
                     <Platform
@@ -111,7 +110,17 @@ export function App() {
                 )}
                 {displayRoute.view === 'missing' && <NotFound />}
             </main>
-            {finderOpen && <Finder onClose={() => setFinderOpen(false)} />}
+            {finderOpen && (
+                <Suspense
+                    fallback={
+                        <p role="status" class="shell">
+                            Loading constituency finder…
+                        </p>
+                    }
+                >
+                    <Finder onClose={() => setFinderOpen(false)} />
+                </Suspense>
+            )}
             <SiteFooter />
         </>
     );
