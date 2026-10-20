@@ -16,9 +16,11 @@ export function FinderResult({ result, onClose }) {
                               : 'Approximate constituency'}
                     </h3>
                     <p>
-                        {result.method === 'postal_code'
-                            ? 'Based on recorded postal-code locations. The pin shows one recorded point; these locations may not cover the entire postal-code area.'
-                            : 'Based on your selected location. Your current location may differ from your home.'}
+                        {result.location_is_view
+                            ? 'Based on recorded postal-code locations. The map shows the possible constituencies, rather than a home location. Click near your home to refine the match.'
+                            : result.method === 'postal_code'
+                              ? 'Based on recorded postal-code locations. The pin shows one recorded point; these locations may not cover the entire postal-code area.'
+                              : 'Based on your selected location. Your current location may differ from your home.'}
                     </p>
                     {result.districts.map((district) => (
                         <div
@@ -31,11 +33,12 @@ export function FinderResult({ result, onClose }) {
                                     href={districtHref(district.official_code)}
                                     onClick={onClose}
                                 >
-                                    View candidates →
+                                    View local race and ballot →
                                 </a>
                             ) : (
                                 <span>
-                                    Candidate research is not yet published.
+                                    This constituency is not yet published in
+                                    the guide.
                                 </span>
                             )}
                         </div>

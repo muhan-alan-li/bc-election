@@ -11,7 +11,9 @@ export function ConstituencyMap({ result, onLookup }) {
     lookupRef.current = onLookup;
 
     useEffect(() => {
-        const instance = L.map(mapNode.current).setView([53.5, -125.5], 5);
+        const instance = L.map(mapNode.current, {
+            zoomAnimation: false,
+        }).setView([53.5, -125.5], 5);
         map.current = instance;
         L.tileLayer(
             window.BC_MAP_TILE_URL ||
@@ -33,7 +35,10 @@ export function ConstituencyMap({ result, onLookup }) {
 
         return () => {
             cancelAnimationFrame(frame);
+            instance.stop();
             instance.remove();
+            map.current = null;
+            layers.current = null;
         };
     }, []);
 
@@ -46,6 +51,14 @@ export function ConstituencyMap({ result, onLookup }) {
             L.geoJSON(district.feature, {
                 style: { color: '#304e6b', weight: 2, fillOpacity: 0.08 },
             }).addTo(layers.current);
+        if (result.location_is_view) {
+            if (result.districts.length)
+                map.current.fitBounds(layers.current.getBounds().pad(0.08), {
+                    animate: false,
+                });
+            else map.current.setView([53.5, -125.5], 5, { animate: false });
+            return;
+        }
         L.circleMarker([latitude, longitude], {
             radius: 7,
             color: '#245b8a',
@@ -58,7 +71,11 @@ export function ConstituencyMap({ result, onLookup }) {
                 weight: 1,
                 fillOpacity: 0.06,
             }).addTo(layers.current);
-        map.current.setView([latitude, longitude], accuracy_m > 10000 ? 8 : 13);
+        map.current.setView(
+            [latitude, longitude],
+            accuracy_m > 10000 ? 8 : 13,
+            { animate: false },
+        );
     }, [result]);
 
     return (

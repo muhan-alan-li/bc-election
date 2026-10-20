@@ -4,6 +4,7 @@ import { Dialog } from '../ui/Dialog.jsx';
 import { useConstituencyFinder } from '../../hooks/useConstituencyFinder.js';
 import { ConstituencyMap } from './ConstituencyMap.jsx';
 import { FinderResult } from './FinderResult.jsx';
+import { staticSite } from '../../helpers/deployment.js';
 
 export function Finder({ onClose }) {
     const [postal, setPostal] = useState('');
@@ -110,9 +111,11 @@ export function Finder({ onClose }) {
                 .
             </p>
             <p class="finder-sources">
-                Locations are processed by this app’s server. Map tiles load
-                from OpenStreetMap, which receives your IP and the map area you
-                view. We do not save your location.
+                {staticSite
+                    ? 'Lookups are calculated in your browser. Your precise coordinates are not sent to a lookup server. '
+                    : 'Locations are processed by this app’s server. '}
+                Map tiles load from OpenStreetMap, which receives your IP and
+                the map area you view. We do not save your location.
             </p>
         </Dialog>
     );

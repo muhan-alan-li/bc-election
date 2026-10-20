@@ -1,4 +1,7 @@
+import { requestJSON } from '../helpers/api.js';
 import { useEffect, useRef, useState } from 'preact/hooks';
+import { staticSite } from '../helpers/deployment.js';
+import { createStaticFinder } from '../helpers/finder/client.js';
 
 export function useConstituencyFinder() {
     const [result, setResult] = useState(null);
@@ -6,6 +9,7 @@ export function useConstituencyFinder() {
     const [busy, setBusy] = useState(false);
     const request = useRef(null);
     const sequence = useRef(0);
+    const staticFinder = useRef(null);
 
     async function lookup(input) {
         const id = ++sequence.current;
@@ -15,15 +19,19 @@ export function useConstituencyFinder() {
         setError('');
         setResult(null);
         try {
-            const response = await fetch('/api/constituency-finder', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(input),
-                signal: request.current.signal,
-            });
-            const body = await response.json();
-            if (!response.ok)
-                throw new Error(body.error || 'Unable to find a constituency.');
+            if (staticSite && !staticFinder.current)
+                staticFinder.current = createStaticFinder();
+            const body = staticSite
+                ? await staticFinder.current.lookup(
+                      input,
+                      request.current.signal,
+                  )
+                : await requestJSON('/api/constituency-finder', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify(input),
+                      signal: request.current.signal,
+                  });
             if (id === sequence.current) setResult(body);
         } catch (error) {
             if (id === sequence.current && error.name !== 'AbortError')
@@ -71,6 +79,7 @@ export function useConstituencyFinder() {
         () => () => {
             sequence.current++;
             request.current?.abort();
+            staticFinder.current?.dispose();
         },
         [],
     );
