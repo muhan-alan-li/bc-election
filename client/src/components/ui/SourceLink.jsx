@@ -1,6 +1,9 @@
+import { sourceURL } from '../../helpers/urls.js';
+
 export function SourceLink({ href, children, showIcon = true, ...props }) {
-    return href ? (
-        <a {...props} href={href} target="_blank" rel="noopener noreferrer">
+    const safeHref = sourceURL(href);
+    return safeHref ? (
+        <a {...props} href={safeHref} target="_blank" rel="noopener noreferrer">
             {children}
             {showIcon && (
                 <>
