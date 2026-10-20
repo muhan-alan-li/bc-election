@@ -1,0 +1,3561 @@
+{
+  "generated_at": "2026-10-14T03:25:08.178139+00:00",
+  "election_id": "bc-provincial-2026",
+  "candidates": [
+    {
+      "candidate_id": "candidacy-e61aff7a-144c-5d64-816a-05ad9437c13c",
+      "candidate": "A'aliya Warbus",
+      "constituency": "CHC",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-01b41f7d-2653-51d8-83cc-4982dd88b4ed",
+      "candidate": "Abraham Nordine",
+      "constituency": "KLM",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-c9788984-e211-56e0-969d-e19e905c7b4f",
+      "candidate": "Adam Frank",
+      "constituency": "WKP",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-4d375c91-3f29-5199-9927-5fe5a354b577",
+      "candidate": "Adam Hawk",
+      "constituency": "VKE",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-10600b3c-8cb6-54dc-bf42-53659e0cde48",
+      "candidate": "Adila Shaukat",
+      "constituency": "CHN",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-b75760e4-0478-57c3-bb17-5b4bd8272210",
+      "candidate": "Adrian Dix",
+      "constituency": "VNR",
+      "party": "BC NDP",
+      "collected_votes": 242,
+      "published_votes": 242,
+      "published_comparisons": 4,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-63bd9b16-1ef9-52cd-8b3a-b8bc69b4304a",
+      "candidate": "AJ Wolfe",
+      "constituency": "KOR",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-7a20b186-9980-5c6a-833c-224b151ccb6a",
+      "candidate": "Alan Beesley",
+      "constituency": "VLA",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-fbcd618e-52b9-5bf8-91a1-836989af616a",
+      "candidate": "Alex Joehl",
+      "constituency": "LLA",
+      "party": "Libertarian",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-f18483c8-7bd1-5261-85ea-7d98197c43bc",
+      "candidate": "Alex McMillan",
+      "constituency": "VNP",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-c6915055-4663-5739-b30b-424ab9ba81d8",
+      "candidate": "Alex Muir",
+      "constituency": "VLM",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-392b4adc-bff3-5676-bd15-52c869582083",
+      "candidate": "Alex Thurlborn",
+      "constituency": "LFH",
+      "party": null,
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-0fbad2c6-8986-512b-8006-34c155016b26",
+      "candidate": "Alexandra Wright",
+      "constituency": "KLC",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-1ba67c4d-e837-5df1-a120-39688278514c",
+      "candidate": "Aman Singh",
+      "constituency": "VFV",
+      "party": "BC NDP",
+      "collected_votes": 95,
+      "published_votes": 95,
+      "published_comparisons": 4,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-63f9503c-7b20-5623-92b9-45511a8e4736",
+      "candidate": "Amanda Burrows",
+      "constituency": "VNT",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-6c22ee62-e25e-5354-b2c0-ea7eb5b1c471",
+      "candidate": "Amanda James",
+      "constituency": "SWR",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-5f840156-9044-5538-a87b-90ceeddd7098",
+      "candidate": "Amna Shah",
+      "constituency": "SRC",
+      "party": "BC NDP",
+      "collected_votes": 113,
+      "published_votes": 113,
+      "published_comparisons": 2,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-a23c479a-0690-5f33-84d2-80f113a1d2b5",
+      "candidate": "Andrea Dunlop",
+      "constituency": "CLR",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-3b6bbfe7-a28e-5f2f-a35a-bcf929682fbd",
+      "candidate": "Andrew Appleton",
+      "constituency": "OBG",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-d4811b89-0c38-5337-9f11-8f70a100b021",
+      "candidate": "Andrew Mercier",
+      "constituency": "LWI",
+      "party": "BC NDP",
+      "collected_votes": 97,
+      "published_votes": 97,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-7c7de2b0-bb36-57e9-acec-e48bf157c35b",
+      "candidate": "Andrew Rose",
+      "constituency": "BNS",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-01943147-24ac-5e9f-922a-d5eebc239480",
+      "candidate": "Andrew Weaver",
+      "constituency": "OBG",
+      "party": "CentreBC",
+      "collected_votes": 10,
+      "published_votes": 10,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-d1e8f82f-f6de-525c-a8df-4c59ea75dd86",
+      "candidate": "Anna Kindy",
+      "constituency": "NOI",
+      "party": "Conservative Party",
+      "collected_votes": 101,
+      "published_votes": 101,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-c42ef9d4-bda6-5af1-bec4-98afa36a8f37",
+      "candidate": "Anna Mary McKenzie",
+      "constituency": "NAI",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-48ef5f46-2130-5d2b-8fc6-6a8a686f5e9f",
+      "candidate": "Anne Kang",
+      "constituency": "BNC",
+      "party": "BC NDP",
+      "collected_votes": 236,
+      "published_votes": 236,
+      "published_comparisons": 3,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-760e0810-abeb-5d48-92cd-65e65060e46e",
+      "candidate": "Annelise Beach",
+      "constituency": "KAC",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-cd58b7df-ff80-5dab-87da-82e5a912cb77",
+      "candidate": "Aron Lageri",
+      "constituency": "VKE",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-9dd45dd4-8d8d-5a30-b465-956fe24bb30f",
+      "candidate": "Arwa Shurab",
+      "constituency": "WVC",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-6454eb9c-1214-5954-aa00-64db2d7fdfcc",
+      "candidate": "Ayla Dumais",
+      "constituency": "WVS",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-43c323e4-5a46-5a7e-9515-78b0840caaa9",
+      "candidate": "Barbara Presch",
+      "constituency": "SHU",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-2b98fd3b-137e-5663-bdb9-4833d620ba49",
+      "candidate": "Barry Wosk",
+      "constituency": "RCS",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-06e3fad4-5eb8-55f0-8954-57ef4e29095a",
+      "candidate": "Beatrice Sharpe",
+      "constituency": "VNP",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-f5e529eb-1d7e-55f2-bdfa-5b1efc746e78",
+      "candidate": "Ben Holt",
+      "constituency": "NVS",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-c799a861-3ece-5dcc-b97c-bb04e3921957",
+      "candidate": "Benjamin Olsson",
+      "constituency": "NOI",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-5a60c1e0-1857-5d12-b6af-bba01d570b00",
+      "candidate": "Bert Chen",
+      "constituency": "CWV",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-90c589ad-fb93-5a15-883d-9797993274bc",
+      "candidate": "Bill Desrosiers",
+      "constituency": "KEC",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-5f709ed1-63a5-5d45-8f5a-62a40a62683c",
+      "candidate": "Bill McConnell",
+      "constituency": "SUS",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-ca92a465-bdea-5cab-b34c-1e4c7652bbdf",
+      "candidate": "Binny Boparai",
+      "constituency": "KLC",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-c93245f5-ce47-5320-9c05-b08001dad656",
+      "candidate": "Blair Visscher",
+      "constituency": "VRL",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-2a5115ce-a2e1-51ee-8392-c71a3061cb88",
+      "candidate": "Bowinn Ma",
+      "constituency": "NVL",
+      "party": "BC NDP",
+      "collected_votes": 204,
+      "published_votes": 204,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-99f4075e-b506-5edd-8ce3-fe6e1de88de7",
+      "candidate": "Bradley Sean Bartsch",
+      "constituency": "PES",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-89cc8ac4-7340-589f-a45a-482b716244d6",
+      "candidate": "Brennan Day",
+      "constituency": "CRC",
+      "party": "Conservative Party",
+      "collected_votes": 96,
+      "published_votes": 96,
+      "published_comparisons": 2,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-85d8db20-93e8-5a1f-9a41-5485c82bfce9",
+      "candidate": "Brittny Anderson",
+      "constituency": "KOC",
+      "party": "BC NDP",
+      "collected_votes": 205,
+      "published_votes": 205,
+      "published_comparisons": 4,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-f277a596-ddb2-52fe-ba8e-6b9cd0aa7010",
+      "candidate": "Bruce Banman",
+      "constituency": "ABS",
+      "party": "Conservative Party",
+      "collected_votes": 210,
+      "published_votes": 210,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-4c3a4d97-0033-5900-ba60-54dc71522fa4",
+      "candidate": "Bruce Kong",
+      "constituency": "RCS",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-8612586d-2bc2-5919-a868-ff28ea7fa745",
+      "candidate": "Bryan Fockler",
+      "constituency": "BNS",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-3fa65e41-fa2f-5e92-b5b1-9169f1475902",
+      "candidate": "Bryan Tepper",
+      "constituency": "SUP",
+      "party": "Conservative Party",
+      "collected_votes": 100,
+      "published_votes": 100,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-cb360aad-7e21-5add-9779-88b2f413e78d",
+      "candidate": "Callista Ryan",
+      "constituency": "VNQ",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-e68f00f2-4f47-53bd-bfcc-deb9cd1ffc56",
+      "candidate": "Calvin Dang",
+      "constituency": "RCC",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-11444c89-7037-5f13-9282-902e77e4cb90",
+      "candidate": "Carol Bourque",
+      "constituency": "PRV",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-390e27b5-9b5d-52c3-905f-a37359eef515",
+      "candidate": "Caroline Elliott",
+      "constituency": "WVC",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-6fb420af-a619-54d5-8d1c-436ca318e671",
+      "candidate": "Carolyn Hofbauer",
+      "constituency": "SRF",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-b4195a62-2f24-576f-8cb4-69abf153fc18",
+      "candidate": "Carolyn Howe",
+      "constituency": "VTS",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-07c40d0e-53f3-5686-8f28-f1f486798ab5",
+      "candidate": "Carson Binda",
+      "constituency": "VNQ",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-e5f9adef-7610-5b1d-aa05-6949ec5d07b5",
+      "candidate": "Carter Mochinski",
+      "constituency": "KLC",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-83f41bba-e395-5f1a-a2e4-264a0930d1ea",
+      "candidate": "Cathie Ounsted",
+      "constituency": "SAS",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-58d5ee2e-8537-5e3a-bc86-2e4676aaf58a",
+      "candidate": "Chantel Gibbs",
+      "constituency": "VRL",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-15c260fb-3b8e-5bd6-a00b-5e2dd747b62c",
+      "candidate": "Charlene Smylie",
+      "constituency": "LAO",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-12adfd64-0d43-5cf6-aeed-daf1647d96c3",
+      "candidate": "Chris Hatchwell",
+      "constituency": "MAE",
+      "party": null,
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-90634c14-6e09-538c-84b8-54fd33798fc3",
+      "candidate": "Christian Bosio",
+      "constituency": "VHA",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-57ead588-c114-5589-885e-b96013e54c69",
+      "candidate": "Christian McCay",
+      "constituency": "LFH",
+      "party": "Christian Heritage Party of BC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-34b88294-703f-50b8-9204-1f643dfe3a60",
+      "candidate": "Christine Boyle",
+      "constituency": "VLM",
+      "party": "BC NDP",
+      "collected_votes": 118,
+      "published_votes": 118,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-56dfdbf9-8175-59b8-9b56-6b47a34a0b1e",
+      "candidate": "Christine Kinnie",
+      "constituency": "SWR",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-a24a5cd3-ca4d-5c90-8ab9-6881e668ee26",
+      "candidate": "Christopher Moon",
+      "constituency": "LFH",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-41223b19-a44e-5562-a146-24b8d267de7b",
+      "candidate": "Cindy Scott",
+      "constituency": "LFH",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-dc21ebdc-c51f-5271-9784-d6ca86ddd52a",
+      "candidate": "Claire Rattée",
+      "constituency": "SKE",
+      "party": "Conservative Party",
+      "collected_votes": 93,
+      "published_votes": 93,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-cadc649c-2ecc-5473-a7d2-4d875e30dc0d",
+      "candidate": "Clint Lambert",
+      "constituency": "NEC",
+      "party": null,
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-08d8f80c-5723-50da-ab37-48b3589998a4",
+      "candidate": "Colin Smith",
+      "constituency": "VNS",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-3c674696-6509-5c77-a6d2-84d369b66211",
+      "candidate": "Connie Larochelle",
+      "constituency": "KOM",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-5666dbc5-9a4a-510d-954e-1712f1fc9368",
+      "candidate": "Curtis Whitford",
+      "constituency": "PCN",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-9494c7ee-0eef-5ecc-b331-4f6a11870d50",
+      "candidate": "Dallas Brodie",
+      "constituency": "VNQ",
+      "party": "OneBC",
+      "collected_votes": 80,
+      "published_votes": 80,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-9d354442-f7c7-5e49-89b6-defc10a79ec5",
+      "candidate": "Dan Grice",
+      "constituency": "CHN",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-f3804204-c3f1-5ff7-b278-05238e4f3b13",
+      "candidate": "Dan Wood",
+      "constituency": "WVS",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-94f9dd16-98f1-5927-864e-28d6455cdedc",
+      "candidate": "Dana Lajeunesse",
+      "constituency": "JFM",
+      "party": "BC NDP",
+      "collected_votes": 118,
+      "published_votes": 118,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-8f91de58-b4f3-5131-a508-0971032c82cc",
+      "candidate": "Daniel Kite",
+      "constituency": "MAE",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-59941568-12d0-5db3-b1e0-666d96aa7c70",
+      "candidate": "Darlene Rotchford",
+      "constituency": "ESC",
+      "party": "BC NDP",
+      "collected_votes": 106,
+      "published_votes": 106,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-9efb39cd-9d7e-50d8-ab7a-0eab81d1bdc0",
+      "candidate": "Darryl Kropp",
+      "constituency": "ABM",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-018e031a-8172-58e6-9fbf-71dc07b97087",
+      "candidate": "Darryl Walker",
+      "constituency": "SWR",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-3f4ab923-1e6b-5382-be89-821e8d9db812",
+      "candidate": "Dave Johnston",
+      "constituency": "ESC",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-5040c72b-e4d1-542d-946b-94dd6adba475",
+      "candidate": "David Eby",
+      "constituency": "VNP",
+      "party": "BC NDP",
+      "collected_votes": 191,
+      "published_votes": 191,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-0c6d89ea-b2cb-583b-b8fe-6eaef2961910",
+      "candidate": "David Evans",
+      "constituency": "JFM",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-84073402-8809-5080-98b7-04bcd78d7020",
+      "candidate": "David L Williams",
+      "constituency": "SHU",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-ce3abb96-473b-505a-88e1-dc0a5e58b0aa",
+      "candidate": "David Xie",
+      "constituency": "BNS",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-bd10bb67-d930-51b2-b07c-25b3aa4afbd2",
+      "candidate": "De Ding",
+      "constituency": "BNE",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-e4b6c2fc-ed10-56e6-8c89-2f978def350b",
+      "candidate": "Deborah Friesen",
+      "constituency": "KAN",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-d85acec2-f70f-53e4-a0fd-ad27f161c65b",
+      "candidate": "Debra Toporowski",
+      "constituency": "CWV",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-2ce4fd2d-9bf9-5dbe-ab9f-d557b5be33a4",
+      "candidate": "Deep Sandhu",
+      "constituency": "VFV",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-0e491a46-dfd5-5f14-b48a-db920e4c3217",
+      "candidate": "Denice Bardua",
+      "constituency": "PRO",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-01f4bb05-6147-5cc2-bc34-5c8b20a4d84c",
+      "candidate": "Denis R Hurtubise",
+      "constituency": "SUS",
+      "party": null,
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-65945cae-a7e9-5300-87fe-8a1d5a4f000a",
+      "candidate": "Denise Reimer",
+      "constituency": "SHU",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-4d38d22e-e0ed-5ea9-9b38-bc09d22570d2",
+      "candidate": "Dhar Grewal",
+      "constituency": "RCQ",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-02ed1857-dc72-52a3-90c9-0678569cdf1e",
+      "candidate": "Diana Gibson",
+      "constituency": "OBG",
+      "party": "BC NDP",
+      "collected_votes": 119,
+      "published_votes": 119,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-511bef01-a587-5446-8ece-8e207a57c891",
+      "candidate": "Diane Black",
+      "constituency": "NEC",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-02691c14-820f-54c4-8835-ba7e468dd773",
+      "candidate": "Dion Weisner",
+      "constituency": "VNW",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-dd7a2684-9d7c-5293-9ebb-dc76128563ea",
+      "candidate": "Donegal Wilson",
+      "constituency": "BDS",
+      "party": "Conservative Party",
+      "collected_votes": 122,
+      "published_votes": 122,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-f840d18d-307f-5903-a67c-58e34038df36",
+      "candidate": "Doug Morneau",
+      "constituency": "MAP",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-9b74ce0a-02d4-5f65-919f-38b4dccbe371",
+      "candidate": "Douglas Courtemanche",
+      "constituency": "VNQ",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-293d8a3c-9d02-5b50-9e66-57e61058235e",
+      "candidate": "Douglas Gook",
+      "constituency": "CBC",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-889c345a-21f2-55e7-9d1f-98ca4b95b26a",
+      "candidate": "Ed Ewald",
+      "constituency": "BLS",
+      "party": "Christian Heritage Party of BC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-da83a051-6f86-50db-8f44-861e1104c699",
+      "candidate": "Elenore Sturko",
+      "constituency": "SUS",
+      "party": "CentreBC",
+      "collected_votes": 150,
+      "published_votes": 150,
+      "published_comparisons": 2,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-b78e16cb-3bdf-509f-b832-f3ec7e822d60",
+      "candidate": "Emily Lowan",
+      "constituency": "SAN",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-16cfeb3e-5633-57f3-b76d-18fba2d03fc7",
+      "candidate": "Erin Osborne",
+      "constituency": "LLA",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-25531e49-7e55-5ba6-9d95-decff0bde4fb",
+      "candidate": "Errol Povah",
+      "constituency": "SUR",
+      "party": "Freedom Party of BC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-2ca98b6d-8ed2-5069-8a39-7269040f6196",
+      "candidate": "Francis Racy",
+      "constituency": "NOH",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-a55e069c-554d-5569-87bb-28001247676e",
+      "candidate": "Francoise Raunet",
+      "constituency": "VFV",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-16454835-15ef-51ca-a604-16b3958f6e99",
+      "candidate": "Frankie Abel",
+      "constituency": "BLS",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-4006eced-51da-5ced-9074-d11af8a7e40f",
+      "candidate": "Freddy Rawji",
+      "constituency": "POM",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-1f1d2328-9ad7-539e-b2d4-7b158106c82a",
+      "candidate": "Frederick Thiele",
+      "constituency": "NVS",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-de1f4ec6-6b36-51fc-8cdb-43a7e4841dfe",
+      "candidate": "Garry Begg",
+      "constituency": "SRG",
+      "party": "BC NDP",
+      "collected_votes": 129,
+      "published_votes": 129,
+      "published_comparisons": 2,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-85246abc-7478-54cc-89cc-a668ebc498af",
+      "candidate": "Garry Purewal",
+      "constituency": "SRF",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-baa3a388-a3d4-562e-a724-26bed5e0030b",
+      "candidate": "Garry Thind",
+      "constituency": "SRG",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-ced07cf9-a8fe-5254-96ea-f7bdecfa6e00",
+      "candidate": "Gavin Dew",
+      "constituency": "KLM",
+      "party": "Conservative Party",
+      "collected_votes": 110,
+      "published_votes": 110,
+      "published_comparisons": 2,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-0a3d70a7-aa0a-53c5-8c08-91f16e3b1b3f",
+      "candidate": "George Anderson",
+      "constituency": "NAL",
+      "party": "BC NDP",
+      "collected_votes": 111,
+      "published_votes": 111,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-1932ead9-3c8a-5568-9356-d55ff21eaf0d",
+      "candidate": "George Morgan",
+      "constituency": "WKP",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-97cd104e-51e2-5589-b242-718ee8a14596",
+      "candidate": "Gerry Lenoski",
+      "constituency": "NMC",
+      "party": null,
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-5aef0c26-59d3-5036-8de3-952d982c52a8",
+      "candidate": "Gloria Morgan",
+      "constituency": "SHU",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-68437639-144c-5890-a6c2-e1acd39c1f34",
+      "candidate": "Gordon Skulnec",
+      "constituency": "KOC",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-42c42d4a-b51d-52e8-a598-3bb7b3ec9596",
+      "candidate": "Gordon Zhang",
+      "constituency": "RCS",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-44eaf13c-b570-517f-bb91-9b344558b345",
+      "candidate": "Grace Lore",
+      "constituency": "VTB",
+      "party": "BC NDP",
+      "collected_votes": 193,
+      "published_votes": 193,
+      "published_comparisons": 4,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-2a369aaf-34ca-5927-baed-86162cad6b6b",
+      "candidate": "Gracie MacDonald",
+      "constituency": "MPR",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-ccebf45c-4d27-5d23-a42f-056d014bb536",
+      "candidate": "Greg DePaco",
+      "constituency": "BNN",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-c5b356e9-567f-5b4b-a35f-4d2b7fa18cf5",
+      "candidate": "Griffin Leonard Lea",
+      "constituency": "POR",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-10f85577-2187-5442-88c8-73762a4c1f6a",
+      "candidate": "Gurpreet Chahal",
+      "constituency": "ABW",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-6f33e54f-dbd9-52cc-b9c6-908f6f018525",
+      "candidate": "Harj Dhaliwal",
+      "constituency": "SRN",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-be6e45cf-17c8-5d60-8ae8-1510b2c7b6cb",
+      "candidate": "Harman Bhangu",
+      "constituency": "LLA",
+      "party": "Conservative Party",
+      "collected_votes": 94,
+      "published_votes": 94,
+      "published_comparisons": 2,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-eb2511ce-d80b-52b0-9237-0df74d3ed8b6",
+      "candidate": "Harman Preet Singh",
+      "constituency": "SRN",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-eed5349d-cc64-59a7-9b8b-2e5892ae55ed",
+      "candidate": "Harwinder Sandhu",
+      "constituency": "VRL",
+      "party": "BC NDP",
+      "collected_votes": 202,
+      "published_votes": 202,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-6e910853-4104-5bb3-b5f1-868366dee181",
+      "candidate": "Heather Maahs",
+      "constituency": "CHN",
+      "party": "Conservative Party",
+      "collected_votes": 137,
+      "published_votes": 137,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-b9a47bec-465c-5763-8416-555b11ffb9bd",
+      "candidate": "Helen Scott",
+      "constituency": "PCS",
+      "party": null,
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-ad2a2831-a961-58a4-b953-9f451113775b",
+      "candidate": "Henry Yao",
+      "constituency": "RCC",
+      "party": "BC NDP",
+      "collected_votes": 105,
+      "published_votes": 105,
+      "published_comparisons": 11,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-fb39a0c5-8132-5e64-a0f3-80fb5b3ac3fd",
+      "candidate": "Holly Isaac",
+      "constituency": "LWG",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-63a30e22-d82a-5d1d-8ff6-126a953d3dab",
+      "candidate": "Honieh Barzegari",
+      "constituency": "WVC",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-5bbd93cc-776f-5fb8-92c7-2191849f942a",
+      "candidate": "Hudson Campbell",
+      "constituency": "MAE",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-d62bef38-6924-5eaa-bd54-3945703d1477",
+      "candidate": "Hunter Corrigal",
+      "constituency": "KOC",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-c09058a6-ee9e-51f3-9a08-2776a864fa9c",
+      "candidate": "Ian McMahon",
+      "constituency": "PRM",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-64a88060-06e1-50f7-ba25-c5740efeacec",
+      "candidate": "Ian Paton",
+      "constituency": "DLS",
+      "party": "Conservative Party",
+      "collected_votes": 219,
+      "published_votes": 219,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-306b8a2e-2635-5fcf-990a-9a9ec47d1b7e",
+      "candidate": "Jag Bhandari",
+      "constituency": "SUN",
+      "party": null,
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-763eef61-a0d0-523d-a41a-8145b9f19f2e",
+      "candidate": "Jagrup Brar",
+      "constituency": "SRF",
+      "party": "BC NDP",
+      "collected_votes": 217,
+      "published_votes": 217,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-2aa16f6c-f5eb-5f2a-a601-e5514f7bb434",
+      "candidate": "Jaime Stein",
+      "constituency": "VLA",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-dc97ab13-569c-5ac7-9c38-19389e3ba24c",
+      "candidate": "James Chumsa",
+      "constituency": "CWV",
+      "party": "Communist Party of BC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-293e2d53-5ffb-594a-889c-d89cefb042b7",
+      "candidate": "James Yaroshuk",
+      "constituency": "SRG",
+      "party": null,
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-7c639941-3853-5fdd-8f93-f17dc2cd7c9f",
+      "candidate": "Janet Routledge",
+      "constituency": "BNO",
+      "party": "BC NDP",
+      "collected_votes": 289,
+      "published_votes": 289,
+      "published_comparisons": 4,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-5c5aa768-9114-5d7c-9650-36cc53e54d1a",
+      "candidate": "Jason Cook",
+      "constituency": "CRC",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-4ada2c75-e7d9-5321-b57f-881176c9734c",
+      "candidate": "Jason Leboe",
+      "constituency": "FRN",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-71e2bdef-f2ad-5071-b95b-f04363701ea2",
+      "candidate": "Jason McCormick",
+      "constituency": "DLS",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-d8e6ac8b-4d85-5f16-b28b-90e3dd5e031a",
+      "candidate": "Javad Shushtarian",
+      "constituency": "BNE",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-8cfc8ef1-b331-597c-b391-101020db9522",
+      "candidate": "Jay Van Oostdam",
+      "constituency": "CRC",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-e03c80ec-8ace-5d3f-9f66-37074069c3ca",
+      "candidate": "Jed Wiebe",
+      "constituency": "SHU",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-07b05944-3bdf-5569-acf0-99b6fae5db53",
+      "candidate": "Jeff Brown",
+      "constituency": "JFM",
+      "party": "Christian Heritage Party of BC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-cf5132af-76c1-52d6-aacf-0e6a876cfaed",
+      "candidate": "Jeff Monds",
+      "constituency": "ABM",
+      "party": "Libertarian",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-2ca7071e-8cc1-55e6-85d5-4e1c58deb64b",
+      "candidate": "Jennifer Blatherwick",
+      "constituency": "CQM",
+      "party": "BC NDP",
+      "collected_votes": 110,
+      "published_votes": 110,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-21f59219-2827-53cd-88b3-2f527f24163c",
+      "candidate": "Jennifer Whiteside",
+      "constituency": "NMC",
+      "party": "BC NDP",
+      "collected_votes": 200,
+      "published_votes": 200,
+      "published_comparisons": 3,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-20a56463-4a41-57d2-84a7-c6703460d561",
+      "candidate": "Jeremy Valeriote",
+      "constituency": "WVS",
+      "party": "BC Green Party",
+      "collected_votes": 128,
+      "published_votes": 128,
+      "published_comparisons": 2,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-fec29d98-23f5-52a7-aad0-82537cdad495",
+      "candidate": "Jesse Gervais",
+      "constituency": "NEC",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-c7a85ba4-bd6b-51e7-8bde-97f6b443c0f5",
+      "candidate": "Jessie Sunner",
+      "constituency": "SRN",
+      "party": "BC NDP",
+      "collected_votes": 116,
+      "published_votes": 116,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-ab9fc3b5-f751-5eb0-ad64-66e4b8831f7d",
+      "candidate": "Jessy Sahota",
+      "constituency": "SUR",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-8c17b862-1ba9-57e8-aba4-26d9a52799dd",
+      "candidate": "Jim McMurtry",
+      "constituency": "DLS",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-a44fb77e-17a1-522a-b641-ea9ba9dce262",
+      "candidate": "Jinny Sims",
+      "constituency": "SUP",
+      "party": "BC NDP",
+      "collected_votes": 114,
+      "published_votes": 114,
+      "published_comparisons": 2,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-1c599986-e27b-5626-ba17-276dad7720ed",
+      "candidate": "Joachim Agou",
+      "constituency": "VTB",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-1f74e1e1-a20b-539b-8864-043baeec1b88",
+      "candidate": "Jodi Murphy",
+      "constituency": "SRG",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-4040f05f-57bb-50f3-9e4a-2d2b1ea131dc",
+      "candidate": "Jodie Capling",
+      "constituency": "PRV",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-d8baa944-4268-5edd-947f-33076d574cf8",
+      "candidate": "Jodie Wickens",
+      "constituency": "CQB",
+      "party": "BC NDP",
+      "collected_votes": 108,
+      "published_votes": 108,
+      "published_comparisons": 2,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-4853f404-c092-5875-a066-4846d2ac1f7a",
+      "candidate": "Jody Toor",
+      "constituency": "LWI",
+      "party": "Conservative Party",
+      "collected_votes": 102,
+      "published_votes": 102,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-a36deda4-4fbd-564f-939f-360598a32ced",
+      "candidate": "Joe Latam",
+      "constituency": "BNN",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-11601039-86cb-5e2f-8089-99772b809400",
+      "candidate": "John Atoyebi",
+      "constituency": "VLA",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-56b6c0c4-f1cf-5305-86c7-fc06e57c6545",
+      "candidate": "John Henderson",
+      "constituency": "POR",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-4f1cde25-f99e-53b3-b5ed-85bf17b0708b",
+      "candidate": "John McEwen",
+      "constituency": "POM",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-5e14fc00-a1b5-50b8-97d4-44b904bd3504",
+      "candidate": "Jordan Kealy",
+      "constituency": "PCN",
+      "party": null,
+      "collected_votes": 96,
+      "published_votes": 96,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-9d3a83d2-3f7e-59d5-b669-67dbb25d19f0",
+      "candidate": "Jordan Simmons",
+      "constituency": "MAP",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-5a259320-a1a6-5bb8-baaf-fb4abfe8ea6f",
+      "candidate": "Jordan Zheng McIntosh",
+      "constituency": "VNT",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-743b3b3e-a25f-5c19-85a6-000e99a7b56b",
+      "candidate": "Joshua A Singer Johnson",
+      "constituency": "NVL",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-6509d092-107c-5755-89b0-8709c2ba0815",
+      "candidate": "Joshua Dahling",
+      "constituency": "MPR",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-a78aa4ea-983c-54af-9680-13daea7f3909",
+      "candidate": "Joshua Domnich",
+      "constituency": "BNC",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-85aaf72f-fb6c-5486-abac-ebd8ccb38280",
+      "candidate": "Josie Osborne",
+      "constituency": "MPR",
+      "party": "BC NDP",
+      "collected_votes": 209,
+      "published_votes": 209,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-30076983-ddcf-51b9-a9b4-936a5cfff00c",
+      "candidate": "Judy Higginbotham",
+      "constituency": "SUR",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-0d6d9561-6f8c-5754-aff2-dfaea1e87dab",
+      "candidate": "Jules Côté",
+      "constituency": "ABW",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-19087b36-8296-507d-9f4d-d6c360f702ee",
+      "candidate": "Justin Douglas",
+      "constituency": "CWV",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-7f7beaec-c24c-5183-895f-cd176a0f66a3",
+      "candidate": "Kaden Mann",
+      "constituency": "CQB",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-f95fe5e7-f6de-54a8-af0e-3e16cf356208",
+      "candidate": "Kala Bryson",
+      "constituency": "SAN",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-494620c6-2210-5439-ab14-1be515ace63d",
+      "candidate": "Kathryn Askew",
+      "constituency": "CBC",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-d6b8f726-b608-5641-a3d8-268c49eca7b8",
+      "candidate": "Keenan Adams",
+      "constituency": "POC",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-94833583-a81f-54fa-8ab2-d13a4468182f",
+      "candidate": "Keenan Dennehy",
+      "constituency": "KOR",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-7af4b041-3bd1-5faf-a77d-df1650bcd0ac",
+      "candidate": "Keenan Yang",
+      "constituency": "RCS",
+      "party": "CWP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-a67b285a-90eb-5d82-94b6-e55ae9d5ba31",
+      "candidate": "Keith Pomeroy",
+      "constituency": "BDS",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-f2ac58b2-6544-570f-a2c7-9b05c202e90e",
+      "candidate": "Kelli Paddon",
+      "constituency": "CHC",
+      "party": "BC NDP",
+      "collected_votes": 107,
+      "published_votes": 107,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-0e746637-7034-5f4e-8ad4-2b40b9055683",
+      "candidate": "Kelsey Pringle",
+      "constituency": "NAL",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-21a9654b-2e72-5997-819b-041f205a6c8f",
+      "candidate": "Kevin Acton",
+      "constituency": "VRL",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-50501df4-d6c5-5df8-bca5-2485be4e5a5d",
+      "candidate": "Kevin Diakiw",
+      "constituency": "SWR",
+      "party": null,
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-c4276acc-187a-5076-a9a6-4cf9d768c655",
+      "candidate": "Kiel Giddens",
+      "constituency": "PRM",
+      "party": "Conservative Party",
+      "collected_votes": 101,
+      "published_votes": 101,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-a7bbfefc-5fb9-5bf6-9a28-f81aa386ca15",
+      "candidate": "Kimball Cariou",
+      "constituency": "VHA",
+      "party": "Communist Party of BC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-89399efd-836e-5f8c-9ee5-f297d6e75da6",
+      "candidate": "Korky Neufeld",
+      "constituency": "ABW",
+      "party": "Conservative Party",
+      "collected_votes": 97,
+      "published_votes": 97,
+      "published_comparisons": 2,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-08d5d464-1b0c-536a-a80b-5ead2b1df8e1",
+      "candidate": "Kory Clark",
+      "constituency": "KAN",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-ee3323cd-5e10-5052-91b2-10ee4c7441a1",
+      "candidate": "Kris McNichol",
+      "constituency": "LAO",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-942cbf34-be60-5731-961e-af7c9d9d7666",
+      "candidate": "Kristina Loewen",
+      "constituency": "KEC",
+      "party": "Conservative Party",
+      "collected_votes": 101,
+      "published_votes": 101,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-32ad2588-1ab5-5fbf-b499-ab85a087b18c",
+      "candidate": "Kuldeep Rangi",
+      "constituency": "DLN",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-eea6964b-7351-5da9-bcb2-812d805e3f04",
+      "candidate": "Kyle Stevenson",
+      "constituency": "LWG",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-1b3c2fda-6b84-5ca4-bdb5-cd38db28ed0e",
+      "candidate": "Kyra Philbert",
+      "constituency": "VHA",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-ae77299e-91d5-57fc-bb84-c8716297de64",
+      "candidate": "Lakhwinder Jhaj",
+      "constituency": "ABM",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-98594d80-e2e1-582f-9ca2-3b139b8ebc19",
+      "candidate": "Lara Honrado",
+      "constituency": "VNS",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-80f5ea3f-1407-5b63-a05e-a1e18025b4b2",
+      "candidate": "Larry Eugene Taylor",
+      "constituency": "SKE",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-6f3d208a-c922-5e8e-aab0-4c08c03d52b6",
+      "candidate": "Larry Neufeld",
+      "constituency": "PCS",
+      "party": "Conservative Party",
+      "collected_votes": 130,
+      "published_votes": 130,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-ada96af9-1ac4-5714-b92f-fb55324e37b7",
+      "candidate": "Lawrence Chen",
+      "constituency": "RCC",
+      "party": "CWP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-19518598-58aa-5444-b232-001793d8d47d",
+      "candidate": "Lawrence Mok",
+      "constituency": "MAE",
+      "party": "Conservative Party",
+      "collected_votes": 137,
+      "published_votes": 137,
+      "published_comparisons": 2,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-c6c6747b-3ef1-5f8f-94f2-d3c1ebbb4893",
+      "candidate": "Leah Ballantyne",
+      "constituency": "ABS",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-2d407723-f095-51ee-9055-8c34f2c2b09d",
+      "candidate": "Lee-Ann Bates",
+      "constituency": "POC",
+      "party": null,
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-78bc2053-187e-5951-9e05-0af73d3db5f8",
+      "candidate": "Lewis C. Dahlby",
+      "constituency": "POC",
+      "party": "Libertarian",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-a8c09d8c-d3b1-507d-881c-eaf059d0f5ef",
+      "candidate": "Linda Li",
+      "constituency": "RCB",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-728a4d67-d0b1-52c5-a5a8-0ae1da20d28e",
+      "candidate": "Lisa Beare",
+      "constituency": "MAP",
+      "party": "BC NDP",
+      "collected_votes": 235,
+      "published_votes": 235,
+      "published_comparisons": 3,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-434eea4b-497a-51fc-8894-15f4d5003cbd",
+      "candidate": "Lisa Lapointe",
+      "constituency": "SAS",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-bd44a9e1-c712-58ea-afed-20da8359455b",
+      "candidate": "Lisa Phillips",
+      "constituency": "VNS",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-d39668bc-5b04-54e4-920c-5dd595eed8aa",
+      "candidate": "Lisa Prescott",
+      "constituency": "VNR",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-b90887ce-5719-51b4-a8e6-673c3d36c893",
+      "candidate": "Lori Climenhaga",
+      "constituency": "NVS",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-3ebfa905-c0fb-5805-91fe-c277e0dafdfb",
+      "candidate": "Lorne Doerkson",
+      "constituency": "CBC",
+      "party": "Conservative Party",
+      "collected_votes": 195,
+      "published_votes": 195,
+      "published_comparisons": 2,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-8396e77d-4a5b-57a8-a902-12c35d037021",
+      "candidate": "Loyal Wooldridge",
+      "constituency": "KEC",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-48b678d2-d620-5e63-9233-f980f88846e2",
+      "candidate": "Luc Burns",
+      "constituency": "RCQ",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-23ff87f3-33c7-5af2-8134-41c714b6b85c",
+      "candidate": "Lynne Block",
+      "constituency": "NVS",
+      "party": "Conservative Party",
+      "collected_votes": 102,
+      "published_votes": 102,
+      "published_comparisons": 2,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-eeffc5ef-23f0-5a39-851a-f651548ba2ec",
+      "candidate": "Mable Elmore",
+      "constituency": "VKE",
+      "party": "BC NDP",
+      "collected_votes": 208,
+      "published_votes": 208,
+      "published_comparisons": 3,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-8701fcb5-0816-5630-be2d-e8b2502c29fb",
+      "candidate": "Macklin McCall",
+      "constituency": "WKP",
+      "party": "Conservative Party",
+      "collected_votes": 123,
+      "published_votes": 123,
+      "published_comparisons": 2,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-eb7391cd-d41c-51f6-9dd2-bb11525fc60f",
+      "candidate": "Maddy Kennedy-Parrott",
+      "constituency": "BNO",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-a4a687b6-bbfd-530e-a5f0-bffb3d27f341",
+      "candidate": "Manav Manro",
+      "constituency": "SUP",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-54b533cc-3fc5-5541-934d-aa49553d8927",
+      "candidate": "Mandeep Singh Dhaliwal",
+      "constituency": "SUN",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-4f2a0ece-5371-5589-9a5d-58ec1935f24d",
+      "candidate": "Margareta Dovgal",
+      "constituency": "VNY",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-5f07f38d-9eb1-5948-a7ad-9f9b18013741",
+      "candidate": "Maria J Cruz",
+      "constituency": "VNS",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-a36a316e-75da-5c02-8cbf-c215ae17911c",
+      "candidate": "Mark MacDonald",
+      "constituency": "NAI",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-84ca6361-b721-515f-a641-c2933d523fab",
+      "candidate": "Marsha Rose Dufresne",
+      "constituency": "PCS",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-4fcae87d-53a5-59cc-aaef-3c43954c75fe",
+      "candidate": "Matt Liang",
+      "constituency": "CQM",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-f4e9b89d-d936-5391-9c5a-f2dda6574f51",
+      "candidate": "Maureen Curran",
+      "constituency": "NMC",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-d74db9f5-6b93-5347-b109-94ca34114846",
+      "candidate": "Megan Knight",
+      "constituency": "SUS",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-ae85bb35-feeb-5fc1-b6e7-8e8dab3ccf7e",
+      "candidate": "Melissa Snazell",
+      "constituency": "LLA",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-36670b75-f461-51ce-8181-83e2630fb6bf",
+      "candidate": "Michael Davis",
+      "constituency": "VNP",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-26d63d3c-0c66-5ecd-8a6c-30e216f14c63",
+      "candidate": "Michele Lau",
+      "constituency": "NMC",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-b09a7668-4a2e-5b8d-bd4c-aa05e87213a2",
+      "candidate": "Michelle Livaja",
+      "constituency": "WVS",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-339d64c6-3d6f-5efa-a7da-026fa755d759",
+      "candidate": "Mike Farnworth",
+      "constituency": "POC",
+      "party": "BC NDP",
+      "collected_votes": 219,
+      "published_votes": 219,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-f591849a-79ce-5e4f-aa8b-25722d345741",
+      "candidate": "Mike Hicks",
+      "constituency": "JFM",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-f05b13ac-cbb7-598d-a97f-c983a316e05b",
+      "candidate": "Mike Wisla",
+      "constituency": "KAC",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-54da1ecf-986c-5b0d-9230-b5892d1f70c1",
+      "candidate": "Miriam Rycroft",
+      "constituency": "KLM",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-f56e9b48-6b7d-5608-bedc-1e1725901812",
+      "candidate": "Misty Van Popta",
+      "constituency": "LWG",
+      "party": "Conservative Party",
+      "collected_votes": 97,
+      "published_votes": 97,
+      "published_comparisons": 2,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-13c1c4ce-d661-55fc-9f3e-5e090d814fb7",
+      "candidate": "Mitchell Lukoni",
+      "constituency": "PRV",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-7e2204a2-6bcb-54f5-aacd-17c70cc635e3",
+      "candidate": "Monica Mohan",
+      "constituency": "DLN",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-3ba0d1e6-c1c2-5c10-9d3d-20fbbe37e996",
+      "candidate": "Naomi Chocyk",
+      "constituency": "WVC",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-775ffa59-325f-5521-bd04-a9ac9b60cdc1",
+      "candidate": "Nicholas Cartmell",
+      "constituency": "SRD",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-191a6e61-f385-5f90-9f16-60eeac572bc3",
+      "candidate": "Nick Gottlieb",
+      "constituency": "SKE",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-5a4c7ebe-896d-5b18-b0b0-ea51763cf084",
+      "candidate": "Nicola Spurling",
+      "constituency": "CQM",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-af6ead2a-a0f2-5800-a361-88cbc91c8b69",
+      "candidate": "Nicole Charlwood",
+      "constituency": "KOC",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-95a4d624-2412-5f7c-9b49-cc5c51a2b67f",
+      "candidate": "Niki Sharma",
+      "constituency": "VHA",
+      "party": "BC NDP",
+      "collected_votes": 235,
+      "published_votes": 235,
+      "published_comparisons": 2,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-9d4b0bbb-75eb-59ad-be5a-ed8c949f4463",
+      "candidate": "Nina Krieger",
+      "constituency": "VTS",
+      "party": "BC NDP",
+      "collected_votes": 108,
+      "published_votes": 108,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-3739823e-a642-5895-90a5-df2d6774db33",
+      "candidate": "Nolen Scott",
+      "constituency": "SUP",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-2f2f7c3e-47f9-5881-9f62-3f8a1f463c8a",
+      "candidate": "Norma Blissett",
+      "constituency": "KOR",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-5e126460-0549-5fe0-a46e-87cc2f5321a2",
+      "candidate": "Oliver Wildfong",
+      "constituency": "SRC",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-dafa0635-df8c-5d36-bbbd-edaf12617661",
+      "candidate": "Pam Alexis",
+      "constituency": "ABM",
+      "party": "BC NDP",
+      "collected_votes": 91,
+      "published_votes": 91,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-4979f27c-657c-5d72-98c1-5df1a7ee6a2e",
+      "candidate": "Parik Tahlan",
+      "constituency": "SUS",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-90f87988-793a-5034-a447-d4d4983928bb",
+      "candidate": "Parm Bhandol",
+      "constituency": "SUN",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-8049d945-27ae-574f-9de5-ea25cd16ca6e",
+      "candidate": "Pat McCutcheon",
+      "constituency": "SRD",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-a1ac58b3-1709-5277-826f-6912ddb9c0bc",
+      "candidate": "Patrick Michell",
+      "constituency": "FRN",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-db21b1be-e51c-5dc9-a478-062d102e76b9",
+      "candidate": "Paul Brar",
+      "constituency": "SRF",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-0831487e-955f-5c49-bdec-b49cc9891ae8",
+      "candidate": "Paul Choi",
+      "constituency": "BNS",
+      "party": "BC NDP",
+      "collected_votes": 118,
+      "published_votes": 118,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-c2c52f04-d808-5c9f-9b96-3afa093550f3",
+      "candidate": "Paul Heywood",
+      "constituency": "KOR",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-f6e8c335-ae02-516a-b64e-324bafd369be",
+      "candidate": "Pavneet Singh",
+      "constituency": "KLC",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-958f1ad3-b33d-5ad3-a594-07a8cfafdcaf",
+      "candidate": "Pepper Saltman",
+      "constituency": "NAL",
+      "party": "Communist Party of BC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-44581e75-6e69-54eb-bdb4-675f44f9ef20",
+      "candidate": "Pete Davis",
+      "constituency": "KOR",
+      "party": "Conservative Party",
+      "collected_votes": 95,
+      "published_votes": 95,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-03cb8e03-08c7-51ae-9f8f-a24fb19809a6",
+      "candidate": "Peter Milobar",
+      "constituency": "KAC",
+      "party": "Conservative Party",
+      "collected_votes": 213,
+      "published_votes": 213,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-02b4f185-94de-53b8-af16-8bfd85c320e4",
+      "candidate": "Peter Si",
+      "constituency": "BNE",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-5e34d641-2b44-5eab-8c11-8d5216e3ccd9",
+      "candidate": "Petra Kuret",
+      "constituency": "VNQ",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-1a3d3138-0083-53bc-ac92-55d322101434",
+      "candidate": "Phil Webb",
+      "constituency": "VHA",
+      "party": "Libertarian",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-e015b496-4b17-55a2-bdc8-6558083a0ec6",
+      "candidate": "Phyllis Tang",
+      "constituency": "VHA",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-917bf51c-144b-5424-b28e-9124cd9a27fc",
+      "candidate": "Priyan Samarakoone",
+      "constituency": "VNY",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-bc6fcf71-1f06-521d-9a48-1bd1fc1eadd5",
+      "candidate": "Raj Chouhan",
+      "constituency": "BNN",
+      "party": "BC NDP",
+      "collected_votes": 11,
+      "published_votes": 11,
+      "published_comparisons": 2,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-6314845e-abe5-5c9d-87df-825afc7e81c8",
+      "candidate": "Rajinder S. Sahota",
+      "constituency": "VTB",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-da7cab3e-cd81-59ce-8f46-c0023dd63794",
+      "candidate": "Raman Sharma",
+      "constituency": "SRC",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-c8700df7-d3db-5f82-a9e4-a00c20a97cbd",
+      "candidate": "Rana Nelson",
+      "constituency": "CLR",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-f4cef89c-db10-5ba3-8ea7-583293a47a90",
+      "candidate": "Randene Neill",
+      "constituency": "POR",
+      "party": "BC NDP",
+      "collected_votes": 110,
+      "published_votes": 110,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-92151794-8b87-5ba0-8b79-5155ff120cd5",
+      "candidate": "Randy Thompson",
+      "constituency": "PRO",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-43ddea29-6a7b-5942-ac90-512e3e0df9e9",
+      "candidate": "Ravi Parmar",
+      "constituency": "LFH",
+      "party": "BC NDP",
+      "collected_votes": 148,
+      "published_votes": 148,
+      "published_comparisons": 3,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-4fe5d2a0-d6f0-54c0-a46d-57950fd51e45",
+      "candidate": "Rebecca Haber",
+      "constituency": "VNR",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-c8144914-dbf3-5816-84b0-e964173abbc7",
+      "candidate": "Richard Lambert",
+      "constituency": "NOI",
+      "party": null,
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-ccb70bdc-3fc6-50f4-85d3-e2d43a5323ee",
+      "candidate": "Richard Smith",
+      "constituency": "SAN",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-db6a101a-f638-5207-99b7-2c305731cff7",
+      "candidate": "Richard Zussman",
+      "constituency": "SAS",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-54db7735-f20d-55ac-97f7-70926aef6011",
+      "candidate": "Rick Glumac",
+      "constituency": "POM",
+      "party": "BC NDP",
+      "collected_votes": 223,
+      "published_votes": 223,
+      "published_comparisons": 2,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-b3e4fd85-8a40-5892-bf54-7e8d8fa83ae2",
+      "candidate": "Robert Crooks",
+      "constituency": "VNT",
+      "party": "Communist Party of BC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-26b79068-0c29-5fe7-b139-ffba4712ba9a",
+      "candidate": "Robert Evans",
+      "constituency": "RCS",
+      "party": null,
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-2d5a21c4-cc05-5802-be8a-0d0eab472e9d",
+      "candidate": "Robin Roy",
+      "constituency": "ABS",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-01323c4e-c025-5000-874a-b42365271e01",
+      "candidate": "Rocky McAfee",
+      "constituency": "KAC",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-e39fd2e3-0655-5af1-8ae3-ae8b24721508",
+      "candidate": "Rodney Proskiw",
+      "constituency": "NOH",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-390fd0ad-fe8b-5f3f-82cc-884f8ce14e14",
+      "candidate": "Rohini Reah Arora",
+      "constituency": "BNE",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-7ae97943-8aa4-5b99-a80e-2e3794f37d53",
+      "candidate": "Roly Russell",
+      "constituency": "BDS",
+      "party": "BC NDP",
+      "collected_votes": 89,
+      "published_votes": 89,
+      "published_comparisons": 2,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-9ed958e4-db11-579e-93c2-60ba58c5cfea",
+      "candidate": "Rosalyn Bird",
+      "constituency": "PRV",
+      "party": "Conservative Party",
+      "collected_votes": 101,
+      "published_votes": 101,
+      "published_comparisons": 2,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-6e178547-460c-5835-b8a7-26e471f1eea8",
+      "candidate": "Ryan Peterson",
+      "constituency": "CQB",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-1eb1376f-21cd-5e7f-9141-86b1c138826c",
+      "candidate": "Ryan Windsor",
+      "constituency": "SAN",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-cb59fcbe-4c3f-592f-819a-92f6ccc745e5",
+      "candidate": "Sacha Peter",
+      "constituency": "RCC",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-fd0f97f4-b547-576a-8533-56a16f944e70",
+      "candidate": "Sahib Thind",
+      "constituency": "SUN",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-9e51c0ab-73d0-5e47-9edd-be390cde6f79",
+      "candidate": "Salvatore Vetro",
+      "constituency": "VNS",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-92c2da0c-6bf4-54e8-8512-90037d294843",
+      "candidate": "Sam Chandola",
+      "constituency": "VNY",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-a6fb5f02-dfb6-5d61-9b79-cb1e50b7cfd6",
+      "candidate": "Sam Meyer",
+      "constituency": "LWG",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-e3b81e1f-f613-5277-b7f4-82471626b9e7",
+      "candidate": "Saoirse MacKinnon",
+      "constituency": "KLM",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-8488503f-4d66-5a16-ab20-96b2c73361f4",
+      "candidate": "Sara Lopez",
+      "constituency": "NOI",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-aed1c2d2-9ef2-5f2b-84bb-7cb3795d9ce0",
+      "candidate": "Sarah MacLeod",
+      "constituency": "VLM",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-5597277e-ed4a-5320-9fee-b47bfab04464",
+      "candidate": "Sarah Zimmerman",
+      "constituency": "SKE",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-b009d48e-9335-53c9-9d84-0f26988562bb",
+      "candidate": "Sargy Chima",
+      "constituency": "SRD",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-b1c735a6-0816-5ae6-9b71-980af8332051",
+      "candidate": "Scott MacDonald",
+      "constituency": "VNW",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-e18ddd6f-3417-5e7a-b5b4-06d22175d1d6",
+      "candidate": "Scott McInnis",
+      "constituency": "CLR",
+      "party": "Conservative Party",
+      "collected_votes": 108,
+      "published_votes": 108,
+      "published_comparisons": 2,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-2088f698-0ad9-5630-a814-623b9b7ec602",
+      "candidate": "Sean Flynn",
+      "constituency": "LFH",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-807327d3-ea6e-585d-bf80-0fb11a0080ac",
+      "candidate": "Shane Friesen",
+      "constituency": "JFM",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-3e9ad5b6-fbc1-529e-888b-f8dfae7a48cd",
+      "candidate": "Sharleen Weatherley",
+      "constituency": "NAL",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-56ba3d1e-ac41-516b-a828-9f8b4fa41660",
+      "candidate": "Sharon Hartwell",
+      "constituency": "BLS",
+      "party": "Conservative Party",
+      "collected_votes": 100,
+      "published_votes": 100,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-b0a70563-3c48-59c1-9a3e-991806e70f61",
+      "candidate": "Sheila Malcolmson",
+      "constituency": "NAI",
+      "party": "BC NDP",
+      "collected_votes": 228,
+      "published_votes": 228,
+      "published_comparisons": 2,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-15945fa5-5bd4-554c-a059-9a51e863cf6a",
+      "candidate": "Sheldon Clare",
+      "constituency": "PRO",
+      "party": "Conservative Party",
+      "collected_votes": 103,
+      "published_votes": 103,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-2cb53374-fe65-51db-b01f-b494e6c457a1",
+      "candidate": "Shelly Jan",
+      "constituency": "LLA",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-1c8506d9-a8ed-5ee6-93ce-f81edc3e5b00",
+      "candidate": "Shila Taheri",
+      "constituency": "BNC",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-82b4c483-387f-592e-a260-5ee0a56bae5b",
+      "candidate": "Shubham Joshi",
+      "constituency": "LWI",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-a536153a-a0e7-5a9f-b348-ee160191dda6",
+      "candidate": "Sid Tobias",
+      "constituency": "ESC",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-f232ba15-5aa6-5fc1-89c8-8beaae8df0c9",
+      "candidate": "Sidney Coles",
+      "constituency": "ESC",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-c95ce1e0-f9dd-50e8-b3f9-94bfc4938d3e",
+      "candidate": "Sikander Kang",
+      "constituency": "SUR",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-f0c0a12b-f9f8-5c86-bd3b-6703c59cdb41",
+      "candidate": "Simon Chandler",
+      "constituency": "BNO",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-e0a22931-7c37-57f0-bd32-b0516bcae700",
+      "candidate": "Skadi Green",
+      "constituency": "DLS",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-e85ed3fb-016c-5479-9070-4f00c680646e",
+      "candidate": "Spencer Chandra Herbert",
+      "constituency": "VNW",
+      "party": "BC NDP",
+      "collected_votes": 188,
+      "published_votes": 188,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-4e661ca5-ec03-522b-bda7-416c52739cf9",
+      "candidate": "Stan Sipos",
+      "constituency": "OBG",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-2163ab24-89de-5e0b-a0a0-9440f9098662",
+      "candidate": "Stephanie Hendy",
+      "constituency": "POC",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-97a3628e-8ca8-54ce-b88c-dc20d7d8a092",
+      "candidate": "Stephanie Higginson",
+      "constituency": "LAO",
+      "party": "BC NDP",
+      "collected_votes": 117,
+      "published_votes": 117,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-102b7efc-b78c-5db6-9781-e50edf3b0947",
+      "candidate": "Stephen Dooley",
+      "constituency": "SRD",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-787b3e32-57f6-5930-a130-1e187c4301d2",
+      "candidate": "Stephen Hill",
+      "constituency": "KOM",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-10f069df-b9da-5535-bb7f-15e97466e5dc",
+      "candidate": "Steve Kooner",
+      "constituency": "RCQ",
+      "party": "Conservative Party",
+      "collected_votes": 123,
+      "published_votes": 123,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-2226e8cb-fdaa-576a-8671-7baed7c9e587",
+      "candidate": "Steve Morissette",
+      "constituency": "KOM",
+      "party": "BC NDP",
+      "collected_votes": 115,
+      "published_votes": 115,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-b3c64133-3fd1-5db5-aefa-bf30e7541139",
+      "candidate": "Sunita Dhir",
+      "constituency": "VLA",
+      "party": "BC NDP",
+      "collected_votes": 103,
+      "published_votes": 103,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-b6bae7e1-7182-5df7-a715-6845b93865f0",
+      "candidate": "Susan Einarsson",
+      "constituency": "MAP",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-365be9ce-66e8-5e88-ac50-2c8ffc91cf6b",
+      "candidate": "Susie Chant",
+      "constituency": "NVS",
+      "party": "BC NDP",
+      "collected_votes": 204,
+      "published_votes": 204,
+      "published_comparisons": 3,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-2bdf3f97-cf77-5fc7-810e-4a17bb913f25",
+      "candidate": "Tamara Davidson",
+      "constituency": "NOH",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-8f9d7feb-e921-5691-9b38-16bd5062410f",
+      "candidate": "Tanya Gupta",
+      "constituency": "SUN",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-64eba333-1aa4-5e8b-876f-210e933a90eb",
+      "candidate": "Tanya Webking",
+      "constituency": "VNT",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-cb0abaa5-fc29-539a-b475-6b91c9f22a74",
+      "candidate": "Teresa Wat",
+      "constituency": "RCB",
+      "party": "Conservative Party",
+      "collected_votes": 98,
+      "published_votes": 98,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-1f90ca3e-108e-5a92-bbed-dc936771823b",
+      "candidate": "Teri Young",
+      "constituency": "PRM",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-c75a3720-338b-5499-b0df-c23c1859143e",
+      "candidate": "Terry Yung",
+      "constituency": "VNY",
+      "party": "BC NDP",
+      "collected_votes": 110,
+      "published_votes": 110,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-7959abfa-c918-5e1c-abf1-9e399da12fef",
+      "candidate": "Thaelo Proctor",
+      "constituency": "KAC",
+      "party": null,
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-91cd5a4f-fc6a-5b43-b8c3-417469705c4c",
+      "candidate": "Tim Binnema",
+      "constituency": "SRF",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-097096c4-a23e-5778-9729-5660a18a0767",
+      "candidate": "Tim Taylor",
+      "constituency": "VTS",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-0743d8ac-add9-5d0f-b05a-80237e9d0a4c",
+      "candidate": "Timothy Webster",
+      "constituency": "VNY",
+      "party": null,
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-a0bf63ca-85dc-518d-bb83-0470acc57354",
+      "candidate": "Tina Lee",
+      "constituency": "PES",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-b6c526e2-6226-5f28-89a1-b12fe67eb090",
+      "candidate": "Todd Holowchak",
+      "constituency": "SUR",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-85cd4a3e-eef7-5e33-a64b-3ffb17ca0ae9",
+      "candidate": "Todd Schierling",
+      "constituency": "DLN",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-dd7bf0e1-fcc5-511b-8211-0fd0bc7f0d82",
+      "candidate": "Tom Ikonomou",
+      "constituency": "VNR",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-6fe0ca62-7255-5490-b909-d1b4606f239c",
+      "candidate": "Tony Luck",
+      "constituency": "FRN",
+      "party": "Conservative Party",
+      "collected_votes": 117,
+      "published_votes": 117,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-7920c0c1-2cd8-5889-91e8-8fe120cbb97b",
+      "candidate": "Tracy St Claire",
+      "constituency": "PES",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-4ece6f58-51a2-5295-95f6-835c444c2c18",
+      "candidate": "Travis Marchenski",
+      "constituency": "SRD",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-fd4ba65e-f5ab-57f1-b017-9bd5ed2094ef",
+      "candidate": "Trevor Halford",
+      "constituency": "SWR",
+      "party": "Conservative Party",
+      "collected_votes": 202,
+      "published_votes": 202,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-2b804366-1cbb-5a28-943d-dbb31da57c6d",
+      "candidate": "Trevor Withers",
+      "constituency": "NVL",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-28ad546f-fca1-5772-a203-b73d0ff722d2",
+      "candidate": "Valerie Morrison",
+      "constituency": "CQB",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-bd713c40-c4a1-52b6-9314-11e85fc106fa",
+      "candidate": "Vikas Gautam",
+      "constituency": "BNC",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-7885b4e6-4f8d-5008-b861-81eace4ff28c",
+      "candidate": "Virender Dass",
+      "constituency": "ABM",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-94d4a203-1bfa-52e6-bdc9-c1fa8f9a10f1",
+      "candidate": "Waqas Rana",
+      "constituency": "SWR",
+      "party": "CentreBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-9fb247de-af11-5534-a6e8-70a130fdb517",
+      "candidate": "Ward Stamer",
+      "constituency": "KAN",
+      "party": "Conservative Party",
+      "collected_votes": 115,
+      "published_votes": 115,
+      "published_comparisons": 1,
+      "status": "analyzed"
+    },
+    {
+      "candidate_id": "candidacy-9bc70bb1-af8d-53ad-ba6c-937d32d5af86",
+      "candidate": "Warren Hamm",
+      "constituency": "PES",
+      "party": "OneBC",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-f112f1b5-5f38-5898-a412-141850fa1445",
+      "candidate": "Warren Mirko",
+      "constituency": "KOM",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-00ef053a-db51-5ab3-85e8-a0b442814c89",
+      "candidate": "Wei Chou",
+      "constituency": "POM",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-2a785d8d-f8d4-563a-a80f-5593f77f947e",
+      "candidate": "Will Cole-Hamilton",
+      "constituency": "CRC",
+      "party": "BC NDP",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-8f41b3e8-d329-5e2f-abc7-fa5b72285e4d",
+      "candidate": "Yudhbir Gill",
+      "constituency": "SUN",
+      "party": "BC Green Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    },
+    {
+      "candidate_id": "candidacy-461a575d-4462-5d5d-8c14-475c503d33a9",
+      "candidate": "Zeeshan Wahla",
+      "constituency": "SRC",
+      "party": "Conservative Party",
+      "collected_votes": 0,
+      "published_votes": 0,
+      "published_comparisons": 0,
+      "status": "skipped_no_collected_votes"
+    }
+  ],
+  "counts": {
+    "skipped_no_collected_votes": 274,
+    "analyzed": 81
+  },
+  "complete_for_candidates_with_votes": true
+}

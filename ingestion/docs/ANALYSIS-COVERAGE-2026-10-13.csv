@@ -1,0 +1,356 @@
+candidate_id,candidate,constituency,party,collected_votes,published_votes,published_comparisons,status
+candidacy-e61aff7a-144c-5d64-816a-05ad9437c13c,A'aliya Warbus,CHC,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-01b41f7d-2653-51d8-83cc-4982dd88b4ed,Abraham Nordine,KLM,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-c9788984-e211-56e0-969d-e19e905c7b4f,Adam Frank,WKP,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-4d375c91-3f29-5199-9927-5fe5a354b577,Adam Hawk,VKE,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-10600b3c-8cb6-54dc-bf42-53659e0cde48,Adila Shaukat,CHN,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-b75760e4-0478-57c3-bb17-5b4bd8272210,Adrian Dix,VNR,BC NDP,242,242,4,analyzed
+candidacy-63bd9b16-1ef9-52cd-8b3a-b8bc69b4304a,AJ Wolfe,KOR,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-7a20b186-9980-5c6a-833c-224b151ccb6a,Alan Beesley,VLA,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-fbcd618e-52b9-5bf8-91a1-836989af616a,Alex Joehl,LLA,Libertarian,0,0,0,skipped_no_collected_votes
+candidacy-f18483c8-7bd1-5261-85ea-7d98197c43bc,Alex McMillan,VNP,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-c6915055-4663-5739-b30b-424ab9ba81d8,Alex Muir,VLM,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-392b4adc-bff3-5676-bd15-52c869582083,Alex Thurlborn,LFH,,0,0,0,skipped_no_collected_votes
+candidacy-0fbad2c6-8986-512b-8006-34c155016b26,Alexandra Wright,KLC,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-1ba67c4d-e837-5df1-a120-39688278514c,Aman Singh,VFV,BC NDP,95,95,4,analyzed
+candidacy-63f9503c-7b20-5623-92b9-45511a8e4736,Amanda Burrows,VNT,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-6c22ee62-e25e-5354-b2c0-ea7eb5b1c471,Amanda James,SWR,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-5f840156-9044-5538-a87b-90ceeddd7098,Amna Shah,SRC,BC NDP,113,113,2,analyzed
+candidacy-a23c479a-0690-5f33-84d2-80f113a1d2b5,Andrea Dunlop,CLR,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-3b6bbfe7-a28e-5f2f-a35a-bcf929682fbd,Andrew Appleton,OBG,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-d4811b89-0c38-5337-9f11-8f70a100b021,Andrew Mercier,LWI,BC NDP,97,97,1,analyzed
+candidacy-7c7de2b0-bb36-57e9-acec-e48bf157c35b,Andrew Rose,BNS,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-01943147-24ac-5e9f-922a-d5eebc239480,Andrew Weaver,OBG,CentreBC,10,10,1,analyzed
+candidacy-d1e8f82f-f6de-525c-a8df-4c59ea75dd86,Anna Kindy,NOI,Conservative Party,101,101,1,analyzed
+candidacy-c42ef9d4-bda6-5af1-bec4-98afa36a8f37,Anna Mary McKenzie,NAI,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-48ef5f46-2130-5d2b-8fc6-6a8a686f5e9f,Anne Kang,BNC,BC NDP,236,236,3,analyzed
+candidacy-760e0810-abeb-5d48-92cd-65e65060e46e,Annelise Beach,KAC,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-cd58b7df-ff80-5dab-87da-82e5a912cb77,Aron Lageri,VKE,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-9dd45dd4-8d8d-5a30-b465-956fe24bb30f,Arwa Shurab,WVC,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-6454eb9c-1214-5954-aa00-64db2d7fdfcc,Ayla Dumais,WVS,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-43c323e4-5a46-5a7e-9515-78b0840caaa9,Barbara Presch,SHU,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-2b98fd3b-137e-5663-bdb9-4833d620ba49,Barry Wosk,RCS,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-06e3fad4-5eb8-55f0-8954-57ef4e29095a,Beatrice Sharpe,VNP,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-f5e529eb-1d7e-55f2-bdfa-5b1efc746e78,Ben Holt,NVS,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-c799a861-3ece-5dcc-b97c-bb04e3921957,Benjamin Olsson,NOI,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-5a60c1e0-1857-5d12-b6af-bba01d570b00,Bert Chen,CWV,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-90c589ad-fb93-5a15-883d-9797993274bc,Bill Desrosiers,KEC,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-5f709ed1-63a5-5d45-8f5a-62a40a62683c,Bill McConnell,SUS,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-ca92a465-bdea-5cab-b34c-1e4c7652bbdf,Binny Boparai,KLC,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-c93245f5-ce47-5320-9c05-b08001dad656,Blair Visscher,VRL,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-2a5115ce-a2e1-51ee-8392-c71a3061cb88,Bowinn Ma,NVL,BC NDP,204,204,1,analyzed
+candidacy-99f4075e-b506-5edd-8ce3-fe6e1de88de7,Bradley Sean Bartsch,PES,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-89cc8ac4-7340-589f-a45a-482b716244d6,Brennan Day,CRC,Conservative Party,96,96,2,analyzed
+candidacy-85d8db20-93e8-5a1f-9a41-5485c82bfce9,Brittny Anderson,KOC,BC NDP,205,205,4,analyzed
+candidacy-f277a596-ddb2-52fe-ba8e-6b9cd0aa7010,Bruce Banman,ABS,Conservative Party,210,210,1,analyzed
+candidacy-4c3a4d97-0033-5900-ba60-54dc71522fa4,Bruce Kong,RCS,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-8612586d-2bc2-5919-a868-ff28ea7fa745,Bryan Fockler,BNS,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-3fa65e41-fa2f-5e92-b5b1-9169f1475902,Bryan Tepper,SUP,Conservative Party,100,100,1,analyzed
+candidacy-cb360aad-7e21-5add-9779-88b2f413e78d,Callista Ryan,VNQ,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-e68f00f2-4f47-53bd-bfcc-deb9cd1ffc56,Calvin Dang,RCC,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-11444c89-7037-5f13-9282-902e77e4cb90,Carol Bourque,PRV,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-390e27b5-9b5d-52c3-905f-a37359eef515,Caroline Elliott,WVC,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-6fb420af-a619-54d5-8d1c-436ca318e671,Carolyn Hofbauer,SRF,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-b4195a62-2f24-576f-8cb4-69abf153fc18,Carolyn Howe,VTS,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-07c40d0e-53f3-5686-8f28-f1f486798ab5,Carson Binda,VNQ,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-e5f9adef-7610-5b1d-aa05-6949ec5d07b5,Carter Mochinski,KLC,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-83f41bba-e395-5f1a-a2e4-264a0930d1ea,Cathie Ounsted,SAS,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-58d5ee2e-8537-5e3a-bc86-2e4676aaf58a,Chantel Gibbs,VRL,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-15c260fb-3b8e-5bd6-a00b-5e2dd747b62c,Charlene Smylie,LAO,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-12adfd64-0d43-5cf6-aeed-daf1647d96c3,Chris Hatchwell,MAE,,0,0,0,skipped_no_collected_votes
+candidacy-90634c14-6e09-538c-84b8-54fd33798fc3,Christian Bosio,VHA,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-57ead588-c114-5589-885e-b96013e54c69,Christian McCay,LFH,Christian Heritage Party of BC,0,0,0,skipped_no_collected_votes
+candidacy-34b88294-703f-50b8-9204-1f643dfe3a60,Christine Boyle,VLM,BC NDP,118,118,1,analyzed
+candidacy-56dfdbf9-8175-59b8-9b56-6b47a34a0b1e,Christine Kinnie,SWR,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-a24a5cd3-ca4d-5c90-8ab9-6881e668ee26,Christopher Moon,LFH,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-41223b19-a44e-5562-a146-24b8d267de7b,Cindy Scott,LFH,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-dc21ebdc-c51f-5271-9784-d6ca86ddd52a,Claire Rattée,SKE,Conservative Party,93,93,1,analyzed
+candidacy-cadc649c-2ecc-5473-a7d2-4d875e30dc0d,Clint Lambert,NEC,,0,0,0,skipped_no_collected_votes
+candidacy-08d8f80c-5723-50da-ab37-48b3589998a4,Colin Smith,VNS,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-3c674696-6509-5c77-a6d2-84d369b66211,Connie Larochelle,KOM,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-5666dbc5-9a4a-510d-954e-1712f1fc9368,Curtis Whitford,PCN,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-9494c7ee-0eef-5ecc-b331-4f6a11870d50,Dallas Brodie,VNQ,OneBC,80,80,1,analyzed
+candidacy-9d354442-f7c7-5e49-89b6-defc10a79ec5,Dan Grice,CHN,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-f3804204-c3f1-5ff7-b278-05238e4f3b13,Dan Wood,WVS,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-94f9dd16-98f1-5927-864e-28d6455cdedc,Dana Lajeunesse,JFM,BC NDP,118,118,1,analyzed
+candidacy-8f91de58-b4f3-5131-a508-0971032c82cc,Daniel Kite,MAE,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-59941568-12d0-5db3-b1e0-666d96aa7c70,Darlene Rotchford,ESC,BC NDP,106,106,1,analyzed
+candidacy-9efb39cd-9d7e-50d8-ab7a-0eab81d1bdc0,Darryl Kropp,ABM,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-018e031a-8172-58e6-9fbf-71dc07b97087,Darryl Walker,SWR,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-3f4ab923-1e6b-5382-be89-821e8d9db812,Dave Johnston,ESC,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-5040c72b-e4d1-542d-946b-94dd6adba475,David Eby,VNP,BC NDP,191,191,1,analyzed
+candidacy-0c6d89ea-b2cb-583b-b8fe-6eaef2961910,David Evans,JFM,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-84073402-8809-5080-98b7-04bcd78d7020,David L Williams,SHU,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-ce3abb96-473b-505a-88e1-dc0a5e58b0aa,David Xie,BNS,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-bd10bb67-d930-51b2-b07c-25b3aa4afbd2,De Ding,BNE,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-e4b6c2fc-ed10-56e6-8c89-2f978def350b,Deborah Friesen,KAN,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-d85acec2-f70f-53e4-a0fd-ad27f161c65b,Debra Toporowski,CWV,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-2ce4fd2d-9bf9-5dbe-ab9f-d557b5be33a4,Deep Sandhu,VFV,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-0e491a46-dfd5-5f14-b48a-db920e4c3217,Denice Bardua,PRO,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-01f4bb05-6147-5cc2-bc34-5c8b20a4d84c,Denis R Hurtubise,SUS,,0,0,0,skipped_no_collected_votes
+candidacy-65945cae-a7e9-5300-87fe-8a1d5a4f000a,Denise Reimer,SHU,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-4d38d22e-e0ed-5ea9-9b38-bc09d22570d2,Dhar Grewal,RCQ,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-02ed1857-dc72-52a3-90c9-0678569cdf1e,Diana Gibson,OBG,BC NDP,119,119,1,analyzed
+candidacy-511bef01-a587-5446-8ece-8e207a57c891,Diane Black,NEC,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-02691c14-820f-54c4-8835-ba7e468dd773,Dion Weisner,VNW,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-dd7a2684-9d7c-5293-9ebb-dc76128563ea,Donegal Wilson,BDS,Conservative Party,122,122,1,analyzed
+candidacy-f840d18d-307f-5903-a67c-58e34038df36,Doug Morneau,MAP,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-9b74ce0a-02d4-5f65-919f-38b4dccbe371,Douglas Courtemanche,VNQ,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-293d8a3c-9d02-5b50-9e66-57e61058235e,Douglas Gook,CBC,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-889c345a-21f2-55e7-9d1f-98ca4b95b26a,Ed Ewald,BLS,Christian Heritage Party of BC,0,0,0,skipped_no_collected_votes
+candidacy-da83a051-6f86-50db-8f44-861e1104c699,Elenore Sturko,SUS,CentreBC,150,150,2,analyzed
+candidacy-b78e16cb-3bdf-509f-b832-f3ec7e822d60,Emily Lowan,SAN,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-16cfeb3e-5633-57f3-b76d-18fba2d03fc7,Erin Osborne,LLA,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-25531e49-7e55-5ba6-9d95-decff0bde4fb,Errol Povah,SUR,Freedom Party of BC,0,0,0,skipped_no_collected_votes
+candidacy-2ca98b6d-8ed2-5069-8a39-7269040f6196,Francis Racy,NOH,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-a55e069c-554d-5569-87bb-28001247676e,Francoise Raunet,VFV,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-16454835-15ef-51ca-a604-16b3958f6e99,Frankie Abel,BLS,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-4006eced-51da-5ced-9074-d11af8a7e40f,Freddy Rawji,POM,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-1f1d2328-9ad7-539e-b2d4-7b158106c82a,Frederick Thiele,NVS,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-de1f4ec6-6b36-51fc-8cdb-43a7e4841dfe,Garry Begg,SRG,BC NDP,129,129,2,analyzed
+candidacy-85246abc-7478-54cc-89cc-a668ebc498af,Garry Purewal,SRF,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-baa3a388-a3d4-562e-a724-26bed5e0030b,Garry Thind,SRG,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-ced07cf9-a8fe-5254-96ea-f7bdecfa6e00,Gavin Dew,KLM,Conservative Party,110,110,2,analyzed
+candidacy-0a3d70a7-aa0a-53c5-8c08-91f16e3b1b3f,George Anderson,NAL,BC NDP,111,111,1,analyzed
+candidacy-1932ead9-3c8a-5568-9356-d55ff21eaf0d,George Morgan,WKP,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-97cd104e-51e2-5589-b242-718ee8a14596,Gerry Lenoski,NMC,,0,0,0,skipped_no_collected_votes
+candidacy-5aef0c26-59d3-5036-8de3-952d982c52a8,Gloria Morgan,SHU,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-68437639-144c-5890-a6c2-e1acd39c1f34,Gordon Skulnec,KOC,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-42c42d4a-b51d-52e8-a598-3bb7b3ec9596,Gordon Zhang,RCS,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-44eaf13c-b570-517f-bb91-9b344558b345,Grace Lore,VTB,BC NDP,193,193,4,analyzed
+candidacy-2a369aaf-34ca-5927-baed-86162cad6b6b,Gracie MacDonald,MPR,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-ccebf45c-4d27-5d23-a42f-056d014bb536,Greg DePaco,BNN,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-c5b356e9-567f-5b4b-a35f-4d2b7fa18cf5,Griffin Leonard Lea,POR,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-10f85577-2187-5442-88c8-73762a4c1f6a,Gurpreet Chahal,ABW,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-6f33e54f-dbd9-52cc-b9c6-908f6f018525,Harj Dhaliwal,SRN,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-be6e45cf-17c8-5d60-8ae8-1510b2c7b6cb,Harman Bhangu,LLA,Conservative Party,94,94,2,analyzed
+candidacy-eb2511ce-d80b-52b0-9237-0df74d3ed8b6,Harman Preet Singh,SRN,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-eed5349d-cc64-59a7-9b8b-2e5892ae55ed,Harwinder Sandhu,VRL,BC NDP,202,202,1,analyzed
+candidacy-6e910853-4104-5bb3-b5f1-868366dee181,Heather Maahs,CHN,Conservative Party,137,137,1,analyzed
+candidacy-b9a47bec-465c-5763-8416-555b11ffb9bd,Helen Scott,PCS,,0,0,0,skipped_no_collected_votes
+candidacy-ad2a2831-a961-58a4-b953-9f451113775b,Henry Yao,RCC,BC NDP,105,105,11,analyzed
+candidacy-fb39a0c5-8132-5e64-a0f3-80fb5b3ac3fd,Holly Isaac,LWG,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-63a30e22-d82a-5d1d-8ff6-126a953d3dab,Honieh Barzegari,WVC,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-5bbd93cc-776f-5fb8-92c7-2191849f942a,Hudson Campbell,MAE,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-d62bef38-6924-5eaa-bd54-3945703d1477,Hunter Corrigal,KOC,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-c09058a6-ee9e-51f3-9a08-2776a864fa9c,Ian McMahon,PRM,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-64a88060-06e1-50f7-ba25-c5740efeacec,Ian Paton,DLS,Conservative Party,219,219,1,analyzed
+candidacy-306b8a2e-2635-5fcf-990a-9a9ec47d1b7e,Jag Bhandari,SUN,,0,0,0,skipped_no_collected_votes
+candidacy-763eef61-a0d0-523d-a41a-8145b9f19f2e,Jagrup Brar,SRF,BC NDP,217,217,1,analyzed
+candidacy-2aa16f6c-f5eb-5f2a-a601-e5514f7bb434,Jaime Stein,VLA,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-dc97ab13-569c-5ac7-9c38-19389e3ba24c,James Chumsa,CWV,Communist Party of BC,0,0,0,skipped_no_collected_votes
+candidacy-293e2d53-5ffb-594a-889c-d89cefb042b7,James Yaroshuk,SRG,,0,0,0,skipped_no_collected_votes
+candidacy-7c639941-3853-5fdd-8f93-f17dc2cd7c9f,Janet Routledge,BNO,BC NDP,289,289,4,analyzed
+candidacy-5c5aa768-9114-5d7c-9650-36cc53e54d1a,Jason Cook,CRC,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-4ada2c75-e7d9-5321-b57f-881176c9734c,Jason Leboe,FRN,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-71e2bdef-f2ad-5071-b95b-f04363701ea2,Jason McCormick,DLS,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-d8e6ac8b-4d85-5f16-b28b-90e3dd5e031a,Javad Shushtarian,BNE,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-8cfc8ef1-b331-597c-b391-101020db9522,Jay Van Oostdam,CRC,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-e03c80ec-8ace-5d3f-9f66-37074069c3ca,Jed Wiebe,SHU,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-07b05944-3bdf-5569-acf0-99b6fae5db53,Jeff Brown,JFM,Christian Heritage Party of BC,0,0,0,skipped_no_collected_votes
+candidacy-cf5132af-76c1-52d6-aacf-0e6a876cfaed,Jeff Monds,ABM,Libertarian,0,0,0,skipped_no_collected_votes
+candidacy-2ca7071e-8cc1-55e6-85d5-4e1c58deb64b,Jennifer Blatherwick,CQM,BC NDP,110,110,1,analyzed
+candidacy-21f59219-2827-53cd-88b3-2f527f24163c,Jennifer Whiteside,NMC,BC NDP,200,200,3,analyzed
+candidacy-20a56463-4a41-57d2-84a7-c6703460d561,Jeremy Valeriote,WVS,BC Green Party,128,128,2,analyzed
+candidacy-fec29d98-23f5-52a7-aad0-82537cdad495,Jesse Gervais,NEC,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-c7a85ba4-bd6b-51e7-8bde-97f6b443c0f5,Jessie Sunner,SRN,BC NDP,116,116,1,analyzed
+candidacy-ab9fc3b5-f751-5eb0-ad64-66e4b8831f7d,Jessy Sahota,SUR,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-8c17b862-1ba9-57e8-aba4-26d9a52799dd,Jim McMurtry,DLS,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-a44fb77e-17a1-522a-b641-ea9ba9dce262,Jinny Sims,SUP,BC NDP,114,114,2,analyzed
+candidacy-1c599986-e27b-5626-ba17-276dad7720ed,Joachim Agou,VTB,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-1f74e1e1-a20b-539b-8864-043baeec1b88,Jodi Murphy,SRG,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-4040f05f-57bb-50f3-9e4a-2d2b1ea131dc,Jodie Capling,PRV,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-d8baa944-4268-5edd-947f-33076d574cf8,Jodie Wickens,CQB,BC NDP,108,108,2,analyzed
+candidacy-4853f404-c092-5875-a066-4846d2ac1f7a,Jody Toor,LWI,Conservative Party,102,102,1,analyzed
+candidacy-a36deda4-4fbd-564f-939f-360598a32ced,Joe Latam,BNN,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-11601039-86cb-5e2f-8089-99772b809400,John Atoyebi,VLA,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-56b6c0c4-f1cf-5305-86c7-fc06e57c6545,John Henderson,POR,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-4f1cde25-f99e-53b3-b5ed-85bf17b0708b,John McEwen,POM,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-5e14fc00-a1b5-50b8-97d4-44b904bd3504,Jordan Kealy,PCN,,96,96,1,analyzed
+candidacy-9d3a83d2-3f7e-59d5-b669-67dbb25d19f0,Jordan Simmons,MAP,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-5a259320-a1a6-5bb8-baaf-fb4abfe8ea6f,Jordan Zheng McIntosh,VNT,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-743b3b3e-a25f-5c19-85a6-000e99a7b56b,Joshua A Singer Johnson,NVL,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-6509d092-107c-5755-89b0-8709c2ba0815,Joshua Dahling,MPR,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-a78aa4ea-983c-54af-9680-13daea7f3909,Joshua Domnich,BNC,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-85aaf72f-fb6c-5486-abac-ebd8ccb38280,Josie Osborne,MPR,BC NDP,209,209,1,analyzed
+candidacy-30076983-ddcf-51b9-a9b4-936a5cfff00c,Judy Higginbotham,SUR,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-0d6d9561-6f8c-5754-aff2-dfaea1e87dab,Jules Côté,ABW,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-19087b36-8296-507d-9f4d-d6c360f702ee,Justin Douglas,CWV,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-7f7beaec-c24c-5183-895f-cd176a0f66a3,Kaden Mann,CQB,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-f95fe5e7-f6de-54a8-af0e-3e16cf356208,Kala Bryson,SAN,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-494620c6-2210-5439-ab14-1be515ace63d,Kathryn Askew,CBC,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-d6b8f726-b608-5641-a3d8-268c49eca7b8,Keenan Adams,POC,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-94833583-a81f-54fa-8ab2-d13a4468182f,Keenan Dennehy,KOR,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-7af4b041-3bd1-5faf-a77d-df1650bcd0ac,Keenan Yang,RCS,CWP,0,0,0,skipped_no_collected_votes
+candidacy-a67b285a-90eb-5d82-94b6-e55ae9d5ba31,Keith Pomeroy,BDS,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-f2ac58b2-6544-570f-a2c7-9b05c202e90e,Kelli Paddon,CHC,BC NDP,107,107,1,analyzed
+candidacy-0e746637-7034-5f4e-8ad4-2b40b9055683,Kelsey Pringle,NAL,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-21a9654b-2e72-5997-819b-041f205a6c8f,Kevin Acton,VRL,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-50501df4-d6c5-5df8-bca5-2485be4e5a5d,Kevin Diakiw,SWR,,0,0,0,skipped_no_collected_votes
+candidacy-c4276acc-187a-5076-a9a6-4cf9d768c655,Kiel Giddens,PRM,Conservative Party,101,101,1,analyzed
+candidacy-a7bbfefc-5fb9-5bf6-9a28-f81aa386ca15,Kimball Cariou,VHA,Communist Party of BC,0,0,0,skipped_no_collected_votes
+candidacy-89399efd-836e-5f8c-9ee5-f297d6e75da6,Korky Neufeld,ABW,Conservative Party,97,97,2,analyzed
+candidacy-08d5d464-1b0c-536a-a80b-5ead2b1df8e1,Kory Clark,KAN,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-ee3323cd-5e10-5052-91b2-10ee4c7441a1,Kris McNichol,LAO,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-942cbf34-be60-5731-961e-af7c9d9d7666,Kristina Loewen,KEC,Conservative Party,101,101,1,analyzed
+candidacy-32ad2588-1ab5-5fbf-b499-ab85a087b18c,Kuldeep Rangi,DLN,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-eea6964b-7351-5da9-bcb2-812d805e3f04,Kyle Stevenson,LWG,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-1b3c2fda-6b84-5ca4-bdb5-cd38db28ed0e,Kyra Philbert,VHA,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-ae77299e-91d5-57fc-bb84-c8716297de64,Lakhwinder Jhaj,ABM,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-98594d80-e2e1-582f-9ca2-3b139b8ebc19,Lara Honrado,VNS,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-80f5ea3f-1407-5b63-a05e-a1e18025b4b2,Larry Eugene Taylor,SKE,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-6f3d208a-c922-5e8e-aab0-4c08c03d52b6,Larry Neufeld,PCS,Conservative Party,130,130,1,analyzed
+candidacy-ada96af9-1ac4-5714-b92f-fb55324e37b7,Lawrence Chen,RCC,CWP,0,0,0,skipped_no_collected_votes
+candidacy-19518598-58aa-5444-b232-001793d8d47d,Lawrence Mok,MAE,Conservative Party,137,137,2,analyzed
+candidacy-c6c6747b-3ef1-5f8f-94f2-d3c1ebbb4893,Leah Ballantyne,ABS,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-2d407723-f095-51ee-9055-8c34f2c2b09d,Lee-Ann Bates,POC,,0,0,0,skipped_no_collected_votes
+candidacy-78bc2053-187e-5951-9e05-0af73d3db5f8,Lewis C. Dahlby,POC,Libertarian,0,0,0,skipped_no_collected_votes
+candidacy-a8c09d8c-d3b1-507d-881c-eaf059d0f5ef,Linda Li,RCB,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-728a4d67-d0b1-52c5-a5a8-0ae1da20d28e,Lisa Beare,MAP,BC NDP,235,235,3,analyzed
+candidacy-434eea4b-497a-51fc-8894-15f4d5003cbd,Lisa Lapointe,SAS,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-bd44a9e1-c712-58ea-afed-20da8359455b,Lisa Phillips,VNS,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-d39668bc-5b04-54e4-920c-5dd595eed8aa,Lisa Prescott,VNR,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-b90887ce-5719-51b4-a8e6-673c3d36c893,Lori Climenhaga,NVS,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-3ebfa905-c0fb-5805-91fe-c277e0dafdfb,Lorne Doerkson,CBC,Conservative Party,195,195,2,analyzed
+candidacy-8396e77d-4a5b-57a8-a902-12c35d037021,Loyal Wooldridge,KEC,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-48b678d2-d620-5e63-9233-f980f88846e2,Luc Burns,RCQ,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-23ff87f3-33c7-5af2-8134-41c714b6b85c,Lynne Block,NVS,Conservative Party,102,102,2,analyzed
+candidacy-eeffc5ef-23f0-5a39-851a-f651548ba2ec,Mable Elmore,VKE,BC NDP,208,208,3,analyzed
+candidacy-8701fcb5-0816-5630-be2d-e8b2502c29fb,Macklin McCall,WKP,Conservative Party,123,123,2,analyzed
+candidacy-eb7391cd-d41c-51f6-9dd2-bb11525fc60f,Maddy Kennedy-Parrott,BNO,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-a4a687b6-bbfd-530e-a5f0-bffb3d27f341,Manav Manro,SUP,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-54b533cc-3fc5-5541-934d-aa49553d8927,Mandeep Singh Dhaliwal,SUN,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-4f2a0ece-5371-5589-9a5d-58ec1935f24d,Margareta Dovgal,VNY,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-5f07f38d-9eb1-5948-a7ad-9f9b18013741,Maria J Cruz,VNS,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-a36a316e-75da-5c02-8cbf-c215ae17911c,Mark MacDonald,NAI,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-84ca6361-b721-515f-a641-c2933d523fab,Marsha Rose Dufresne,PCS,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-4fcae87d-53a5-59cc-aaef-3c43954c75fe,Matt Liang,CQM,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-f4e9b89d-d936-5391-9c5a-f2dda6574f51,Maureen Curran,NMC,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-d74db9f5-6b93-5347-b109-94ca34114846,Megan Knight,SUS,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-ae85bb35-feeb-5fc1-b6e7-8e8dab3ccf7e,Melissa Snazell,LLA,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-36670b75-f461-51ce-8181-83e2630fb6bf,Michael Davis,VNP,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-26d63d3c-0c66-5ecd-8a6c-30e216f14c63,Michele Lau,NMC,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-b09a7668-4a2e-5b8d-bd4c-aa05e87213a2,Michelle Livaja,WVS,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-339d64c6-3d6f-5efa-a7da-026fa755d759,Mike Farnworth,POC,BC NDP,219,219,1,analyzed
+candidacy-f591849a-79ce-5e4f-aa8b-25722d345741,Mike Hicks,JFM,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-f05b13ac-cbb7-598d-a97f-c983a316e05b,Mike Wisla,KAC,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-54da1ecf-986c-5b0d-9230-b5892d1f70c1,Miriam Rycroft,KLM,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-f56e9b48-6b7d-5608-bedc-1e1725901812,Misty Van Popta,LWG,Conservative Party,97,97,2,analyzed
+candidacy-13c1c4ce-d661-55fc-9f3e-5e090d814fb7,Mitchell Lukoni,PRV,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-7e2204a2-6bcb-54f5-aacd-17c70cc635e3,Monica Mohan,DLN,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-3ba0d1e6-c1c2-5c10-9d3d-20fbbe37e996,Naomi Chocyk,WVC,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-775ffa59-325f-5521-bd04-a9ac9b60cdc1,Nicholas Cartmell,SRD,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-191a6e61-f385-5f90-9f16-60eeac572bc3,Nick Gottlieb,SKE,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-5a4c7ebe-896d-5b18-b0b0-ea51763cf084,Nicola Spurling,CQM,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-af6ead2a-a0f2-5800-a361-88cbc91c8b69,Nicole Charlwood,KOC,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-95a4d624-2412-5f7c-9b49-cc5c51a2b67f,Niki Sharma,VHA,BC NDP,235,235,2,analyzed
+candidacy-9d4b0bbb-75eb-59ad-be5a-ed8c949f4463,Nina Krieger,VTS,BC NDP,108,108,1,analyzed
+candidacy-3739823e-a642-5895-90a5-df2d6774db33,Nolen Scott,SUP,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-2f2f7c3e-47f9-5881-9f62-3f8a1f463c8a,Norma Blissett,KOR,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-5e126460-0549-5fe0-a46e-87cc2f5321a2,Oliver Wildfong,SRC,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-dafa0635-df8c-5d36-bbbd-edaf12617661,Pam Alexis,ABM,BC NDP,91,91,1,analyzed
+candidacy-4979f27c-657c-5d72-98c1-5df1a7ee6a2e,Parik Tahlan,SUS,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-90f87988-793a-5034-a447-d4d4983928bb,Parm Bhandol,SUN,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-8049d945-27ae-574f-9de5-ea25cd16ca6e,Pat McCutcheon,SRD,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-a1ac58b3-1709-5277-826f-6912ddb9c0bc,Patrick Michell,FRN,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-db21b1be-e51c-5dc9-a478-062d102e76b9,Paul Brar,SRF,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-0831487e-955f-5c49-bdec-b49cc9891ae8,Paul Choi,BNS,BC NDP,118,118,1,analyzed
+candidacy-c2c52f04-d808-5c9f-9b96-3afa093550f3,Paul Heywood,KOR,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-f6e8c335-ae02-516a-b64e-324bafd369be,Pavneet Singh,KLC,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-958f1ad3-b33d-5ad3-a594-07a8cfafdcaf,Pepper Saltman,NAL,Communist Party of BC,0,0,0,skipped_no_collected_votes
+candidacy-44581e75-6e69-54eb-bdb4-675f44f9ef20,Pete Davis,KOR,Conservative Party,95,95,1,analyzed
+candidacy-03cb8e03-08c7-51ae-9f8f-a24fb19809a6,Peter Milobar,KAC,Conservative Party,213,213,1,analyzed
+candidacy-02b4f185-94de-53b8-af16-8bfd85c320e4,Peter Si,BNE,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-5e34d641-2b44-5eab-8c11-8d5216e3ccd9,Petra Kuret,VNQ,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-1a3d3138-0083-53bc-ac92-55d322101434,Phil Webb,VHA,Libertarian,0,0,0,skipped_no_collected_votes
+candidacy-e015b496-4b17-55a2-bdc8-6558083a0ec6,Phyllis Tang,VHA,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-917bf51c-144b-5424-b28e-9124cd9a27fc,Priyan Samarakoone,VNY,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-bc6fcf71-1f06-521d-9a48-1bd1fc1eadd5,Raj Chouhan,BNN,BC NDP,11,11,2,analyzed
+candidacy-6314845e-abe5-5c9d-87df-825afc7e81c8,Rajinder S. Sahota,VTB,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-da7cab3e-cd81-59ce-8f46-c0023dd63794,Raman Sharma,SRC,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-c8700df7-d3db-5f82-a9e4-a00c20a97cbd,Rana Nelson,CLR,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-f4cef89c-db10-5ba3-8ea7-583293a47a90,Randene Neill,POR,BC NDP,110,110,1,analyzed
+candidacy-92151794-8b87-5ba0-8b79-5155ff120cd5,Randy Thompson,PRO,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-43ddea29-6a7b-5942-ac90-512e3e0df9e9,Ravi Parmar,LFH,BC NDP,148,148,3,analyzed
+candidacy-4fe5d2a0-d6f0-54c0-a46d-57950fd51e45,Rebecca Haber,VNR,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-c8144914-dbf3-5816-84b0-e964173abbc7,Richard Lambert,NOI,,0,0,0,skipped_no_collected_votes
+candidacy-ccb70bdc-3fc6-50f4-85d3-e2d43a5323ee,Richard Smith,SAN,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-db6a101a-f638-5207-99b7-2c305731cff7,Richard Zussman,SAS,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-54db7735-f20d-55ac-97f7-70926aef6011,Rick Glumac,POM,BC NDP,223,223,2,analyzed
+candidacy-b3e4fd85-8a40-5892-bf54-7e8d8fa83ae2,Robert Crooks,VNT,Communist Party of BC,0,0,0,skipped_no_collected_votes
+candidacy-26b79068-0c29-5fe7-b139-ffba4712ba9a,Robert Evans,RCS,,0,0,0,skipped_no_collected_votes
+candidacy-2d5a21c4-cc05-5802-be8a-0d0eab472e9d,Robin Roy,ABS,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-01323c4e-c025-5000-874a-b42365271e01,Rocky McAfee,KAC,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-e39fd2e3-0655-5af1-8ae3-ae8b24721508,Rodney Proskiw,NOH,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-390fd0ad-fe8b-5f3f-82cc-884f8ce14e14,Rohini Reah Arora,BNE,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-7ae97943-8aa4-5b99-a80e-2e3794f37d53,Roly Russell,BDS,BC NDP,89,89,2,analyzed
+candidacy-9ed958e4-db11-579e-93c2-60ba58c5cfea,Rosalyn Bird,PRV,Conservative Party,101,101,2,analyzed
+candidacy-6e178547-460c-5835-b8a7-26e471f1eea8,Ryan Peterson,CQB,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-1eb1376f-21cd-5e7f-9141-86b1c138826c,Ryan Windsor,SAN,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-cb59fcbe-4c3f-592f-819a-92f6ccc745e5,Sacha Peter,RCC,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-fd0f97f4-b547-576a-8533-56a16f944e70,Sahib Thind,SUN,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-9e51c0ab-73d0-5e47-9edd-be390cde6f79,Salvatore Vetro,VNS,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-92c2da0c-6bf4-54e8-8512-90037d294843,Sam Chandola,VNY,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-a6fb5f02-dfb6-5d61-9b79-cb1e50b7cfd6,Sam Meyer,LWG,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-e3b81e1f-f613-5277-b7f4-82471626b9e7,Saoirse MacKinnon,KLM,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-8488503f-4d66-5a16-ab20-96b2c73361f4,Sara Lopez,NOI,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-aed1c2d2-9ef2-5f2b-84bb-7cb3795d9ce0,Sarah MacLeod,VLM,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-5597277e-ed4a-5320-9fee-b47bfab04464,Sarah Zimmerman,SKE,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-b009d48e-9335-53c9-9d84-0f26988562bb,Sargy Chima,SRD,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-b1c735a6-0816-5ae6-9b71-980af8332051,Scott MacDonald,VNW,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-e18ddd6f-3417-5e7a-b5b4-06d22175d1d6,Scott McInnis,CLR,Conservative Party,108,108,2,analyzed
+candidacy-2088f698-0ad9-5630-a814-623b9b7ec602,Sean Flynn,LFH,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-807327d3-ea6e-585d-bf80-0fb11a0080ac,Shane Friesen,JFM,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-3e9ad5b6-fbc1-529e-888b-f8dfae7a48cd,Sharleen Weatherley,NAL,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-56ba3d1e-ac41-516b-a828-9f8b4fa41660,Sharon Hartwell,BLS,Conservative Party,100,100,1,analyzed
+candidacy-b0a70563-3c48-59c1-9a3e-991806e70f61,Sheila Malcolmson,NAI,BC NDP,228,228,2,analyzed
+candidacy-15945fa5-5bd4-554c-a059-9a51e863cf6a,Sheldon Clare,PRO,Conservative Party,103,103,1,analyzed
+candidacy-2cb53374-fe65-51db-b01f-b494e6c457a1,Shelly Jan,LLA,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-1c8506d9-a8ed-5ee6-93ce-f81edc3e5b00,Shila Taheri,BNC,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-82b4c483-387f-592e-a260-5ee0a56bae5b,Shubham Joshi,LWI,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-a536153a-a0e7-5a9f-b348-ee160191dda6,Sid Tobias,ESC,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-f232ba15-5aa6-5fc1-89c8-8beaae8df0c9,Sidney Coles,ESC,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-c95ce1e0-f9dd-50e8-b3f9-94bfc4938d3e,Sikander Kang,SUR,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-f0c0a12b-f9f8-5c86-bd3b-6703c59cdb41,Simon Chandler,BNO,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-e0a22931-7c37-57f0-bd32-b0516bcae700,Skadi Green,DLS,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-e85ed3fb-016c-5479-9070-4f00c680646e,Spencer Chandra Herbert,VNW,BC NDP,188,188,1,analyzed
+candidacy-4e661ca5-ec03-522b-bda7-416c52739cf9,Stan Sipos,OBG,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-2163ab24-89de-5e0b-a0a0-9440f9098662,Stephanie Hendy,POC,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-97a3628e-8ca8-54ce-b88c-dc20d7d8a092,Stephanie Higginson,LAO,BC NDP,117,117,1,analyzed
+candidacy-102b7efc-b78c-5db6-9781-e50edf3b0947,Stephen Dooley,SRD,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-787b3e32-57f6-5930-a130-1e187c4301d2,Stephen Hill,KOM,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-10f069df-b9da-5535-bb7f-15e97466e5dc,Steve Kooner,RCQ,Conservative Party,123,123,1,analyzed
+candidacy-2226e8cb-fdaa-576a-8671-7baed7c9e587,Steve Morissette,KOM,BC NDP,115,115,1,analyzed
+candidacy-b3c64133-3fd1-5db5-aefa-bf30e7541139,Sunita Dhir,VLA,BC NDP,103,103,1,analyzed
+candidacy-b6bae7e1-7182-5df7-a715-6845b93865f0,Susan Einarsson,MAP,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-365be9ce-66e8-5e88-ac50-2c8ffc91cf6b,Susie Chant,NVS,BC NDP,204,204,3,analyzed
+candidacy-2bdf3f97-cf77-5fc7-810e-4a17bb913f25,Tamara Davidson,NOH,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-8f9d7feb-e921-5691-9b38-16bd5062410f,Tanya Gupta,SUN,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-64eba333-1aa4-5e8b-876f-210e933a90eb,Tanya Webking,VNT,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-cb0abaa5-fc29-539a-b475-6b91c9f22a74,Teresa Wat,RCB,Conservative Party,98,98,1,analyzed
+candidacy-1f90ca3e-108e-5a92-bbed-dc936771823b,Teri Young,PRM,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-c75a3720-338b-5499-b0df-c23c1859143e,Terry Yung,VNY,BC NDP,110,110,1,analyzed
+candidacy-7959abfa-c918-5e1c-abf1-9e399da12fef,Thaelo Proctor,KAC,,0,0,0,skipped_no_collected_votes
+candidacy-91cd5a4f-fc6a-5b43-b8c3-417469705c4c,Tim Binnema,SRF,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-097096c4-a23e-5778-9729-5660a18a0767,Tim Taylor,VTS,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-0743d8ac-add9-5d0f-b05a-80237e9d0a4c,Timothy Webster,VNY,,0,0,0,skipped_no_collected_votes
+candidacy-a0bf63ca-85dc-518d-bb83-0470acc57354,Tina Lee,PES,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-b6c526e2-6226-5f28-89a1-b12fe67eb090,Todd Holowchak,SUR,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-85cd4a3e-eef7-5e33-a64b-3ffb17ca0ae9,Todd Schierling,DLN,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-dd7bf0e1-fcc5-511b-8211-0fd0bc7f0d82,Tom Ikonomou,VNR,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-6fe0ca62-7255-5490-b909-d1b4606f239c,Tony Luck,FRN,Conservative Party,117,117,1,analyzed
+candidacy-7920c0c1-2cd8-5889-91e8-8fe120cbb97b,Tracy St Claire,PES,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-4ece6f58-51a2-5295-95f6-835c444c2c18,Travis Marchenski,SRD,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-fd4ba65e-f5ab-57f1-b017-9bd5ed2094ef,Trevor Halford,SWR,Conservative Party,202,202,1,analyzed
+candidacy-2b804366-1cbb-5a28-943d-dbb31da57c6d,Trevor Withers,NVL,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-28ad546f-fca1-5772-a203-b73d0ff722d2,Valerie Morrison,CQB,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-bd713c40-c4a1-52b6-9314-11e85fc106fa,Vikas Gautam,BNC,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-7885b4e6-4f8d-5008-b861-81eace4ff28c,Virender Dass,ABM,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-94d4a203-1bfa-52e6-bdc9-c1fa8f9a10f1,Waqas Rana,SWR,CentreBC,0,0,0,skipped_no_collected_votes
+candidacy-9fb247de-af11-5534-a6e8-70a130fdb517,Ward Stamer,KAN,Conservative Party,115,115,1,analyzed
+candidacy-9bc70bb1-af8d-53ad-ba6c-937d32d5af86,Warren Hamm,PES,OneBC,0,0,0,skipped_no_collected_votes
+candidacy-f112f1b5-5f38-5898-a412-141850fa1445,Warren Mirko,KOM,Conservative Party,0,0,0,skipped_no_collected_votes
+candidacy-00ef053a-db51-5ab3-85e8-a0b442814c89,Wei Chou,POM,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-2a785d8d-f8d4-563a-a80f-5593f77f947e,Will Cole-Hamilton,CRC,BC NDP,0,0,0,skipped_no_collected_votes
+candidacy-8f41b3e8-d329-5e2f-abc7-fa5b72285e4d,Yudhbir Gill,SUN,BC Green Party,0,0,0,skipped_no_collected_votes
+candidacy-461a575d-4462-5d5d-8c14-475c503d33a9,Zeeshan Wahla,SRC,Conservative Party,0,0,0,skipped_no_collected_votes
