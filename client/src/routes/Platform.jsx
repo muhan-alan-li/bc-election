@@ -9,7 +9,10 @@ export function Platform({ party, reviewedOn }) {
     return (
         <section
             class="party-platform"
-            style={{ '--party-color': party.color }}
+            style={{
+                '--party-color': party.color,
+                '--party-text-color': party.textColor,
+            }}
             aria-label={`${party.name} policies`}
         >
             <PlatformOverview party={party} />

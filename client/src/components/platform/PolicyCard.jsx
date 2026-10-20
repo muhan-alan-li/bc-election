@@ -21,6 +21,9 @@ export function PolicyCard({
                     <strong>{item.alignmentTag}:</strong> {item.alignmentNote}
                 </span>
             )}
+            {!item.alignmentTag && item.alignmentNote && (
+                <span class="policy-card-note">{item.alignmentNote}</span>
+            )}
             {actionLabel && (
                 <span class="card-action policy-card-action">
                     {actionLabel} <span aria-hidden="true">↗</span>

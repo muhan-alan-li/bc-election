@@ -79,7 +79,7 @@ td {
     display: flex;
     justify-content: space-between;
     border-top: 1px solid var(--line);
-    color: var(--party-color);
+    color: var(--party-text-color, var(--party-color));
     font-weight: 700;
 }
 .dialog {

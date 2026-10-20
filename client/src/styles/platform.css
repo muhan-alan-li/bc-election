@@ -1,6 +1,6 @@
 .platform-overview {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 32px;
     padding: 24px;
     margin-bottom: 28px;
@@ -20,7 +20,7 @@
 .policy-card-topic {
     font-size: 23px;
     font-weight: 700;
-    color: var(--party-color);
+    color: var(--party-text-color, var(--party-color));
 }
 .policy-card-summary {
     line-height: 1.65;
@@ -68,7 +68,7 @@
 }
 .policy-dialog .eyebrow,
 .policy-dialog h2 {
-    color: var(--party-color);
+    color: var(--party-text-color, var(--party-color));
 }
 .policy-summary {
     font-size: 21px;
@@ -126,4 +126,8 @@
     vertical-align: super;
     line-height: 1;
     white-space: nowrap;
+}
+.policy-card-note {
+    color: var(--ink2);
+    font-size: 0.8rem;
 }

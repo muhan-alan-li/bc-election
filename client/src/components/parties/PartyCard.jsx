@@ -5,7 +5,10 @@ export function PartyCard({ party, compact = false }) {
     return (
         <Card
             class={`party-card${compact ? ' party-card-compact' : ''}`}
-            style={{ '--party-color': party.color }}
+            style={{
+                '--party-color': party.color,
+                '--party-text-color': party.textColor,
+            }}
             href={platformHref(party.id)}
             aria-label={`View ${party.name} promises, led by ${party.leader}`}
         >

@@ -8,6 +8,7 @@ export function ExpandedPolicy({ party, item, onClose }) {
             title={item.topic}
             eyebrow={`${party.name} · Platform`}
             color={party.color}
+            textColor={party.textColor}
             onClose={onClose}
         >
             <p class="policy-summary">{item.summary}</p>

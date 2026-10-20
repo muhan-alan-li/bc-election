@@ -4,6 +4,7 @@ export function PolicyDialog({
     title,
     eyebrow,
     color,
+    textColor = color,
     onClose,
     children,
     closeLabel = 'Close expanded policy',
@@ -12,7 +13,10 @@ export function PolicyDialog({
         <Dialog
             class="policy-dialog"
             titleId="policy-title"
-            style={{ '--party-color': color }}
+            style={{
+                '--party-color': color,
+                '--party-text-color': textColor,
+            }}
             onClose={onClose}
         >
             <div class="policy-dialog-head">
