@@ -234,6 +234,6 @@ def polish(root, election_id, district=None):
         pending.extend(profile_publications(root, election_id))
     if not pending:
         raise ValueError('No curated datasets found')
-    for path, output in pending:
-        atomic_json(path, output, compact=True)
+    from .releases import publish_release
+    publish_release(root, election_id, pending)
     return [path for path, _ in pending]
