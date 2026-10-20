@@ -149,6 +149,12 @@ class AnalysisTests(unittest.TestCase):
         with patch.dict(os.environ, {'TEST_KEY':'test-only'}), patch('election.analysis.provider.urlopen', return_value=io.BytesIO(json.dumps(response).encode())) as mocked:
             result, _ = p.complete([{'role':'user','content':'Return JSON'}]); payload=json.loads(mocked.call_args[0][0].data)
             self.assertEqual(result, {'valid':True}); self.assertEqual(payload['thinking'], {'type':'disabled'}); self.assertEqual(payload['response_format'], {'type':'json_object'})
+            original = [{'role': 'user', 'content': 'Return the supplied fields only.'}]
+            mocked.return_value = io.BytesIO(json.dumps(response).encode())
+            p.complete(original)
+            sent = json.loads(mocked.call_args[0][0].data)['messages']
+            self.assertIn('JSON', sent[0]['content'])
+            self.assertEqual(len(original), 1)
         response['choices'][0]['finish_reason']='length'
         with patch.dict(os.environ, {'TEST_KEY':'test-only'}), patch('election.analysis.provider.urlopen', return_value=io.BytesIO(json.dumps(response).encode())):
             with self.assertRaisesRegex(ModelError,'incomplete'): p.complete([])

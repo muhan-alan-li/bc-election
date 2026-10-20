@@ -40,6 +40,10 @@ class ChatProvider:
         key = os.environ.get(self.api_key_env, '') if self.api_key_env else ''
         if self.api_key_env and not key:
             raise ModelError(f'Set {self.api_key_env} before running model analysis')
+        # JSON-mode providers require an explicit JSON instruction somewhere in
+        # the request. Keep callers' source-grounded messages immutable.
+        if not any('json' in message.get('content', '').lower() for message in messages):
+            messages = [{'role': 'system', 'content': 'Return a valid JSON object only, following the supplied output schema.'}, *messages]
         payload = {'model': self.model, 'messages': messages, 'stream': False,
                    'max_tokens': self.max_output_tokens, 'response_format': {'type': 'json_object'},
                    **self.extra_body}
