@@ -1,9 +1,15 @@
 package main
 
 import (
+	"context"
+	"errors"
 	"flag"
 	"log"
 	"net/http"
+	"os"
+	"os/signal"
+	"path/filepath"
+	"syscall"
 	"time"
 
 	"bc-election/content-server/internal/httpapi"
@@ -18,12 +24,39 @@ func main() {
 	contentDir := flag.String("content-dir", "content", "directory containing reviewed guide content and portraits")
 	flag.Parse()
 
+	config := httpapi.Config{
+		ClientDir:  *clientDir,
+		DataDir:    *dataDir,
+		ContentDir: *contentDir,
+		ElectionID: *electionID,
+		FinderURL:  *finderURL,
+	}
+	for _, path := range []string{filepath.Join(*clientDir, "index.html"), *contentDir} {
+		if _, err := os.Stat(path); err != nil {
+			log.Fatalf("Startup path %s: %v", path, err)
+		}
+	}
 	server := &http.Server{
 		Addr:              *addr,
-		Handler:           httpapi.NewHandler(httpapi.Config{ClientDir: *clientDir, DataDir: *dataDir, ElectionID: *electionID, FinderURL: *finderURL, ContentDir: *contentDir}),
+		Handler:           httpapi.NewHandler(config),
 		ReadHeaderTimeout: 5 * time.Second,
+		ReadTimeout:       15 * time.Second,
+		WriteTimeout:      45 * time.Second,
+		IdleTimeout:       60 * time.Second,
 	}
 
 	log.Printf("Serving %s on %s", *clientDir, *addr)
-	log.Fatal(server.ListenAndServe())
+	stop, cancel := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
+	defer cancel()
+	go func() {
+		<-stop.Done()
+		ctx, done := context.WithTimeout(context.Background(), 10*time.Second)
+		defer done()
+		if err := server.Shutdown(ctx); err != nil {
+			log.Printf("Shutdown: %v", err)
+		}
+	}()
+	if err := server.ListenAndServe(); err != nil && !errors.Is(err, http.ErrServerClosed) {
+		log.Fatal(err)
+	}
 }
