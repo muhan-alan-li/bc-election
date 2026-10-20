@@ -101,9 +101,11 @@ export function Constituencies({ districts, onFind }) {
                                     {row.name}
                                 </a>
                             </th>
-                            <td>{row.official_code}</td>
-                            <td>{row.candidate_count}</td>
-                            <td>
+                            <td data-label="Code">{row.official_code}</td>
+                            <td data-label="Candidates">
+                                {row.candidate_count}
+                            </td>
+                            <td data-label="Roster">
                                 {row.roster_status === 'final_roster'
                                     ? 'Final candidate list'
                                     : 'Provisional candidate list'}

@@ -56,12 +56,10 @@
 .candidate-table tbody th {
     padding: 14px 16px;
 }
-.constituency-table tbody tr:hover,
-.candidate-table tbody tr:hover {
+.constituency-table tbody tr:hover {
     background: var(--panel);
 }
-.constituency-table tbody tr:hover th,
-.candidate-table tbody tr:hover th {
+.constituency-table tbody tr:hover th {
     background: var(--panel);
 }
 .constituency-table .star-column {
@@ -82,4 +80,51 @@
 }
 .star-button:hover {
     background: var(--panel);
+}
+
+@media (max-width: 600px) {
+    .constituency-table,
+    .candidate-table {
+        min-width: 0;
+    }
+    .constituency-table thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+    }
+    .constituency-table tbody tr {
+        display: grid;
+        grid-template-columns: 48px minmax(0, 1fr);
+        border-bottom: 1px solid var(--line);
+    }
+    .constituency-table tbody th {
+        grid-column: 2;
+    }
+    .constituency-table .star-column {
+        grid-row: 1 / span 4;
+        width: auto;
+    }
+    .constituency-table td[data-label] {
+        grid-column: 2;
+        padding-block: 4px;
+    }
+    .constituency-table td[data-label]::before {
+        content: attr(data-label) ': ';
+        color: var(--ink3);
+    }
+    .constituency-table tbody th,
+    .constituency-table td {
+        border: 0;
+        overflow-wrap: anywhere;
+    }
+    .candidate-table {
+        table-layout: fixed;
+    }
+    .candidate-table th,
+    .candidate-table td {
+        overflow-wrap: anywhere;
+        padding: 12px;
+    }
 }
