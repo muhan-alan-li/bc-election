@@ -332,6 +332,32 @@
     .quiz-options {
         grid-template-columns: 1fr;
     }
+    .quiz-panel:not(.is-active) {
+        display: none;
+    }
+    .quiz-panel > .quiz-controls {
+        margin-top: var(--space-4);
+    }
+    .quiz-controls {
+        flex-wrap: nowrap;
+        gap: 6px;
+    }
+    .quiz-actions {
+        gap: 6px;
+    }
+    .quiz-controls button {
+        min-height: 40px;
+        padding: 8px 10px;
+        font-size: 14px;
+        line-height: 1.2;
+        white-space: nowrap;
+    }
+    .quiz-label-full {
+        display: none;
+    }
+    .quiz-label-short {
+        display: inline;
+    }
     .quiz-choice {
         padding: 12px 14px;
     }
