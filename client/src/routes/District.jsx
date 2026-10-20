@@ -1,5 +1,6 @@
 import { Table } from '../components/ui/Table.jsx';
 import { useState } from 'preact/hooks';
+import { PollingContext } from '../components/match/PollingContext.jsx';
 import { partyName } from '../helpers/candidates.js';
 
 const columns = [{ label: 'Candidate' }, { label: 'Party or affiliation' }];
@@ -83,6 +84,10 @@ export function District({ dataset, registry }) {
                         : 'No candidates are listed in this published roster yet.'}
                 </p>
             )}
+            <PollingContext
+                code={dataset.district.official_code}
+                registry={registry}
+            />
         </>
     );
 }
