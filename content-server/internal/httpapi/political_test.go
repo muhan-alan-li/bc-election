@@ -1,10 +1,8 @@
-package main
+package httpapi
 
 import (
-	"encoding/json"
 	"net/http"
 	"net/http/httptest"
-	"os"
 	"path/filepath"
 	"strings"
 	"testing"
@@ -20,7 +18,7 @@ func politicalFixture() map[string]any {
 
 func alignmentFixture() map[string]any {
 	pillars := []any{}
-	for _, id := range pillarIDs {
+	for _, id := range []string{"housing", "healthcare", "affordability", "economy", "public_safety", "climate"} {
 		pillar := map[string]any{"id": id, "label": id, "description": "Policy description", "takeaway": nil}
 		if id == "housing" {
 			pillar["takeaway"] = "A reviewed comparison."
@@ -36,20 +34,6 @@ func alignmentFixture() map[string]any {
 	}
 }
 
-func writeFixture(t *testing.T, path string, value any) {
-	t.Helper()
-	if err := os.MkdirAll(filepath.Dir(path), 0755); err != nil {
-		t.Fatal(err)
-	}
-	body, err := json.Marshal(value)
-	if err != nil {
-		t.Fatal(err)
-	}
-	if err := os.WriteFile(path, body, 0644); err != nil {
-		t.Fatal(err)
-	}
-}
-
 func TestPoliticalEndpointsReloadAndRevalidate(t *testing.T) {
 	root, content := t.TempDir(), t.TempDir()
 	path := filepath.Join(root, "political", "synthetic", "candidates", "candidate-1.json")
@@ -59,7 +43,7 @@ func TestPoliticalEndpointsReloadAndRevalidate(t *testing.T) {
 	copyPath := filepath.Join(content, "synthetic", "candidate-copy.json")
 	copy := map[string]any{"schema_version": 1, "election_id": "synthetic", "candidates": map[string]any{"candidate-1": map[string]any{"alignment_notes": map[string]any{"housing": "Editorial note"}}}}
 	writeFixture(t, copyPath, copy)
-	handler := newHandler(t.TempDir(), root, "synthetic", "http://localhost:8001", content)
+	handler := NewHandler(Config{ClientDir: t.TempDir(), DataDir: root, ElectionID: "synthetic", FinderURL: "http://localhost:8001", ContentDir: content})
 	first := request(handler, "/api/political/candidates/candidate-1")
 	if first.Code != 200 || !strings.Contains(first.Body.String(), "Editorial note") || !strings.Contains(first.Body.String(), "Housing Act") {
 		t.Fatal(first.Code, first.Body.String())
@@ -131,7 +115,7 @@ func TestPoliticalEndpointsRejectUnpublishedEvidence(t *testing.T) {
 			record := politicalFixture()
 			tc.mutate(record)
 			writeFixture(t, filepath.Join(root, "political", "synthetic", "candidates", "candidate-1.json"), record)
-			handler := newHandler(t.TempDir(), root, "synthetic")
+			handler := NewHandler(Config{ClientDir: t.TempDir(), DataDir: root, ElectionID: "synthetic"})
 			response := request(handler, "/api/political/candidates/candidate-1")
 			if response.Code != 503 || strings.Contains(response.Body.String(), "private research") {
 				t.Fatal(response.Code, response.Body.String())

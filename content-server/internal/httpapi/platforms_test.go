@@ -1,4 +1,4 @@
-package main
+package httpapi
 
 import (
 	"net/http"
@@ -21,7 +21,7 @@ func TestPlatformEndpointsFilterRevalidateAndReload(t *testing.T) {
 	if err := os.WriteFile(path, []byte(candidatePlatformFixture), 0644); err != nil {
 		t.Fatal(err)
 	}
-	handler := newHandler(t.TempDir(), root, "synthetic")
+	handler := NewHandler(Config{ClientDir: t.TempDir(), DataDir: root, ElectionID: "synthetic"})
 	first := request(handler, "/api/platforms/candidates?district=syn")
 	if first.Code != 200 || !strings.Contains(first.Body.String(), "Alex Example") {
 		t.Fatal(first.Code, first.Body.String())
@@ -62,7 +62,7 @@ func TestPlatformsRejectResearchBodiesAndWrongElection(t *testing.T) {
 		t.Fatal(err)
 	}
 	path := filepath.Join(folder, "record.json")
-	handler := newHandler(t.TempDir(), root, "synthetic")
+	handler := NewHandler(Config{ClientDir: t.TempDir(), DataDir: root, ElectionID: "synthetic"})
 	for _, body := range []string{
 		strings.Replace(candidatePlatformFixture, `"documents":[{`, `"documents":[{"pages":[{"text":"private research text"}],`, 1),
 		strings.Replace(candidatePlatformFixture, `"election_id":"synthetic"`, `"election_id":"wrong"`, 1),

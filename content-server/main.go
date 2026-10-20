@@ -5,6 +5,8 @@ import (
 	"log"
 	"net/http"
 	"time"
+
+	"bc-election/content-server/internal/httpapi"
 )
 
 func main() {
@@ -18,7 +20,7 @@ func main() {
 
 	server := &http.Server{
 		Addr:              *addr,
-		Handler:           newHandler(*clientDir, *dataDir, *electionID, *finderURL, *contentDir),
+		Handler:           httpapi.NewHandler(httpapi.Config{ClientDir: *clientDir, DataDir: *dataDir, ElectionID: *electionID, FinderURL: *finderURL, ContentDir: *contentDir}),
 		ReadHeaderTimeout: 5 * time.Second,
 	}
 

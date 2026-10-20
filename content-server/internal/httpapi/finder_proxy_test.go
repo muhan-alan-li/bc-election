@@ -1,4 +1,4 @@
-package main
+package httpapi
 
 import (
 	"errors"
@@ -48,7 +48,7 @@ func TestFinderProxyUnavailable(t *testing.T) {
 
 // Exercise the same router the client reaches, including the /api/ fallback.
 func TestSidebarFinderRoute(t *testing.T) {
-	handler := newHandler(t.TempDir(), t.TempDir(), "synthetic", ":invalid")
+	handler := NewHandler(Config{ClientDir: t.TempDir(), DataDir: t.TempDir(), ElectionID: "synthetic", FinderURL: ":invalid"})
 	response := httptest.NewRecorder()
 	handler.ServeHTTP(response, httptest.NewRequest("POST", "/api/constituency-finder", strings.NewReader(`{"postal_code":"V6Y1N9"}`)))
 	if response.Code != http.StatusServiceUnavailable || !strings.Contains(response.Body.String(), "finder service is unavailable") {

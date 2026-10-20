@@ -1,4 +1,4 @@
-package main
+package httpapi
 
 import (
 	"encoding/json"
@@ -8,6 +8,8 @@ import (
 	"path/filepath"
 	"strings"
 	"testing"
+
+	"bc-election/content-server/internal/publication"
 )
 
 const fixture = `{
@@ -31,13 +33,7 @@ func setupAPI(t *testing.T) (http.Handler, string) {
 	if err := os.WriteFile(path, []byte(fixture), 0644); err != nil {
 		t.Fatal(err)
 	}
-	return newHandler(t.TempDir(), root, "synthetic"), path
-}
-
-func request(handler http.Handler, url string) *httptest.ResponseRecorder {
-	recorder := httptest.NewRecorder()
-	handler.ServeHTTP(recorder, httptest.NewRequest(http.MethodGet, url, nil))
-	return recorder
+	return NewHandler(Config{ClientDir: t.TempDir(), DataDir: root, ElectionID: "synthetic"}), path
 }
 
 func TestDistrictSearchAndPublicDataset(t *testing.T) {
@@ -107,7 +103,7 @@ func TestEmptyCatalogAndStaticClient(t *testing.T) {
 	if err := os.WriteFile(filepath.Join(client, "index.html"), []byte("<html>client</html>"), 0644); err != nil {
 		t.Fatal(err)
 	}
-	handler := newHandler(client, t.TempDir(), "synthetic")
+	handler := NewHandler(Config{ClientDir: client, DataDir: t.TempDir(), ElectionID: "synthetic"})
 	if response := request(handler, "/"); response.Code != 200 || !strings.Contains(response.Body.String(), "client") {
 		t.Fatal(response.Code)
 	}
@@ -117,18 +113,18 @@ func TestEmptyCatalogAndStaticClient(t *testing.T) {
 }
 
 func TestRichmondCentrePublication(t *testing.T) {
-	path := "../ingestion/storage/published/bc-provincial-2026/RCC.json"
+	path := "../../../ingestion/storage/published/bc-provincial-2026/RCC.json"
 	if _, err := os.Stat(path); os.IsNotExist(err) {
 		t.Skip("Local generated publication is not present")
 	}
-	data, err := loadDataset(path, "bc-provincial-2026", "RCC")
+	data, err := (publication.Store{DataDir: "../../../ingestion/storage/published", ElectionID: "bc-provincial-2026"}).District("RCC")
 	if err != nil {
 		t.Fatal(err)
 	}
 	if len(data.Candidacies) != 4 {
 		t.Fatalf("Expected pilot roster, got %d", len(data.Candidacies))
 	}
-	response := request(newHandler(t.TempDir(), "../ingestion/storage/published", "bc-provincial-2026"), "/api/districts/RCC")
+	response := request(NewHandler(Config{ClientDir: t.TempDir(), DataDir: "../../../ingestion/storage/published", ElectionID: "bc-provincial-2026"}), "/api/districts/RCC")
 	var body map[string]any
 	if response.Code != 200 || json.Unmarshal(response.Body.Bytes(), &body) != nil {
 		t.Fatal(response.Code)
