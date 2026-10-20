@@ -1,0 +1,440 @@
+{
+  "schema_version": 1,
+  "election_id": "bc-provincial-2026",
+  "reviewedOn": "2026-10-17",
+  "methodology": "Each answer is compared only with an explicit position in the linked party material. Missing or ambiguous positions remain unknown. Parties appear alphabetically, without a score or ranking. These are selected policy questions, not a complete measure of political alignment.",
+  "parties": [
+    {
+      "id": "ndp",
+      "ballotNames": [
+        "BC NDP"
+      ]
+    },
+    {
+      "id": "conservative",
+      "ballotNames": [
+        "Conservative Party"
+      ]
+    },
+    {
+      "id": "green",
+      "ballotNames": [
+        "BC Green Party"
+      ]
+    },
+    {
+      "id": "centre",
+      "ballotNames": [
+        "CentreBC"
+      ]
+    },
+    {
+      "id": "chp",
+      "ballotNames": [
+        "Christian Heritage Party of BC"
+      ]
+    },
+    {
+      "id": "communist",
+      "ballotNames": [
+        "Communist Party of BC"
+      ]
+    },
+    {
+      "id": "canwest",
+      "ballotNames": [
+        "CWP"
+      ]
+    },
+    {
+      "id": "freedom",
+      "ballotNames": [
+        "Freedom Party of BC"
+      ]
+    },
+    {
+      "id": "libertarian",
+      "ballotNames": [
+        "Libertarian"
+      ]
+    },
+    {
+      "id": "onebc",
+      "ballotNames": [
+        "OneBC"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "lng",
+      "topic": "Energy",
+      "prompt": "Should BC expand liquefied natural gas (LNG) development?",
+      "yes": "Allow new LNG projects and increase production.",
+      "no": "Do not expand LNG development.",
+      "note": "LNG is natural gas cooled for shipping. Consider export revenue, emissions and electricity demand.",
+      "stances": [
+        {
+          "partyID": "conservative",
+          "side": "yes",
+          "summary": "Proposes higher natural gas and LNG production.",
+          "source": {
+            "url": "https://conservativebc.ca/plan/make-british-columbia-an-energy-superpower/",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        },
+        {
+          "partyID": "chp",
+          "side": "yes",
+          "summary": "Supports new LNG projects and related infrastructure.",
+          "source": {
+            "url": "https://www.chpbc.ca/platform-priorities/",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        },
+        {
+          "partyID": "green",
+          "side": "no",
+          "summary": "Would stop new fossil fuel development.",
+          "source": {
+            "url": "https://bcgreens.ca/our-plan/",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        },
+        {
+          "partyID": "communist",
+          "side": "no",
+          "summary": "Would cancel Ksi Lisims LNG and end LNG subsidies.",
+          "source": {
+            "url": "https://cpcbc.ca/our-platform/",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "short-term-rentals",
+      "topic": "Short-term rentals",
+      "prompt": "Should BC keep restrictions that reserve short-term rentals for a host’s main home?",
+      "yes": "Keep the main-home rule in communities where it applies.",
+      "no": "Remove the main-home restriction.",
+      "note": "This concerns homes offered for short stays. It does not ban every short-term rental.",
+      "stances": [
+        {
+          "partyID": "ndp",
+          "side": "yes",
+          "summary": "Defends provincial short-term rental restrictions.",
+          "source": {
+            "url": "https://www.bcndp.ca/action-for-you",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "rent-between-tenants",
+      "topic": "Rent protection",
+      "prompt": "Should rent increases be limited when a new tenant moves in?",
+      "yes": "Tie rent limits to the home, including between tenancies.",
+      "no": "Let landlords reset rent between tenancies.",
+      "note": "This is different from the existing annual limit for a tenant who stays in the same home.",
+      "stances": [
+        {
+          "partyID": "green",
+          "side": "yes",
+          "summary": "Would cap rent increases between tenancies.",
+          "source": {
+            "url": "https://bcgreens.ca/our-plan/",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        },
+        {
+          "partyID": "communist",
+          "side": "yes",
+          "summary": "Would attach rent controls to the unit.",
+          "source": {
+            "url": "https://cpcbc.ca/our-platform/",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "transit",
+      "topic": "Public transit",
+      "prompt": "Should public transit be free to ride?",
+      "yes": "Replace fares with public funding.",
+      "no": "Keep charging fares to help fund transit.",
+      "note": "Removing fares needs replacement funding. Service frequency and coverage are separate choices.",
+      "stances": [
+        {
+          "partyID": "green",
+          "side": "yes",
+          "summary": "Promises fare-free transit.",
+          "source": {
+            "url": "https://bcgreens.ca/our-plan/",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        },
+        {
+          "partyID": "communist",
+          "side": "yes",
+          "summary": "Proposes free transit and a provincial bus network.",
+          "source": {
+            "url": "https://cpcbc.ca/our-platform/",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "private-care",
+      "topic": "Health care",
+      "prompt": "Should BC allow a separate private-pay health-care option alongside public care?",
+      "yes": "Allow patients to pay for a separate private care option.",
+      "no": "Keep access to publicly insured care within the public system.",
+      "note": "This asks about paying for care covered by the public system, rather than services like cosmetic surgery. Public contracts with private providers are a separate question.",
+      "stances": [
+        {
+          "partyID": "libertarian",
+          "side": "yes",
+          "summary": "Supports access to private surgery options.",
+          "source": {
+            "url": "https://libertarian.bc.ca/2026-platform/",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        },
+        {
+          "partyID": "onebc",
+          "side": "yes",
+          "summary": "Proposes private care alongside public care.",
+          "source": {
+            "url": "https://1bc.ca/priorities",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        },
+        {
+          "partyID": "communist",
+          "side": "no",
+          "summary": "Rejects privatization and advocates public provision.",
+          "source": {
+            "url": "https://cpcbc.ca/our-platform/",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "dripa",
+      "topic": "Indigenous rights",
+      "prompt": "Should BC repeal its Declaration on the Rights of Indigenous Peoples Act (DRIPA)?",
+      "yes": "Repeal DRIPA.",
+      "no": "Keep DRIPA in force.",
+      "note": "DRIPA sets a framework for implementing the UN declaration. Repealing it would not remove constitutional or treaty rights.",
+      "stances": [
+        {
+          "partyID": "conservative",
+          "side": "yes",
+          "summary": "Would repeal DRIPA.",
+          "source": {
+            "url": "https://conservativebc.ca/plan/first-nations-dripa/",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        },
+        {
+          "partyID": "chp",
+          "side": "yes",
+          "summary": "Would replace DRIPA with another reconciliation framework.",
+          "source": {
+            "url": "https://www.chpbc.ca/platform-priorities/",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        },
+        {
+          "partyID": "onebc",
+          "side": "yes",
+          "summary": "Would repeal DRIPA.",
+          "source": {
+            "url": "https://1bc.ca/priorities",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        },
+        {
+          "partyID": "communist",
+          "side": "no",
+          "summary": "Opposes attacks on the Declaration Act.",
+          "source": {
+            "url": "https://cpcbc.ca/our-platform/",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "sogi",
+      "topic": "Education",
+      "prompt": "Should schools stop using the SOGI 123 resource package?",
+      "yes": "Remove SOGI 123 from schools.",
+      "no": "Keep SOGI 123 available to schools.",
+      "note": "SOGI means sexual orientation and gender identity. The package provides resources for inclusion and preventing bullying.",
+      "stances": [
+        {
+          "partyID": "conservative",
+          "side": "yes",
+          "summary": "Would remove SOGI resources.",
+          "source": {
+            "url": "https://conservativebc.ca/plan/safe-schools/",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        },
+        {
+          "partyID": "chp",
+          "side": "yes",
+          "summary": "Would stop using SOGI 123.",
+          "source": {
+            "url": "https://www.chpbc.ca/platform-priorities/",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        },
+        {
+          "partyID": "onebc",
+          "side": "yes",
+          "summary": "Would remove SOGI 123.",
+          "source": {
+            "url": "https://1bc.ca/priorities",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        },
+        {
+          "partyID": "communist",
+          "side": "no",
+          "summary": "Would implement SOGI 123 across school districts.",
+          "source": {
+            "url": "https://cpcbc.ca/our-platform/",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "insurance",
+      "topic": "Car insurance",
+      "prompt": "Should drivers be able to choose a private insurer for basic auto coverage?",
+      "yes": "Open basic insurance to competing providers.",
+      "no": "Keep ICBC as the sole basic insurance provider.",
+      "note": "Basic insurance is mandatory coverage. Optional insurance already has competing providers.",
+      "stances": [
+        {
+          "partyID": "libertarian",
+          "side": "yes",
+          "summary": "Would end ICBC’s monopoly on basic coverage.",
+          "source": {
+            "url": "https://libertarian.bc.ca/2026-platform/",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        },
+        {
+          "partyID": "onebc",
+          "side": "yes",
+          "summary": "Would phase out ICBC’s insurance monopoly.",
+          "source": {
+            "url": "https://1bc.ca/priorities",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "involuntary-care",
+      "topic": "Mental health and addiction",
+      "prompt": "Should BC expand care without consent for people in severe mental health or addiction crises?",
+      "yes": "Expand care without consent for severe crises.",
+      "no": "Do not expand care without consent.",
+      "note": "The parties propose different admission rules. Their safeguards and treatment plans need separate scrutiny.",
+      "stances": [
+        {
+          "partyID": "ndp",
+          "side": "yes",
+          "summary": "Supports more involuntary care beds for severe crises.",
+          "source": {
+            "url": "https://www.bcndp.ca/action-for-you",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        },
+        {
+          "partyID": "conservative",
+          "side": "yes",
+          "summary": "Proposes mandatory care interventions.",
+          "source": {
+            "url": "https://conservativebc.ca/plan/safe-streets-for-bc/",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        },
+        {
+          "partyID": "chp",
+          "side": "yes",
+          "summary": "Supports medically supervised admission when legal criteria are met.",
+          "source": {
+            "url": "https://www.chpbc.ca/platform-priorities/",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        },
+        {
+          "partyID": "onebc",
+          "side": "yes",
+          "summary": "Proposes involuntary rehabilitation for severe addiction.",
+          "source": {
+            "url": "https://1bc.ca/priorities",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "voting-system",
+      "topic": "Democracy",
+      "prompt": "Should BC change to proportional representation?",
+      "yes": "Allocate seats more closely to parties’ share of the vote.",
+      "no": "Keep choosing one MLA per riding by the most votes.",
+      "note": "Proportional systems vary. A commitment to introduce legislation does not settle the final voting system.",
+      "stances": [
+        {
+          "partyID": "green",
+          "side": "yes",
+          "summary": "Would introduce proportional representation legislation.",
+          "source": {
+            "url": "https://bcgreens.ca/our-plan/",
+            "label": "Party policy source"
+          },
+          "checkedOn": "2026-10-17"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "election_id": "bc-provincial-2026",
+  "parties": [
+    {
+      "id": "ndp",
+      "name": "BC NDP",
+      "color": "#c85316",
+      "ballotNames": [
+        "BC NDP"
+      ]
+    },
+    {
+      "id": "conservative",
+      "name": "Conservative Party of BC",
+      "color": "#245b8a",
+      "ballotNames": [
+        "Conservative Party"
+      ]
+    },
+    {
+      "id": "green",
+      "name": "BC Green Party",
+      "color": "#38634b",
+      "ballotNames": [
+        "BC Green Party"
+      ]
+    },
+    {
+      "id": "centre",
+      "name": "CentreBC",
+      "color": "#65518b",
+      "ballotNames": [
+        "CentreBC"
+      ]
+    },
+    {
+      "id": "chp",
+      "name": "Christian Heritage Party of BC",
+      "color": "#315580",
+      "ballotNames": [
+        "Christian Heritage Party of BC"
+      ]
+    },
+    {
+      "id": "communist",
+      "name": "Communist Party of BC",
+      "color": "#a33333",
+      "ballotNames": [
+        "Communist Party of BC"
+      ]
+    },
+    {
+      "id": "canwest",
+      "name": "CanWest Party (CWP)",
+      "color": "#536473",
+      "ballotNames": [
+        "CWP"
+      ]
+    },
+    {
+      "id": "freedom",
+      "name": "Freedom Party of BC",
+      "color": "#766126",
+      "ballotNames": [
+        "Freedom Party of BC"
+      ]
+    },
+    {
+      "id": "libertarian",
+      "name": "Libertarian",
+      "color": "#806822",
+      "ballotNames": [
+        "Libertarian"
+      ]
+    },
+    {
+      "id": "onebc",
+      "name": "OneBC",
+      "color": "#773a44",
+      "ballotNames": [
+        "OneBC"
+      ]
+    }
+  ]
+}
