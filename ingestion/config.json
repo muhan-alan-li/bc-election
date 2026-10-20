@@ -10,6 +10,15 @@
   "roster_url": "https://elections.bc.ca/2026election/2026-provincial-general-election-candidates.csv",
   "voting_archive_url": "https://www.leg.bc.ca/parliamentary-business/voting-records-index-archive",
   "voting_since": 2020,
+  "comparison_research": {
+    "max_output_tokens": 6000
+  },
+  "identity_review": {
+    "max_output_tokens": 4000
+  },
+  "source_review": {
+    "max_output_tokens": 6000
+  },
   "political_analysis": {
     "base_url": "https://api.deepseek.com/v1",
     "model": "deepseek-flash",
