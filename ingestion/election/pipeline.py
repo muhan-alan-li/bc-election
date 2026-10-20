@@ -33,6 +33,15 @@ def curate_district(data, root):
     people = {person['id']: person for person in registry['people']}
     data['people'] = [deepcopy(people[person['id']]) for person in data['people']]
     source_map = {source['id']: source for source in data['sources']}
+    # Identity review can cite campaign sources collected outside the original
+    # constituency adapter. Carry those verified inline citations into its catalog.
+    for person in data['people']:
+        for source in person.get('identity_sources', []):
+            if source.get('source_id'):
+                if not all(source.get(field) for field in ('url', 'sha256', 'retrieved_at')):
+                    raise ValueError('Reviewed identity citation needs complete source provenance')
+                source_map.setdefault(source['source_id'],
+                    {**{key: value for key, value in source.items() if key != 'source_id'}, 'id': source['source_id']})
     for person in data['people']:
         pid = person['id']
         candidate = next(row for row in data['candidacies'] if row['person_id'] == pid)

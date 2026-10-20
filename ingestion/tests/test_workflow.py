@@ -211,6 +211,18 @@ class WorkflowTests(unittest.TestCase):
         self.assertEqual(output['votes'], [])
         self.assertEqual(output['disclosures'], [])
 
+    def test_reviewed_campaign_citations_join_the_constituency_source_catalog(self):
+        data, _ = self.collect()
+        pid = self.review_alex()
+        path = self.root / 'curated/identities.json'
+        registry = read_json(path)
+        person = next(row for row in registry['people'] if row['id'] == pid)
+        person['identity_sources'] = [{'source_id': 'source-campaign', 'url': 'https://example.org/campaign',
+                                      'sha256': 'a' * 64, 'retrieved_at': '2026-10-12T00:00:00Z'}]
+        atomic_json(path, registry)
+        output = curate_district(data, self.root)
+        self.assertIn('source-campaign', {source['id'] for source in output['sources']})
+
     def test_provisional_evidence_requires_current_reviewed_aliases(self):
         baseline, _ = self.collect()
         pid = self.review_alex()
