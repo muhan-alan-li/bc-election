@@ -63,9 +63,7 @@ export async function requestJSON(
 
 function validateResource(path, body) {
     let valid = true;
-    if (path === '/api/constituency-finder')
-        valid = !!body.location && Array.isArray(body.districts);
-    else if (path === '/api/districts') valid = Array.isArray(body.districts);
+    if (path === '/api/districts') valid = Array.isArray(body.districts);
     else if (path.endsWith('/ballot'))
         valid =
             !!body.district?.name &&

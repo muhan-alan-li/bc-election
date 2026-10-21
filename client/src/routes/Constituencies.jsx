@@ -116,7 +116,7 @@ export function Constituencies({ districts, onFind }) {
             ) : (
                 <p class="empty">
                     {!districts.length
-                        ? 'No constituency research has been published yet.'
+                        ? 'No constituencies have been published yet.'
                         : starredOnly
                           ? query.trim()
                               ? 'No starred constituencies match your search.'

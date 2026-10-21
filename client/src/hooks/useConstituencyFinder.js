@@ -1,6 +1,4 @@
-import { requestJSON } from '../helpers/api.js';
 import { useEffect, useRef, useState } from 'preact/hooks';
-import { staticSite } from '../helpers/deployment.js';
 import { createStaticFinder } from '../helpers/finder/client.js';
 
 export function useConstituencyFinder() {
@@ -19,19 +17,12 @@ export function useConstituencyFinder() {
         setError('');
         setResult(null);
         try {
-            if (staticSite && !staticFinder.current)
+            if (!staticFinder.current)
                 staticFinder.current = createStaticFinder();
-            const body = staticSite
-                ? await staticFinder.current.lookup(
-                      input,
-                      request.current.signal,
-                  )
-                : await requestJSON('/api/constituency-finder', {
-                      method: 'POST',
-                      headers: { 'Content-Type': 'application/json' },
-                      body: JSON.stringify(input),
-                      signal: request.current.signal,
-                  });
+            const body = await staticFinder.current.lookup(
+                input,
+                request.current.signal,
+            );
             if (id === sequence.current) setResult(body);
         } catch (error) {
             if (id === sequence.current && error.name !== 'AbortError')

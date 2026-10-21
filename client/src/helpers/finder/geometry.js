@@ -1,4 +1,4 @@
-// Geometry calculations mirror the Go matcher, including holes, shared edges
+// Geometry calculations for the browser matcher, including holes, shared edges
 // and the local metre projection used for browser location accuracy circles.
 export function segmentDistance(p, a, b) {
     const sx = 111320 * Math.cos((p[1] * Math.PI) / 180);
