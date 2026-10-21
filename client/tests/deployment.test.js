@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { resourceURL } from '../src/helpers/deployment.js';
 
-test('static deployments load public JSON files and keep finder separate', () => {
+test('static paths map API resources to public JSON files', () => {
     for (const endpoint of [
         'parties',
         'guide',
@@ -11,21 +11,10 @@ test('static deployments load public JSON files and keep finder separate', () =>
         'districts',
         'districts/RCC/ballot',
     ]) {
-        assert.equal(
-            resourceURL(`/api/${endpoint}`, true),
-            `/data/${endpoint}.json`,
-        );
-        assert.equal(
-            resourceURL(`/api/${endpoint}`, false),
-            `/api/${endpoint}`,
-        );
+        assert.equal(resourceURL(`/api/${endpoint}`), `/data/${endpoint}.json`);
     }
     assert.equal(
-        resourceURL('/api/constituency-finder', true),
-        '/api/constituency-finder',
-    );
-    assert.equal(
-        resourceURL('/content/assets/leaders/example.jpg', true),
+        resourceURL('/content/assets/leaders/example.jpg'),
         '/content/assets/leaders/example.jpg',
     );
 });

@@ -11,7 +11,7 @@ import { parseRoute } from '../src/helpers/routes.js';
 const questionnaire = JSON.parse(
     readFileSync(
         new URL(
-            '../../content-server/content/bc-provincial-2026/questionnaire.json',
+            '../../content/bc-provincial-2026/questionnaire.json',
             import.meta.url,
         ),
     ),

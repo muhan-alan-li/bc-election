@@ -11,10 +11,7 @@ const { PolicyDetails, PolicySources, PolicyCard } = await loadComponents(`
 
 const guide = JSON.parse(
     await readFile(
-        new URL(
-            '../../content-server/content/bc-provincial-2026/guide.json',
-            import.meta.url,
-        ),
+        new URL('../../content/bc-provincial-2026/guide.json', import.meta.url),
         'utf8',
     ),
 );

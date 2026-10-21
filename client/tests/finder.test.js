@@ -98,3 +98,98 @@ test('invalid inputs never download data, and cancelled requests stay cancelled'
     await assert.rejects(lookup, { name: 'AbortError' });
     assert.equal(calls, 1);
 });
+
+test('static exporter writes lossless geometry and postal tables', async () => {
+    const { mkdtemp, writeFile, rm } = await import('node:fs/promises');
+    const { tmpdir } = await import('node:os');
+    const path = await import('node:path');
+    const { exportFinder } = await import('../scripts/export-finder.mjs');
+    const output = await mkdtemp(path.join(tmpdir(), 'finder-export-'));
+    try {
+        const catalog = path.join(output, 'catalog.json');
+        await writeFile(
+            catalog,
+            JSON.stringify({
+                districts: [{ official_code: 'RCC' }, { official_code: 'OTH' }],
+            }),
+        );
+        const result = await exportFinder({
+            dataset: new URL('./fixtures/static-finder.json', import.meta.url)
+                .pathname,
+            catalog,
+            output,
+        });
+        assert.equal(result.boundaries, 3);
+        const fixture = JSON.parse(
+            await readFile(
+                new URL('./fixtures/static-finder.json', import.meta.url),
+            ),
+        );
+        const manifest = JSON.parse(
+            await readFile(
+                path.join(output, 'finder', 'manifest.json'),
+                'utf8',
+            ),
+        );
+        for (const feature of fixture.boundaries.features) {
+            const code = feature.properties.official_code;
+            const body = await readFile(
+                path.join(
+                    output,
+                    'finder',
+                    result.version,
+                    'detailed',
+                    `${code}.bin`,
+                ),
+            );
+            const geometry = decodeGeometry(
+                body.buffer.slice(
+                    body.byteOffset,
+                    body.byteOffset + body.byteLength,
+                ),
+            );
+            assert.deepEqual(
+                geometry.type === 'Polygon'
+                    ? geometry.polygons[0]
+                    : geometry.polygons,
+                feature.geometry.coordinates,
+                `${code} detailed geometry is lossless`,
+            );
+            const outline = await readFile(
+                path.join(
+                    output,
+                    'finder',
+                    result.version,
+                    'boundaries',
+                    `${code}.bin`,
+                ),
+            );
+            assert.doesNotThrow(() =>
+                decodeGeometry(
+                    outline.buffer.slice(
+                        outline.byteOffset,
+                        outline.byteOffset + outline.byteLength,
+                    ),
+                ),
+            );
+        }
+        assert.deepEqual(
+            manifest.districts.map((district) => district.published),
+            [true, true, false],
+        );
+        const table = await readFile(
+            path.join(output, 'finder', result.version, 'postal', 'V6Y.bin'),
+        );
+        assert.equal(table.length, 2000);
+        assert.equal(
+            table[
+                Number('1') * 200 +
+                    'ABCEGHJKLMNPRSTVWXYZ'.indexOf('N') * 10 +
+                    Number('8')
+            ],
+            254,
+        );
+    } finally {
+        await rm(output, { recursive: true, force: true });
+    }
+});

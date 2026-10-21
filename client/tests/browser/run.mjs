@@ -1,4 +1,5 @@
-// A dependency-free Chrome DevTools regression suite. Run after npm run build.
+// A dependency-free Chrome DevTools regression suite. It builds synthetic data
+// and serves the resulting static site; no application server is used.
 import assert from 'node:assert/strict';
 import { spawn, execFileSync } from 'node:child_process';
 import { mkdtemp, mkdir, writeFile, readFile, access } from 'node:fs/promises';
@@ -19,7 +20,7 @@ const externalURL =
     process.env.BC_TEST_URL ||
     process.argv.find((arg) => arg.startsWith('--live='))?.slice(7);
 const baseURL = externalURL || `http://127.0.0.1:${port}`;
-let chrome, server, socket;
+let chrome, socket;
 const logs = [];
 const pending = new Map();
 let nextID = 0;
@@ -28,7 +29,6 @@ const exceptions = [],
     violations = [];
 let interception = null;
 const election = 'bc-provincial-2026';
-const staticMode = process.argv.includes('--static');
 let staticServer;
 const staticRequests = [];
 let slowPostal = false;
@@ -46,6 +46,11 @@ function candidate(code) {
         party_id: null,
         affiliation: 'independent',
         status: 'listed',
+        source: {
+            url: 'https://example.org/roster.csv',
+            sha256: '0'.repeat(64),
+            retrieved_at: '2026-10-01T00:00:00Z',
+        },
     };
 }
 
@@ -109,7 +114,7 @@ async function shot(name) {
     );
 }
 async function intercept(pattern, fn) {
-    pattern = resourceURL(pattern, staticMode);
+    pattern = resourceURL(pattern);
     interception = fn;
     await send('Fetch.enable', { patterns: [{ urlPattern: `*${pattern}*` }] });
 }
@@ -153,102 +158,79 @@ async function start() {
             election_id: election,
             districts,
         });
-        if (staticMode) {
-            const output = path.join(temporary, 'static-site');
-            execFileSync(process.execPath, ['build.js', '--static'], {
-                cwd: path.join(repo, 'client'),
-                env: {
-                    ...process.env,
-                    BC_PUBLISHED_DIR: data,
-                    BC_STATIC_OUTPUT: output,
-                    BC_FINDER_DATASET: path.join(
-                        repo,
-                        'client/tests/fixtures/static-finder.json',
-                    ),
-                },
-                stdio: 'inherit',
-            });
-            const headerFile = await readFile(
-                path.join(output, '_headers'),
-                'utf8',
+        const output = path.join(temporary, 'static-site');
+        execFileSync(process.execPath, ['build.js'], {
+            cwd: path.join(repo, 'client'),
+            env: {
+                ...process.env,
+                BC_PUBLISHED_DIR: data,
+                BC_STATIC_OUTPUT: output,
+                BC_FINDER_DATASET: path.join(
+                    repo,
+                    'client/tests/fixtures/static-finder.json',
+                ),
+            },
+            stdio: 'inherit',
+        });
+        const headerFile = await readFile(
+            path.join(output, '_headers'),
+            'utf8',
+        );
+        const security = Object.fromEntries(
+            headerFile
+                .split('\n')
+                .filter(
+                    (line) =>
+                        line.startsWith('  ') &&
+                        !line.includes('Cache-Control'),
+                )
+                .map((line) => {
+                    const colon = line.indexOf(':');
+                    return [
+                        line.slice(0, colon).trim(),
+                        line.slice(colon + 1).trim(),
+                    ];
+                }),
+        );
+        staticServer = createServer(async (req, res) => {
+            const name = new URL(req.url, baseURL).pathname;
+            staticRequests.push(name);
+            if (slowPostal && name.endsWith('/postal/V0A.bin'))
+                await delay(700);
+            const file = path.resolve(
+                output,
+                '.' + (name === '/' ? '/index.html' : name),
             );
-            const security = Object.fromEntries(
-                headerFile
-                    .split('\n')
-                    .filter(
-                        (line) =>
-                            line.startsWith('  ') &&
-                            !line.includes('Cache-Control'),
-                    )
-                    .map((line) => {
-                        const colon = line.indexOf(':');
-                        return [
-                            line.slice(0, colon).trim(),
-                            line.slice(colon + 1).trim(),
-                        ];
-                    }),
-            );
-            // Serve only files, with no API routes or Go runtime.
-            staticServer = createServer(async (req, res) => {
-                const name = new URL(req.url, baseURL).pathname;
-                staticRequests.push(name);
-                if (slowPostal && name.endsWith('/postal/V0A.bin'))
-                    await delay(700);
-                const file = path.resolve(
-                    output,
-                    '.' + (name === '/' ? '/index.html' : name),
-                );
-                if (!file.startsWith(output + path.sep)) {
-                    res.writeHead(404).end();
-                    return;
-                }
-                try {
-                    const body = await readFile(file);
-                    const mime =
-                        {
-                            '.json': 'application/json',
-                            '.js': 'text/javascript',
-                            '.css': 'text/css',
-                            '.html': 'text/html',
-                            '.jpg': 'image/jpeg',
-                        }[path.extname(file)] || 'application/octet-stream';
-                    res.writeHead(200, {
-                        ...security,
-                        'Content-Type': mime,
-                    }).end(body);
-                } catch {
-                    res.writeHead(404).end('Not found');
-                }
-            });
-            await new Promise((resolve) =>
-                staticServer.listen(port, '127.0.0.1', resolve),
-            );
-        } else {
-            server = spawn(
-                'go',
-                [
-                    'run',
-                    '.',
-                    '-addr',
-                    `127.0.0.1:${port}`,
-                    '-data-dir',
-                    data,
-                    '-content-dir',
-                    path.join(repo, 'content-server/content'),
-                ],
-                {
-                    cwd: path.join(repo, 'content-server'),
-                    stdio: ['ignore', 'ignore', 'pipe'],
-                    detached: true,
-                },
-            );
-            server.stderr.on('data', (data) => logs.push(data.toString()));
-        }
+            if (!file.startsWith(output + path.sep)) {
+                res.writeHead(404).end();
+                return;
+            }
+            try {
+                const body = await readFile(file);
+                const mime =
+                    {
+                        '.json': 'application/json',
+                        '.js': 'text/javascript',
+                        '.css': 'text/css',
+                        '.html': 'text/html',
+                        '.jpg': 'image/jpeg',
+                    }[path.extname(file)] || 'application/octet-stream';
+                res.writeHead(200, {
+                    ...security,
+                    'Content-Type': mime,
+                }).end(body);
+            } catch {
+                res.writeHead(404).end('Not found');
+            }
+        });
+        await new Promise((resolve) =>
+            staticServer.listen(port, '127.0.0.1', resolve),
+        );
     }
     let ready = false;
     for (let i = 0; i < 150; i++) {
         try {
-            if ((await fetch(`${baseURL}/${staticMode ? '' : 'health'}`)).ok) {
+            if ((await fetch(`${baseURL}/`)).ok) {
                 ready = true;
                 break;
             }
@@ -349,8 +331,8 @@ try {
     assert.ok(
         !requests.some(
             (url) =>
-                url.endsWith('/api/districts') ||
-                url.endsWith('/api/guide') ||
+                url.endsWith('/data/districts.json') ||
+                url.endsWith('/data/guide.json') ||
                 /Finder-.*\.js/.test(url),
         ),
         'Questionnaire avoids directory, guide and map requests',
@@ -532,180 +514,128 @@ try {
         ),
         'Keyboard input outline remains visible',
     );
-    if (staticMode) {
-        assert.ok(
-            !staticRequests.some((url) => url.startsWith('/finder/')),
-            'Finder data stays lazy',
-        );
+    assert.ok(
+        !staticRequests.some((url) => url.startsWith('/finder/')),
+        'Finder data stays lazy',
+    );
+    await evaluate(
+        '(()=>{const button=[...document.querySelectorAll("button")].find(x=>x.textContent.includes("Find my constituency"));button.focus();button.click();})()',
+    );
+    await until('document.querySelector("dialog .leaflet-pane")');
+    const submitPostal = async (code) => {
         await evaluate(
-            '(()=>{const button=[...document.querySelectorAll("button")].find(x=>x.textContent.includes("Find my constituency"));button.focus();button.click();})()',
+            `(()=>{const input=document.getElementById("finder-postal"); input.value=${JSON.stringify(code)}; input.dispatchEvent(new Event("input",{bubbles:true}));})()`,
         );
-        await until('document.querySelector("dialog .leaflet-pane")');
-        const submitPostal = async (code) => {
-            await evaluate(
-                `(()=>{const input=document.getElementById("finder-postal"); input.value=${JSON.stringify(code)}; input.dispatchEvent(new Event("input",{bubbles:true}));})()`,
-            );
-            await evaluate(
-                'document.querySelector(".finder-panel form").dispatchEvent(new Event("submit",{bubbles:true,cancelable:true}))',
-            );
-        };
-        await submitPostal('V6Y 1N9');
-        await until(
-            'document.querySelector(".finder-district")?.textContent.includes("Richmond Centre")',
-        );
-        assert.ok(
-            !staticRequests.some(
-                (url) =>
-                    url.includes('/detailed/') || url.includes('/ambiguities/'),
-            ),
-            'Ordinary postal lookup avoids detailed geometry',
-        );
-        assert.ok(
-            !(await evaluate(
-                '!!document.querySelector(".leaflet-interactive.leaflet-circle-marker")',
-            )),
-            'Postal result has no home pin',
-        );
-        await shot('finder-static-mobile');
-        slowPostal = true;
-        await submitPostal('V0A 0A0');
-        for (
-            let i = 0;
-            i < 100 &&
-            !staticRequests.some((url) => url.endsWith('/postal/V0A.bin'));
-            i++
-        )
-            await delay(20);
-        assert.ok(
-            staticRequests.some((url) => url.endsWith('/postal/V0A.bin')),
-        );
-        await submitPostal('V6Y 1N9');
-        await until(
-            'document.querySelector(".finder-district")?.textContent.includes("Richmond Centre")',
-        );
-        await delay(800);
-        assert.ok(
-            await evaluate(
-                'document.querySelector(".finder-district")?.textContent.includes("Richmond Centre")',
-            ),
-        );
-        slowPostal = false;
-        await submitPostal('V6Y 1N8');
-        await until('document.querySelectorAll(".finder-district").length===2');
-        assert.ok(staticRequests.some((url) => url.includes('/ambiguities/')));
-        await submitPostal('V6Y 1N0');
-        await until(
-            'document.querySelector(".finder-panel [role=alert]")?.textContent.includes("missing")',
-        );
-        await submitPostal('V6Y 1N9');
-        await until('document.querySelectorAll(".finder-district").length===1');
-        // Browser coordinates near a shared edge must fetch exact geometry.
-        await send('Browser.grantPermissions', {
-            origin: baseURL,
-            permissions: ['geolocation'],
-        });
-        await send('Emulation.setGeolocationOverride', {
-            latitude: 49.16,
-            longitude: -123.1001,
-            accuracy: 50,
-        });
-        await evaluate('document.querySelector(".location-button").click()');
-        await until('document.querySelectorAll(".finder-district").length===2');
-        assert.ok(staticRequests.some((url) => url.includes('/detailed/')));
-        assert.ok(
-            await evaluate(
-                'document.querySelector(".finder-result")?.textContent.includes("selected location")',
-            ),
-        );
-        await evaluate(
-            'document.querySelector(".finder-map").scrollIntoView({block:"center"})',
-        );
-        const mapPoint = await evaluate(
-            '(()=>{const r=document.querySelector(".finder-map").getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2};})()',
-        );
-        await send('Input.dispatchMouseEvent', {
-            type: 'mousePressed',
-            ...mapPoint,
-            button: 'left',
-            clickCount: 1,
-        });
-        await send('Input.dispatchMouseEvent', {
-            type: 'mouseReleased',
-            ...mapPoint,
-            button: 'left',
-            clickCount: 1,
-        });
-        await until(
-            'document.querySelector(".finder-result")?.textContent.includes("selected location")',
-        );
-        await evaluate('document.querySelector(".finder-head button").click()');
-        await until('!document.querySelector(".finder-panel")');
-        assert.ok(
-            await evaluate(
-                'document.activeElement.textContent.includes("Find my constituency")',
-            ),
-        );
-        // Closing terminates the worker; reopening must still start cleanly.
-        await evaluate(
-            '(()=>{const button=[...document.querySelectorAll("button")].find(x=>x.textContent.includes("Find my constituency"));button.focus();button.click();})()',
-        );
-        await submitPostal('V6Y 1N9');
-        await until(
-            'document.querySelector(".finder-district")?.textContent.includes("Richmond Centre")',
-        );
-        await evaluate('document.querySelector(".finder-head button").click()');
-        console.log(
-            'PASS static worker postal, ambiguity, missing-code recovery, geolocation, detailed fallback, map click and reopen',
-        );
-    } else {
-        await evaluate(
-            '(()=>{const button=[...document.querySelectorAll("button")].find(x=>x.textContent.includes("Find my constituency"));button.focus();button.click();})()',
-        );
-        await until('document.querySelector("dialog .leaflet-pane")');
-        assert.ok(
-            requests.some((url) => /Finder-.*\.js/.test(url)),
-            'Map code loads on demand',
-        );
-        let firstLookup;
-        let lookupCount = 0;
-        const newest = {
-            status: 'no_match',
-            method: 'coordinates',
-            location: { latitude: 49, longitude: -123, accuracy_m: 0 },
-            districts: [],
-        };
-        await intercept('/api/constituency-finder', (event) => {
-            lookupCount++;
-            if (lookupCount === 1) {
-                firstLookup = event;
-                return;
-            }
-            return fulfill(event, newest);
-        });
-        await evaluate(
-            'document.getElementById("finder-postal").value="V6Y 1N9"; document.querySelector(".finder-panel form").dispatchEvent(new Event("submit",{bubbles:true,cancelable:true}))',
-        );
-        for (let i = 0; i < 100 && !firstLookup; i++) await delay(20);
-        assert.ok(firstLookup);
         await evaluate(
             'document.querySelector(".finder-panel form").dispatchEvent(new Event("submit",{bubbles:true,cancelable:true}))',
         );
-        await until(
-            'document.querySelector(".finder-result")?.textContent.includes("No constituency match")',
-        );
-        await send('Fetch.continueRequest', {
-            requestId: firstLookup.requestId,
-        }).catch(() => {});
-        await unintercept();
-        await delay(100);
-        assert.ok(
-            await evaluate(
-                'document.querySelector(".finder-result")?.textContent.includes("No constituency match")',
-            ),
-        );
-        console.log('PASS finder cancels superseded lookups');
-        await evaluate('document.querySelector(".finder-head button").click()');
-    }
+    };
+    await submitPostal('V6Y 1N9');
+    await until(
+        'document.querySelector(".finder-district")?.textContent.includes("Richmond Centre")',
+    );
+    assert.ok(
+        !staticRequests.some(
+            (url) =>
+                url.includes('/detailed/') || url.includes('/ambiguities/'),
+        ),
+        'Ordinary postal lookup avoids detailed geometry',
+    );
+    assert.ok(
+        !(await evaluate(
+            '!!document.querySelector(".leaflet-interactive.leaflet-circle-marker")',
+        )),
+        'Postal result has no home pin',
+    );
+    await shot('finder-static-mobile');
+    slowPostal = true;
+    await submitPostal('V0A 0A0');
+    for (
+        let i = 0;
+        i < 100 &&
+        !staticRequests.some((url) => url.endsWith('/postal/V0A.bin'));
+        i++
+    )
+        await delay(20);
+    assert.ok(staticRequests.some((url) => url.endsWith('/postal/V0A.bin')));
+    await submitPostal('V6Y 1N9');
+    await until(
+        'document.querySelector(".finder-district")?.textContent.includes("Richmond Centre")',
+    );
+    await delay(800);
+    assert.ok(
+        await evaluate(
+            'document.querySelector(".finder-district")?.textContent.includes("Richmond Centre")',
+        ),
+    );
+    slowPostal = false;
+    await submitPostal('V6Y 1N8');
+    await until('document.querySelectorAll(".finder-district").length===2');
+    assert.ok(staticRequests.some((url) => url.includes('/ambiguities/')));
+    await submitPostal('V6Y 1N0');
+    await until(
+        'document.querySelector(".finder-panel [role=alert]")?.textContent.includes("missing")',
+    );
+    await submitPostal('V6Y 1N9');
+    await until('document.querySelectorAll(".finder-district").length===1');
+    // Browser coordinates near a shared edge must fetch exact geometry.
+    await send('Browser.grantPermissions', {
+        origin: baseURL,
+        permissions: ['geolocation'],
+    });
+    await send('Emulation.setGeolocationOverride', {
+        latitude: 49.16,
+        longitude: -123.1001,
+        accuracy: 50,
+    });
+    await evaluate('document.querySelector(".location-button").click()');
+    await until('document.querySelectorAll(".finder-district").length===2');
+    assert.ok(staticRequests.some((url) => url.includes('/detailed/')));
+    assert.ok(
+        await evaluate(
+            'document.querySelector(".finder-result")?.textContent.includes("selected location")',
+        ),
+    );
+    await evaluate(
+        'document.querySelector(".finder-map").scrollIntoView({block:"center"})',
+    );
+    const mapPoint = await evaluate(
+        '(()=>{const r=document.querySelector(".finder-map").getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2};})()',
+    );
+    await send('Input.dispatchMouseEvent', {
+        type: 'mousePressed',
+        ...mapPoint,
+        button: 'left',
+        clickCount: 1,
+    });
+    await send('Input.dispatchMouseEvent', {
+        type: 'mouseReleased',
+        ...mapPoint,
+        button: 'left',
+        clickCount: 1,
+    });
+    await until(
+        'document.querySelector(".finder-result")?.textContent.includes("selected location")',
+    );
+    await evaluate('document.querySelector(".finder-head button").click()');
+    await until('!document.querySelector(".finder-panel")');
+    assert.ok(
+        await evaluate(
+            'document.activeElement.textContent.includes("Find my constituency")',
+        ),
+    );
+    // Closing terminates the worker; reopening must still start cleanly.
+    await evaluate(
+        '(()=>{const button=[...document.querySelectorAll("button")].find(x=>x.textContent.includes("Find my constituency"));button.focus();button.click();})()',
+    );
+    await submitPostal('V6Y 1N9');
+    await until(
+        'document.querySelector(".finder-district")?.textContent.includes("Richmond Centre")',
+    );
+    await evaluate('document.querySelector(".finder-head button").click()');
+    console.log(
+        'PASS static worker postal, ambiguity, missing-code recovery, geolocation, detailed fallback, map click and reopen',
+    );
     await route('#/constituencies/RCC');
     await until(
         'document.querySelector(".candidate-table") && document.querySelector(".riding-outlook")',
@@ -716,8 +646,8 @@ try {
         ),
     );
     assert.ok(
-        !requests.some((url) => url.endsWith('/api/districts/RCC')),
-        'Ballot avoids archived research endpoint',
+        !requests.some((url) => url.endsWith('/data/districts/RCC.json')),
+        'Ballot avoids the retired district endpoint',
     );
     await shot('district-mobile');
     console.log(
@@ -744,12 +674,7 @@ try {
     // Return a changed prompt for an existing ID: saved answers must not transfer.
     const questionnaire = JSON.parse(
         await readFile(
-            path.join(
-                repo,
-                'content-server/content',
-                election,
-                'questionnaire.json',
-            ),
+            path.join(repo, 'content', election, 'questionnaire.json'),
             'utf8',
         ),
     );
@@ -833,12 +758,10 @@ try {
             '/api/districts',
             '/api/districts/RCC/ballot',
             '/api/parties',
-            staticMode ? '/data/publication.json' : '/ready',
+            '/data/publication.json',
         ]) {
             const start = performance.now();
-            const response = await fetch(
-                baseURL + resourceURL(endpoint, staticMode),
-            );
+            const response = await fetch(baseURL + resourceURL(endpoint));
             const body = await response.text();
             assert.equal(response.status, 200, endpoint);
             console.log(
@@ -853,34 +776,27 @@ try {
             );
         }
     }
-    if (staticMode) {
-        assert.deepEqual(
-            staticRequests.filter((url) => url.startsWith('/api/')),
-            [],
-        );
-        assert.deepEqual(
-            requests.filter((url) => new URL(url).pathname.startsWith('/api/')),
-            [],
-            'Static site makes no backend requests',
-        );
-    }
+    assert.deepEqual(
+        staticRequests.filter((url) => url.startsWith('/api/')),
+        [],
+    );
+    assert.deepEqual(
+        requests.filter((url) => new URL(url).pathname.startsWith('/api/')),
+        [],
+        'Static site makes no backend requests',
+    );
     assert.equal(exceptions.length, 0, JSON.stringify(exceptions));
     assert.equal(violations.length, 0, JSON.stringify(violations));
     console.log(`Browser suite passed. Screenshots: ${temporary}`);
 } catch (error) {
     console.error(logs.join(''));
-    if (staticMode) console.error('Static file requests:', staticRequests);
+    console.error('Static file requests:', staticRequests);
     throw error;
 } finally {
     socket?.close();
     chrome?.kill('SIGTERM');
     staticServer?.closeAllConnections();
     staticServer?.close();
-    if (server?.pid) {
-        try {
-            process.kill(-server.pid, 'SIGINT');
-        } catch {}
-    }
     for (const item of pending.values())
         item.reject(Error('Browser session ended'));
 }
