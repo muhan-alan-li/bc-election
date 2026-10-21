@@ -1,56 +1,62 @@
 .DEFAULT_GOAL := help
 
-PORT ?= 8000
-FINDER_PORT ?= 8001
+PORT ?= 8080
 
-.PHONY: help setup build up down status finder-data test data-curate data-polish data-build
+.PHONY: help setup build data finder-data refresh-finder-data preview test test-browser check format clean
+
+FINDER_DATA := ingestion/storage/published/finder.json
 
 help:
-	@echo "make up      Build and restart the app in the background"
-	@echo "make down    Stop the app"
-	@echo "make status  Check whether the app is running"
-	@echo "make build   Build the client and both Go services"
-	@echo "make setup   Install client dependencies"
-	@echo "make finder-data  Import/update free constituency finder data"
-	@echo "make test    Run the Go API and finder tests"
-	@echo "make data-build  Curate and polish collected evidence, without downloads"
-	@echo "make data-curate Apply reviewed identity and interest records"
-	@echo "make data-polish Build client files from curated snapshots"
-
-data-curate:
-	cd ingestion && python3 -m election curate
-
-data-polish:
-	cd ingestion && python3 -m election polish
-
-data-build:
-	cd ingestion && python3 -m election build-data
+	@echo "make setup       Install client dependencies"
+	@echo "make build       Export data, build the finder, and bundle the static site"
+	@echo "make data        Build catalog and ballots from the official roster"
+	@echo "make finder-data Build finder data if it is missing"
+	@echo "make refresh-finder-data Re-download finder source data"
+	@echo "make preview     Serve client/dist-static at http://localhost:$(PORT)"
+	@echo "make test        Run Python and client unit tests"
+	@echo "make test-browser Run the static browser regression suite"
+	@echo "make check       Run formatting checks and all non-browser tests"
+	@echo "make clean       Remove generated static output"
+	@echo "make format      Format client source"
 
 setup:
 	cd client && npm install
 	touch client/node_modules/.installed
 
-client/node_modules/.installed: client/package.json
+client/node_modules/.installed: client/package.json client/package-lock.json
 	cd client && npm install
 	touch client/node_modules/.installed
 
-build: client/node_modules/.installed
-	cd client && npm run build
-	cd content-server && go build -o bin/content-server .
-	cd constituency-finder && go build -o bin/constituency-finder .
+data:
+	cd ingestion && python3 -m election build
 
-up: build
-	sh scripts/app.sh up "$(PORT)" "$(FINDER_PORT)"
+finder-data: $(FINDER_DATA)
 
-down:
-	sh scripts/app.sh down "$(PORT)" "$(FINDER_PORT)"
-
-status:
-	sh scripts/app.sh status "$(PORT)" "$(FINDER_PORT)"
-
-finder-data:
+$(FINDER_DATA):
 	cd ingestion && python3 -m election build-finder
 
+refresh-finder-data:
+	cd ingestion && python3 -m election --refresh build-finder
+
+build: client/node_modules/.installed data finder-data
+	cd client && npm run build
+
+preview:
+	cd client && python3 -m http.server "$(PORT)" --directory dist-static
+
 test:
-	cd content-server && go test ./...
-	cd constituency-finder && go test ./...
+	cd ingestion && python3 -m unittest discover -s tests
+	cd client && npm test
+
+test-browser: client/node_modules/.installed
+	cd client && npm run test:browser
+
+check: client/node_modules/.installed
+	cd client && npm run format:check
+	$(MAKE) test
+
+format: client/node_modules/.installed
+	cd client && npm run format
+
+clean:
+	rm -rf client/dist-static client/.static-build-*
