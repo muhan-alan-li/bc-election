@@ -68,3 +68,18 @@ The finder binds to loopback port 8001 by default. The main content server forwa
 The finder retains the loaded dataset until process restart. A separate LRU cache holds at most 256 normalized postal-code results for ten minutes. Entries contain only indices into the immutable boundary collection. They do not duplicate coordinates, geometry, or serialized responses. Coordinate requests are not cached. Cancellation stops matching work. Research availability is based on a regular publication file existing and is checked fresh on each lookup; the content API validates that publication when the user opens its candidates.
 
 Use `make up`/`down`/`status` to manage both services. The Makefile builds both binaries. Startup checks process survival and removes newly started finder processes if main-server startup fails. Existing running services are preserved. Logs live in `.run/`. Restart both services to apply code changes or replace finder data.
+
+## Static deployment
+
+`npm run build:static` in `client/` exports this dataset into versioned binary
+lookup tables and boundary files. Postal matches are computed with Go during the
+build. A JavaScript browser worker handles coordinate matching and reads the
+precomputed postal results, fetching detailed geometry near edges. No finder
+service is required for that deployment. Postal results zoom to matching
+constituencies without a recorded-point pin. Coordinates stay in the browser;
+OpenStreetMap still receives the viewed tile area. The service documentation
+above describes the retained Go-served development/research deployment.
+
+See `client/README.md` for format details and `npm run test:browser:static` for
+end-to-end checks. `BC_FINDER_DATASET` selects the build input; generating or
+refreshing that input remains an explicit ingestion operation.

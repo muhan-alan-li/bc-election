@@ -86,9 +86,10 @@ python3 -m election validate --client storage/published/bc-provincial-2026/RCC.j
 ```
 
 Polishing reads curated snapshots only, validates the whole selected batch before
-writing, and atomically replaces individual client files. Validation failures leave
-the previous client files intact. Writes are atomic per file, not one transaction
-across the batch. Repeating a build with identical evidence/reviews produces
+writing, builds a complete immutable generation with lightweight ballots/catalog
+and the reviewed editorial snapshot, then atomically replaces one active manifest.
+Validation or staging failures leave the previous active generation intact.
+Legacy client files are compatibility exports written after activation. Repeating a build with identical evidence/reviews produces
 identical client bytes. Changes appear in the API without a service restart.
 
 From the repository root, use `make data-build` to curate and polish existing
@@ -184,7 +185,7 @@ reports the subset actually included in the profile.
 
 `build-political-profiles` validates profiles before replacing curated snapshots;
 polishing validates the selected political batch before replacing its files.
-Publication is atomic per file. Rebuilding identical evidence produces identical
+Publication activates a complete generation through one atomic manifest. Rebuilding identical evidence produces identical
 profile bytes. The outputs are ready for a future site/API presentation, but this
 change does not expose a new endpoint or change the UI. Generated research remains
 Git-ignored: back up normalized evidence and reviewed inputs.
