@@ -8,13 +8,14 @@
   },
   "scripts": {
     "build": "node build.js",
-    "build:static": "node build.js --static",
+    "build:static": "node build.js",
     "dev": "node build.js --watch",
-    "format": "prettier --write build.js \"src/**/*.{js,jsx,css}\" \"tests/**/*.{js,mjs}\" index.html README.md",
-    "format:check": "prettier --check build.js \"src/**/*.{js,jsx,css}\" \"tests/**/*.{js,mjs}\" index.html README.md",
+    "preview": "python3 -m http.server 8080 --directory dist-static",
+    "format": "prettier --write build.js \"scripts/**/*.mjs\" \"src/**/*.{js,jsx,css}\" \"tests/**/*.{js,mjs}\" index.html README.md",
+    "format:check": "prettier --check build.js \"scripts/**/*.mjs\" \"src/**/*.{js,jsx,css}\" \"tests/**/*.{js,mjs}\" index.html README.md",
     "test": "node --test tests/*.test.js",
     "test:browser": "node tests/browser/run.mjs",
-    "test:browser:static": "node tests/browser/run.mjs --static"
+    "test:browser:static": "node tests/browser/run.mjs"
   },
   "dependencies": {
     "leaflet": "^1.9.4",
