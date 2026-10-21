@@ -1,0 +1,51 @@
+name: Static site
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: static-site
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: client/package-lock.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/cache@v4
+        with:
+          path: ingestion/storage/raw
+          key: bc-finder-sources-v1
+      - run: npm ci
+        working-directory: client
+      - name: Build official roster
+        run: python3 -m election --refresh build
+        working-directory: ingestion
+      - name: Build finder source data
+        run: python3 -m election build-finder
+        working-directory: ingestion
+      - name: Build static site
+        run: npm run build
+        working-directory: client
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bc-election-static
+          path: client/dist-static
+          retention-days: 14
+      - name: Deploy to Cloudflare Pages
+        if: github.ref == 'refs/heads/main' && vars.CLOUDFLARE_PAGES_PROJECT != ''
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy client/dist-static --project-name=${{ vars.CLOUDFLARE_PAGES_PROJECT }}
