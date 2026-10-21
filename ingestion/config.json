@@ -3,44 +3,9 @@
     "id": "bc-provincial-2026",
     "title": "2026 BC Provincial General Election",
     "voting_date": null,
-    "boundary_version": null,
+    "boundary_version": "bc-2023-redistribution-set-11",
     "status": "final_roster",
     "source_url": "https://elections.bc.ca/2026-provincial-election/candidate-list/"
   },
-  "roster_url": "https://elections.bc.ca/2026election/2026-provincial-general-election-candidates.csv",
-  "voting_archive_url": "https://www.leg.bc.ca/parliamentary-business/voting-records-index-archive",
-  "voting_since": 2020,
-  "comparison_research": {
-    "max_output_tokens": 6000
-  },
-  "identity_review": {
-    "max_output_tokens": 4000
-  },
-  "source_review": {
-    "max_output_tokens": 6000
-  },
-  "political_analysis": {
-    "base_url": "https://api.deepseek.com/v1",
-    "model": "deepseek-flash",
-    "api_key_env": "DEEPSEEK_API_KEY",
-    "max_output_tokens": 2500,
-    "requests_per_minute": 120,
-    "workers": 8,
-    "timeout_seconds": 60,
-    "retries": 2,
-    "extra_body": { "thinking": { "type": "disabled" } },
-    "pricing": { "input_per_million": 0.30, "output_per_million": 1.20 }
-  },
-  "platform_directories": [
-    "https://www.bcndp.ca/team",
-    "https://conservativebc.ca/our-team/",
-    "https://bcgreens.ca/candidates-2026/",
-    "https://www.centrebc.ca/our-team/",
-    "https://libertarian.bc.ca/2026-candidates/",
-    "https://votemate.org/bc2026provincial/candidates/"
-  ],
-  "disclosure_urls": [
-    "https://www.leg.bc.ca/about/accountability/members-disclosures/public-disclosure-statements",
-    "https://www.leg.bc.ca/about/accountability/members-disclosures/public-disclosure-statements/y/archived-public-disclosure-statements"
-  ]
+  "roster_url": "https://elections.bc.ca/2026election/2026-provincial-general-election-candidates.csv"
 }

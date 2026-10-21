@@ -92,7 +92,7 @@ class SourceStore:
         if self.offline:
             raise SourceError(f"Source not cached: {url}")
         try:
-            request = Request(url, headers={"User-Agent": "BC-Election-Research/0.1"})
+            request = Request(url, headers={"User-Agent": "BC-Election-Guide/1.0"})
             with urlopen(request, timeout=30) as response:
                 data = response.read()
         except (URLError, TimeoutError, OSError) as error:

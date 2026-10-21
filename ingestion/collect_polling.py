@@ -62,11 +62,11 @@ def main():
     if args.html:
         html = args.html.read_text()
     else:
-        with urlopen(Request(SOURCE,headers={'User-Agent':'BC-election-guide/1.0 (source-attributed election research)'}), timeout=45) as response:
+        with urlopen(Request(SOURCE,headers={'User-Agent':'BC-election-guide/1.0 (source-attributed polling)'}), timeout=45) as response:
             html = response.read().decode('utf-8')
     districts = json.loads((BASE/'ingestion/polling-districts.json').read_text())
     rows = parse_outlooks(html, districts)
-    folder = BASE/'content-server/content/bc-provincial-2026'
+    folder = BASE/'content/bc-provincial-2026'
     output = {'schema_version':1,'election_id':'bc-provincial-2026',
               'collectedAt':datetime.now(timezone.utc).isoformat(),
               'methodology':{'url':'https://338canada.com/about.htm','label':'338Canada methodology'},

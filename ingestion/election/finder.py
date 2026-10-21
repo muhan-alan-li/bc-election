@@ -1,4 +1,4 @@
-"""Import free location sources; keep matching in the Go server."""
+"""Import free location sources for the static constituency finder."""
 import csv
 import io
 import json

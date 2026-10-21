@@ -1,6 +1,6 @@
 [project]
 name = "bc-election-ingestion"
 version = "0.1.0"
-description = "Repeatable, source-linked constituency research"
+description = "Build the static BC election publication and constituency finder data"
 requires-python = ">=3.12"
 dependencies = []

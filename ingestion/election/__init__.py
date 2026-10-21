@@ -1,1 +1,1 @@
-"""Offline-first constituency research workflow."""
+"""Build the static election publication and constituency finder data."""

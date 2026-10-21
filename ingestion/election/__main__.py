@@ -4,205 +4,86 @@ import sys
 import tempfile
 from pathlib import Path
 
-from .storage import SourceStore, read_json
 from .finder import build_finder
-from .platforms import collect_parties, collect_candidates, latest_attempt
-from .workflow import load_roster, run_district, validate
-from .pipeline import curate, polish, migrate_evidence
+from .roster import load_roster, publish_roster
+from .storage import SourceStore, read_json
+from .validate import validate_publication
 
 
 def main():
     base = Path(__file__).resolve().parent.parent
-    parser = argparse.ArgumentParser(description="Repeatable BC constituency research workflow")
+    parser = argparse.ArgumentParser(description="Build the BC election guide's static publication")
     parser.add_argument("--config", type=Path, default=base / "config.json")
     parser.add_argument("--storage", type=Path, default=base / "storage")
-    parser.add_argument("--offline", action="store_true", help="Use cached snapshots only")
-    parser.add_argument("--refresh", action="store_true", help="Fetch fresh sources; never silently fall back to stale data")
-    parser.add_argument("--ephemeral-raw", action="store_true", help="Download into temporary storage; keep extracted evidence, discard raw bytes after this command")
+    parser.add_argument("--offline", action="store_true", help="Use cached source snapshots only")
+    parser.add_argument(
+        "--refresh",
+        action="store_true",
+        help="Fetch fresh sources; never silently fall back to stale data",
+    )
+    parser.add_argument(
+        "--ephemeral-raw",
+        action="store_true",
+        help="Download into temporary storage and discard raw bytes after this command",
+    )
     commands = parser.add_subparsers(dest="command", required=True)
-    commands.add_parser("build-finder", help="Import free BC postal locations and official boundaries")
+    commands.add_parser("build", help="Fetch the official roster and publish compact ballots")
+    commands.add_parser("build-finder", help="Import BC postal locations and official boundaries")
     commands.add_parser("list-districts", help="Read constituency names/codes from the official roster")
-    commands.add_parser('migrate-evidence', help='Copy legacy published platform research into normalized storage')
-    political = commands.add_parser('collect-political-records', help='Collect Assembly transcript evidence for all candidate voting records')
-    political.add_argument('--workers', type=int, choices=range(1, 9), default=4)
-    commands.add_parser('build-political-profiles', help='Organize existing actions and platform evidence by topic, offline')
-    research = commands.add_parser('research-candidates', help='Plan, initialize, collect, draft, or publish candidate comparisons')
-    research.add_argument('--stage', choices=['plan', 'init', 'collect', 'draft', 'publish'], default='plan')
-    research.add_argument('--district', help='District code; defaults to all constituencies')
-    research.add_argument('--candidate', help='Exact ballot name or candidacy ID; defaults to all candidates')
-    research.add_argument('--research-dir', type=Path, help='Research inputs root; defaults to storage/curated/research')
-    research.add_argument('--max-calls', type=int, default=0, help='Total new model calls across this batch; cached drafts are reused')
-    for name in ('collect-alignment-evidence', 'analyze-platform-alignment', 'build-platform-alignment'):
-        alignment = commands.add_parser(name, help='Collect, draft or publish selective commitment comparisons')
-        alignment.add_argument('--manifest', '--pilot', dest='manifest', type=Path, required=True,
-                               help='Candidate-specific research manifest (--pilot is a compatibility alias)')
-        alignment.add_argument('--review', type=Path, help='Source-checked editorial review, required for build')
-        alignment.add_argument('--max-calls', type=int, default=4)
-        if name == 'analyze-platform-alignment':
-            from .analysis.alignment import PILLAR_IDS
-            alignment.add_argument('--pillar', choices=sorted(PILLAR_IDS), help='Draft only cases in this pillar; publication still checks the complete review')
-    for name in ('estimate-political-analysis', 'analyze-political-records'):
-        analysis = commands.add_parser(name, help='Prepare shared decisions and estimate usage' if name.startswith('estimate') else 'Interpret decisions and summarize candidate issue patterns')
-        analysis.add_argument('--district', help='District code; defaults to all candidates')
-        analysis.add_argument('--max-calls', type=int, default=20, help='Maximum new model calls; cached interpretations are reused')
-    for name in ('curate', 'polish', 'build-data'):
-        stage = commands.add_parser(name, help={'curate': 'Apply reviewed registries to normalized evidence, offline',
-                                   'polish': 'Build compact client files from curated snapshots, offline',
-                                   'build-data': 'Curate and polish existing evidence without downloads'}[name])
-        stage.add_argument('--district', help='District code; defaults to all available datasets')
-    normalize = commands.add_parser('normalize', help='Collect constituency evidence without client publication')
-    normalize.add_argument('--district', help='Official name or code; defaults to all districts')
-    normalize.add_argument('--download-documents', action='store_true')
-    parties = commands.add_parser("collect-party-platforms", help="Collect shared party platform source material")
-    parties.add_argument("--party", help="Exact official party name; defaults to all parties")
-    parties.add_argument("--max-pages", type=int, default=60)
-    candidates = commands.add_parser("collect-candidate-platforms", help="Collect individual candidate platform source material")
-    candidates.add_argument("--district", help="Official constituency name or code; defaults to all")
-    candidates.add_argument("--candidate", help="Exact ballot name")
-    candidates.add_argument("--max-pages", type=int, default=12)
-    run = commands.add_parser("run", help="Collect and publish one constituency")
-    run.add_argument("--district", required=True, help="Exact official name or ED code")
-    run.add_argument("--download-documents", action="store_true", help="Save disclosure PDFs and extract page text with pdftotext")
+    commands.add_parser("validate", help="Validate the current compact publication")
     seed = commands.add_parser("import-source", help="Cache a source downloaded separately")
     seed.add_argument("--url", required=True)
     seed.add_argument("--file", type=Path, required=True)
-    check = commands.add_parser("validate", help="Validate a generated constituency dataset")
-    check.add_argument("file", type=Path)
-    check.add_argument('--client', action='store_true', help='Validate a polished client file')
     args = parser.parse_args()
+
     if args.offline and args.refresh:
         parser.error("--offline and --refresh cannot be combined")
     if args.ephemeral_raw and args.offline:
-        parser.error('--ephemeral-raw cannot be used with --offline (temporary cache starts empty)')
+        parser.error("--ephemeral-raw cannot be used with --offline")
+
+    if args.command == "validate":
+        config = read_json(args.config)
+        validate_publication(args.storage / "published" / config["election"]["id"],
+                             config["election"]["id"])
+        print("Valid publication")
+        return 0
+
     temporary = tempfile.TemporaryDirectory() if args.ephemeral_raw else None
-    store = SourceStore(args.storage, offline=args.offline, refresh=args.refresh,
-                        raw_root=temporary.name if temporary else None)
+    store = SourceStore(
+        args.storage,
+        offline=args.offline,
+        refresh=args.refresh,
+        raw_root=temporary.name if temporary else None,
+    )
     try:
         if args.command == "import-source":
             _, meta = store.import_file(args.url, args.file)
             print(json.dumps(meta, indent=2))
-        elif args.command == "build-finder":
+            return 0
+
+        config = read_json(args.config)
+        if args.command == "build-finder":
             path, audit = build_finder(store, args.storage)
             print(json.dumps(audit, indent=2))
             print(path)
-        elif args.command == "validate":
-            validate(read_json(args.file), client=args.client)
-            print("Valid constituency dataset")
-        else:
-            config = read_json(args.config)
-            if args.command == 'research-candidates':
-                from .analysis.alignment.batch import research_candidates
-                if args.stage == 'draft' and not args.offline and args.max_calls:
-                    from .analysis.service import load_env
-                    load_env(base.parent / '.env')
-                summary = research_candidates(args.storage, config, stage=args.stage,
-                    district=args.district, candidate=args.candidate, research_dir=args.research_dir,
-                    max_calls=args.max_calls, offline=args.offline, refresh=args.refresh)
-                print(json.dumps(summary, indent=2))
-                return int(bool(summary['errors']))
-            elif args.command in {'collect-alignment-evidence', 'analyze-platform-alignment', 'build-platform-alignment'}:
-                from .analysis.alignment import run as align, build_reviewed
-                from .analysis.service import load_env
-                manifest = read_json(args.manifest)
-                if args.command == 'build-platform-alignment':
-                    if not args.review:
-                        parser.error('--review is required for source-checked publication')
-                    dossier = build_reviewed(args.storage, manifest, read_json(args.review))
-                    from .political import build_profiles, polish_profiles
-                    build_profiles(args.storage, manifest['election_id'])
-                    polish_profiles(args.storage, manifest['election_id'])
-                    summary = {'findings': len(dossier['findings']), 'coverage': dossier['coverage']}
-                else:
-                    if args.command == 'analyze-platform-alignment' and not args.offline and args.max_calls:
-                        load_env(base.parent / '.env')
-                    summary = align(args.storage, config, manifest, pillar=getattr(args, 'pillar', None), max_calls=args.max_calls,
-                        offline=args.offline, refresh=args.refresh, collect_only=args.command == 'collect-alignment-evidence')
-                print(json.dumps(summary, indent=2))
-                return int(bool(summary.get('errors')))
-            elif args.command in {'estimate-political-analysis', 'analyze-political-records'}:
-                from .analysis.service import prepare, estimate, provider_from_config, run as analyze, load_env
-                provider = provider_from_config(config)
-                election_id = config['election']['id']
-                if args.command == 'estimate-political-analysis':
-                    _, jobs, _ = prepare(args.storage, election_id, district=args.district)
-                    summary = estimate(jobs, provider, args.storage, election_id, config.get('political_analysis', {}).get('pricing', {'input_per_million': .30, 'output_per_million': 1.20}))
-                else:
-                    if not args.offline and args.max_calls:
-                        load_env(base.parent / '.env')
-                    summary = analyze(args.storage, config, district=args.district, provider=provider,
-                                      max_calls=args.max_calls, offline=args.offline)
-                    from .political import build_profiles, polish_profiles
-                    build_profiles(args.storage, election_id)
-                    polish_profiles(args.storage, election_id)
-                print(json.dumps(summary, indent=2))
-                return int(bool(summary.get('errors')))
-            elif args.command in {'collect-political-records', 'build-political-profiles'}:
-                from .political import collect_transcripts, build_profiles, polish_profiles
-                election_id = config['election']['id']
-                if args.command == 'collect-political-records':
-                    collect_transcripts(args.storage, election_id, offline=args.offline,
-                                        refresh=args.refresh, workers=args.workers,
-                                        raw_root=temporary.name if temporary else None)
-                summary = build_profiles(args.storage, election_id)
-                paths = polish_profiles(args.storage, election_id)
-                print(json.dumps(summary, indent=2))
-                print(f'Polished {len(paths)} political profiles')
-                return int(bool(summary['transcript_errors']))
-            elif args.command == 'migrate-evidence':
-                paths = migrate_evidence(args.storage, config['election']['id'])
-                print(f'Migrated {len(paths)} legacy research files')
-            elif args.command in {'curate', 'polish', 'build-data'}:
-                election_id = config['election']['id']
-                if args.command in {'curate', 'build-data'}:
-                    paths = curate(args.storage, election_id, args.district)
-                    print(f'Curated {len(paths)} datasets')
-                if args.command in {'polish', 'build-data'}:
-                    paths = polish(args.storage, election_id, args.district)
-                    print(f'Polished {len(paths)} client datasets in {args.storage / "published"}')
-            elif args.command in {"collect-party-platforms", "collect-candidate-platforms"}:
-                if args.command == "collect-party-platforms":
-                    paths = collect_parties(store, config, args.storage, party=args.party, max_pages=args.max_pages)
-                else:
-                    paths = collect_candidates(store, config, args.storage, district=args.district,
-                                               candidate=args.candidate, max_pages=args.max_pages)
-                for path in paths:
-                    output = read_json(path)
-                    print(f"{output['coverage']['status']}: {path}")
-                    attempt = path.with_suffix(".attempt.json")
-                    if attempt.exists() and read_json(attempt)["generated_at"] > output["generated_at"]:
-                        print(f"  Failed collection; previous publication retained. See {attempt}")
-                return int(any(latest_attempt(path)["coverage"]["errors"] for path in paths))
-            elif args.command == "list-districts":
-                districts, _, _ = load_roster(store, config)
-                for code, name in sorted(districts.items(), key=lambda item: item[1]):
-                    print(f"{code}\t{name}")
-            elif args.command == 'normalize':
-                selections = [args.district] if args.district else sorted(load_roster(store, config)[0])
-                for selection in selections:
-                    dataset, path = run_district(store, config, args.storage, selection,
-                                                download_documents=args.download_documents, publish=False)
-                    print(f"Normalized {dataset['district']['name']}: {len(dataset['candidacies'])} candidates; {path}")
-            else:
-                dataset, path = run_district(store, config, args.storage, args.district,
-                                            download_documents=args.download_documents, publish=args.command == 'run')
-                print(f"{'Published' if args.command == 'run' else 'Normalized'} {dataset['district']['name']}: {len(dataset['candidacies'])} candidates, "
-                      f"{len(dataset['votes'])} indexed votes, {len(dataset['disclosures'])} disclosure documents")
-                print(path)
-                parties = {party["id"]: party["name"] for party in dataset["parties"]}
-                for candidate in dataset["candidacies"]:
-                    coverage = next(row for row in dataset["coverage"] if row["person_id"] == candidate["person_id"])
-                    affiliation = parties.get(candidate["party_id"], candidate["affiliation"])
-                    print(f"  {candidate['ballot_name']}: {affiliation}; "
-                          f"votes {coverage['voting']['count']} ({coverage['voting']['status']}); "
-                          f"interests {coverage['interests']['reviewed_entry_count']} ({coverage['interests']['status']})")
-                print(f"Research tasks: {len(dataset['tasks'])}; see coverage in the dataset")
+            return 0
+
+        districts, candidates, meta = load_roster(store, config)
+        if args.command == "list-districts":
+            for code, name in sorted(districts.items(), key=lambda item: item[1]):
+                print(f"{code}\t{name}")
+            return 0
+
+        path, count = publish_roster(args.storage, config, districts, candidates, meta)
+        print(f"Published {len(districts)} constituencies and {len(candidates)} candidates")
+        print(path)
+        return 0
     except (ValueError, OSError, KeyError, TypeError) as error:
         print(f"error: {error}", file=sys.stderr)
         return 1
     finally:
         if temporary:
             temporary.cleanup()
-    return 0
 
 
 if __name__ == "__main__":
