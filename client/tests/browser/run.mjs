@@ -20,7 +20,7 @@ const externalURL =
     process.env.BC_TEST_URL ||
     process.argv.find((arg) => arg.startsWith('--live='))?.slice(7);
 const baseURL = externalURL || `http://127.0.0.1:${port}`;
-let chrome, socket;
+let chrome, socket, pageSession;
 const logs = [];
 const pending = new Map();
 let nextID = 0;
@@ -71,7 +71,17 @@ function send(method, params = {}) {
                 reject(error);
             },
         });
-        socket.send(JSON.stringify({ id, method, params }));
+        const browserMethod = /^(Target|Browser)\./.test(method);
+        socket.send(
+            JSON.stringify({
+                id,
+                method,
+                params,
+                ...(pageSession && !browserMethod
+                    ? { sessionId: pageSession }
+                    : {}),
+            }),
+        );
     });
 }
 async function evaluate(expression) {
@@ -157,6 +167,124 @@ async function start() {
             schema_version: 1,
             election_id: election,
             districts,
+        });
+        const resultParties = [
+            {
+                id: 'conservative',
+                name: 'Conservative Party of BC',
+                color: '#245b8a',
+                seats: 1,
+                votes: 1200,
+                vote_share: 60,
+                historical: false,
+            },
+            {
+                id: 'ndp',
+                name: 'BC NDP',
+                color: '#c85316',
+                seats: 1,
+                votes: 800,
+                vote_share: 40,
+                historical: false,
+            },
+        ];
+        const resultDistricts = {
+            RCC: {
+                code: 'RCC',
+                name: 'Richmond Centre',
+                winner: {
+                    name: 'Alex Example',
+                    party_id: 'conservative',
+                    votes: 700,
+                    vote_share: 70,
+                },
+                candidates: [
+                    {
+                        name: 'Alex Example',
+                        party_id: 'conservative',
+                        votes: 700,
+                        vote_share: 70,
+                        elected: true,
+                        rank: 1,
+                    },
+                    {
+                        name: 'Sam Sample',
+                        party_id: 'ndp',
+                        votes: 300,
+                        vote_share: 30,
+                        elected: false,
+                        rank: 2,
+                    },
+                ],
+                valid_votes: 1000,
+                rejected_votes: 5,
+                considered_votes: 1005,
+                margin: { votes: 400, points: 40 },
+                history: [],
+            },
+            OTH: {
+                code: 'OTH',
+                name: 'Other Constituency',
+                winner: {
+                    name: 'Other Example',
+                    party_id: 'ndp',
+                    votes: 500,
+                    vote_share: 50,
+                },
+                candidates: [
+                    {
+                        name: 'Other Example',
+                        party_id: 'ndp',
+                        votes: 500,
+                        vote_share: 50,
+                        elected: true,
+                        rank: 1,
+                    },
+                    {
+                        name: 'Second Example',
+                        party_id: 'conservative',
+                        votes: 500,
+                        vote_share: 50,
+                        elected: false,
+                        rank: 2,
+                    },
+                ],
+                valid_votes: 1000,
+                rejected_votes: 2,
+                considered_votes: 1002,
+                margin: { votes: 0, points: 0 },
+                history: [],
+            },
+        };
+        await json(path.join(data, election, 'results.json'), {
+            schema_version: 1,
+            election_id: election,
+            generated_at: '2026-10-26T00:00:00Z',
+            election: {
+                id: election,
+                title: '2026 BC Provincial General Election',
+                voting_date: '2026-10-24',
+                parliament: '44th Parliament',
+                seats: 2,
+                majority: 2,
+                status: 'initial_count',
+                status_label: 'Initial count complete',
+                as_of: 'October 26, 2026 10:34 PST',
+                final_count: { start: '2026-11-06', end: '2026-11-10' },
+                reporting: '100% of ballot boxes reporting',
+                turnout: {
+                    percent: 48.14,
+                    votes_considered: 2007,
+                    registered_voters: 4000,
+                },
+                source: {
+                    url: 'https://results.elections.bc.ca/',
+                    label: 'Elections BC results',
+                },
+            },
+            parties: resultParties,
+            districts: resultDistricts,
+            history: { years: [], coverage: {}, source: [] },
         });
         const output = path.join(temporary, 'static-site');
         execFileSync(process.execPath, ['build.js'], {
@@ -258,6 +386,7 @@ async function start() {
         executable,
         [
             '--headless=new',
+            '--no-sandbox',
             '--no-first-run',
             '--no-default-browser-check',
             '--disable-dev-shm-usage',
@@ -280,12 +409,12 @@ async function start() {
         await delay(100);
     }
     assert.ok(ready, 'Chrome starts');
-    const target = await (
-        await fetch(`http://127.0.0.1:${debugPort}/json/new?about:blank`, {
-            method: 'PUT',
-        })
+    // Chrome 136+ removed per-target DevTools WebSockets. Connect to the
+    // browser endpoint and attach a flat session for the page instead.
+    const version = await (
+        await fetch(`http://127.0.0.1:${debugPort}/json/version`)
     ).json();
-    socket = new WebSocket(target.webSocketDebuggerUrl);
+    socket = new WebSocket(version.webSocketDebuggerUrl);
     await new Promise((resolve, reject) => {
         socket.addEventListener('open', resolve);
         socket.addEventListener('error', reject);
@@ -317,6 +446,12 @@ async function start() {
             Promise.resolve(task).catch((error) => logs.push(error.stack));
         }
     });
+    const target = await send('Target.createTarget', { url: 'about:blank' });
+    const attached = await send('Target.attachToTarget', {
+        targetId: target.targetId,
+        flatten: true,
+    });
+    pageSession = attached.sessionId;
     await send('Page.enable');
     await send('Runtime.enable');
     await send('Network.enable');
@@ -492,9 +627,7 @@ try {
         await evaluate('document.documentElement.scrollWidth > innerWidth'),
         false,
     );
-    await evaluate(
-        'document.getElementById("constituency-search")?.focus() || document.querySelector("input[type=search]").focus()',
-    );
+    await evaluate('document.getElementById("district-search").focus()');
     await send('Input.dispatchKeyEvent', {
         type: 'keyDown',
         key: 'Tab',
@@ -510,7 +643,7 @@ try {
     });
     assert.ok(
         await evaluate(
-            'getComputedStyle(document.querySelector("input[type=search]")).outlineStyle !== "none"',
+            'getComputedStyle(document.getElementById("district-search")).outlineStyle !== "none"',
         ),
         'Keyboard input outline remains visible',
     );
@@ -619,10 +752,8 @@ try {
     );
     await evaluate('document.querySelector(".finder-head button").click()');
     await until('!document.querySelector(".finder-panel")');
-    assert.ok(
-        await evaluate(
-            'document.activeElement.textContent.includes("Find my constituency")',
-        ),
+    await until(
+        'document.activeElement.textContent.includes("Find my constituency")',
     );
     // Closing terminates the worker; reopening must still start cleanly.
     await evaluate(
@@ -638,20 +769,21 @@ try {
     );
     await route('#/constituencies/RCC');
     await until(
-        'document.querySelector(".candidate-table") && document.querySelector(".riding-outlook")',
+        'document.querySelector(".candidate-table") && document.querySelector(".winner-card")',
     );
     assert.ok(
         await evaluate(
-            '!!(document.querySelector(".candidate-table").compareDocumentPosition(document.querySelector(".polling-context")) & Node.DOCUMENT_POSITION_FOLLOWING)',
+            'document.querySelector(".winner-card").textContent.includes("Alex Example")',
         ),
     );
     assert.ok(
-        !requests.some((url) => url.endsWith('/data/districts/RCC.json')),
-        'Ballot avoids the retired district endpoint',
+        await evaluate(
+            'document.querySelector(".candidate-table").textContent.includes("Elected")',
+        ),
     );
     await shot('district-mobile');
     console.log(
-        'PASS mobile directory, keyboard outline, lazy finder and ballot-first district',
+        'PASS mobile directory, keyboard outline, lazy finder and riding results',
     );
 
     await intercept('/api/parties', (event) =>
@@ -700,32 +832,6 @@ try {
     await unintercept();
     console.log('PASS changed question wording invalidates saved answers');
 
-    if (!externalURL) {
-        // Older district response arrives after navigation: it must not replace the current riding.
-        let paused;
-        await intercept('/api/districts/RCC/ballot', (event) => {
-            paused = event;
-        });
-        await route('#/constituencies/RCC');
-        for (let i = 0; i < 100 && !paused; i++) await delay(20);
-        assert.ok(paused);
-        await route('#/constituencies/OTH');
-        await until(
-            'document.getElementById("page-title").textContent.includes("Other Constituency")',
-        );
-        await send('Fetch.continueRequest', {
-            requestId: paused.requestId,
-        }).catch(() => {});
-        await unintercept();
-        await delay(200);
-        assert.ok(
-            await evaluate(
-                'document.getElementById("page-title").textContent.includes("Other Constituency")',
-            ),
-        );
-        console.log('PASS navigation cancels stale ballot responses');
-    }
-
     await route('#/match');
     await until('document.querySelector(".party-quiz")');
     for (let i = 0; i < questionnaire.questions.length; i++) {
@@ -755,8 +861,8 @@ try {
 
     if (externalURL) {
         for (const endpoint of [
-            '/api/districts',
-            '/api/districts/RCC/ballot',
+            '/api/results',
+            '/api/cabinet',
             '/api/parties',
             '/data/publication.json',
         ]) {

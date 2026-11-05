@@ -1,39 +1,42 @@
 import { PartyCard } from '../components/parties/PartyCard.jsx';
 import { SourceLink } from '../components/ui/SourceLink.jsx';
 
-export function Parties({ parties, otherParties, partyRosterSource }) {
+export function Parties({ parties, otherParties, partyRosterSource, results }) {
+    const held = results.parties.filter((party) => party.seats > 0);
+    const byID = new Map(
+        [...parties, ...otherParties].map((party) => [party.id, party]),
+    );
     return (
         <>
+            <p class="results-standfirst">
+                Three parties won seats in the 2026 election. Each card shows
+                the party's seat count, vote share and leader; links lead to the
+                campaign platform it took to voters.
+            </p>
             <div class="parties-grid">
-                {parties.map((party) => (
-                    <PartyCard key={party.id} party={party} />
-                ))}
-            </div>
-            <details class="other-parties">
-                <summary>
-                    Other parties running{' '}
-                    <span class="count">{otherParties.length}</span>
-                </summary>
-                <div class="parties-grid other-parties-grid">
-                    {otherParties.map((party) => (
+                {held.map((result) => {
+                    const party = byID.get(result.id);
+                    if (!party) return null;
+                    return (
                         <PartyCard
-                            key={party.id}
-                            party={party}
-
-                            compact
+                            key={result.id}
+                            party={{
+                                ...party,
+                                seats: result.seats,
+                                voteShare: result.vote_share,
+                                role: result.role,
+                            }}
                         />
-                    ))}
-                </div>
-                <p class="note">
-                    <SourceLink href={partyRosterSource}>
-                        Elections BC: final candidate list
-                    </SourceLink>{' '}
-                    ·{' '}
-                    <SourceLink href="https://elections.bc.ca/candidates-parties/political-parties/">
-                        Registered parties
-                    </SourceLink>
-                </p>
-            </details>
+                    );
+                })}
+            </div>
+            <p class="note">
+                Only parties that hold a seat are shown. CentreBC, OneBC and the
+                other parties that ran did not win a seat in 2026.{' '}
+                <SourceLink href={partyRosterSource}>
+                    Elections BC: candidate list
+                </SourceLink>
+            </p>
         </>
     );
 }

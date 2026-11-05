@@ -4,6 +4,9 @@ export const platformHref = (id) =>
 export const districtHref = (code) =>
     `#/constituencies/${encodeURIComponent(code)}`;
 
+export const resultsHref = '#/results';
+export const cabinetHref = '#/cabinet';
+
 export function parseRoute() {
     try {
         const parts = window.location.hash
@@ -12,8 +15,12 @@ export function parseRoute() {
             .map(decodeURIComponent);
         if (
             (!parts[0] && parts.length === 1) ||
-            (parts[0] === 'match' && parts.length === 1)
+            (parts[0] === 'results' && parts.length === 1)
         )
+            return { view: 'results' };
+        if (parts[0] === 'cabinet' && parts.length === 1)
+            return { view: 'cabinet' };
+        if (parts[0] === 'match' && parts.length === 1)
             return { view: 'match' };
         if (parts[0] === 'parties' && parts.length === 1)
             return { view: 'parties' };

@@ -2,10 +2,18 @@
   "election": {
     "id": "bc-provincial-2026",
     "title": "2026 BC Provincial General Election",
-    "voting_date": null,
+    "voting_date": "2026-10-24",
+    "parliament": "44th Parliament",
+    "seats": 93,
     "boundary_version": "bc-2023-redistribution-set-11",
     "status": "final_roster",
+    "results_status": "initial_count",
     "source_url": "https://elections.bc.ca/2026-provincial-election/candidate-list/"
   },
-  "roster_url": "https://elections.bc.ca/2026election/2026-provincial-general-election-candidates.csv"
+  "roster_url": "https://elections.bc.ca/2026election/2026-provincial-general-election-candidates.csv",
+  "results_url": "https://results.elections.bc.ca/Results_11684_GE-2026-10-24_Candidate.html",
+  "history_urls": {
+    "by_voting_area": "https://catalogue.data.gov.bc.ca/dataset/44914a35-de9a-4830-ac48-870001ef8935/resource/fb40239e-b718-4a79-b18f-7a62139d9792/download/provincial_voting_results_by_va.csv",
+    "by_voting_place": "https://catalogue.data.gov.bc.ca/dataset/44914a35-de9a-4830-ac48-870001ef8935/resource/4e7be8e3-0805-4f39-87f3-47c4c29e262d/download/provincial_voting_results_by_voting_place.csv"
+  }
 }

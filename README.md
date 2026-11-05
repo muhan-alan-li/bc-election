@@ -1,8 +1,14 @@
-# BC election guide
+# BC election results
 
-A static, source-linked guide to the 2026 BC provincial election. The site
-includes party and policy comparisons, a constituency directory, ballots, dated
-polling context, and a browser-only constituency finder.
+A static, source-linked guide to the 2026 BC provincial general election
+results. It shows the party standings and vote share, every constituency result,
+each riding's recent electoral history, the status of the new cabinet, and the
+parties that hold seats. A browser-only constituency finder is retained.
+
+The election was held on October 24, 2026. The published results are Elections
+BC's **initial count**, complete as of October 26; final count for mail-in and
+absentee ballots runs November 6–10, so close results may change. The cabinet
+page reports that the ministry has not yet been appointed.
 
 There is no application server. GitHub Actions builds the publication data and
 finder assets from official sources, bundles the client, and uploads the static
@@ -15,8 +21,8 @@ the artifact to Cloudflare Pages.
 | Path | Purpose |
 | --- | --- |
 | `client/` | Preact single-page app, build scripts, and tests. |
-| `content/` | Reviewed editorial content: party guide, questionnaire, polling, and portraits. |
-| `ingestion/` | Roster and finder data importers plus the polling refresher. |
+| `content/` | Reviewed editorial content: parties, campaign platforms, questionnaire, polling, portraits, and cabinet status. |
+| `ingestion/` | Roster, results, and finder importers plus historical riding totals. |
 | `ingestion/storage/` | Git-ignored downloaded sources and generated publications. |
 | `client/dist-static/` | Git-ignored static build output. |
 
@@ -26,14 +32,15 @@ Requirements: Node 22.12+, Python 3.12+, and `make`.
 
 ```sh
 make setup       # install client dependencies
-make build       # roster + finder data + static bundle
+make build       # roster + results + finder data + static bundle
 make preview     # serve client/dist-static at http://localhost:8080
 ```
 
-The first finder build downloads public GeoNames, Statistics Canada, and
-Elections BC datasets. Later builds reuse the cached source snapshots in
-`ingestion/storage/raw/`. Use `make data` to refresh the roster and
-`make refresh-finder-data` to re-download postal and boundary sources.
+The first results build downloads the Elections BC reporting page and the BC
+Data Catalogue voting-results tables (about 32 MB). Later builds reuse the
+cached source snapshots in `ingestion/storage/raw/`. Use `make data` to refresh
+the roster and results, or `make results` to rebuild results alone.
+`make refresh-finder-data` re-downloads postal and boundary sources.
 `make test` runs the Python and client unit tests; `make test-browser` runs the
 Chrome regression suite.
 
@@ -46,9 +53,17 @@ rather than committing them.
 - **Elections BC roster** — constituency codes and names, ballot names, and
   affiliations. `ingestion/election/roster.py` writes one compact catalog and one
   ballot per constituency.
-- **Reviewed content** — leaders, policy summaries, citations, questionnaire
-  positions, and polling. These files are committed under `content/` and are
-  validated during every build.
+- **Elections BC results** — initial-count results by constituency and
+  candidate. `ingestion/election/results.py` parses the reporting page,
+  recomputes candidate shares against valid votes, matches ridings to the
+  official roster, and validates the seat and vote totals.
+- **Historical results** — `ingestion/election/history.py` aggregates the BC
+  Data Catalogue voting-results tables to constituency-level winners and party
+  shares for 2005, 2009, 2013, 2017, 2020, and 2024. The 2024 election used the
+  same boundaries as 2026; earlier years are matched by constituency name.
+- **Reviewed content** — party identities, campaign platforms, questionnaire
+  positions, polling snapshots, and cabinet status. These files are committed
+  under `content/` and are validated during every build.
 - **Finder sources** — postal locations and 2023 redistribution boundaries.
   `ingestion/election/finder.py` imports them; `client/scripts/export-finder.mjs`
   creates versioned postal tables and geometry for the browser.

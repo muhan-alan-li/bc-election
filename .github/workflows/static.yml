@@ -31,6 +31,9 @@ jobs:
       - name: Build official roster
         run: python3 -m election --refresh build
         working-directory: ingestion
+      - name: Build election results
+        run: python3 -m election --refresh build-results
+        working-directory: ingestion
       - name: Build finder source data
         run: python3 -m election build-finder
         working-directory: ingestion

@@ -31,8 +31,9 @@ export function Platform({ party, reviewedOn }) {
             )}
             {party.note && <p class="note">{party.note}</p>}
             <p class="note">
-                Selected commitments · Reviewed {reviewedOn}. These summaries
-                describe campaign proposals.
+                2026 campaign platform · Reviewed {reviewedOn}. These summaries
+                describe proposals made before the October 24, 2026 election and
+                are kept for reference.
             </p>
             {selected && (
                 <ExpandedPolicy

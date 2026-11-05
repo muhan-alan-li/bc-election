@@ -411,6 +411,161 @@ function validateBallot(ballot, electionID, district) {
     return ballot;
 }
 
+function validateResults(results, electionID) {
+    if (
+        !results ||
+        results.schema_version !== 1 ||
+        results.election_id !== electionID ||
+        !results.election ||
+        !results.election.source ||
+        !validSource(results.election.source)
+    )
+        bad('invalid results publication');
+    const election = results.election;
+    const districts = results.districts;
+    if (
+        !Number.isInteger(election.seats) ||
+        election.seats < 1 ||
+        election.majority !== Math.floor(election.seats / 2) + 1 ||
+        !districts ||
+        typeof districts !== 'object' ||
+        Array.isArray(districts)
+    )
+        bad('invalid legislature summary');
+    const codes = Object.keys(districts);
+    if (codes.length !== election.seats) bad('results seat count mismatch');
+    let validVotes = 0;
+    for (const code of codes) {
+        const district = districts[code];
+        if (
+            district.code !== code ||
+            !district.name ||
+            !Array.isArray(district.candidates) ||
+            district.candidates.length < 2 ||
+            !Number.isInteger(district.valid_votes) ||
+            district.valid_votes < 1 ||
+            !district.winner ||
+            !Array.isArray(district.history)
+        )
+            bad(`invalid result for ${code}`);
+        const candidates = district.candidates;
+        if (
+            candidates.reduce((sum, row) => sum + row.votes, 0) !==
+            district.valid_votes
+        )
+            bad(`result votes do not add up for ${code}`);
+        if (
+            Math.abs(
+                candidates.reduce((sum, row) => sum + row.vote_share, 0) - 100,
+            ) > 0.5
+        )
+            bad(`result shares do not add up for ${code}`);
+        if (
+            !candidates.every(
+                (row) =>
+                    row.name &&
+                    validID(row.party_id) &&
+                    Number.isInteger(row.votes) &&
+                    row.votes >= 0 &&
+                    typeof row.vote_share === 'number',
+            ) ||
+            candidates.filter((row) => row.elected).length !== 1
+        )
+            bad(`invalid candidates for ${code}`);
+        if (candidates[0].name !== district.winner.name)
+            bad(`winner mismatch for ${code}`);
+        for (const year of district.history) {
+            if (
+                !Number.isInteger(year.year) ||
+                !year.winner?.name ||
+                !Array.isArray(year.parties) ||
+                year.parties.length === 0
+            )
+                bad(`invalid history for ${code}`);
+        }
+        validVotes += district.valid_votes;
+    }
+    if (!Array.isArray(results.parties) || !results.parties.length)
+        bad('results have no parties');
+    for (const party of results.parties) {
+        if (
+            !validID(party.id) ||
+            !party.name ||
+            !color(party.color) ||
+            !Number.isInteger(party.seats) ||
+            !Number.isInteger(party.votes) ||
+            typeof party.vote_share !== 'number'
+        )
+            bad('invalid party result');
+    }
+    if (
+        results.parties.reduce((sum, party) => sum + party.seats, 0) !==
+            codes.length ||
+        results.parties.reduce((sum, party) => sum + party.votes, 0) !==
+            validVotes
+    )
+        bad('party totals do not match constituency results');
+    return results;
+}
+
+function validateCabinet(cabinet, electionID, ids) {
+    if (
+        !cabinet ||
+        cabinet.schema_version !== 1 ||
+        cabinet.election_id !== electionID ||
+        !['pending', 'appointed'].includes(cabinet.status) ||
+        !validDate(cabinet.reviewedOn) ||
+        !cabinet.summary ||
+        !cabinet.premier?.name ||
+        !cabinet.premier?.title ||
+        !ids.has(cabinet.premier.partyID) ||
+        !Array.isArray(cabinet.ministers) ||
+        !Array.isArray(cabinet.sources) ||
+        !cabinet.sources.length ||
+        !cabinet.sources.every(validSource)
+    )
+        bad('invalid cabinet content');
+    for (const minister of cabinet.ministers) {
+        if (!minister.portfolio || !minister.name || !ids.has(minister.partyID))
+            bad('invalid cabinet minister');
+    }
+    return cabinet;
+}
+
+function withPartyRoles(results, guide, electionID) {
+    const people = new Map(
+        [...guide.parties, ...guide.otherParties].map((party) => [
+            party.id,
+            party,
+        ]),
+    );
+    const ranked = [...results.parties]
+        .filter((party) => party.seats > 0)
+        .sort((a, b) => b.seats - a.seats);
+    const roles = new Map(
+        ranked.map((party, index) => [
+            party.id,
+            index === 0
+                ? party.seats > results.election.seats / 2
+                    ? 'Government'
+                    : 'Largest party'
+                : index === 1
+                  ? 'Official opposition'
+                  : 'Holds seats',
+        ]),
+    );
+    return {
+        ...results,
+        election_id: electionID,
+        parties: results.parties.map((party) => ({
+            ...party,
+            leader: people.get(party.id)?.leader ?? null,
+            leaderNote: people.get(party.id)?.leaderNote ?? null,
+            role: roles.get(party.id) ?? null,
+        })),
+    };
+}
+
 export async function exportSiteData({
     publishedDir,
     contentDir,
@@ -453,6 +608,19 @@ export async function exportSiteData({
         ),
         electionID,
     );
+    const results = validateResults(
+        await readJSON(
+            path.join(source.electionDir, 'results.json'),
+            'results',
+        ),
+        electionID,
+    );
+    const cabinet = validateCabinet(
+        await readJSON(path.join(contentFolder, 'cabinet.json'), 'cabinet'),
+        electionID,
+        ids,
+    );
+    const publicationResults = withPartyRoles(results, guide, electionID);
 
     const data = path.join(output, 'data');
     await rm(data, { recursive: true, force: true });
@@ -464,6 +632,8 @@ export async function exportSiteData({
         write(path.join(data, 'guide.json'), guide),
         write(path.join(data, 'questionnaire.json'), questionnaire),
         write(path.join(data, 'polling.json'), polling),
+        write(path.join(data, 'results.json'), publicationResults),
+        write(path.join(data, 'cabinet.json'), cabinet),
         write(path.join(data, 'districts.json'), {
             election_id: electionID,
             districts: catalog.districts,

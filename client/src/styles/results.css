@@ -1,0 +1,483 @@
+/* Election results: legislature summary, constituency tables, riding detail. */
+.results-headline {
+    font-size: clamp(30px, 4.4vw, 46px);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    max-width: 22ch;
+    margin: 0 0 12px;
+}
+.results-standfirst {
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--ink2);
+    max-width: 62ch;
+    margin: 0 0 26px;
+}
+.muted {
+    color: var(--ink3);
+    font-weight: 400;
+}
+
+/* Seat bar */
+.seat-chart {
+    margin: 8px 0 18px;
+}
+.seat-chart-plot {
+    position: relative;
+    padding-top: 26px;
+}
+.seat-chart-track {
+    display: flex;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 2px;
+    background: var(--line);
+    box-shadow: inset 0 0 0 1px rgb(0 0 0 / 6%);
+}
+.seat-chart-segment {
+    display: block;
+    height: 100%;
+    border-right: 2px solid #fff;
+}
+.seat-chart-segment:last-child {
+    border-right: 0;
+}
+.seat-chart-majority {
+    position: absolute;
+    top: 20px;
+    bottom: 0;
+    width: 0;
+    border-left: 2px dashed var(--ink);
+}
+.seat-chart-majority-label {
+    position: absolute;
+    top: -4px;
+    left: 0;
+    transform: translate(-50%, -100%);
+    background: var(--bg);
+    padding: 1px 5px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink2);
+    white-space: nowrap;
+}
+.seat-chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    margin-top: 14px;
+}
+.seat-chart-key {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 7px;
+    font-size: 14px;
+    color: var(--ink2);
+}
+.seat-chart-key strong {
+    color: var(--ink);
+    font-size: 16px;
+}
+.seat-chart-share {
+    color: var(--ink3);
+    font-size: 13px;
+}
+.party-swatch {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    border-radius: 1px;
+    flex: none;
+    align-self: center;
+}
+
+/* Summary statistics */
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    margin: 30px 0 38px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line2);
+}
+.stat strong {
+    display: block;
+    font-size: 32px;
+    line-height: 1.1;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+}
+.stat span {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+    color: var(--ink3);
+}
+
+/* Party results table */
+.party-results-table th .party-swatch {
+    margin-right: 8px;
+}
+.party-results-table tbody th {
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 15px;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 600;
+}
+.party-results-table td,
+.party-results-table tbody th {
+    padding: 13px 14px;
+}
+.party-results-table td:first-of-type {
+    white-space: nowrap;
+}
+.role-tag {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 1px 6px;
+    border: 1px solid var(--line2);
+    background: var(--panel);
+    color: var(--ink3);
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.party-cell {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.party-results-other th,
+.party-results-other td {
+    color: var(--ink3);
+}
+
+.results-notes .note {
+    margin-bottom: 12px;
+}
+.note.subtle {
+    background: transparent;
+    border-left-color: var(--line2);
+}
+
+/* Section links */
+.next-links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 34px;
+}
+.link-card {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px;
+    border: 1px solid var(--line2);
+    border-top: 3px solid var(--accent);
+    color: var(--ink);
+}
+.link-card:hover {
+    border-color: var(--accent);
+    text-decoration: none;
+}
+.link-card strong {
+    font-size: 18px;
+}
+.link-card span {
+    font-size: 14px;
+    color: var(--ink3);
+}
+.link-card .card-action {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Constituency directory tools */
+.results-tools {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
+    gap: 16px;
+    align-items: end;
+}
+.results-tool-buttons {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.results-tools input,
+.results-tools select,
+.results-tool-buttons button {
+    height: 46px;
+}
+.district-code {
+    display: block;
+    font-size: 11.5px;
+    letter-spacing: 0.05em;
+    color: var(--ink3);
+    font-weight: 400;
+}
+
+/* Riding detail */
+.winner-card {
+    border: 1px solid var(--line2);
+    border-top: 6px solid var(--party-color);
+    padding: 24px 26px;
+    margin-bottom: 34px;
+    background: linear-gradient(180deg, var(--panel), var(--bg) 70%);
+}
+.winner-name {
+    font-size: clamp(30px, 3.6vw, 40px);
+    letter-spacing: -0.025em;
+    margin: 0 0 4px;
+}
+.winner-party {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 17px;
+    color: var(--ink2);
+    margin: 0 0 20px;
+}
+.winner-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 48px;
+    margin: 0;
+}
+.winner-stats dt,
+.turnout-row dt {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--ink3);
+}
+.winner-stats dd,
+.turnout-row dd {
+    margin: 2px 0 0;
+    font-size: 20px;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+}
+.turnout-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 44px;
+    margin: 4px 0 40px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+}
+.turnout-row dd {
+    font-size: 16px;
+    font-weight: 600;
+}
+.back-link {
+    margin-top: 34px;
+    font-size: 15px;
+}
+
+/* Historical trend */
+.history-list {
+    list-style: none;
+    margin: 18px 0 0;
+    padding: 0;
+    border-top: 1px solid var(--line2);
+}
+.history-row {
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 18px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+}
+.history-year {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 18px;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+}
+.history-current {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink3);
+}
+.history-winner {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    font-size: 15px;
+}
+.share-bar {
+    display: flex;
+    height: 13px;
+    margin: 8px 0 5px;
+    overflow: hidden;
+    border-radius: 1px;
+    background: var(--line);
+}
+.share-bar-segment {
+    display: block;
+    height: 100%;
+    border-right: 1px solid #fff;
+}
+.share-bar-segment:last-child {
+    border-right: 0;
+}
+.history-meta {
+    margin: 0;
+    font-size: 12.5px;
+    color: var(--ink3);
+}
+
+/* Cabinet */
+.cabinet-status {
+    font-size: clamp(26px, 3.4vw, 36px);
+    letter-spacing: -0.02em;
+    margin: 0 0 10px;
+}
+.premier-card {
+    border: 1px solid var(--line2);
+    border-top: 6px solid var(--party-color);
+    background: var(--panel);
+    padding: 24px 26px;
+    margin: 8px 0 36px;
+}
+.premier-name {
+    font-size: clamp(28px, 3.4vw, 38px);
+    letter-spacing: -0.025em;
+    margin: 0 0 6px;
+}
+.premier-card .note {
+    margin: 18px 0 0;
+    background: transparent;
+}
+.timeline {
+    list-style: none;
+    margin: 14px 0 26px;
+    padding: 0;
+    border-top: 1px solid var(--line2);
+}
+.timeline li {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 16px;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 15px;
+}
+.timeline-date {
+    font-weight: 650;
+    color: var(--ink2);
+}
+
+@media (max-width: 900px) {
+    .results-tools {
+        grid-template-columns: 1fr 1fr;
+    }
+    .results-search {
+        grid-column: 1 / -1;
+    }
+    .next-links {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 700px) {
+    .stat-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+    }
+    .results-standfirst {
+        font-size: 17px;
+    }
+    .winner-card,
+    .premier-card {
+        padding: 20px;
+    }
+    .winner-stats {
+        gap: 12px 30px;
+    }
+    .history-row {
+        grid-template-columns: 64px minmax(0, 1fr);
+        gap: 12px;
+    }
+    .timeline li {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+}
+@media (max-width: 600px) {
+    .results-tools {
+        grid-template-columns: 1fr;
+    }
+    .results-search {
+        grid-column: auto;
+    }
+    .seat-chart-track {
+        height: 32px;
+    }
+}
+
+/* Stack wide result tables on narrow screens instead of scrolling sideways. */
+@media (max-width: 700px) {
+    .party-results-table,
+    .candidate-table {
+        min-width: 0;
+    }
+    .party-results-table thead,
+    .candidate-table thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+    }
+    .party-results-table tbody tr,
+    .candidate-table tbody tr {
+        display: block;
+        padding: 12px 14px;
+        border-bottom: 1px solid var(--line);
+    }
+    .party-results-table tbody th,
+    .candidate-table tbody th {
+        display: block;
+        padding: 0 0 6px;
+        border: 0;
+        font-size: 16px;
+    }
+    .party-results-table td,
+    .candidate-table td {
+        display: grid;
+        grid-template-columns: 84px minmax(0, 1fr);
+        gap: 12px;
+        padding: 3px 0;
+        border: 0;
+        text-align: left;
+    }
+    .party-results-table td::before,
+    .candidate-table td::before {
+        content: attr(data-label);
+        color: var(--ink3);
+        font-size: 12.5px;
+    }
+    .party-results-table td:first-of-type {
+        white-space: normal;
+    }
+}

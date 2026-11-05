@@ -1,5 +1,5 @@
 import { RetryError } from './components/ui/RetryError.jsx';
-import { useState } from 'preact/hooks';
+import { useRef, useState } from 'preact/hooks';
 import { lazy, Suspense } from 'preact/compat';
 import { useVoterResource } from './hooks/useVoterResource.js';
 import { useElectionData } from './hooks/useElectionData.js';
@@ -8,6 +8,8 @@ import { SiteHeader } from './components/layout/SiteHeader.jsx';
 import { SiteFooter } from './components/layout/SiteFooter.jsx';
 import { Constituencies } from './routes/Constituencies.jsx';
 import { District } from './routes/District.jsx';
+import { Results } from './routes/Results.jsx';
+import { Cabinet } from './routes/Cabinet.jsx';
 import { Match } from './routes/Match.jsx';
 import { Platform } from './routes/Platform.jsx';
 import { useGuide } from './hooks/useGuide.js';
@@ -22,16 +24,21 @@ const Finder = lazy(() =>
 
 export function App() {
     const [finderOpen, setFinderOpen] = useState(false);
+    const finderButton = useRef(null);
+    const closeFinder = () => {
+        setFinderOpen(false);
+        requestAnimationFrame(() => finderButton.current?.focus());
+    };
     const {
         route,
-        districts,
-        dataset,
-        catalogLoading,
-        loading,
-        catalogError,
-        error,
-        retryCatalog,
-        retryBallot,
+        results,
+        resultsLoading,
+        resultsError,
+        retryResults,
+        cabinet,
+        cabinetLoading,
+        cabinetError,
+        retryCabinet,
     } = useElectionData();
     const {
         guide,
@@ -40,15 +47,18 @@ export function App() {
         retry: retryGuide,
     } = useGuide(['parties', 'platform'].includes(route.view));
     const registry = useVoterResource(
-        ['match', 'district'].includes(route.view) ? '/api/parties' : null,
+        route.view === 'match' ? '/api/parties' : null,
     );
     const guideParties = [
         ...(guide?.parties || []),
         ...(guide?.otherParties || []),
     ];
     const party = guideParties.find((row) => row.id === route.partyID);
+    const district =
+        route.code && results ? results.districts[route.code] : null;
     const displayRoute =
-        route.view === 'platform' && guide && !party
+        (route.code && results && !district) ||
+        (route.view === 'platform' && guide && !party)
             ? { view: 'missing' }
             : route;
 
@@ -68,49 +78,98 @@ export function App() {
             <main class="shell" id="main-content" tabIndex="-1">
                 <PageHeader
                     route={displayRoute}
-                    dataset={dataset}
+                    district={district}
                     party={party}
                 />
-                {route.view === 'constituencies' && (
-                    <>
-                        {catalogLoading ? (
-                            <p role="status">Loading constituencies…</p>
-                        ) : catalogError ? (
-                            <RetryError
-                                error={catalogError}
-                                onRetry={retryCatalog}
-                            />
-                        ) : (
+
+                {route.view === 'results' &&
+                    (resultsLoading ? (
+                        <p role="status">Loading results…</p>
+                    ) : resultsError ? (
+                        <RetryError
+                            error={resultsError}
+                            onRetry={retryResults}
+                        />
+                    ) : (
+                        results && <Results results={results} />
+                    ))}
+
+                {route.view === 'constituencies' &&
+                    (resultsLoading ? (
+                        <p role="status">Loading constituency results…</p>
+                    ) : resultsError ? (
+                        <RetryError
+                            error={resultsError}
+                            onRetry={retryResults}
+                        />
+                    ) : (
+                        results && (
                             <Constituencies
-                                districts={districts}
+                                results={results}
                                 onFind={() => setFinderOpen(true)}
+                                finderButtonRef={finderButton}
                             />
-                        )}
-                    </>
-                )}
-                {route.code && (
-                    <>
-                        {loading || (!dataset && !error) ? (
-                            <p role="status">Loading candidates…</p>
-                        ) : error ? (
-                            <RetryError error={error} onRetry={retryBallot} />
-                        ) : (
+                        )
+                    ))}
+
+                {route.code &&
+                    (resultsLoading ? (
+                        <p role="status">Loading constituency results…</p>
+                    ) : resultsError ? (
+                        <RetryError
+                            error={resultsError}
+                            onRetry={retryResults}
+                        />
+                    ) : (
+                        district && (
                             <District
                                 key={route.code}
-                                dataset={dataset}
-                                registry={registry}
+                                district={district}
+                                parties={results.parties}
                             />
-                        )}
-                    </>
-                )}
-                {['parties', 'platform'].includes(route.view) &&
+                        )
+                    ))}
+
+                {route.view === 'cabinet' &&
+                    (cabinetLoading ? (
+                        <p role="status">Loading cabinet…</p>
+                    ) : cabinetError ? (
+                        <RetryError
+                            error={cabinetError}
+                            onRetry={retryCabinet}
+                        />
+                    ) : (
+                        cabinet &&
+                        results && (
+                            <Cabinet
+                                cabinet={cabinet}
+                                parties={results.parties}
+                            />
+                        )
+                    ))}
+
+                {route.view === 'parties' &&
+                    (guideLoading || resultsLoading ? (
+                        <p role="status">Loading party results…</p>
+                    ) : guideError ? (
+                        <RetryError error={guideError} onRetry={retryGuide} />
+                    ) : resultsError ? (
+                        <RetryError
+                            error={resultsError}
+                            onRetry={retryResults}
+                        />
+                    ) : (
+                        guide &&
+                        results && <Parties {...guide} results={results} />
+                    ))}
+
+                {route.view === 'platform' &&
                     (guideLoading ? (
                         <p role="status">Loading party content…</p>
                     ) : guideError ? (
                         <RetryError error={guideError} onRetry={retryGuide} />
                     ) : null)}
                 {route.view === 'match' && <Match registry={registry} />}
-                {route.view === 'parties' && guide && <Parties {...guide} />}
                 {route.view === 'platform' && party && (
                     <Platform
                         key={party.id}
@@ -128,7 +187,7 @@ export function App() {
                         </p>
                     }
                 >
-                    <Finder onClose={() => setFinderOpen(false)} />
+                    <Finder onClose={closeFinder} />
                 </Suspense>
             )}
             <SiteFooter />

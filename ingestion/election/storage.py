@@ -3,12 +3,27 @@
 import hashlib
 import json
 import os
+import ssl
 import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.error import URLError
 from urllib.parse import quote, urlparse
 from urllib.request import Request, urlopen
+
+
+def http_context():
+    """Verify HTTPS against a current CA bundle when one is installed.
+
+    Python.org builds on macOS do not read the system keychain, so the default
+    OpenSSL store can reject otherwise valid chains. certifi is the standard
+    trust store shipped with the requests ecosystem and is used when present.
+    """
+    try:
+        import certifi
+    except ImportError:
+        return None
+    return ssl.create_default_context(cafile=certifi.where())
 
 
 def now():
@@ -93,7 +108,7 @@ class SourceStore:
             raise SourceError(f"Source not cached: {url}")
         try:
             request = Request(url, headers={"User-Agent": "BC-Election-Guide/1.0"})
-            with urlopen(request, timeout=30) as response:
+            with urlopen(request, timeout=30, context=http_context()) as response:
                 data = response.read()
         except (URLError, TimeoutError, OSError) as error:
             raise SourceError(f"Could not fetch {url}: {error}") from error

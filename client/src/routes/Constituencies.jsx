@@ -5,41 +5,75 @@ import { useState } from 'preact/hooks';
 import { districtHref } from '../helpers/routes.js';
 import { useStarredConstituencies } from '../hooks/useStarredConstituencies.js';
 import { useAdaptivePageSize } from '../hooks/useAdaptivePageSize.js';
+import {
+    formatNumber,
+    formatPercent,
+    partyLookup,
+    seatHolders,
+    shortPartyName,
+} from '../helpers/results.js';
 
 const columns = [
     { label: 'Star', class: 'star-column' },
     { label: 'Constituency' },
-    { label: 'Code' },
-    { label: 'Candidates' },
-    { label: 'Roster' },
+    { label: 'Elected' },
+    { label: 'Party' },
+    { label: 'Vote share' },
+    { label: 'Margin' },
 ];
 
-export function Constituencies({ districts, onFind }) {
+const sortOptions = [
+    { value: 'name', label: 'Alphabetical' },
+    { value: 'closest', label: 'Closest races' },
+    { value: 'largest', label: 'Largest wins' },
+];
+
+export function Constituencies({ results, onFind, finderButtonRef }) {
     const [query, setQuery] = useState('');
+    const [partyFilter, setPartyFilter] = useState('');
+    const [sort, setSort] = useState('name');
     const [starredOnly, setStarredOnly] = useState(false);
     const [page, setPage] = useState(1);
     const { starred, toggleStar } = useStarredConstituencies();
 
+    const districts = Object.values(results.districts);
+    const partyById = partyLookup(results.parties);
+    const parties = seatHolders(results.parties);
+    const name = (id) => shortPartyName(partyById.get(id));
+
     const matches = districts
         .filter(
             (row) =>
-                (!starredOnly || starred.includes(row.official_code)) &&
-                `${row.name} ${row.official_code}`
+                (!starredOnly || starred.includes(row.code)) &&
+                (!partyFilter || row.winner.party_id === partyFilter) &&
+                `${row.name} ${row.code} ${row.winner.name} ${name(
+                    row.winner.party_id,
+                )}`
                     .toLocaleLowerCase()
                     .includes(query.trim().toLocaleLowerCase()),
         )
-        .sort((a, b) => a.name.localeCompare(b.name, 'en-CA'));
+        .sort((a, b) => {
+            if (sort === 'closest') return a.margin.points - b.margin.points;
+            if (sort === 'largest')
+                return b.winner.vote_share - a.winner.vote_share;
+            return a.name.localeCompare(b.name, 'en-CA');
+        });
     const { pageSize, tableRef, paginationRef, controlsRef } =
-        useAdaptivePageSize(query, matches.length, page);
+        useAdaptivePageSize(
+            `${query}${partyFilter}${sort}`,
+            matches.length,
+            page,
+        );
 
     const { pages, currentPage, rows } = paginate(matches, page, pageSize);
+    const reset = () => setPage(1);
 
     return (
         <>
-            <div ref={controlsRef} class="constituency-tools">
-                <div>
+            <div ref={controlsRef} class="results-tools">
+                <div class="results-search">
                     <label for="district-search">
-                        Search by constituency name or code
+                        Search constituency, elected member or party
                     </label>
                     <input
                         id="district-search"
@@ -48,80 +82,146 @@ export function Constituencies({ districts, onFind }) {
                         value={query}
                         onInput={(event) => {
                             setQuery(event.currentTarget.value);
-                            setPage(1);
+                            reset();
                         }}
                     />
                 </div>
-                <button
-                    type="button"
-                    class="secondary starred-filter"
-                    aria-pressed={starredOnly}
-                    onClick={() => {
-                        setStarredOnly((value) => !value);
-                        setPage(1);
-                    }}
-                >
-                    <span aria-hidden="true">★</span> Starred only
-                </button>
-                <button class="secondary" onClick={onFind}>
-                    Find my constituency
-                </button>
+                <div>
+                    <label for="party-filter">Party</label>
+                    <select
+                        id="party-filter"
+                        value={partyFilter}
+                        onChange={(event) => {
+                            setPartyFilter(event.currentTarget.value);
+                            reset();
+                        }}
+                    >
+                        <option value="">All parties</option>
+                        {parties.map((party) => (
+                            <option key={party.id} value={party.id}>
+                                {party.name}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                <div>
+                    <label for="result-sort">Sort</label>
+                    <select
+                        id="result-sort"
+                        value={sort}
+                        onChange={(event) => {
+                            setSort(event.currentTarget.value);
+                            reset();
+                        }}
+                    >
+                        {sortOptions.map((option) => (
+                            <option key={option.value} value={option.value}>
+                                {option.label}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                <div class="results-tool-buttons">
+                    <button
+                        type="button"
+                        class="secondary starred-filter"
+                        aria-pressed={starredOnly}
+                        onClick={() => {
+                            setStarredOnly((value) => !value);
+                            reset();
+                        }}
+                    >
+                        <span aria-hidden="true">★</span> Starred only
+                    </button>
+                    <button
+                        type="button"
+                        class="secondary"
+                        onClick={onFind}
+                        ref={finderButtonRef}
+                    >
+                        Find my constituency
+                    </button>
+                </div>
             </div>
             <p class="result-count" role="status">
-                {matches.length} constituencies · Alphabetical order
+                {matches.length} of {districts.length} constituencies
+                {partyFilter ? ` · ${partyById.get(partyFilter)?.name}` : ''}
+                {starredOnly ? ' · starred' : ''} ·{' '}
+                {sortOptions.find((option) => option.value === sort)?.label}
             </p>
             {rows.length ? (
                 <Table
-                    label="Constituencies"
+                    label="Constituency results"
                     columns={columns}
                     tableClass="constituency-table"
                     tableRef={tableRef}
                 >
-                    {rows.map((row) => (
-                        <tr key={row.official_code}>
-                            <td class="star-column">
-                                <button
-                                    type="button"
-                                    class="star-button"
-                                    aria-pressed={starred.includes(
-                                        row.official_code,
-                                    )}
-                                    aria-label={`${starred.includes(row.official_code) ? 'Unstar' : 'Star'} ${row.name}`}
-                                    onClick={() =>
-                                        toggleStar(row.official_code)
-                                    }
-                                >
-                                    {starred.includes(row.official_code)
-                                        ? '★'
-                                        : '☆'}
-                                </button>
-                            </td>
-                            <th scope="row">
-                                <a href={districtHref(row.official_code)}>
-                                    {row.name}
-                                </a>
-                            </th>
-                            <td data-label="Code">{row.official_code}</td>
-                            <td data-label="Candidates">
-                                {row.candidate_count}
-                            </td>
-                            <td data-label="Roster">
-                                {row.roster_status === 'final_roster'
-                                    ? 'Final candidate list'
-                                    : 'Provisional candidate list'}
-                            </td>
-                        </tr>
-                    ))}
+                    {rows.map((row) => {
+                        const party = partyById.get(row.winner.party_id);
+                        return (
+                            <tr key={row.code}>
+                                <td class="star-column">
+                                    <button
+                                        type="button"
+                                        class="star-button"
+                                        aria-pressed={starred.includes(
+                                            row.code,
+                                        )}
+                                        aria-label={`${
+                                            starred.includes(row.code)
+                                                ? 'Unstar'
+                                                : 'Star'
+                                        } ${row.name}`}
+                                        onClick={() => toggleStar(row.code)}
+                                    >
+                                        {starred.includes(row.code) ? '★' : '☆'}
+                                    </button>
+                                </td>
+                                <th scope="row">
+                                    <a href={districtHref(row.code)}>
+                                        {row.name}
+                                    </a>
+                                    <span class="muted district-code">
+                                        {row.code}
+                                    </span>
+                                </th>
+                                <td data-label="Elected">{row.winner.name}</td>
+                                <td data-label="Party">
+                                    <span class="party-cell">
+                                        <span
+                                            class="party-swatch"
+                                            style={{
+                                                background:
+                                                    party?.color || '#8a8f98',
+                                            }}
+                                            aria-hidden="true"
+                                        />
+                                        {party?.name || 'Unknown party'}
+                                    </span>
+                                </td>
+                                <td data-label="Vote share">
+                                    {formatPercent(row.winner.vote_share)}
+                                </td>
+                                <td data-label="Margin">
+                                    {formatNumber(row.margin.votes)} votes
+                                    <span class="muted">
+                                        {' '}
+                                        ({formatPercent(row.margin.points)} pts)
+                                    </span>
+                                </td>
+                            </tr>
+                        );
+                    })}
                 </Table>
             ) : (
                 <p class="empty">
                     {!districts.length
-                        ? 'No constituencies have been published yet.'
+                        ? 'No constituency results have been published yet.'
                         : starredOnly
                           ? query.trim()
                               ? 'No starred constituencies match your search.'
                               : 'No starred constituencies to show. Star a constituency in the full list to save it here.'
-                          : 'No published constituencies match your search.'}
+                          : 'No constituencies match these filters.'}
                 </p>
             )}
             <Pagination

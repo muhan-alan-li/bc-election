@@ -1,17 +1,21 @@
 import { useEffect } from 'preact/hooks';
 import { Breadcrumbs } from './Breadcrumbs.jsx';
 
-export function PageHeader({ route, dataset, party }) {
-    let title = 'Constituencies';
+export function PageHeader({ route, district, party }) {
+    let title = 'Constituency results';
 
-    if (route.view === 'match') {
+    if (route.view === 'results') {
+        title = '2026 election results';
+    } else if (route.view === 'match') {
         title = 'Where do you stand?';
+    } else if (route.view === 'cabinet') {
+        title = 'Cabinet';
     } else if (route.view === 'parties') {
         title = 'Parties';
     } else if (route.view === 'platform') {
         title = `${party?.name || 'Party'} platform`;
     } else if (route.view === 'district') {
-        title = dataset?.district.name || route.code;
+        title = district?.name || route.code;
     } else if (route.view === 'missing') {
         title = 'Page not found';
     }
@@ -25,7 +29,7 @@ export function PageHeader({ route, dataset, party }) {
         };
     }, []);
     useEffect(() => {
-        document.title = `${title} · BC Election Guide`;
+        document.title = `${title} · BC Election Results`;
     }, [title]);
     useEffect(() => {
         const heading = document.getElementById('page-title');
@@ -42,7 +46,7 @@ export function PageHeader({ route, dataset, party }) {
     }, [routeKey]);
     return (
         <header class="page-header">
-            <Breadcrumbs route={route} dataset={dataset} party={party} />
+            <Breadcrumbs route={route} district={district} party={party} />
             <h1 class="page-header-title" id="page-title" tabIndex="-1">
                 {title}
             </h1>

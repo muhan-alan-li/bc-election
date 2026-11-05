@@ -2,14 +2,16 @@
 
 PORT ?= 8080
 
-.PHONY: help setup build data finder-data refresh-finder-data preview test test-browser check format clean
+.PHONY: help setup build data results refresh-results finder-data refresh-finder-data preview test test-browser check format clean
 
 FINDER_DATA := ingestion/storage/published/finder.json
 
 help:
 	@echo "make setup       Install client dependencies"
 	@echo "make build       Export data, build the finder, and bundle the static site"
-	@echo "make data        Build catalog and ballots from the official roster"
+	@echo "make data        Build the roster, results, and historical riding totals"
+	@echo "make results     Rebuild the results publication from cached sources"
+	@echo "make refresh-results Re-download results and historical totals"
 	@echo "make finder-data Build finder data if it is missing"
 	@echo "make refresh-finder-data Re-download finder source data"
 	@echo "make preview     Serve client/dist-static at http://localhost:$(PORT)"
@@ -29,6 +31,13 @@ client/node_modules/.installed: client/package.json client/package-lock.json
 
 data:
 	cd ingestion && python3 -m election build
+	cd ingestion && python3 -m election build-results
+
+results:
+	cd ingestion && python3 -m election build-results
+
+refresh-results:
+	cd ingestion && python3 -m election --refresh build-results
 
 finder-data: $(FINDER_DATA)
 

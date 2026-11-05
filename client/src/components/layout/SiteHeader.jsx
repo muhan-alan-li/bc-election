@@ -2,17 +2,17 @@ export function SiteHeader({ route }) {
     return (
         <header class="site-header">
             <div class="shell">
-                <a class="brand" href="#/match">
-                    BC election guide
+                <a class="brand" href="#/results">
+                    BC election results
                 </a>
                 <nav class="top-nav" aria-label="Main navigation">
                     <a
-                        href="#/match"
+                        href="#/results"
                         aria-current={
-                            route.view === 'match' ? 'page' : undefined
+                            route.view === 'results' ? 'page' : undefined
                         }
                     >
-                        Compare your views
+                        Results
                     </a>
                     <a
                         href="#/constituencies"
@@ -23,6 +23,14 @@ export function SiteHeader({ route }) {
                         }
                     >
                         Constituencies
+                    </a>
+                    <a
+                        href="#/cabinet"
+                        aria-current={
+                            route.view === 'cabinet' ? 'page' : undefined
+                        }
+                    >
+                        Cabinet
                     </a>
                     <a
                         href="#/parties"

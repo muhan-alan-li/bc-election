@@ -5,6 +5,7 @@ import tempfile
 from pathlib import Path
 
 from .finder import build_finder
+from .results import build_results, load_registry, publish_results
 from .roster import load_roster, publish_roster
 from .storage import SourceStore, read_json
 from .validate import validate_publication
@@ -15,6 +16,7 @@ def main():
     parser = argparse.ArgumentParser(description="Build the BC election guide's static publication")
     parser.add_argument("--config", type=Path, default=base / "config.json")
     parser.add_argument("--storage", type=Path, default=base / "storage")
+    parser.add_argument("--content", type=Path, default=base.parent / "content")
     parser.add_argument("--offline", action="store_true", help="Use cached source snapshots only")
     parser.add_argument(
         "--refresh",
@@ -29,6 +31,7 @@ def main():
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("build", help="Fetch the official roster and publish compact ballots")
     commands.add_parser("build-finder", help="Import BC postal locations and official boundaries")
+    commands.add_parser("build-results", help="Fetch published results and historical riding totals")
     commands.add_parser("list-districts", help="Read constituency names/codes from the official roster")
     commands.add_parser("validate", help="Validate the current compact publication")
     seed = commands.add_parser("import-source", help="Cache a source downloaded separately")
@@ -62,6 +65,16 @@ def main():
             return 0
 
         config = read_json(args.config)
+        if args.command == "build-results":
+            registry = load_registry(args.content, config["election"]["id"])
+            catalog = read_json(
+                args.storage / "published" / config["election"]["id"] / "catalog.json"
+            )
+            results = build_results(store, config, registry, catalog)
+            path = publish_results(args.storage, results)
+            print(f"Published results for {len(results['districts'])} constituencies")
+            print(path)
+            return 0
         if args.command == "build-finder":
             path, audit = build_finder(store, args.storage)
             print(json.dumps(audit, indent=2))

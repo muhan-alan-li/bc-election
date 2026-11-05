@@ -64,6 +64,26 @@ export async function requestJSON(
 function validateResource(path, body) {
     let valid = true;
     if (path === '/api/districts') valid = Array.isArray(body.districts);
+    else if (path === '/api/results')
+        valid =
+            !!body.election?.seats &&
+            Array.isArray(body.parties) &&
+            body.parties.length > 0 &&
+            body.districts &&
+            typeof body.districts === 'object' &&
+            !Array.isArray(body.districts) &&
+            Object.keys(body.districts).length === body.election.seats &&
+            Object.values(body.districts).every(
+                (district) =>
+                    district.name &&
+                    Array.isArray(district.candidates) &&
+                    district.winner?.name,
+            );
+    else if (path === '/api/cabinet')
+        valid =
+            !!body.premier?.name &&
+            Array.isArray(body.ministers) &&
+            Array.isArray(body.sources);
     else if (path.endsWith('/ballot'))
         valid =
             !!body.district?.name &&

@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "election_id": "bc-provincial-2026",
+  "reviewedOn": "2026-11-04",
+  "status": "pending",
+  "statusLabel": "Ministry not yet appointed",
+  "summary": "The Conservative Party won a majority of seats on October 24, 2026. The premier-designate has not yet been sworn in, and no cabinet has been announced. Final count, including mail-in and absentee ballots, is scheduled for November 6 to 10, 2026.",
+  "premier": {
+    "name": "Lorne Doerkson",
+    "title": "Premier-designate",
+    "partyID": "conservative",
+    "riding": "Cariboo-Chilcotin",
+    "note": "Interim leader of the Conservative Party of BC. Elected in Cariboo-Chilcotin."
+  },
+  "timeline": [
+    { "date": "2026-10-24", "label": "Election day" },
+    { "date": "2026-10-25", "label": "Initial count completed" },
+    { "date": "2026-11-06", "label": "Final count begins for mail-in and absentee ballots" },
+    { "date": "2026-11-10", "label": "Final count scheduled to end" },
+    { "date": null, "label": "Premier and cabinet sworn in — date not announced" }
+  ],
+  "ministers": [],
+  "sources": [
+    {
+      "url": "https://www.cbc.ca/news/canada/british-columbia/who-is-bc-premier-lorne-doerkson-9.7395130",
+      "label": "CBC News: Who is B.C.'s new premier Lorne Doerkson?"
+    },
+    {
+      "url": "https://www.cbc.ca/news/canada/british-columbia/what-s-next-as-the-b-c-conservatives-transition-from-opposition-to-government-9.7407834",
+      "label": "CBC News: What's next as the B.C. Conservatives transition to government"
+    },
+    {
+      "url": "https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations",
+      "label": "Province of British Columbia: Ministries and organizations"
+    }
+  ]
+}

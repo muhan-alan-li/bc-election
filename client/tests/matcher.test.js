@@ -68,8 +68,14 @@ test('ballot lookup uses explicit affiliations, never a name substring or incumb
     assert.deepEqual(ballotCandidates('ndp', questionnaire, null), []);
 });
 
-test('default route opens questionnaire; candidate links resolve to missing pages', () => {
+test('default route opens results; candidate links resolve to missing pages', () => {
     globalThis.window = { location: { hash: '' } };
+    assert.deepEqual(parseRoute(), { view: 'results' });
+    window.location.hash = '#/results';
+    assert.deepEqual(parseRoute(), { view: 'results' });
+    window.location.hash = '#/cabinet';
+    assert.deepEqual(parseRoute(), { view: 'cabinet' });
+    window.location.hash = '#/match';
     assert.deepEqual(parseRoute(), { view: 'match' });
     window.location.hash = '#/match/RCC';
     assert.deepEqual(parseRoute(), { view: 'missing' });

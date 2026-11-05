@@ -29,6 +29,7 @@
 .party-card-body {
     display: flex;
     flex-direction: column;
+    flex: 1;
     padding: 22px;
 }
 .party-label {
@@ -43,8 +44,29 @@
     font-size: 27px;
     font-weight: 700;
 }
+.party-card-stats {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 18px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    color: var(--ink3);
+    font-size: 14px;
+}
+.party-card-stats strong {
+    color: var(--ink);
+    font-size: 20px;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+}
+.party-card-stats .role-tag {
+    flex-basis: 100%;
+    margin-left: 0;
+}
 .party-card-action {
-    margin-top: 22px;
+    margin-top: auto;
     padding-top: 16px;
 }
 .party-sources {

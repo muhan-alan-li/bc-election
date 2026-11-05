@@ -26,28 +26,38 @@ Build them at the repo root with `make data finder-data`, or run `make build` to
 do everything. `BC_PUBLISHED_DIR`, `BC_CONTENT_DIR`, `BC_FINDER_DATASET`,
 `BC_ELECTION_ID`, and `BC_STATIC_OUTPUT` override the corresponding paths.
 
-The build exports and validates content, catalog and ballots; converts the
+The build exports and validates content, results, catalog and ballots; converts the
 finder source into versioned browser assets; bundles the app and Web Worker; and
 only then replaces `dist-static/`. Generated files are Git-ignored.
 
 ## Routes and data
 
-| Path                     | Content                                    |
-| ------------------------ | ------------------------------------------ |
-| `#/match`                | Party comparison and questionnaire         |
-| `#/parties`              | Party guide                                |
-| `#/constituencies`       | Constituency directory                     |
-| `#/constituencies/:code` | Ballot, candidate list and polling context |
+| Path                     | Content                                             |
+| ------------------------ | --------------------------------------------------- |
+| `#/` or `#/results`      | Legislature results, seat bar, vote share, turnout  |
+| `#/constituencies`       | All constituency results with margins and filters   |
+| `#/constituencies/:code` | Riding result, candidates, turnout and past results |
+| `#/cabinet`              | Premier-designate and ministry status               |
+| `#/parties`              | Parties that hold seats, with seats and vote share  |
+| `#/parties/:id/platform` | 2026 campaign platform, kept for reference          |
+| `#/match`                | Party comparison and questionnaire                  |
 
 API-shaped paths from the older server are mapped by
 `src/helpers/deployment.js` to prebuilt files:
 
+- `/api/results` → `/data/results.json`
+- `/api/cabinet` → `/data/cabinet.json`
 - `/api/guide` → `/data/guide.json`
 - `/api/parties` → `/data/parties.json`
 - `/api/districts` → `/data/districts.json`
 - `/api/districts/{code}/ballot` → `/data/districts/{code}/ballot.json`
 - `/api/questionnaire` → `/data/questionnaire.json`
 - `/api/polling` → `/data/polling.json`
+
+`results.json` carries the election summary, party totals, every constituency
+result, and the historical series for ridings whose names match earlier
+elections. The client loads it once for the results, constituency, riding,
+cabinet and party views.
 
 Portraits are served from `/content/assets/leaders/`. The finder has its own
 versioned assets under `/finder/`.
@@ -59,6 +69,7 @@ versioned assets under `/finder/`.
 | `src/routes/`              | Page composition and route-specific filtering and selection state.                            |
 | `src/components/ui/`       | Reusable primitives: `Table`, `Card`, `Dialog`, `Pagination`, `SourceLink`, and `RetryError`. |
 | `src/components/layout/`   | Site header/footer, page header, and breadcrumbs.                                             |
+| `src/components/results/`  | Seat bar and historical riding trend.                                                         |
 | `src/components/parties/`  | Party presentation shared by party lists.                                                     |
 | `src/components/platform/` | Policy cards, expanded details, sources, and the policy dialog header.                        |
 | `src/components/finder/`   | Constituency finder form, map, and results.                                                   |
@@ -74,13 +85,14 @@ Reviewed copy lives in `../content/{election-id}/`:
 
 - `guide.json` — leaders, party metadata, policy items, and citations.
 - `parties.json` — party identity, colors, and ballot aliases.
+- `cabinet.json` — premier-designate, ministry status, timeline, and sources.
 - `questionnaire.json` — questions and dated party positions.
 - `polling.json` — attributed riding projections and provincial surveys.
 - `polling-surveys.json` — source data used by the polling refresher.
 
 The exporter validates schemas, source URLs, dates, party references, citation
-indexes, and portrait paths before writing a build. If validation fails, the
-previous `dist-static/` is not replaced.
+indexes, result arithmetic, and portrait paths before writing a build. If
+validation fails, the previous `dist-static/` is not replaced.
 
 ## Static finder
 

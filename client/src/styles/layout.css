@@ -130,11 +130,15 @@ footer {
     .top-nav {
         gap: 0;
         width: 100%;
-        display: grid;
-        grid-template-columns: 1.5fr 1.3fr 0.7fr;
+        display: flex;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+    .top-nav::-webkit-scrollbar {
+        display: none;
     }
     .top-nav a {
-        padding: 9px 5px;
+        padding: 9px 9px;
         font-size: 13px;
         white-space: nowrap;
     }
@@ -158,4 +162,17 @@ footer {
 #main-content,
 #page-title {
     scroll-margin-top: 120px;
+}
+#page-title:focus {
+    outline: none;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    margin: 10px 0 0;
+}
+.footer-links a {
+    font-weight: 600;
 }
