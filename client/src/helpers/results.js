@@ -20,6 +20,29 @@ export function formatDate(value) {
     }).format(date);
 }
 
+const dayMonthFormat = new Intl.DateTimeFormat('en-CA', {
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC',
+});
+
+// A short span, for example 'November 6–10, 2026', for captions and notes.
+export function formatDateRange(start, end) {
+    if (!start) return '';
+    if (!end || start === end) return formatDate(start);
+    const from = new Date(`${start}T12:00:00Z`);
+    const to = new Date(`${end}T12:00:00Z`);
+    if (Number.isNaN(from.getTime()) || Number.isNaN(to.getTime()))
+        return `${start} to ${end}`;
+    const year = to.getUTCFullYear();
+    if (
+        from.getUTCFullYear() === year &&
+        from.getUTCMonth() === to.getUTCMonth()
+    )
+        return `${dayMonthFormat.format(from)}–${to.getUTCDate()}, ${year}`;
+    return `${dayMonthFormat.format(from)} to ${dayMonthFormat.format(to)}, ${year}`;
+}
+
 export function partyLookup(parties = []) {
     return new Map(parties.map((party) => [party.id, party]));
 }
@@ -43,18 +66,6 @@ export function resultHeadline(results) {
     if (!government) return 'Results';
     const majority = government.seats > results.election.seats / 2;
     return `${government.name} ${majority ? 'wins a majority' : 'wins the most seats'}`;
-}
-
-export function resultStandfirst(results) {
-    const held = seatHolders(results?.parties);
-    const [government, opposition, third] = held;
-    if (!government) return '';
-    const parts = [
-        `${government.name} won ${government.seats} of ${results.election.seats} seats with ${formatPercent(government.vote_share)} of the valid vote.`,
-    ];
-    if (opposition) parts.push(`${opposition.name} took ${opposition.seats}.`);
-    if (third) parts.push(`${third.name} holds ${third.seats}.`);
-    return parts.join(' ');
 }
 
 export function aggregateCandidates(candidates = []) {

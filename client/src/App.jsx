@@ -13,6 +13,7 @@ import { Cabinet } from './routes/Cabinet.jsx';
 import { Match } from './routes/Match.jsx';
 import { Platform } from './routes/Platform.jsx';
 import { useGuide } from './hooks/useGuide.js';
+import { resultHeadline } from './helpers/results.js';
 import { Parties } from './routes/Parties.jsx';
 import { NotFound } from './routes/NotFound.jsx';
 
@@ -61,6 +62,10 @@ export function App() {
         (route.view === 'platform' && guide && !party)
             ? { view: 'missing' }
             : route;
+    const resultsHeadline =
+        route.view === 'results' && results
+            ? resultHeadline(results)
+            : undefined;
 
     return (
         <>
@@ -80,6 +85,7 @@ export function App() {
                     route={displayRoute}
                     district={district}
                     party={party}
+                    title={resultsHeadline}
                 />
 
                 {route.view === 'results' &&

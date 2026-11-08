@@ -4,11 +4,11 @@ import { getJSON } from '../src/helpers/api.js';
 import {
     aggregateCandidates,
     formatDate,
+    formatDateRange,
     formatNumber,
     formatPercent,
     historyRows,
     resultHeadline,
-    resultStandfirst,
     seatHolders,
     shareParts,
 } from '../src/helpers/results.js';
@@ -77,6 +77,15 @@ test('formats counts, shares and dates for results pages', () => {
     assert.equal(formatPercent(48.06, 2), '48.06%');
     assert.equal(formatDate('2026-11-06'), 'November 6, 2026');
     assert.equal(formatDate(null), '');
+    assert.equal(
+        formatDateRange('2026-11-06', '2026-11-10'),
+        'November 6–10, 2026',
+    );
+    assert.equal(
+        formatDateRange('2026-11-28', '2026-12-02'),
+        'November 28 to December 2, 2026',
+    );
+    assert.equal(formatDateRange('2026-11-06', null), 'November 6, 2026');
 });
 
 test('seat summary and headline describe the largest party', () => {
@@ -85,10 +94,6 @@ test('seat summary and headline describe the largest party', () => {
         ['ndp'],
     );
     assert.equal(resultHeadline(results), 'BC NDP wins a majority');
-    assert.equal(
-        resultStandfirst(results),
-        'BC NDP won 2 of 3 seats with 60.0% of the valid vote.',
-    );
 });
 
 test('history starts with the current count and keeps earlier boundaries', () => {

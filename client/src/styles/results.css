@@ -1,11 +1,4 @@
 /* Election results: legislature summary, constituency tables, riding detail. */
-.results-headline {
-    font-size: clamp(30px, 4.4vw, 46px);
-    line-height: 1.08;
-    letter-spacing: -0.03em;
-    max-width: 22ch;
-    margin: 0 0 12px;
-}
 .results-standfirst {
     font-size: 19px;
     line-height: 1.5;
@@ -16,6 +9,23 @@
 .muted {
     color: var(--ink3);
     font-weight: 400;
+}
+
+/* One-line turnout caption under the seat chart. */
+.results-caption {
+    margin: 0 0 28px;
+    font-size: 14px;
+    color: var(--ink3);
+}
+
+/* Source and status line. Secondary by design: small, muted, one row. */
+.results-meta {
+    margin: 30px 0 0;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    font-size: 13.5px;
+    color: var(--ink3);
+    text-wrap: pretty;
 }
 
 /* Seat bar */
@@ -93,29 +103,6 @@
     align-self: center;
 }
 
-/* Summary statistics */
-.stat-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 24px;
-    margin: 30px 0 38px;
-    padding-top: 14px;
-    border-top: 1px solid var(--line2);
-}
-.stat strong {
-    display: block;
-    font-size: 32px;
-    line-height: 1.1;
-    font-weight: 650;
-    letter-spacing: -0.02em;
-}
-.stat span {
-    display: block;
-    margin-top: 4px;
-    font-size: 13px;
-    color: var(--ink3);
-}
-
 /* Party results table */
 .party-results-table th .party-swatch {
     margin-right: 8px;
@@ -157,50 +144,6 @@
 .party-results-other th,
 .party-results-other td {
     color: var(--ink3);
-}
-
-.results-notes .note {
-    margin-bottom: 12px;
-}
-.note.subtle {
-    background: transparent;
-    border-left-color: var(--line2);
-}
-
-/* Section links */
-.next-links {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
-    margin-top: 34px;
-}
-.link-card {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    padding: 20px;
-    border: 1px solid var(--line2);
-    border-top: 3px solid var(--accent);
-    color: var(--ink);
-}
-.link-card:hover {
-    border-color: var(--accent);
-    text-decoration: none;
-}
-.link-card strong {
-    font-size: 18px;
-}
-.link-card span {
-    font-size: 14px;
-    color: var(--ink3);
-}
-.link-card .card-action {
-    margin-top: auto;
-    padding-top: 12px;
-    border-top: 1px solid var(--line);
-    color: var(--accent);
-    font-size: 14px;
-    font-weight: 700;
 }
 
 /* Constituency directory tools */
@@ -395,15 +338,8 @@
     .results-search {
         grid-column: 1 / -1;
     }
-    .next-links {
-        grid-template-columns: 1fr;
-    }
 }
 @media (max-width: 700px) {
-    .stat-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 18px;
-    }
     .results-standfirst {
         font-size: 17px;
     }

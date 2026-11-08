@@ -62,7 +62,7 @@
     letter-spacing: -0.01em;
 }
 .party-card-stats .role-tag {
-    flex-basis: 100%;
+    flex-basis: auto;
     margin-left: 0;
 }
 .party-card-action {

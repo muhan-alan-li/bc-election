@@ -551,7 +551,7 @@ function withPartyRoles(results, guide, electionID) {
                     : 'Largest party'
                 : index === 1
                   ? 'Official opposition'
-                  : 'Holds seats',
+                  : null,
         ]),
     );
     return {

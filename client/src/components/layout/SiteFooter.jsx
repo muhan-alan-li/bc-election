@@ -4,9 +4,7 @@ export function SiteFooter() {
             <div class="shell">
                 <p>
                     An independent guide to the 2026 BC provincial election
-                    results. Figures are initial-count results published by
-                    Elections BC and may change during final count. Source links
-                    open in a new tab.
+                    results. Figures come from Elections BC.
                 </p>
                 <p class="footer-links">
                     <a href="#/results">Results</a>

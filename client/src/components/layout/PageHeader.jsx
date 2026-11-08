@@ -1,7 +1,7 @@
 import { useEffect } from 'preact/hooks';
 import { Breadcrumbs } from './Breadcrumbs.jsx';
 
-export function PageHeader({ route, district, party }) {
+export function PageHeader({ route, district, party, title: headline }) {
     let title = 'Constituency results';
 
     if (route.view === 'results') {
@@ -19,6 +19,8 @@ export function PageHeader({ route, district, party }) {
     } else if (route.view === 'missing') {
         title = 'Page not found';
     }
+    // The results page states the outcome in its heading, not the section name.
+    if (headline) title = headline;
 
     const routeKey = JSON.stringify(route);
     useEffect(() => {
