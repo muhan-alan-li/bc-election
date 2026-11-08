@@ -10,14 +10,14 @@
     "title": "Premier-designate",
     "partyID": "conservative",
     "riding": "Cariboo-Chilcotin",
-    "note": "Interim leader of the Conservative Party of BC. Elected in Cariboo-Chilcotin."
+    "note": "Interim leader"
   },
   "timeline": [
     { "date": "2026-10-24", "label": "Election day" },
     { "date": "2026-10-25", "label": "Initial count completed" },
     { "date": "2026-11-06", "label": "Final count begins for mail-in and absentee ballots" },
     { "date": "2026-11-10", "label": "Final count scheduled to end" },
-    { "date": null, "label": "Premier and cabinet sworn in — date not announced" }
+    { "date": null, "label": "Premier and cabinet sworn in" }
   ],
   "ministers": [],
   "sources": [
