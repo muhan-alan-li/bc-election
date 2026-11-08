@@ -103,7 +103,8 @@
         grid-column: 2;
     }
     .constituency-table .star-column {
-        grid-row: 1 / span 4;
+        grid-row: 1 / -1;
+        align-self: center;
         width: auto;
     }
     .constituency-table td[data-label] {

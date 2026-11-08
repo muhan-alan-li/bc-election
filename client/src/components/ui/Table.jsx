@@ -27,7 +27,13 @@ export function Table({
                                 scope="col"
                                 class={column.class}
                             >
-                                {column.label}
+                                {column.visuallyHidden ? (
+                                    <span class="visually-hidden">
+                                        {column.label}
+                                    </span>
+                                ) : (
+                                    column.label
+                                )}
                             </th>
                         ))}
                     </tr>

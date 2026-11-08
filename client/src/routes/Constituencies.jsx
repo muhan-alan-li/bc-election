@@ -14,7 +14,7 @@ import {
 } from '../helpers/results.js';
 
 const columns = [
-    { label: 'Star', class: 'star-column' },
+    { label: 'Star', class: 'star-column', visuallyHidden: true },
     { label: 'Constituency' },
     { label: 'Elected' },
     { label: 'Party' },
@@ -67,18 +67,29 @@ export function Constituencies({ results, onFind, finderButtonRef }) {
 
     const { pages, currentPage, rows } = paginate(matches, page, pageSize);
     const reset = () => setPage(1);
+    const filtered = Boolean(query.trim() || partyFilter || starredOnly);
+    const count = [
+        filtered
+            ? `${matches.length} of ${districts.length} constituencies`
+            : `${districts.length} constituencies`,
+        partyFilter ? partyById.get(partyFilter)?.name : '',
+        starredOnly ? 'starred' : '',
+        sort === 'name'
+            ? ''
+            : sortOptions.find((option) => option.value === sort)?.label,
+    ]
+        .filter(Boolean)
+        .join(' · ');
 
     return (
         <>
             <div ref={controlsRef} class="results-tools">
                 <div class="results-search">
-                    <label for="district-search">
-                        Search constituency, elected member or party
-                    </label>
+                    <label for="district-search">Search</label>
                     <input
                         id="district-search"
                         type="search"
-                        placeholder="For example, Richmond Centre"
+                        placeholder="Constituency, member or party"
                         value={query}
                         onInput={(event) => {
                             setQuery(event.currentTarget.value);
@@ -144,10 +155,7 @@ export function Constituencies({ results, onFind, finderButtonRef }) {
                 </div>
             </div>
             <p class="result-count" role="status">
-                {matches.length} of {districts.length} constituencies
-                {partyFilter ? ` · ${partyById.get(partyFilter)?.name}` : ''}
-                {starredOnly ? ' · starred' : ''} ·{' '}
-                {sortOptions.find((option) => option.value === sort)?.label}
+                {count}
             </p>
             {rows.length ? (
                 <Table
@@ -181,9 +189,6 @@ export function Constituencies({ results, onFind, finderButtonRef }) {
                                     <a href={districtHref(row.code)}>
                                         {row.name}
                                     </a>
-                                    <span class="muted district-code">
-                                        {row.code}
-                                    </span>
                                 </th>
                                 <td data-label="Elected">{row.winner.name}</td>
                                 <td data-label="Party">
@@ -205,8 +210,8 @@ export function Constituencies({ results, onFind, finderButtonRef }) {
                                 <td data-label="Margin">
                                     {formatNumber(row.margin.votes)} votes
                                     <span class="muted">
-                                        {' '}
-                                        ({formatPercent(row.margin.points)} pts)
+                                        {' · '}
+                                        {row.margin.points.toFixed(1)} pts
                                     </span>
                                 </td>
                             </tr>
