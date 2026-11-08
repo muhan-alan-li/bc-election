@@ -7,7 +7,13 @@ export function useVoterResource(path) {
     useEffect(() => {
         if (!path) return;
         const controller = new AbortController();
-        setState({ path, data: null, error: '' });
+        // Keep data that is already on screen while the refetch runs, so a
+        // route change does not flash a loading message over loaded content.
+        setState((previous) =>
+            previous.path === path && previous.data
+                ? previous
+                : { path, data: null, error: '' },
+        );
         getJSON(path, controller.signal)
             .then((data) => {
                 if (!controller.signal.aborted)

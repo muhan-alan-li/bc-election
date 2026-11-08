@@ -622,7 +622,11 @@ try {
     );
 
     await route('#/constituencies');
-    await until('document.querySelector(".constituency-table")');
+    // Results reload when the route re-enables the resource, so wait for the
+    // directory controls and the table to be mounted together.
+    await until(
+        'document.querySelector(".constituency-table") && document.getElementById("district-search")',
+    );
     assert.equal(
         await evaluate('document.documentElement.scrollWidth > innerWidth'),
         false,
