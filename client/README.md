@@ -117,7 +117,8 @@ Policy, revalidation for the finder manifest, and immutable caching for versione
 finder data. Hash navigation needs no rewrite rules.
 
 The `Static site` GitHub Actions workflow runs the roster and finder imports,
-builds the site, and uploads `client/dist-static/` as an artifact. If the
-repository variable `CLOUDFLARE_PAGES_PROJECT` is set, it deploys the same
-artifact to Cloudflare Pages using the `CLOUDFLARE_API_TOKEN` and
-`CLOUDFLARE_ACCOUNT_ID` secrets. Build artifacts are never committed.
+builds the site, and uploads `client/dist-static/` as an artifact. It runs for
+pushes to `results-2026`. If the repository variable `CLOUDFLARE_PAGES_PROJECT`
+is set, it deploys the same artifact to Cloudflare Pages using the
+`CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` secrets. Build artifacts are
+never committed.

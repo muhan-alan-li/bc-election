@@ -1,7 +1,7 @@
 name: Static site
 on:
   push:
-    branches: [main]
+    branches: [results-2026]
   workflow_dispatch:
 permissions:
   contents: read
@@ -46,7 +46,7 @@ jobs:
           path: client/dist-static
           retention-days: 14
       - name: Deploy to Cloudflare Pages
-        if: github.ref == 'refs/heads/main' && vars.CLOUDFLARE_PAGES_PROJECT != ''
+        if: github.ref == 'refs/heads/results-2026' && vars.CLOUDFLARE_PAGES_PROJECT != ''
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}

@@ -14,7 +14,8 @@ There is no application server. GitHub Actions builds the publication data and
 finder assets from official sources, bundles the client, and uploads the static
 output from `client/dist-static/` as a workflow artifact. If the
 `CLOUDFLARE_PAGES_PROJECT` repository variable is configured, it also deploys
-the artifact to Cloudflare Pages.
+the artifact to Cloudflare Pages. The workflow deploys the `results-2026`
+branch.
 
 ## Layout
 
