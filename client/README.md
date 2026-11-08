@@ -20,6 +20,10 @@ npm run test:browser   # Chrome suite against a temporary static build
 npm run format:check
 ```
 
+`make dev` at the repo root runs `npm run dev` and serves `dist-static/` at
+http://localhost:8080, so a browser reload shows each rebuild. The watcher
+rebuilds client sources only. Run `make build` after data or content changes.
+
 `npm run build` expects generated inputs under `../ingestion/storage/published/`
 and a finder source dataset at `../ingestion/storage/published/finder.json`.
 Build them at the repo root with `make data finder-data`, or run `make build` to

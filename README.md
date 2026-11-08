@@ -33,8 +33,13 @@ Requirements: Node 22.12+, Python 3.12+, and `make`.
 ```sh
 make setup       # install client dependencies
 make build       # roster + results + finder data + static bundle
-make preview     # serve client/dist-static at http://localhost:8080
+make dev         # watch client sources and serve at http://localhost:8080
+make preview     # serve the last build at http://localhost:8080
 ```
+
+`make dev` needs a previous `make build`, because the watcher rebuilds client
+files only. It does not re-export data. Run `make build` again after data or
+content changes, or use `make preview` for a one-off look at a build.
 
 The first results build downloads the Elections BC reporting page and the BC
 Data Catalogue voting-results tables (about 32 MB). Later builds reuse the

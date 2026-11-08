@@ -2,7 +2,7 @@
 
 PORT ?= 8080
 
-.PHONY: help setup build data results refresh-results finder-data refresh-finder-data preview test test-browser check format clean
+.PHONY: help setup build data results refresh-results finder-data refresh-finder-data dev preview test test-browser check format clean
 
 FINDER_DATA := ingestion/storage/published/finder.json
 
@@ -14,6 +14,7 @@ help:
 	@echo "make refresh-results Re-download results and historical totals"
 	@echo "make finder-data Build finder data if it is missing"
 	@echo "make refresh-finder-data Re-download finder source data"
+	@echo "make dev         Watch client sources and serve client/dist-static at http://localhost:$(PORT)"
 	@echo "make preview     Serve client/dist-static at http://localhost:$(PORT)"
 	@echo "make test        Run Python and client unit tests"
 	@echo "make test-browser Run the static browser regression suite"
@@ -49,6 +50,24 @@ refresh-finder-data:
 
 build: client/node_modules/.installed data finder-data
 	cd client && npm run build
+
+dev: client/node_modules/.installed
+	@test -d ingestion/storage/published || { \
+		echo "Missing ingestion/storage/published. Run 'make build' first."; \
+		exit 1; \
+	}
+	@cd client && { \
+		npm run dev & \
+		watch_pid=$$!; \
+		trap 'kill $$watch_pid 2>/dev/null' EXIT INT TERM; \
+		for i in $$(seq 1 120); do \
+			[ -f dist-static/index.html ] && break; \
+			kill -0 $$watch_pid 2>/dev/null || exit 1; \
+			sleep 0.5; \
+		done; \
+		echo "Dev site: http://localhost:$(PORT)"; \
+		python3 -m http.server "$(PORT)" --bind 127.0.0.1 --directory dist-static; \
+	}
 
 preview:
 	cd client && python3 -m http.server "$(PORT)" --directory dist-static
