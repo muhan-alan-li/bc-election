@@ -2,6 +2,7 @@ client/node_modules/
 client/dist/
 client/dist-static/
 client/.static-build-*/
+.wrangler/
 .DS_Store
 .run/
 __pycache__/
